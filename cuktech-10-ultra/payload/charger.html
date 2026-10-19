@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; font-src 'self'; script-src 'self'; connect-src 'none'" />
+    <title>CUKTECH 10 Ultra</title>
+    <link rel="stylesheet" href="mchose-ui/mchose-ui.css" />
+    <link rel="stylesheet" href="mchose-ui/mchose-icons.css" />
+    <link rel="stylesheet" href="mchose-ui/razer-theme.css" />
+    <link rel="stylesheet" href="charger.css" />
+  </head>
+  <body>
+    <div class="dc-page">
+      <header class="dc-official-header"><button id="backHome" class="left back" type="button"><i class="header-back-icon iconfont icon-home_linear" aria-hidden="true"></i><span class="name">返回主页</span></button></header>
+      <div class="dc-main">
+        <aside class="dc-sidebar">
+          <header class="dc-sidebar-header"><div class="dc-sidebar-name">CUKTECH 10 Ultra</div><div class="dc-sidebar-meta"><span class="dc-sidebar-meta-item"><i class="iconfont icon-a-bluetooth2_char" aria-hidden="true"></i><span id="connectionText">读取中</span></span></div></header>
+          <nav id="categoryNav" class="dc-nav" aria-label="充电器设置"></nav>
+        </aside>
+        <main class="dc-right">
+          <div class="dc-menu"><h1 id="pageTitle">实时监控</h1><span id="feedback" role="status" aria-live="polite"></span></div>
+          <section class="dc-panel">
+            <div class="dc-stage"><img id="chargerArt" alt="CUKTECH 10 Ultra" hidden /><div id="artPlaceholder"><i class="iconfont icon-usb_linear" aria-hidden="true"></i><span>CUKTECH 10 Ultra</span></div><div id="powerOverview"><span>总输出功率</span><strong id="totalPower">—<small> W</small></strong></div></div>
+            <div id="configArea" class="dc-config"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <dialog id="pairDialog" aria-labelledby="pairTitle">
+      <header><h2 id="pairTitle">连接米家充电器</h2><button id="closePair" type="button" aria-label="关闭">×</button></header>
+      <p id="qrStatus" role="status">请用已绑定充电器的米家 App 扫码，并在手机上确认。</p>
+      <img id="qrImage" alt="米家登录二维码" hidden />
+      <div id="deviceChoices"></div>
+      <button id="newQr" type="button">获取二维码</button>
+    </dialog>
+    <script src="charger-page.js"></script>
+  </body>
+</html>

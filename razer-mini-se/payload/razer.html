@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.mchose.com.cn; font-src 'self' https://cdn.mchose.com.cn; script-src 'self'"
+    />
+    <title>Razer Viper Mini SE</title>
+    <link rel="stylesheet" href="mchose-ui/mchose-ui.css" />
+    <link rel="stylesheet" href="mchose-ui/mchose-icons.css" />
+    <link rel="stylesheet" href="mchose-ui/razer-theme.css" />
+  </head>
+  <body>
+    <div class="dc-page">
+      <div class="dc-official-header">
+        <div id="backHome" class="left back flex flex-ac cursor">
+          <i class="header-back-icon mc-icon iconfont icon-home_linear" style="width:20px;height:20px;font-size:20px"></i>
+          <span class="name">返回主页</span>
+        </div>
+      </div>
+
+      <div class="dc-main">
+        <aside class="dc-sidebar">
+          <header class="dc-sidebar-header">
+            <div class="dc-sidebar-name">Viper Mini SE</div>
+            <div class="dc-sidebar-meta">
+              <span class="dc-sidebar-meta-item">
+                <i id="batteryIcon" class="iconfont icon-a-elec100_linear"></i>
+                <span id="batteryText">--%</span>
+              </span>
+              <span class="dc-sidebar-meta-item">
+                <i class="iconfont icon-wifi_linear"></i>
+                <span id="connectionText">读取中</span>
+              </span>
+            </div>
+          </header>
+          <nav id="categoryNav" class="dc-nav" aria-label="设备设置"></nav>
+        </aside>
+
+        <main class="dc-right">
+          <div id="tabMenu" class="dc-menu" role="tablist"></div>
+          <section class="dc-panel">
+            <div class="dc-stage">
+              <img data-product-image src="product-assets/razer-black.webp" alt="Razer Viper Mini SE" />
+            </div>
+            <div id="configArea" class="dc-config"></div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="razer-page.js"></script>
+  </body>
+</html>

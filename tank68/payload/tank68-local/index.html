@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN" data-dc-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TANK68HE</title>
+    <script src="theme/theme.js"></script>
+    <link rel="stylesheet" href="theme/mchose-shell.css" />
+    <link rel="stylesheet" href="theme/mchose-icons.css" />
+    <link rel="stylesheet" href="theme/tank68-shell.css" />
+  </head>
+  <body>
+    <div class="dc-page">
+      <header class="dc-official-header">
+        <button id="backHome" class="left back" type="button">
+          <i class="header-back-icon iconfont icon-home_linear" aria-hidden="true"></i>
+          <span class="name">返回主页</span>
+        </button>
+      </header>
+      <div class="dc-main">
+        <aside class="dc-sidebar">
+          <header class="dc-sidebar-header">
+            <div class="dc-sidebar-name">TANK68HE</div>
+            <div class="dc-sidebar-meta">
+              <span class="dc-sidebar-meta-item"><i class="iconfont icon-usb_linear" aria-hidden="true"></i>USB</span>
+            </div>
+          </header>
+          <nav id="categoryNav" class="dc-nav" aria-label="键盘配置"></nav>
+        </aside>
+        <main class="dc-right">
+          <div class="dc-menu"><h1 id="panelTitle">灯光设置</h1><span id="panelStatus" role="status" aria-live="polite"></span></div>
+          <section class="dc-vendor-panel" aria-labelledby="panelTitle">
+            <iframe id="vendorFrame" title="Tank68 键盘与设置" allow="hid" src="about:blank"></iframe>
+            <div id="frameError" class="dc-frame-error" hidden>
+              <p>键盘设置暂时未能加载</p><button id="retryFrame" type="button">重新加载</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <script src="theme/tank68-shell.js"></script>
+  </body>
+</html>

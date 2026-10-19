@@ -1,0 +1,2131 @@
+"""CUKTECH BLE data server for Home Assistant integration.
+
+BLE data is published to MQTT for real-time updates in Home Assistant.
+"""
+import asyncio
+import re
+import sys
+import warnings
+warnings.filterwarnings('ignore', message='.*default MTU.*')
+import gzip
+import hashlib
+import json
+import logging
+import logging.handlers
+import math
+import os
+import threading
+import time
+from collections import OrderedDict
+from pathlib import Path
+from aiohttp import web
+
+from config import load_config, LOG_LEVELS
+from state import ChargerState, PORT_BITS, PORT_NAMES, PORT_DEFAULT, VALID_PIIDS, PIID_RANGES, PROTOCOL_SWITCH_BITS
+from ble_manager import BLEManager, set_status_cache_invalidator, END_REASON_SHUTDOWN
+from energy import MAX_LIMIT_WH, LIMIT_MODES
+from history import PortHistory
+from bemfa_client import BemfaClient, MSG_ON, MSG_OFF
+
+
+def _load_xiaomi_cloud():
+    """按需导入小米云扫码登录客户端（延迟导入）。
+
+    该模块只被 3 个低频端点使用（/api/xiaomi/login、/qr/complete、/beaconkey），
+    却会连带拉进 requests + pycryptodome —— 实测在真实进程里常驻约 6.3 MB。
+    原先放在模块顶层急切导入，等于为一个几乎不用的功能长期占内存；
+    改为首次调用时才导入（结果由 sys.modules 缓存，代价只付一次，首次请求略慢）。
+
+    返回 (QrCodeXiaomiCloudClient, XiaomiCloudLoginError)；依赖缺失时抛
+    ImportError，由调用方转成明确的接口错误。
+    """
+    from xiaomi_cloud import QrCodeXiaomiCloudClient, XiaomiCloudLoginError
+    return QrCodeXiaomiCloudClient, XiaomiCloudLoginError
+
+
+# 日志文件路径：由 cuktech_ctl.sh 通过 CUKTECH_LOG_FILE 传入（默认与脚本一致），
+# 两边必须指向同一个文件，`cuktech_ctl.sh log` 才读得到。
+LOG_FILE = os.environ.get("CUKTECH_LOG_FILE", "/tmp/cuktech_server.log")
+LOG_MAX_BYTES = int(os.environ.get("CUKTECH_LOG_MAX_BYTES", 20 * 1024 * 1024))
+LOG_BACKUP_COUNT = int(os.environ.get("CUKTECH_LOG_BACKUP_COUNT", 5))
+
+
+def _setup_logging() -> None:
+    """根 logger：按大小轮转的文件处理器 + 控制台。
+
+    文件处理器是主日志（cuktech_ctl.sh log 读的就是它），按 LOG_MAX_BYTES 切割、
+    保留 LOG_BACKUP_COUNT 份，避免长期运行无限增长（info 级别下约 9 MB/天）。
+    控制台输出由 ctl 重定向到 *.console.log，用于保留"日志系统就绪前"的启动期
+    异常（导入错误、解释器告警等）。
+    """
+    fmt = logging.Formatter("%(asctime)s %(name)s %(levelname)s %(message)s",
+                            "%Y-%m-%d %H:%M:%S")
+    root = logging.getLogger()
+    root.setLevel(logging.INFO)
+    if not any(isinstance(h, logging.handlers.RotatingFileHandler) for h in root.handlers):
+        try:
+            fh = logging.handlers.RotatingFileHandler(
+                LOG_FILE, maxBytes=LOG_MAX_BYTES, backupCount=LOG_BACKUP_COUNT,
+                encoding="utf-8")
+            fh.setFormatter(fmt)
+            root.addHandler(fh)
+        except Exception as e:      # 路径不可写等 → 退回仅控制台输出
+            logging.getLogger("cuktech_server").warning(
+                "File log handler disabled (%s): %s", LOG_FILE, e)
+    # 仅交互式前台运行时才把日志打到终端。被 cuktech_ctl.sh 重定向到文件时若再加
+    # 一个 StreamHandler，会和主日志内容完全重复（实测两文件行数相同），白白翻倍。
+    if sys.stderr.isatty() and not any(
+            isinstance(h, logging.StreamHandler)
+            and not isinstance(h, logging.FileHandler) for h in root.handlers):
+        sh = logging.StreamHandler()
+        sh.setFormatter(fmt)
+        root.addHandler(sh)
+
+
+_setup_logging()
+_LOGGER = logging.getLogger("cuktech_server")
+
+
+_sse_log = logging.getLogger("cuktech_sse")
+
+
+# ── Request size limit (prevent DoS via large payloads) ──
+MAX_REQUEST_BODY_SIZE = 1024 * 1024  # 1 MB
+
+# ── MQTT 待确认队列上限 ──
+# paho 对 QoS>0 的待确认消息默认 max_queued_messages=0（无上限）：连接"看起来还在"
+# 但 broker 不再回 PUBACK（半开 TCP、NAT 超时、broker 卡住）时，1Hz 的状态发布会
+# 一直堆进 _out_messages。实测每条约 1.2KB → 几小时就能吃掉上百 MB。低频状态主题
+# 已改用 QoS0（QoS0 不入队），这里再给低频的 QoS1 路径一个硬上限兜底。
+MQTT_MAX_QUEUED_MESSAGES = 200
+MQTT_MAX_INFLIGHT_MESSAGES = 20
+
+# ── 图表缓存的内存保护 ──
+# 缓存里存的是**整段 JSON body**：720h@30s 实测 6.6MB，而缓存按"条数"上限 10 条，
+# 最坏情况能吃掉几十 MB。这里改成"条数 + 总字节"双重封顶，并给长区间强制更粗的桶。
+CHART_CACHE_MAX_BYTES = 8 * 1024 * 1024      # 缓存 body 总量上限
+CHART_CACHE_MAX_ENTRY_BYTES = 1024 * 1024    # 单条 body 超过它就不进缓存
+# hours 超过阈值 → interval 下限（UI 自身最长 24h@300s，不受影响）
+_CHART_INTERVAL_FLOORS = ((168, 1800), (72, 600), (24, 300))
+
+
+def _chart_interval_floor(hours: float) -> int:
+    """长区间的桶宽下限：避免构造型查询生成数 MB 的 body。"""
+    for threshold, floor in _CHART_INTERVAL_FLOORS:
+        if hours > threshold:
+            return floor
+    return 5      # ≤24h：沿用请求值（最小 5s）
+
+
+def _chart_cache_bytes(cache) -> int:
+    """缓存里所有 body 的字节总量（条数很少，直接累加即可）。"""
+    total = 0
+    for entry in cache.values():
+        try:
+            total += len(entry[2])
+        except (TypeError, IndexError):
+            continue
+    return total
+
+
+class SSEEmitter:
+    """SSE event broadcaster — push events to all connected browser clients."""
+
+    MAX_QUEUE_SIZE = 128
+
+    def __init__(self):
+        self._clients: set[asyncio.Queue] = set()
+        self._pending_status: dict[int, str] = {}  # id(queue) -> latest status payload
+        self._lock = threading.Lock()
+
+    def add_client(self, queue: asyncio.Queue):
+        with self._lock:
+            self._clients.add(queue)
+        _sse_log.info("SSE client connected (total: %d)", len(self._clients))
+
+    def remove_client(self, queue: asyncio.Queue):
+        with self._lock:
+            self._clients.discard(queue)
+            self._pending_status.pop(id(queue), None)
+        _sse_log.info("SSE client disconnected (total: %d)", len(self._clients))
+
+    def _put_or_drop(self, q: asyncio.Queue, payload: str):
+        """Put payload in queue; drop oldest if full."""
+        try:
+            q.put_nowait(payload)
+        except asyncio.QueueFull:
+            _sse_log.warning("SSE queue full, dropping oldest event (qsize=%s)", q.qsize())
+            try:
+                q.get_nowait()
+            except asyncio.QueueEmpty:
+                pass
+            try:
+                q.put_nowait(payload)
+            except asyncio.QueueFull:
+                pass
+
+    def emit(self, event_type: str, data: dict):
+        """Broadcast event to all connected clients.
+        Status events are kept as 'latest only' — stale statuses are replaced,
+        never enqueued alongside newer statuses.
+        """
+        payload = json.dumps({"type": event_type, **data}, ensure_ascii=False)
+        is_status = event_type == "status"
+        with self._lock:
+            for q in self._clients:
+                qid = id(q)
+                if is_status:
+                    # Status: just update pending, don't enqueue (replaces stale status)
+                    self._pending_status[qid] = payload
+                else:
+                    # Non-status: flush pending status first, then enqueue
+                    status = self._pending_status.pop(qid, None)
+                    if status:
+                        self._put_or_drop(q, status)
+                    self._put_or_drop(q, payload)
+
+    def flush_status(self, q: asyncio.Queue) -> str | None:
+        """Return and clear the latest pending status for a queue (if any).
+        Called by SSE handler before each queue read to ensure the newest status
+        is sent ahead of all other events.
+        """
+        with self._lock:
+            return self._pending_status.pop(id(q), None)
+
+
+class Server:
+    def __init__(self):
+        self.config = load_config()
+        self.state = ChargerState()
+        self.ble = BLEManager(self.config.ble.mac, self.config.ble.token, self.state, self.config)
+        self.mqtt_client = None
+        self._mqtt_connect_time = 0.0
+        self._mqtt_disconnect_count = 0
+        self._mqtt_publish_failures = 0
+        self.loop = None
+        self._start_lock = asyncio.Lock()
+        self._status_cache_bytes = None
+        self._status_cache_valid = False
+        self._chart_cache: OrderedDict = OrderedDict()
+        self._chart_cache_ttl = 10
+        self._chart_cache_max = 10
+        self._chart_cache_max_bytes = CHART_CACHE_MAX_BYTES
+        self._chart_cache_max_entry_bytes = CHART_CACHE_MAX_ENTRY_BYTES
+        self.sse = SSEEmitter()
+        self._xiaomi_sessions: dict[str, tuple[Any, asyncio.TimerHandle | None]] = {}  # session_id -> (client, timer)
+        self._start_time = time.time()
+        self.history = PortHistory(
+            db_path=self.config.server.history_db_path,
+            retention_days=self.config.server.history_retention_days,
+        )
+        self.bemfa: BemfaClient | None = None
+        # 后台任务挂在实例上而不是 aiohttp 的 app_ 里：应用启动完成后再写 app_
+        # 会触发 aiohttp 的 DeprecationWarning（"Changing state of started or
+        # joined application is deprecated"），未来版本会直接报错。
+        self._ble_task: asyncio.Task | None = None
+        self._backfill_task: asyncio.Task | None = None
+        effective_level = self.config.server.log_level
+        logging.getLogger().setLevel(LOG_LEVELS.get(effective_level, logging.INFO))
+        env_var = os.environ.get("CUKTECH_LOG_LEVEL")
+        source = "环境变量 CUKTECH_LOG_LEVEL" if env_var else "config.yaml"
+        _LOGGER.info("日志级别: %s (来源: %s)", effective_level, source)
+
+    def mqtt_publish(self, topic, payload, retain=False):
+        """Publish to all enabled MQTT clients (multiplex)."""
+        # HA MQTT
+        if self.mqtt_client and self.mqtt_client.is_connected():
+            try:
+                self.mqtt_client.publish(topic, json.dumps(payload, ensure_ascii=False), retain=retain)
+            except Exception:
+                self._mqtt_publish_failures += 1
+        # Bemfa
+        if self.bemfa and self.bemfa.is_connected:
+            self._bemfa_publish(topic, payload)
+
+    def _bemfa_publish(self, topic, payload):
+        """Map HA MQTT topics to Bemfa device states."""
+        topic_prefix = self.config.mqtt.topic_prefix
+        # Port state: {prefix}/port/{port_name}
+        if topic.startswith(f"{topic_prefix}/port/"):
+            port_name = topic.split("/")[-1]
+            entity_map = {
+                "c1": "cuktech_c1",
+                "c2": "cuktech_c2",
+                "c3": "cuktech_c3",
+                "a": "cuktech_usb_a",
+            }
+            entity_id = entity_map.get(port_name)
+            if entity_id and isinstance(payload, dict):
+                state = MSG_ON if payload.get("active") else MSG_OFF
+                self.bemfa.publish_state(entity_id, state)
+        # BLE status: {prefix}/status
+        elif topic == f"{topic_prefix}/status":
+            if isinstance(payload, dict):
+                connected = payload.get("connected", False)
+                self.bemfa.publish_state("cuktech_ble", MSG_ON if connected else MSG_OFF)
+
+    async def setup_bemfa(self):
+        """Initialize Bemfa client if enabled."""
+        if not self.config.bemfa.enabled or not self.config.bemfa.uid:
+            _LOGGER.info("Bemfa disabled or UID not configured")
+            return
+
+        # Cleanup old client if exists
+        if self.bemfa:
+            await self.bemfa.stop()
+
+        self.bemfa = BemfaClient(self.config.bemfa.uid, modified=self.config.bemfa.modified)
+
+        # Register devices with custom display names
+        self.bemfa.add_device("cuktech_c1", self.config.bemfa.name_c1)
+        self.bemfa.add_device("cuktech_c2", self.config.bemfa.name_c2)
+        self.bemfa.add_device("cuktech_c3", self.config.bemfa.name_c3)
+        self.bemfa.add_device("cuktech_usb_a", self.config.bemfa.name_a)
+        self.bemfa.add_device("cuktech_ble", self.config.bemfa.name_ble)
+
+        # Register command callbacks
+        def _port_cmd(port, on):
+            _LOGGER.info("Bemfa command: %s %s", port, "on" if on else "off")
+            try:
+                self.loop.call_soon_threadsafe(
+                    self.ble.cmd_queue.put_nowait,
+                    ("port", (port, "on" if on else "off"), None))
+                return True
+            except Exception as e:
+                _LOGGER.error("Bemfa port cmd failed: %s", e)
+                return False
+
+        def _ble_cmd(on):
+            _LOGGER.info("Bemfa BLE command: %s", "on" if on else "off")
+            try:
+                if on:
+                    asyncio.run_coroutine_threadsafe(self.ble.start(), self.loop)
+                else:
+                    asyncio.run_coroutine_threadsafe(self.ble.request_stop(), self.loop)
+                return True
+            except Exception as e:
+                _LOGGER.error("Bemfa BLE cmd failed: %s", e)
+                return False
+
+        self.bemfa.on_command("cuktech_c1", lambda on: _port_cmd("c1", on))
+        self.bemfa.on_command("cuktech_c2", lambda on: _port_cmd("c2", on))
+        self.bemfa.on_command("cuktech_c3", lambda on: _port_cmd("c3", on))
+        self.bemfa.on_command("cuktech_usb_a", lambda on: _port_cmd("a", on))
+        self.bemfa.on_command("cuktech_ble", _ble_cmd)
+
+        await self.bemfa.start()
+
+        # Clear modified flag after successful topic registration
+        if self.config.bemfa.modified:
+            self._clear_bemfa_modified()
+
+    def _config_path(self) -> Path:
+        return Path(os.environ.get("CUKTECH_CONFIG_PATH", str(Path(__file__).parent / "config.yaml")))
+
+    def _clear_bemfa_modified(self):
+        """Set bemfa.modified=false in config.yaml after topic re-registration."""
+        try:
+            import yaml
+            config_path = self._config_path()
+            cfg = {}
+            if config_path.exists():
+                with open(config_path) as f:
+                    cfg = yaml.safe_load(f) or {}
+            if cfg.get("bemfa", {}).get("modified"):
+                cfg["bemfa"]["modified"] = False
+                # Atomic write: write to temp file then rename
+                tmp_path = config_path.with_suffix(".tmp")
+                with open(tmp_path, "w") as f:
+                    yaml.dump(cfg, f, allow_unicode=True, default_flow_style=False)
+                os.replace(tmp_path, config_path)
+                _LOGGER.info("Bemfa modified flag cleared")
+        except Exception:
+            _LOGGER.warning("Failed to clear bemfa modified flag", exc_info=True)
+
+    async def handle_health(self, request):
+        """GET /api/health - health check endpoint."""
+        ble_connected = self.ble.ctrl is not None and self.state.connected
+        mqtt_connected = self.mqtt_client is not None and self.mqtt_client.is_connected()
+        bemfa_connected = self.bemfa is not None and self.bemfa.is_connected
+        all_healthy = bool(ble_connected or self.config.server.port > 0)
+        return web.json_response({
+            "ok": True,
+            "healthy": all_healthy,
+            "components": {
+                "ble": ble_connected,
+                "mqtt": mqtt_connected,
+                "bemfa": bemfa_connected,
+            },
+            "uptime_ms": int((time.time() - getattr(self, '_start_time', time.time())) * 1000),
+        })
+
+    async def handle_bemfa(self, request):
+        """GET /api/bemfa - get Bemfa status."""
+        enabled = self.bemfa is not None
+        connected = self.bemfa is not None and self.bemfa.is_connected
+        uid = self.config.bemfa.uid
+        uid_display = f"{uid[:4]}****" if len(uid) > 4 else uid
+        return web.json_response({
+            "enabled": enabled,
+            "connected": connected,
+            "uid": uid_display,
+            "configured": bool(uid),
+        })
+
+    async def setup_mqtt(self):
+        if not self.config.mqtt.enabled:
+            _LOGGER.info("MQTT disabled, running in standalone web server mode")
+            return
+
+        import paho.mqtt.client as mqtt
+        self.mqtt_client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+        # 见模块常量注释：给待确认队列硬上限，避免断线/半开连接期间无限堆积
+        self.mqtt_client.max_queued_messages_set(MQTT_MAX_QUEUED_MESSAGES)
+        self.mqtt_client.max_inflight_messages_set(MQTT_MAX_INFLIGHT_MESSAGES)
+        if self.config.mqtt.username:
+            self.mqtt_client.username_pw_set(self.config.mqtt.username, self.config.mqtt.password)
+        self.mqtt_client.reconnect_delay_set(min_delay=1, max_delay=60)
+
+        def on_connect(client, userdata, flags, rc, properties=None):
+            _LOGGER.info("MQTT connected (rc=%s)", rc)
+            s = get_server()
+            s._mqtt_connect_time = time.time()
+            if s.ble:
+                s.ble.set_mqtt_publisher(s.mqtt_publish)
+            s.setup_mqtt_subscriptions()
+
+        def on_disconnect(client, userdata, flags, rc, properties=None):
+            _LOGGER.warning("MQTT disconnected (rc=%s)", rc)
+            get_server()._mqtt_disconnect_count += 1
+
+        self.mqtt_client.on_connect = on_connect
+        self.mqtt_client.on_disconnect = on_disconnect
+
+        self.mqtt_client.will_set(
+            self.config.topic_status,
+            json.dumps({"connected": False}),
+            retain=True, qos=1
+        )
+
+        for attempt in range(3):
+            try:
+                self.mqtt_client.connect(self.config.mqtt.host, self.config.mqtt.port, self.config.mqtt.keepalive)
+                self.mqtt_client.loop_start()
+                _LOGGER.info("MQTT connecting to %s:%s", self.config.mqtt.host, self.config.mqtt.port)
+                break
+            except Exception:
+                _LOGGER.error("MQTT connection failed (attempt %d/3): %s:%s",
+                              attempt + 1, self.config.mqtt.host, self.config.mqtt.port)
+                if attempt < 2:
+                    await asyncio.sleep(3)
+                else:
+                    self.mqtt_client = None
+
+        if self.mqtt_client:
+            self.ble.set_mqtt_publisher(self.mqtt_publish)
+
+    def setup_mqtt_subscriptions(self):
+        if not self.mqtt_client:
+            return
+        server = self
+
+        def on_mqtt_message(client, userdata, msg):
+            try:
+                payload = json.loads(msg.payload)
+                if server.loop is None:
+                    return
+                if msg.topic == f"{server.config.mqtt.topic_prefix}/set":
+                    piid = payload.get("piid")
+                    value = payload.get("value")
+                    if piid is None or value is None:
+                        _LOGGER.warning("Invalid set command: missing piid or value")
+                        return
+                    try:
+                        piid_int = int(piid)
+                        value_int = int(value)
+                    except (ValueError, TypeError):
+                        _LOGGER.warning("Invalid set command: piid/value must be integers")
+                        return
+                    if piid_int not in VALID_PIIDS:
+                        _LOGGER.warning("Invalid set command: piid %d not valid", piid_int)
+                        return
+                    min_val, max_val = PIID_RANGES[piid_int]
+                    if not (min_val <= value_int <= max_val):
+                        _LOGGER.warning("Invalid set command: value %d out of range [%d, %d]", value_int, min_val, max_val)
+                        return
+                    server.loop.call_soon_threadsafe(
+                        server.ble.cmd_queue.put_nowait,
+                        ("set", (piid_int, value_int), None))
+                    _LOGGER.info("MQTT set command: piid=%d value=%d", piid_int, value_int)
+                elif msg.topic == f"{server.config.mqtt.topic_prefix}/port":
+                    port = payload.get("port")
+                    action = payload.get("action")
+                    if not port or action not in ("on", "off"):
+                        _LOGGER.warning("Invalid port command: port=%s action=%s", port, action)
+                        return
+                    if port not in PORT_BITS and port != "all":
+                        _LOGGER.warning("Invalid port command: unknown port %s", port)
+                        return
+                    server.loop.call_soon_threadsafe(
+                        server.ble.cmd_queue.put_nowait,
+                        ("port", (port, action), None))
+                    _LOGGER.info("MQTT port command: port=%s action=%s", port, action)
+                elif msg.topic == f"{server.config.mqtt.topic_prefix}/ble":
+                    enabled = payload.get("enabled")
+                    if enabled is None or not isinstance(enabled, bool):
+                        _LOGGER.warning("Invalid BLE command: 'enabled' must be a bool")
+                        return
+                    _LOGGER.info("MQTT BLE command: %s", "enable" if enabled else "disable")
+                    try:
+                        if enabled:
+                            asyncio.run_coroutine_threadsafe(server.ble.start(), server.loop)
+                        else:
+                            asyncio.run_coroutine_threadsafe(server.ble.request_stop(), server.loop)
+                    except Exception as e:
+                        _LOGGER.error("MQTT BLE cmd failed: %s", e)
+            except (json.JSONDecodeError, ValueError, TypeError) as e:
+                _LOGGER.error("MQTT cmd parse error: %s", e)
+            except Exception as e:
+                _LOGGER.error("MQTT cmd error: %s", e)
+
+        self.mqtt_client.on_message = on_mqtt_message
+        self.mqtt_client.subscribe(f"{self.config.mqtt.topic_prefix}/set")
+        self.mqtt_client.subscribe(f"{self.config.mqtt.topic_prefix}/port")
+        # /ble: HA "BLE连接" switch — enable/disable BLE connection
+        self.mqtt_client.subscribe(f"{self.config.mqtt.topic_prefix}/ble")
+
+        _LOGGER.info("MQTT subscriptions ready")
+
+    def invalidate_status_cache(self):
+        self._status_cache_valid = False
+
+    def mqtt_quality(self) -> dict:
+        """Return MQTT connection quality metrics."""
+        if not self.mqtt_client:
+            return {"score": 0, "uptime": 0, "disconnects": 0, "publish_failures": 0}
+        connected = self.mqtt_client.is_connected()
+        if not connected:
+            return {"score": 0, "uptime": 0, "disconnects": self._mqtt_disconnect_count,
+                    "publish_failures": self._mqtt_publish_failures}
+        uptime = int(time.time() - self._mqtt_connect_time) if self._mqtt_connect_time else 0
+        # Disconnect penalty: each disconnect costs 15 points
+        dc_score = max(0, 100 - self._mqtt_disconnect_count * 15)
+        # Publish failure penalty
+        pf_score = max(0, 100 - self._mqtt_publish_failures * 5)
+        score = round(dc_score * 0.6 + pf_score * 0.4)
+        return {"score": score, "uptime": uptime, "disconnects": self._mqtt_disconnect_count,
+                "publish_failures": self._mqtt_publish_failures}
+
+    async def handle_status(self, request):
+        if self._status_cache_valid and self._status_cache_bytes:
+            return web.Response(
+                body=self._status_cache_bytes,
+                content_type="application/json",
+            )
+        data = await self.state.to_dict()
+        data["mqtt_connected"] = self.mqtt_client is not None and self.mqtt_client.is_connected()
+        data["session_recording"] = bool(self.ble.record_sessions)
+        modes = self.ble.get_port_modes_state()
+        data["permanent_ports"] = modes["permanent_ports"]
+        data["full_off_ports"] = modes["full_off_ports"]
+        self._status_cache_bytes = await asyncio.to_thread(
+            lambda: json.dumps(data, ensure_ascii=False).encode()
+        )
+        self._status_cache_valid = True
+        return web.Response(
+            body=self._status_cache_bytes,
+            content_type="application/json",
+        )
+
+    async def handle_set(self, request):
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+        piid = data.get("piid")
+        value = data.get("value")
+        if piid is None or value is None:
+            return web.json_response({"ok": False, "error": "missing piid or value"}, status=400)
+        try:
+            piid_int = int(piid)
+            value_int = int(value)
+        except (ValueError, TypeError):
+            return web.json_response({"ok": False, "error": "piid and value must be integers"}, status=400)
+        if piid_int not in VALID_PIIDS:
+            return web.json_response({"ok": False, "error": f"invalid piid: {piid_int}"}, status=400)
+        min_val, max_val = PIID_RANGES[piid_int]
+        if not (min_val <= value_int <= max_val):
+            return web.json_response({"ok": False, "error": f"value must be between {min_val} and {max_val}"}, status=400)
+        result = await self.ble.send_command("set", (piid_int, value_int))
+        self.invalidate_status_cache()
+        return web.json_response(result)
+
+    async def handle_port(self, request):
+        try:
+            body = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+        port = body.get("port", "").lower()
+        action = body.get("action", "").lower()
+        if action not in ("on", "off"):
+            return web.json_response({"ok": False, "error": "action must be on/off"}, status=400)
+        if port not in PORT_BITS and port != "all":
+            return web.json_response({"ok": False, "error": f"unknown port: {port}"}, status=400)
+        result = await self.ble.send_command("port", (port, action))
+        self.invalidate_status_cache()
+        return web.json_response(result)
+
+    async def handle_protocol(self, request):
+        """处理协议开关 (PIID 21)。
+
+        请求体:
+          {"port": "c1", "protocol": "pd"}           # toggle
+          {"port": "c1", "protocol": "pd", "action": "on"}   # 显式开关
+          {"switches": {"c1": {"pd": true, ...}}}     # 批量设置
+          {"value": 50532111}                         # 直接写原始值
+        """
+        try:
+            body = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        try:
+            state = self.ble.state
+            if "value" in body:
+                new_val = int(body["value"])
+                if not (0 <= new_val <= 0xFFFFFFFF):
+                    return web.json_response({"ok": False, "error": "value out of range (0-0xFFFFFFFF)"}, status=400)
+            elif "switches" in body:
+                new_val = ChargerState.encode_protocol_extend(body["switches"])
+            elif "port" in body and "protocol" in body:
+                port = body["port"].lower()
+                proto = body["protocol"].lower()
+                action = body.get("action", "toggle")
+
+                # 加锁确保 read-modify-write-send 原子性，防止竞态
+                async with state.lock:
+                    current_val = state.protocol_extend
+                    switches = dict(state.protocol_switches)
+
+                    if port not in switches or proto not in switches[port]:
+                        return web.json_response({"ok": False, "error": f"unknown {port}.{proto}"}, status=400)
+
+                    cur = switches[port][proto]
+                    if action == "toggle":
+                        new_state = not cur
+                    elif action == "on":
+                        new_state = True
+                    elif action == "off":
+                        new_state = False
+                    else:
+                        return web.json_response({"ok": False, "error": f"invalid action: {action}"}, status=400)
+
+                    _LOGGER.info("Protocol switch: %s.%s %s->%s (current 0x%08X)",
+                                 port, proto, cur, new_state, current_val)
+
+                    # 构建新的开关状态
+                    new_switches = dict(switches)
+                    new_switches[port] = dict(switches[port])
+                    new_switches[port][proto] = new_state
+
+                    new_val = ChargerState.encode_protocol_extend(new_switches)
+
+                # 锁外发送 SET (send_command 内部也有 async 操作)
+                result = await self.ble.send_command("set", (21, new_val))
+                # 同步本地状态，确保后续 GET 读到最新值
+                if result and result.get("ok"):
+                    await state.update_protocol_extend(new_val)
+                    if hasattr(self, 'sse'):
+                        self.sse.emit("protocol", {"switches": state.protocol_switches,
+                                                    "protocol_extend": new_val})
+                self.invalidate_status_cache()
+                return web.json_response(result)
+            else:
+                return web.json_response({"ok": False, "error": "missing port/protocol or value"}, status=400)
+
+            # 批量/原始值路径：锁外发送
+            result = await self.ble.send_command("set", (21, new_val))
+            if result and result.get("ok"):
+                await state.update_protocol_extend(new_val)
+                if hasattr(self, 'sse'):
+                    self.sse.emit("protocol", {"switches": state.protocol_switches,
+                                               "protocol_extend": new_val})
+            return web.json_response(result)
+        except Exception as e:
+            _LOGGER.error("Protocol switch error: %s", e)
+            return web.json_response({"ok": False, "error": str(e)}, status=500)
+
+    async def handle_enable(self, request):
+        try:
+            body = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+        enabled = body.get("enabled", True)
+        if enabled:
+            async with self._start_lock:
+                if self.ble.is_running:
+                    return web.json_response({"ok": True, "enabled": True, "note": "already running"})
+                old = self._ble_task
+                if old and not old.done():
+                    old.cancel()
+                    try:
+                        await old
+                    except asyncio.CancelledError:
+                        pass
+                self._ble_task = asyncio.create_task(self.ble.start())
+        else:
+            async with self._start_lock:
+                await self.ble.request_stop()
+                task = self._ble_task
+                if task and not task.done():
+                    try:
+                        await asyncio.wait_for(task, timeout=10)
+                    except (asyncio.CancelledError, asyncio.TimeoutError):
+                        pass
+                # _disconnect() (在 start() 的 finally 中) 已进行完整的 Bleak 清理，
+                # 不需要额外调用 _force_disconnect_bluetooth()（仅用于错误恢复/关机）
+            for piid in range(1, 5):
+                await self.state.update_port(piid, PORT_DEFAULT)
+            if self.mqtt_client and self.mqtt_client.is_connected():
+                for piid, pname in PORT_NAMES.items():
+                    self.mqtt_publish(f"{self.config.topic_port}/{pname}", PORT_DEFAULT)
+                self.mqtt_publish(self.config.topic_status, {"connected": False}, retain=True)
+            else:
+                _LOGGER.warning("MQTT not connected, port data not cleared via MQTT")
+        self.invalidate_status_cache()
+        return web.json_response({"ok": True, "enabled": enabled})
+
+    async def handle_log_level(self, request):
+        """Get or set log level."""
+        if request.method == "GET":
+            current = logging.getLogger().level
+            level_name = logging.getLevelName(current).lower()
+            return web.json_response({
+                "level": level_name,
+                "available": list(LOG_LEVELS.keys()),
+            })
+
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        level = data.get("level", "").lower()
+        if level not in LOG_LEVELS:
+            return web.json_response({"ok": False, "error": f"invalid level: {level}"}, status=400)
+
+        logging.getLogger().setLevel(LOG_LEVELS[level])
+        # Persist to config.yaml so the change survives restart
+        try:
+            import yaml
+            config_path = self._config_path()
+            cfg = {}
+            if config_path.exists():
+                with open(config_path) as f:
+                    cfg = yaml.safe_load(f) or {}
+            if "server" not in cfg:
+                cfg["server"] = {}
+            cfg["server"]["log_level"] = level
+            # Atomic write: write to temp file then rename
+            tmp_path = config_path.with_suffix(".tmp")
+            with open(tmp_path, "w") as f:
+                yaml.dump(cfg, f, allow_unicode=True, default_flow_style=False)
+            os.replace(tmp_path, config_path)
+        except Exception:
+            _LOGGER.warning("Failed to persist log level to config.yaml", exc_info=True)
+        _LOGGER.info("Log level changed to %s", level)
+        return web.json_response({"ok": True, "level": level})
+
+    async def handle_session_recording(self, request):
+        """GET/POST /api/session-recording — 充电会话记录开关。
+
+        状态持久化在 history.db 的 meta 表（单源，随数据库备份/清除），
+        即时生效，无需重启服务。关闭后不再创建新的充电会话记录，但充电
+        完成事件（MQTT charge_event，HA 通知）照常发布。
+        """
+        if request.method == "GET":
+            return web.json_response({"ok": True, "enabled": bool(self.ble.record_sessions)})
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+        enabled = data.get("enabled")
+        if not isinstance(enabled, bool):
+            return web.json_response({"ok": False, "error": "enabled must be boolean"}, status=400)
+        was_enabled = bool(self.ble.record_sessions)
+        self.ble.record_sessions = enabled
+        if self.history:
+            self.history.set_session_recording(enabled)
+        if enabled and not was_enabled:
+            # 打开瞬间：把关闭期间仍在充电的占位会话立即转为真实记录，
+            # 使正在充电的端口从此刻起恢复曲线/历史（无需等到下次充电）
+            self.ble.resume_recording_sessions()
+        self.invalidate_status_cache()
+        _LOGGER.info("Charge session recording %s", "enabled" if enabled else "disabled")
+        return web.json_response({"ok": True, "enabled": enabled})
+
+    async def handle_port_modes(self, request):
+        """GET/POST /api/port-modes — 端口模式：长期供电 / 充满即停。
+
+        两者都持久化在 history.db 的 meta 表（单源，随数据库备份/清除），
+        即时生效、无需重启。
+
+        - permanent 长期供电设备：该端口不写充电曲线点（charge_points），曲线只
+          留在内存滑动窗口里供详情浮层查看；会话行与耗能统计照常记录。
+        - full_off 充满即停：复用会话检测的"判满"结果——20s/180s 两个功率中位数都低于
+          T_low = max(0.05W, min(0.6W, 20%×本次会话峰值))，且该收敛状态连续保持
+          HOLD_SEC=600s（期间偶发非收敛累计不超过 GRACE_SEC=120s；出现连续 ≥45s
+          超过 max(5W, 2×T_low) 则视为"恢复充电"，计时清零重来）。判满后会话以
+          low_power 自然结束，随即自动关闭该端口。和限额一样带模式：
+          once 命中即消费（一次），always 每次会话重新生效。
+
+        互斥：长期供电端口不允许开即停（否则把长期供电的负载断掉，语义自相矛盾）。
+        """
+        if request.method == "GET":
+            state = self.ble.get_port_modes_state()
+            state["ok"] = True
+            return web.json_response(state)
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        port = str(data.get("port", "")).strip().lower()
+        if port not in PORT_BITS:
+            return web.json_response({"ok": False, "error": f"unknown port: {port}"}, status=400)
+        permanent = data.get("permanent")
+        full_off = data.get("full_off")
+        if permanent is None and full_off is None:
+            return web.json_response(
+                {"ok": False, "error": "permanent or full_off required"}, status=400)
+        for key, value in (("permanent", permanent), ("full_off", full_off)):
+            if value is not None and not isinstance(value, bool):
+                return web.json_response(
+                    {"ok": False, "error": f"{key} must be boolean"}, status=400)
+
+        current = self.ble.get_port_modes_state()
+        permanent_ports = set(current["permanent_ports"])
+        full_off_modes = dict(current["full_off_ports"])
+        if permanent is not None:
+            if permanent:
+                permanent_ports.add(port)
+                full_off_modes.pop(port, None)   # 互斥：设为长期供电即清掉该口即停
+            else:
+                permanent_ports.discard(port)
+        if full_off is not None:
+            if full_off and port in permanent_ports:
+                return web.json_response(
+                    {"ok": False,
+                     "error": f"port {port} is permanent power, full_off is not applicable"},
+                    status=400)
+            if full_off:
+                mode_raw = data.get("mode")
+                if mode_raw is None:
+                    full_off_modes[port] = self.ble.FULL_OFF_DEFAULT_MODE
+                else:
+                    mode = str(mode_raw).strip().lower()
+                    if mode not in LIMIT_MODES:
+                        return web.json_response(
+                            {"ok": False, "error": f"mode must be one of {LIMIT_MODES}"},
+                            status=400)
+                    full_off_modes[port] = mode
+            else:
+                full_off_modes.pop(port, None)
+
+        loop = asyncio.get_running_loop()
+        if self.history:
+            # 同步 sqlite 写放线程池，避免阻塞事件循环
+            await loop.run_in_executor(
+                None, self.history.set_permanent_ports, sorted(permanent_ports))
+            await loop.run_in_executor(
+                None, self.history.set_full_off, full_off_modes)
+        # 长期供电端口不保留限额（与即停互斥同理）：登记为长期供电时把该口限额清零
+        # 并落库——否则界面上"限额已设"与实际行为不一致（看着设了却永不断电）。
+        # 必须在 set_permanent_ports 之前读快照：那个方法也会在内存里清零，先设就查不到。
+        limits = self.ble.get_charge_limits_state()
+        stale = [name for name in permanent_ports if limits.get(name, {}).get("wh", 0) > 0]
+        if stale:
+            merged = {name: {"wh": e["wh"], "mode": e["mode"]} for name, e in limits.items()}
+            for name in stale:
+                merged[name]["wh"] = 0.0
+            if self.history:
+                await loop.run_in_executor(None, self.history.set_charge_limits, merged)
+            self.ble.set_charge_limits(merged)
+            _LOGGER.info("Charge limits cleared for permanent power ports: %s", sorted(stale))
+        self.ble.set_permanent_ports(permanent_ports)
+        self.ble.set_full_off(full_off_modes)
+        self.invalidate_status_cache()
+        state = self.ble.get_port_modes_state()
+        _LOGGER.info("Port modes updated: permanent=%s full_off=%s",
+                     state["permanent_ports"], state["full_off_ports"])
+        state["ok"] = True
+        return web.json_response(state)
+
+    async def handle_web_language(self, request):
+        """GET/POST /api/web-language — Web UI language (DB meta, instant).
+
+        GET 返回当前语言偏好（'auto' | 'zh-CN' | 'en'），POST 持久化到
+        history.db 的 meta 表（单源，随数据库备份/清除），即时生效、无需重启。
+        'auto' 表示跟随浏览器/系统语言（回退中文）。
+        """
+        if request.method == "GET":
+            lang = self.history.get_web_language() if self.history else "auto"
+            return web.json_response({"ok": True, "language": lang})
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+        raw = str(data.get("language", "")).strip().lower()
+        if raw in ("zh", "zh-cn", "zh-hans"):
+            canonical = "zh-CN"
+        elif raw == "en":
+            canonical = "en"
+        elif raw == "auto":
+            canonical = "auto"
+        else:
+            return web.json_response({"ok": False, "error": "invalid language"}, status=400)
+        if self.history:
+            self.history.set_web_language(canonical)
+        _LOGGER.info("Web UI language set to %s", canonical)
+        return web.json_response({"ok": True, "language": canonical})
+
+    async def handle_charge_limits(self, request):
+        """GET/POST /api/charge-limits — 指定充电量后自动关断端口。
+
+        阈值单位是充电器输出能量（Wh，由 V×I 梯形积分得出），不是被充设备的
+        实际充入电量——线损与设备内转换损耗使后者偏小。
+
+        mode: once   达到阈值即消费清零（一次性）
+              always 长期有效，每次充电会话重新武装
+
+        GET 返回每端口配置 + 本会话实时进度（wh/mode/fired/session_wh/is_charging），
+        前端据此显示"已充 X / 限额 Y Wh"并自算剩余。配置持久化在 history.db 的
+        meta 表（单源，随数据库备份/清除），即时生效、无需重启。
+        """
+        if request.method == "GET":
+            return web.json_response({
+                "ok": True,
+                "limits": self.ble.get_charge_limits_state(),
+            })
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        if "limits" in data:
+            raw = data["limits"]
+            if not isinstance(raw, dict) or not raw:
+                return web.json_response(
+                    {"ok": False, "error": "limits must be a non-empty object"}, status=400)
+            updates = raw
+        elif "port" in data:
+            port = str(data["port"]).strip().lower()
+            if port not in PORT_BITS:
+                return web.json_response({"ok": False, "error": f"unknown port: {port}"}, status=400)
+            updates = {port: {"wh": data.get("wh"), "mode": data.get("mode")}}
+        else:
+            return web.json_response({"ok": False, "error": "missing port or limits"}, status=400)
+
+        # 校验：任何非法项都应拒绝整个请求，而不是静默归一成"禁用"（否则用户
+        # 以为设了限额，实际被封禁，属于危险的静默降级）。
+        cleaned = {}
+        for port, entry in updates.items():
+            port = str(port).strip().lower()
+            if port not in PORT_BITS:
+                return web.json_response({"ok": False, "error": f"unknown port: {port}"}, status=400)
+            wh_raw = entry.get("wh") if isinstance(entry, dict) else entry
+            mode_raw = entry.get("mode") if isinstance(entry, dict) else None
+            try:
+                wh = float(wh_raw)
+            except (TypeError, ValueError):
+                return web.json_response(
+                    {"ok": False, "error": f"port {port}: wh must be a number"}, status=400)
+            if not math.isfinite(wh) or wh < 0 or wh > MAX_LIMIT_WH:
+                return web.json_response(
+                    {"ok": False, "error": f"port {port}: wh must be finite and within 0-{MAX_LIMIT_WH:g}"},
+                    status=400)
+            if wh > 0 and self.ble.is_permanent_name(port):
+                return web.json_response(
+                    {"ok": False,
+                     "error": f"port {port} is permanent power, charge limit is not applicable"},
+                    status=400)
+            if mode_raw is None:
+                mode = None   # 保留该端口既有 mode
+            else:
+                mode = str(mode_raw).strip().lower()
+                if mode not in LIMIT_MODES:
+                    return web.json_response(
+                        {"ok": False, "error": f"port {port}: mode must be one of {LIMIT_MODES}"},
+                        status=400)
+            cleaned[port] = {"wh": wh} if mode is None else {"wh": wh, "mode": mode}
+
+        # 合并既有配置（未提及的端口与 mode 保持原值），写库后应用到内存
+        merged = {name: {"wh": e["wh"], "mode": e["mode"]}
+                  for name, e in self.ble.get_charge_limits_state().items()}
+        for port, entry in cleaned.items():
+            merged[port]["wh"] = entry["wh"]
+            if "mode" in entry:
+                merged[port]["mode"] = entry["mode"]
+
+        # 同步 sqlite 写：放到线程池，避免阻塞事件循环
+        if self.history:
+            await asyncio.get_running_loop().run_in_executor(
+                None, self.history.set_charge_limits, merged)
+        self.ble.set_charge_limits(merged)
+        self.invalidate_status_cache()
+        _LOGGER.info("Charge limits updated: %s",
+                     {p: f'{e["wh"]:g}Wh/{e["mode"]}' for p, e in merged.items() if e["wh"] > 0})
+        return web.json_response({
+            "ok": True,
+            "limits": self.ble.get_charge_limits_state(),
+        })
+
+    async def handle_chart(self, request):
+        """Get chart-ready data for all ports with caching and ETag."""
+        try:
+            hours = min(float(request.query.get("hours", 1)), 720)
+        except (ValueError, TypeError):
+            return web.json_response({"ok": False, "error": "invalid hours parameter"}, status=400)
+        try:
+            interval = max(int(request.query.get("interval", 30)), 5)
+        except (ValueError, TypeError):
+            return web.json_response({"ok": False, "error": "invalid interval parameter"}, status=400)
+        # 长区间强制更粗的桶：body 是整段 JSON，720h@30s 会生成 6.6MB（只是把同样的
+        # 点画得更密）。先粗化再算 cache_key，保证缓存键反映真正生效的 interval。
+        interval = max(interval, _chart_interval_floor(hours))
+        cache_key = f"{hours}:{interval}"
+
+        # Check cache
+        now = time.time()
+        entry = self._chart_cache.get(cache_key)
+        if entry:
+            cached_time, cached_etag, cached_body, _ = entry
+            if now - cached_time < self._chart_cache_ttl:
+                if_none_match = request.headers.get("If-None-Match")
+                if if_none_match == cached_etag:
+                    return web.Response(status=304)
+                return web.Response(
+                    body=cached_body,
+                    content_type="application/json",
+                    headers={"ETag": cached_etag},
+                )
+
+        # Generate data in thread pool (strftime + loops + json.dumps + sha256 are all CPU-bound)
+        now_ts = time.time()
+        start_ts = now_ts - hours * 3600
+        aligned_start = (int(start_ts) // interval) * interval
+        use_date = hours > 12
+        aligned_now = (int(now_ts) // interval) * interval
+        epochs = list(range(aligned_start, aligned_now, interval))
+        # SQLite 查询为同步阻塞调用，放入线程池执行，避免阻塞事件循环
+        raw_rows = await asyncio.to_thread(self.history.query_history_multi, 1, 4, hours, interval)
+
+        def _build_chart(epochs_, labels, raw_rows_):
+            port_data = {p: {} for p in range(1, 5)}
+            for row in raw_rows_:
+                port_data[row["port"]][int(row["bucket"])] = (
+                    row["power"], row["voltage"], row["current"]
+                )
+
+            n = len(labels)
+            power = [[0.0] * n for _ in range(5)]
+            voltage = [[0.0] * n for _ in range(4)]
+            current = [[0.0] * n for _ in range(4)]
+
+            for i, epoch in enumerate(epochs_):
+                total = 0.0
+                for port in range(1, 5):
+                    entry_ = port_data[port].get(epoch)
+                    if entry_ is not None:
+                        p, v, c = entry_
+                        power[port - 1][i] = round(p, 1)
+                        voltage[port - 1][i] = round(v, 2)
+                        current[port - 1][i] = round(c, 2)
+                        total += p
+                power[4][i] = round(total, 1)
+
+            port_names = ["C1", "C2", "C3", "A"]
+            result = {
+                "ok": True,
+                "labels": labels,
+                "datasets": {
+                    "power": [{"label": port_names[p], "data": power[p]} for p in range(4)]
+                           + [{"label": "Total", "data": power[4]}],
+                    "voltage": [{"label": port_names[p], "data": voltage[p]} for p in range(4)],
+                    "current": [{"label": port_names[p], "data": current[p]} for p in range(4)],
+                },
+            }
+            body = json.dumps(result, ensure_ascii=False).encode()
+            etag = hashlib.sha256(body).hexdigest()
+            return body, etag
+
+        if use_date:
+            all_labels = [time.strftime('%m-%d %H:%M', time.localtime(t)) for t in epochs]
+        else:
+            all_labels = [time.strftime('%H:%M', time.localtime(t)) for t in epochs]
+
+        body, etag = await asyncio.to_thread(_build_chart, epochs, all_labels, raw_rows)
+
+        # 更新缓存：条数 + 总字节双重封顶（OrderedDict 按插入序淘汰最旧）。
+        # 单个超大 body 直接不入缓存——缓存是加速用的，不值得为它留几 MB。
+        max_entry = getattr(self, "_chart_cache_max_entry_bytes", CHART_CACHE_MAX_ENTRY_BYTES)
+        max_bytes = getattr(self, "_chart_cache_max_bytes", CHART_CACHE_MAX_BYTES)
+        if len(body) <= max_entry:
+            self._chart_cache[cache_key] = (now, etag, body, now)
+            # 覆盖已存在的键时 OrderedDict 会**保留原位置**，而"TTL 过期后重算同一个
+            # cache_key"正是常见路径：不把它移到队尾，下面的淘汰就可能先删掉刚算好的
+            # 这一条（之后同一图表每次请求都未命中，白跑 SQLite + json.dumps）。
+            self._chart_cache.move_to_end(cache_key)
+            while len(self._chart_cache) > self._chart_cache_max:
+                self._chart_cache.popitem(last=False)
+            # 至少保留刚写入的这一条，避免"单条就超总量上限"时把缓存清空
+            while (len(self._chart_cache) > 1
+                   and _chart_cache_bytes(self._chart_cache) > max_bytes):
+                self._chart_cache.popitem(last=False)
+
+        return web.Response(
+            body=body,
+            content_type="application/json",
+            headers={"ETag": etag},
+        )
+
+    async def handle_statistics(self, request):
+        """Get port statistics."""
+        try:
+            port = int(request.match_info.get("port", 1))
+        except ValueError:
+            return web.json_response({"ok": False, "error": "invalid port"}, status=400)
+        hours = min(float(request.query.get("hours", 24)), 720)
+
+        if port not in range(1, 5):
+            return web.json_response({"ok": False, "error": "invalid port"}, status=400)
+
+        stats = await asyncio.to_thread(self.history.get_statistics, port, int(hours))
+        return web.json_response({"ok": True, "data": stats})
+
+    async def handle_export(self, request):
+        """Export port history as CSV."""
+        try:
+            port = int(request.match_info.get("port", 1))
+        except ValueError:
+            return web.json_response({"ok": False, "error": "invalid port"}, status=400)
+        hours = min(float(request.query.get("hours", 24)), 720)
+
+        if port not in range(1, 5):
+            return web.json_response({"ok": False, "error": "invalid port"}, status=400)
+
+        csv_data = await asyncio.to_thread(self.history.export_csv, port, int(hours))
+        return web.Response(
+            body=csv_data,
+            content_type="text/csv",
+            headers={"Content-Disposition": f"attachment; filename=port_{port}_history.csv"},
+        )
+
+    MOBILE_UA = re.compile(r'Android|iPhone|iPod|webOS|BlackBerry|Windows Phone', re.I)
+
+    async def handle_index(self, request):
+        ua = request.headers.get('User-Agent', '')
+        path = '/phone.html' if self.MOBILE_UA.search(ua) else '/index.html'
+        entry = _static_cache.get(path)
+        if entry:
+            accept_gzip = request.headers.get("Accept-Encoding", "").find("gzip") != -1
+            if accept_gzip and entry["gzipped"]:
+                body = entry["gzipped"]
+                headers = {
+                    "Content-Type": "text/html",
+                    "Content-Encoding": "gzip",
+                    "Content-Length": str(len(body)),
+                    "Cache-Control": "no-cache",
+                }
+            else:
+                body = entry["raw"]
+                headers = {
+                    "Content-Type": "text/html",
+                    "Content-Length": str(len(body)),
+                    "Cache-Control": "no-cache",
+                }
+            return web.Response(body=body, headers=headers)
+        return web.FileResponse(WEB_DIR / path.lstrip('/'))
+
+    # ── Charge Session API ──
+
+    async def handle_sessions(self, request):
+        """GET /api/sessions?port=c1&period=today&limit=10&page=1"""
+        port_str = request.query.get("port", "")
+        period = request.query.get("period", "today")
+        limit = min(int(request.query.get("limit", "10")), 50)
+        page = max(1, int(request.query.get("page", "1")))
+
+        port = None
+        if port_str:
+            port_map = {"c1": 1, "c2": 2, "c3": 3, "a": 4}
+            port = port_map.get(port_str)
+
+        loop = asyncio.get_running_loop()
+        sessions, total = await loop.run_in_executor(
+            None, self.history.get_sessions, port, period, limit, (page - 1) * limit)
+
+        # Merge live energy data for active sessions
+        now = time.time()
+        live = self.ble.get_live_session_data()
+        db_session_ids = {s.get("id") for s in sessions}
+        for port_id, ld in live.items():
+            sid = ld.get("session_id")
+            matched = False
+            for s in sessions:
+                if s.get("id") == sid:
+                    s["total_wh"] = ld["session_wh"]
+                    s["peak_power_w"] = max(s.get("peak_power_w", 0), ld["max_power"])
+                    # Recalculate avg from live data (DB values are stale for active sessions)
+                    start_time = ld.get("start_time") or now
+                    dur_sec = max(1, int(now - start_time))
+                    dur_h = dur_sec / 3600.0
+                    s["avg_power_w"] = round(ld["session_wh"] / dur_h, 1) if dur_h > 0 else 0
+                    port_state = self.ble.state.ports.get(port_id)
+                    if port_state:
+                        s["avg_voltage"] = round(port_state.voltage, 2)
+                        s["avg_current"] = round(port_state.current, 2)
+                    s["duration_sec"] = dur_sec
+                    s["is_active"] = True
+                    s["permanent"] = bool(ld.get("permanent"))
+                    matched = True
+                    break
+            if not matched and sid:
+                # Active session not in DB results (total_wh=0, filtered out) — add it
+                start_time = ld.get("start_time") or now
+                dur_sec = max(1, int(now - start_time))
+                dur_h = dur_sec / 3600.0
+                avg_p = round(ld["session_wh"] / dur_h, 1) if dur_h > 0 else 0
+                # Current V/I from port state as approximate averages for active session
+                port_state = self.ble.state.ports.get(port_id)
+                avg_v = round(port_state.voltage, 2) if port_state else 0
+                avg_i = round(port_state.current, 2) if port_state else 0
+                sessions.insert(0, {
+                    "id": sid, "port": port_id, "start_time": start_time,
+                    "end_time": None, "total_wh": ld["session_wh"],
+                    "avg_power_w": avg_p, "peak_power_w": ld["max_power"],
+                    "avg_voltage": avg_v, "avg_current": avg_i,
+                    "duration_sec": dur_sec,
+                    "protocol": port_state.protocol if port_state else "", "is_active": True,
+                    "permanent": bool(ld.get("permanent")),
+                })
+                total += 1
+
+        # Mark unmatched sessions as inactive
+        live_sids = {ld.get("session_id") for ld in live.values()}
+        for s in sessions:
+            if s.get("id") not in live_sids:
+                s["is_active"] = False
+            # 只有"正在供着电的常供会话"才mark：历史行可能是标记常供之前录的，
+            # 那时曲线是照常落库的，标成常供会让详情看起来像"曲线丢了"。
+            s["permanent"] = bool(s.get("permanent")) and bool(s.get("is_active"))
+            if s["permanent"] and s.get("port") not in self.ble.permanent_ports:
+                s["permanent"] = False
+
+        return web.json_response({
+            "sessions": sessions,
+            "total": total,
+            "page": page,
+            "limit": limit,
+            "pages": max(1, (total + limit - 1) // limit),
+        })
+
+    async def handle_session_points(self, request):
+        """GET /api/sessions/{id}/points?downsample=600[&window=3600]
+
+        普通会话：DB 里的全量采样点（形状不变）。
+        长期供电会话：曲线点不落库，改从内存窗口取；`window` 是窗口宽度（秒，
+        缺省/<=0 = 内存保留时长 1 小时＝能给的都给了），`to` 是窗口右端
+        （缺省=最新）。界面已不再提供窗口长度/滑动控件，这两个参数保留给
+        脚本/调试按需取更窄的一段。两种会话都附带整个会话的 stats
+        （能耗/峰值/时长），前端统计块一律用它——窗口只影响曲线，不影响统计。
+        """
+        sid = int(request.match_info["id"])
+        target = int(request.query.get("downsample", "0"))
+        # 默认窗口 = 内存保留时长（1 小时）：常供会话的曲线只在内存里留这么久，
+        # 界面也不再提供"窗口长度"选择，所以缺省就应当是"能给的都给了"。
+        # 读不到属性时退回 3600，绝不因为一个缺省值把整个接口打成 400。
+        try:
+            default_window = float(self.ble.PERMANENT_RETAIN_SEC)
+        except (AttributeError, TypeError, ValueError):
+            default_window = 3600.0
+        try:
+            window_sec = float(request.query.get("window", str(default_window)))
+            to_raw = request.query.get("to")
+            to_ts = float(to_raw) if to_raw else None
+        except (TypeError, ValueError):
+            return web.json_response(
+                {"ok": False, "error": "window/to must be numbers"}, status=400)
+        if window_sec <= 0:
+            window_sec = float(self.ble.PERMANENT_RETAIN_SEC)
+
+        loop = asyncio.get_running_loop()
+        win = self.ble.get_permanent_session_window(sid, window_sec, to_ts)
+        if win is not None:
+            points = win["points"]
+            if target > 0 and len(points) > target:
+                from downsample import lttb_downsample
+                points = await loop.run_in_executor(
+                    None, lttb_downsample, points, target)
+            return web.json_response({**win, "points": points})
+
+        points = await loop.run_in_executor(
+            None, self.history.get_session_points, sid)
+        if target > 0 and len(points) > target:
+            from downsample import lttb_downsample
+            points = await loop.run_in_executor(
+                None, lttb_downsample, points, target)
+
+        resp = {"points": points}
+        if not points:
+            # 长期供电会话不落曲线点：明确告诉前端"是没存曲线"，不是加载失败
+            resp["no_curve"] = True
+        session = await loop.run_in_executor(None, self.history.get_session, sid)
+        # 服务端是常供与否的唯一权威，且必须**每次都给出**（含 false）：
+        # 端口中途退出常供后，前端若只"见到 true 才置位"会一直挂着旧标题与
+        # "没有曲线"提示。DB 回落分支同样要回答这个问题。
+        resp["permanent"] = bool(session and session.get("port") in self.ble.permanent_ports)
+        if session:
+            # 会话级统计（前端统计块优先用它，避免"只按窗口点现算"的偏差）
+            duration = session.get("duration_sec") or 0
+            if not session.get("end_time"):
+                duration = max(1, int(time.time() - (session.get("start_time") or time.time())))
+            resp["stats"] = {
+                "session_id": sid,
+                "port": session.get("port"),
+                "start_time": session.get("start_time"),
+                "end_time": session.get("end_time"),
+                "total_wh": round(session.get("total_wh") or 0, 4),
+                "avg_power_w": session.get("avg_power_w") or 0,
+                "peak_power_w": session.get("peak_power_w") or 0,
+                "avg_voltage": session.get("avg_voltage") or 0,
+                "avg_current": session.get("avg_current") or 0,
+                "duration_sec": duration,
+            }
+            if session.get("port") in self.ble.permanent_ports:
+                # 常供端口不落曲线点：这里只有"活跃但内存窗口刚起步/已结束"两种情况，
+                # 统计照给；permanent 标记由内存窗口分支负责，历史行不标。
+                resp["window"] = None
+        return web.json_response(resp)
+
+    async def handle_session_export(self, request):
+        """GET /api/sessions/{id}/export — 单个会话的采样点 CSV（会话详情浮层的"导出"）。
+
+        与 /api/export/{port} 的区别：那个是"某端口 + 时间窗"的原始采样（含会话之间的
+        空载片段），这个只导这一次会话。
+        """
+        try:
+            sid = int(request.match_info["id"])
+        except (KeyError, ValueError):
+            return web.json_response({"ok": False, "error": "invalid session id"}, status=400)
+        loop = asyncio.get_running_loop()
+        csv_data = await loop.run_in_executor(None, self.history.export_session_csv, sid)
+        if not csv_data:
+            return web.json_response({"ok": False, "error": "session not found"}, status=404)
+        return web.Response(
+            body=csv_data,
+            content_type="text/csv",
+            headers={"Content-Disposition": f"attachment; filename=session_{sid}.csv"},
+        )
+
+    async def handle_energy_stats(self, request):
+        """GET /api/energy/stats?period=today"""
+        period = request.query.get("period", "today")
+        loop = asyncio.get_running_loop()
+        stats = await loop.run_in_executor(
+            None, self.history.get_energy_stats, period)
+
+        # Merge live data from active sessions
+        now = time.time()
+        live = self.ble.get_live_session_data()
+        live_count = len(live)
+        for port, ld in live.items():
+            stats["total_wh"] = round(stats["total_wh"] + ld["session_wh"], 2)
+            stats["peak_power_w"] = max(stats.get("peak_power_w", 0), ld["max_power"])
+            # Add live duration for active sessions
+            if ld.get("start_time"):
+                live_duration = int(now - ld["start_time"])
+                stats["total_duration_sec"] = stats.get("total_duration_sec", 0) + live_duration
+            port_key = str(port)
+            if port_key not in stats.get("by_port", {}):
+                stats.setdefault("by_port", {})[port_key] = {"wh": 0, "count": 0}
+            stats["by_port"][port_key]["wh"] = round(
+                stats["by_port"][port_key]["wh"] + ld["session_wh"], 2)
+            stats["by_port"][port_key]["count"] = stats["by_port"][port_key].get("count", 0) + 1
+            stats["by_port"][port_key]["is_active"] = True
+
+        # DB count excludes active sessions (total_wh=0), add them back
+        stats["session_count"] = stats.get("session_count", 0) + live_count
+
+        # Recalculate avg_power_w from total energy and total duration
+        total_dur = stats.get("total_duration_sec", 0)
+        total_wh = stats.get("total_wh", 0)
+        stats["avg_power_w"] = round(total_wh / (total_dur / 3600), 1) if total_dur > 0 else 0
+
+        return web.json_response(stats)
+
+    async def handle_energy_protocols(self, request):
+        """GET /api/energy/protocols?period=today
+
+        按协议聚合电量/会话数（前端的"快充协议分布"视图）。走 SQL 聚合而不是让前端
+        拉 /api/sessions 自己算：后者单页最多 50 条，今日就有 120+ 条会话，前端算出来的
+        分布是错的（只有最近 50 条）。
+        """
+        period = request.query.get("period", "today")
+        loop = asyncio.get_running_loop()
+        stats = await loop.run_in_executor(
+            None, self.history.get_protocol_stats, period)
+
+        # 进行中的会话在 DB 里 total_wh=0（不会进聚合），用实时积分补上，
+        # 口径与 handle_energy_stats 的 by_port 一致（两边合计值能对上）。
+        live = self.ble.get_live_session_data()
+        by_proto = {p["protocol"]: p for p in stats["protocols"]}
+        for port, ld in live.items():
+            port_state = self.ble.state.ports.get(port)
+            proto = (port_state.protocol if port_state else "") or "unknown"
+            entry = by_proto.get(proto)
+            if entry is None:
+                entry = {"protocol": proto, "wh": 0.0, "count": 0, "peak_w": 0.0, "is_active": True}
+                stats["protocols"].append(entry)
+                by_proto[proto] = entry
+            entry["wh"] = round(entry["wh"] + ld["session_wh"], 2)
+            entry["count"] += 1
+            entry["peak_w"] = round(max(entry["peak_w"], ld["max_power"]), 1)
+            entry["is_active"] = True
+        if live:
+            stats["protocols"].sort(key=lambda p: p["wh"], reverse=True)
+            stats["total_wh"] = round(sum(p["wh"] for p in stats["protocols"]), 2)
+            stats["session_count"] = sum(p["count"] for p in stats["protocols"])
+
+        return web.json_response(stats)
+
+    async def handle_sse(self, request):
+        """GET /api/events — Server-Sent Events stream."""
+        response = web.StreamResponse(
+            headers={
+                "Cache-Control": "no-cache",
+                "X-Accel-Buffering": "no",
+                "Connection": "keep-alive",
+            },
+        )
+        response.content_type = "text/event-stream"
+        await response.prepare(request)
+
+        queue: asyncio.Queue = asyncio.Queue(maxsize=SSEEmitter.MAX_QUEUE_SIZE)
+        self.sse.add_client(queue)
+
+        # Send full state on connect so client can initialize
+        try:
+            full_state = await self.state.to_dict()
+            full_state["type"] = "init"
+            full_state["mqtt_connected"] = self.mqtt_client is not None and self.mqtt_client.is_connected()
+            await response.write(
+                f"data: {json.dumps(full_state, ensure_ascii=False)}\n\n".encode()
+            )
+        except Exception as e:
+            _sse_log.error("Failed to send SSE init event: %s", e)
+
+        try:
+            while True:
+                # Send latest pending status before each event (stale status never delivered)
+                status_msg = self.sse.flush_status(queue)
+                if status_msg:
+                    await response.write(f"data: {status_msg}\n\n".encode())
+                # Keepalive every 15s + event wait
+                try:
+                    msg = await asyncio.wait_for(queue.get(), timeout=15.0)
+                    await response.write(f"data: {msg}\n\n".encode())
+                except asyncio.TimeoutError:
+                    await response.write(b": keepalive\n\n")
+        except asyncio.CancelledError:
+            _sse_log.debug("SSE handler cancelled")
+        except (ConnectionError, OSError, RuntimeError) as e:
+            _sse_log.debug("SSE client disconnected (%s: %s)", type(e).__name__, e)
+        except asyncio.TimeoutError:
+            _sse_log.debug("SSE keepalive timeout, closing connection")
+        except Exception as e:
+            _sse_log.warning("SSE handler error: %s: %s", type(e).__name__, e)
+        finally:
+            self.sse.remove_client(queue)
+            _sse_log.info("SSE client cleaned up (total: %d)", len(self.sse._clients))
+        return response
+
+    # ── Configuration API ──
+
+    @staticmethod
+    def _mask(val):
+        """Mask sensitive value: show first 4 + **** + last 4."""
+        if not val or len(val) <= 8:
+            return "****"
+        return val[:4] + "****" + val[-4:]
+
+    async def handle_config_get(self, request):
+        """GET /api/config — return current config with masked sensitive fields."""
+        cfg = self.config
+        return web.json_response({
+            "ok": True,
+            "config": {
+                "ble": {
+                    "mac": cfg.ble.mac,
+                    "token": self._mask(cfg.ble.token),
+                    "ble_key": self._mask(cfg.ble.ble_key),
+                    "scan_timeout": cfg.ble.scan_timeout,
+                },
+                "mqtt": {
+                    "enabled": cfg.mqtt.enabled,
+                    "host": cfg.mqtt.host,
+                    "port": cfg.mqtt.port,
+                    "username": cfg.mqtt.username,
+                    "password": self._mask(cfg.mqtt.password),
+                    "topic_prefix": cfg.mqtt.topic_prefix,
+                },
+                "bemfa": {
+                    "enabled": cfg.bemfa.enabled,
+                    "uid": self._mask(cfg.bemfa.uid),
+                    "name_c1": cfg.bemfa.name_c1,
+                    "name_c2": cfg.bemfa.name_c2,
+                    "name_c3": cfg.bemfa.name_c3,
+                    "name_a": cfg.bemfa.name_a,
+                    "name_ble": cfg.bemfa.name_ble,
+                },
+                "server": {
+                    "port": cfg.server.port,
+                    "log_level": cfg.server.log_level,
+                    "history_retention_days": cfg.server.history_retention_days,
+                },
+            },
+        })
+
+    async def handle_config_save(self, request):
+        """POST /api/config — save config to config.yaml and restart."""
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        config_data = data.get("config", {})
+        config_path = self._config_path()
+
+        try:
+            import yaml
+            # Load existing config to preserve unknown fields
+            existing = {}
+            if config_path.exists():
+                with open(config_path) as f:
+                    existing = yaml.safe_load(f) or {}
+
+            # Merge — skip masked placeholder values (****)
+            SENSITIVE_KEYS = {"token", "ble_key", "password", "uid"}
+            for section in ("ble", "mqtt", "bemfa", "server"):
+                if section in config_data:
+                    if section not in existing:
+                        existing[section] = {}
+                    for k, v in config_data[section].items():
+                        if k in SENSITIVE_KEYS and v and "****" in str(v):
+                            continue  # Skip masked values, keep original
+                        existing[section][k] = v
+
+            # Validate server.log_level value (prevent config corruption from frontend)
+            if "server" in existing and "log_level" in existing["server"]:
+                level = existing["server"]["log_level"]
+                if level not in LOG_LEVELS:
+                    _LOGGER.warning(
+                        "Ignoring invalid log_level '%s' in config save, fallback to 'info'",
+                        level,
+                    )
+                    existing["server"]["log_level"] = "info"
+
+            # Detect bemfa name changes → set modified flag for topic re-registration
+            if "bemfa" in config_data:
+                bemfa_existing = existing.get("bemfa", {})
+                NAME_KEYS = {"name_c1", "name_c2", "name_c3", "name_a", "name_ble"}
+                old_names = {}
+                if config_path.exists():
+                    with open(config_path) as f:
+                        old_cfg = yaml.safe_load(f) or {}
+                        old_names = {k: old_cfg.get("bemfa", {}).get(k) for k in NAME_KEYS}
+                new_names = {k: config_data["bemfa"].get(k) for k in NAME_KEYS}
+                if old_names != new_names:
+                    bemfa_existing["modified"] = True
+
+            # Atomic write: write to temp file then rename
+            tmp_path = config_path.with_suffix(".tmp")
+            with open(tmp_path, "w") as f:
+                yaml.dump(existing, f, allow_unicode=True, default_flow_style=False)
+            os.replace(tmp_path, config_path)
+
+            _LOGGER.info("Config saved to %s, restarting...", config_path)
+
+            # Schedule restart after response (use asyncio.sleep instead of deprecated call_later+ensure_future)
+            loop = asyncio.get_running_loop()
+            loop.create_task(self._delayed_restart())
+
+            return web.json_response({"ok": True, "message": "配置已保存，服务将在 1 秒后重启"})
+        except ImportError:
+            return web.json_response({"ok": False, "error": "yaml module not installed"}, status=500)
+        except Exception as e:
+            _LOGGER.error("Config save failed: %s", e)
+            return web.json_response({"ok": False, "error": str(e)}, status=500)
+
+    async def _delayed_restart(self):
+        """Delay 1 second then restart."""
+        await asyncio.sleep(1.0)
+        await self._restart()
+
+    async def _restart(self):
+        """Gracefully restart the server by re-exec-ing the process."""
+        _LOGGER.info("Restarting server...")
+        s = get_server()
+        try:
+            await asyncio.wait_for(s.ble.request_stop(), timeout=5.0)
+        except Exception:
+            pass
+        if s.mqtt_client:
+            s.mqtt_client.loop_stop()
+            s.mqtt_client.disconnect()
+        if s.bemfa:
+            try:
+                await asyncio.wait_for(s.bemfa.stop(), timeout=3.0)
+            except Exception:
+                pass
+        s.history.close()
+        # Windows 下 os.execv 替换映像后 WinRT/bleak 的事件循环无法在新映像内重建:
+        # HTTP 还能应答, 但 BLE 循环不再运转（connected 恒 false、无扫描日志）,
+        # 只能手动触发才恢复。因此 win32 改为干净退出, 由拉起方(监听进程退出的
+        # 桌面端)重新拉起; Linux/BlueZ 保持 os.execv 原语义。
+        if sys.platform == "win32":
+            _LOGGER.info("Restarting server (win32: clean exit, launcher will respawn)")
+            try:
+                sys.stdout.flush()
+                sys.stderr.flush()
+            except Exception:
+                pass
+            # 退出码取 1（非 0）而不是 0：本仓库的 systemd 单元用的是
+            # Restart=on-failure，认证卡死的自愈路径也用 os._exit(1)，
+            # 用 0 会被"只重启异常退出"的托管当成正常停止而不拉起，
+            # 表现为"保存配置后服务就停了"。
+            os._exit(1)
+        os.execv(sys.executable, [sys.executable, str(Path(__file__).parent / "ha_server.py")])
+
+    # ── Xiaomi Cloud API ──
+
+    def _cleanup_xiaomi_session(self, session_id: str):
+        """5 分钟超时清理：移除过期 Xiaomi session，释放相关资源。"""
+        entry = self._xiaomi_sessions.pop(session_id, None)
+        if entry:
+            client, timer = entry
+            if timer and not timer.cancelled():
+                timer.cancel()
+            _LOGGER.info("Xiaomi session %s timed out (5 min), cleaned up", session_id[:8])
+
+    async def handle_xiaomi_login(self, request):
+        """POST /api/xiaomi/login — start QR code login, return QR URL."""
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        server = data.get("server", "cn").strip()
+        if server not in ("cn", "de", "us", "ru", "tw", "sg", "in", "i2"):
+            return web.json_response({"ok": False, "error": "无效的服务器区域"}, status=400)
+
+        # 延迟导入：requests/pycryptodome 只在真正发起扫码登录时才加载
+        try:
+            QrCodeXiaomiCloudClient, XiaomiCloudLoginError = _load_xiaomi_cloud()
+        except ImportError as e:
+            _LOGGER.error("Xiaomi cloud client unavailable: %s", e)
+            return web.json_response(
+                {"ok": False, "error": f"小米云登录依赖缺失: {e}"}, status=503)
+
+        try:
+            import secrets as _secrets
+            loop = asyncio.get_running_loop()
+
+            def _start():
+                client = QrCodeXiaomiCloudClient(server)
+                return client.start_qr_login(), client
+
+            result, client = await loop.run_in_executor(None, _start)
+            session_id = _secrets.token_hex(16)
+            # 5 分钟超时：启动延时清理，session 完成（beaconkey 获取）时取消
+            timer = loop.call_later(300, self._cleanup_xiaomi_session, session_id)
+            self._xiaomi_sessions[session_id] = (client, timer)
+
+            return web.json_response({
+                "ok": True,
+                "qr_image": result["qr_image"],
+                "login_url": result["login_url"],
+                "session_id": session_id,
+            })
+        except XiaomiCloudLoginError as e:
+            return web.json_response({"ok": False, "error": str(e)}, status=400)
+        except Exception as e:
+            _LOGGER.error("Xiaomi QR start failed: %s", e)
+            return web.json_response({"ok": False, "error": f"启动失败: {e}"}, status=500)
+
+    async def handle_xiaomi_qr_complete(self, request):
+        """POST /api/xiaomi/qr/complete — long-poll for QR scan, return devices."""
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        session_id = data.get("session_id", "").strip()
+        if not session_id:
+            return web.json_response({"ok": False, "error": "缺少 session_id"}, status=400)
+
+        entry = self._xiaomi_sessions.get(session_id)
+        if not entry:
+            return web.json_response({"ok": False, "error": "会话已过期，请重新获取二维码"}, status=400)
+        client, _timer = entry
+
+        # 延迟导入（此时客户端实例已存在，模块通常已加载，仅取异常类型）
+        try:
+            XiaomiCloudLoginError = _load_xiaomi_cloud()[1]
+        except ImportError as e:
+            _LOGGER.error("Xiaomi cloud client unavailable: %s", e)
+            return web.json_response(
+                {"ok": False, "error": f"小米云登录依赖缺失: {e}"}, status=503)
+
+        try:
+            loop = asyncio.get_running_loop()
+
+            def _complete():
+                client.complete_qr_login()
+                return client.get_devices()
+
+            devices = await loop.run_in_executor(None, _complete)
+            # QR 扫码已完成，最耗时的阶段已过，取消超时定时器
+            if _timer and not _timer.cancelled():
+                _timer.cancel()
+            self._xiaomi_sessions[session_id] = (client, None)  # 清除定时器引用，保留 client 供 beaconkey 使用
+
+            cuktech_devices = [d for d in devices if "njcuk" in d.model or "fitting" in d.model]
+            all_devices = [{"did": d.did, "mac": d.mac, "token": d.token,
+                            "name": d.name, "model": d.model} for d in devices]
+
+            return web.json_response({
+                "ok": True,
+                "devices": all_devices,
+                "cuktech": [{"did": d.did, "mac": d.mac, "token": d.token,
+                             "name": d.name, "model": d.model} for d in cuktech_devices],
+            })
+        except XiaomiCloudLoginError as e:
+            return web.json_response({"ok": False, "error": str(e)}, status=400)
+        except Exception as e:
+            _LOGGER.error("Xiaomi QR complete failed: %s", e)
+            return web.json_response({"ok": False, "error": str(e)}, status=500)
+
+    async def handle_xiaomi_beaconkey(self, request):
+        """POST /api/xiaomi/beaconkey — get BLE key for a device."""
+        try:
+            data = await request.json()
+        except json.JSONDecodeError:
+            return web.json_response({"ok": False, "error": "invalid JSON"}, status=400)
+
+        session_id = data.get("session_id", "").strip()
+        did = data.get("did", "").strip()
+
+        if not session_id or not did:
+            return web.json_response({"ok": False, "error": "参数不完整"}, status=400)
+
+        entry = self._xiaomi_sessions.get(session_id)
+        if not entry:
+            return web.json_response({"ok": False, "error": "会话已过期，请重新扫码"}, status=400)
+        client, _timer = entry
+
+        # 延迟导入（此时客户端实例已存在，模块通常已加载，仅取异常类型）
+        try:
+            XiaomiCloudLoginError = _load_xiaomi_cloud()[1]
+        except ImportError as e:
+            _LOGGER.error("Xiaomi cloud client unavailable: %s", e)
+            return web.json_response(
+                {"ok": False, "error": f"小米云登录依赖缺失: {e}"}, status=503)
+
+        try:
+            loop = asyncio.get_running_loop()
+
+            def _get_key():
+                return client.get_beaconkey(did)
+
+            ble_key = await loop.run_in_executor(None, _get_key)
+            # Session completed — cancel timeout timer and clean up
+            if _timer and not _timer.cancelled():
+                _timer.cancel()
+            self._xiaomi_sessions.pop(session_id, None)
+
+            if ble_key:
+                return web.json_response({"ok": True, "ble_key": ble_key})
+            return web.json_response({"ok": False, "error": "未找到 BLE Key"}, status=404)
+        except XiaomiCloudLoginError as e:
+            if _timer and not _timer.cancelled():
+                _timer.cancel()
+            self._xiaomi_sessions.pop(session_id, None)
+            return web.json_response({"ok": False, "error": str(e)}, status=400)
+        except Exception as e:
+            _LOGGER.error("Get beaconkey failed: %s", e)
+            if _timer and not _timer.cancelled():
+                _timer.cancel()
+            self._xiaomi_sessions.pop(session_id, None)
+            return web.json_response({"ok": False, "error": str(e)}, status=500)
+
+
+WEB_DIR = Path(__file__).parent / "web"
+_server = None
+
+# ── 静态文件缓存（启动时预加载 + 预压缩） ──
+_static_cache = {}
+_GZIP_TYPES = (".js", ".css", ".html", ".svg", ".json", ".txt")
+
+
+def _static_cache_key(static_dir, fpath) -> str:
+    """构造静态缓存 key (/static/<相对路径>)。
+
+    用 .as_posix() 统一为正斜杠：Windows 上 Path.relative_to() 返回的路径用
+    反斜杠（如 plugin_imgs\\logo.png），与浏览器请求的 /static/plugin_imgs/logo.png
+    不匹配，handle_cached_static 会查不到缓存而返回 404。根目录文件不受影响，
+    子目录文件（plugin_imgs/*、locales/* 等）必须用本函数。
+    """
+    return "/static/" + fpath.relative_to(static_dir).as_posix()
+
+
+def _cache_static_files():
+    """递归扫描 static 目录，预加载并预压缩所有文件到内存。"""
+    static_dir = WEB_DIR / "static"
+    if not static_dir.is_dir():
+        return
+    for fpath in static_dir.rglob("*"):
+        if not fpath.is_file():
+            continue
+        key = _static_cache_key(static_dir, fpath)
+        raw = fpath.read_bytes()
+        ext = fpath.suffix.lower()
+        # 按后缀推断 content-type
+        mime_map = {
+            ".js": "application/javascript",
+            ".css": "text/css",
+            ".html": "text/html",
+            ".png": "image/png",
+            ".ico": "image/x-icon",
+            ".svg": "image/svg+xml",
+            ".json": "application/json",
+            ".txt": "text/plain",
+            ".woff": "font/woff",
+            ".woff2": "font/woff2",
+            ".webp": "image/webp",
+        }
+        ct = mime_map.get(ext, "application/octet-stream")
+        # 预计算 gzip 版本
+        gzipped = None
+        if ext in _GZIP_TYPES and len(raw) >= 1024:
+            compressed = gzip.compress(raw)
+            if len(compressed) < len(raw):
+                gzipped = compressed
+        _static_cache[key] = {
+            "raw": raw,
+            "gzipped": gzipped,
+            "content_type": ct,
+        }
+    # 根目录 HTML 文件也加入缓存
+    for html_name in ("index.html", "phone.html", "config.html"):
+        html_path = WEB_DIR / html_name
+        if html_path.is_file():
+            raw = html_path.read_bytes()
+            compressed = gzip.compress(raw)
+            gzipped = compressed if len(compressed) < len(raw) else None
+            _static_cache[f"/{html_name}"] = {
+                "raw": raw,
+                "gzipped": gzipped,
+                "content_type": "text/html",
+            }
+
+
+async def handle_cached_static(request):
+    """从内存缓存响应静态文件，避免磁盘 I/O 和运行时 gzip。"""
+    entry = _static_cache.get(request.path)
+    if entry is None:
+        raise web.HTTPNotFound()
+    accept_gzip = request.headers.get("Accept-Encoding", "").find("gzip") != -1
+    if accept_gzip and entry["gzipped"]:
+        body = entry["gzipped"]
+        headers = {
+            "Content-Type": entry["content_type"],
+            "Content-Encoding": "gzip",
+            "Content-Length": str(len(body)),
+            "Cache-Control": ("no-cache" if entry["content_type"] == "text/html" else "public, max-age=604800, immutable"),
+        }
+    else:
+        body = entry["raw"]
+        headers = {
+            "Content-Type": entry["content_type"],
+            "Content-Length": str(len(body)),
+            "Cache-Control": ("no-cache" if entry["content_type"] == "text/html" else "public, max-age=604800, immutable"),
+        }
+    return web.Response(body=body, headers=headers)
+
+
+def get_server():
+    """获取全局 Server 单例 (惰性初始化)。"""
+    global _server
+    if _server is None:
+        _server = Server()
+    return _server
+
+
+def reset_server():
+    """重置全局 Server 单例 (仅用于测试)。"""
+    global _server
+    _server = None
+
+
+@web.middleware
+async def cors_middleware(request, handler):
+    if request.method == "OPTIONS":
+        response = web.Response()
+    else:
+        response = await handler(request)
+    origin = request.headers.get("Origin", "")
+    s = get_server()
+    allowed_origins = {
+        f"http://localhost:{s.config.server.port}",
+        f"http://127.0.0.1:{s.config.server.port}",
+    }
+    if origin and origin in allowed_origins:
+        response.headers["Access-Control-Allow-Origin"] = origin
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
+    response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
+    return response
+
+
+@web.middleware
+async def request_size_limit_middleware(request, handler):
+    """Reject requests with body exceeding MAX_REQUEST_BODY_SIZE."""
+    if request.method in ("POST", "PUT", "PATCH"):
+        content_length = request.headers.get("Content-Length")
+        if content_length:
+            try:
+                if int(content_length) > MAX_REQUEST_BODY_SIZE:
+                    return web.json_response(
+                        {"ok": False, "error": "Request body too large"},
+                        status=413,
+                    )
+            except ValueError:
+                pass
+    return await handler(request)
+
+
+@web.middleware
+async def request_timeout_middleware(request, handler):
+    """Apply a per-request timeout (30s for API).
+
+    SSE（/api/events）是长连接，**不设超时**：原先给它 120s 超时，服务端每 2 分钟
+    主动掐断一次，浏览器只能不停重连（真机日志 32.5 小时里 145 次连接 / 157 次断开）。
+    连接寿命改由 handle_sse 自己维持（keepalive 心跳 + 客户端断开时退出）。
+    """
+    if request.path == "/api/events":
+        return await handler(request)
+    if request.path.startswith("/api/"):
+        timeout = 30.0
+    else:
+        # Static files / HTML — no timeout
+        return await handler(request)
+    try:
+        return await asyncio.wait_for(handler(request), timeout=timeout)
+    except asyncio.TimeoutError:
+        _LOGGER.warning("Request timeout: %s %s", request.method, request.path)
+        return web.json_response(
+            {"ok": False, "error": "Request timeout"},
+            status=504,
+        )
+
+
+@web.middleware
+async def gzip_middleware(request, handler):
+    response = await handler(request)
+    # 已预压缩的静态文件（Content-Encoding 已设置）跳过
+    if response.headers.get("Content-Encoding") == "gzip":
+        return response
+    if not hasattr(response, 'body'):
+        return response
+    if request.headers.get("Accept-Encoding", "").find("gzip") == -1:
+        return response
+    if response.content_length is not None and response.content_length < 1024:
+        return response
+    if response.content_type and "text" not in response.content_type and "json" not in response.content_type:
+        return response
+    body = response.body
+    if isinstance(body, bytes) and len(body) >= 1024:
+        compressed = await asyncio.to_thread(gzip.compress, body)
+        if len(compressed) < len(body):
+            response.body = compressed
+            response.headers["Content-Encoding"] = "gzip"
+            response.headers["Content-Length"] = str(len(compressed))
+    return response
+
+
+@web.middleware
+async def cache_middleware(request, handler):
+    response = await handler(request)
+    # 已由 handle_cached_static / handle_index 设置缓存头的文件跳过
+    if response.headers.get("Cache-Control"):
+        return response
+    if request.path.startswith("/static/"):
+        if request.path.endswith((".js", ".css", ".png", ".ico", ".woff", ".woff2")):
+            if os.environ.get("CUKTECH_ENV") == "development":
+                response.headers["Cache-Control"] = "no-cache"
+            else:
+                response.headers["Cache-Control"] = "public, max-age=604800, immutable"
+    return response
+
+
+app = web.Application(middlewares=[
+    request_size_limit_middleware,
+    cors_middleware,
+    gzip_middleware,
+    cache_middleware,
+    request_timeout_middleware,
+])
+app.router.add_get("/", lambda r: get_server().handle_index(r))
+app.router.add_get("/phone.html", handle_cached_static)
+app.router.add_get("/config.html", handle_cached_static)
+app.router.add_get("/static/{tail:.*}", handle_cached_static)
+app.router.add_get("/api/health", lambda r: get_server().handle_health(r))
+app.router.add_get("/api/status", lambda r: get_server().handle_status(r))
+app.router.add_post("/api/set", lambda r: get_server().handle_set(r))
+app.router.add_post("/api/port", lambda r: get_server().handle_port(r))
+app.router.add_post("/api/enable", lambda r: get_server().handle_enable(r))
+app.router.add_post("/api/protocol", lambda r: get_server().handle_protocol(r))
+app.router.add_get("/api/log-level", lambda r: get_server().handle_log_level(r))
+app.router.add_post("/api/log-level", lambda r: get_server().handle_log_level(r))
+app.router.add_get("/api/session-recording", lambda r: get_server().handle_session_recording(r))
+app.router.add_post("/api/session-recording", lambda r: get_server().handle_session_recording(r))
+app.router.add_get("/api/web-language", lambda r: get_server().handle_web_language(r))
+app.router.add_post("/api/web-language", lambda r: get_server().handle_web_language(r))
+app.router.add_get("/api/charge-limits", lambda r: get_server().handle_charge_limits(r))
+app.router.add_post("/api/charge-limits", lambda r: get_server().handle_charge_limits(r))
+app.router.add_get("/api/port-modes", lambda r: get_server().handle_port_modes(r))
+app.router.add_post("/api/port-modes", lambda r: get_server().handle_port_modes(r))
+app.router.add_get("/api/chart", lambda r: get_server().handle_chart(r))
+app.router.add_get("/api/statistics/{port}", lambda r: get_server().handle_statistics(r))
+app.router.add_get("/api/export/{port}", lambda r: get_server().handle_export(r))
+app.router.add_get("/api/bemfa", lambda r: get_server().handle_bemfa(r))
+app.router.add_get("/api/sessions", lambda r: get_server().handle_sessions(r))
+app.router.add_get("/api/sessions/{id}/points", lambda r: get_server().handle_session_points(r))
+app.router.add_get("/api/sessions/{id}/export", lambda r: get_server().handle_session_export(r))
+app.router.add_get("/api/energy/stats", lambda r: get_server().handle_energy_stats(r))
+app.router.add_get("/api/energy/protocols", lambda r: get_server().handle_energy_protocols(r))
+app.router.add_get("/api/events", lambda r: get_server().handle_sse(r))
+app.router.add_get("/api/config", lambda r: get_server().handle_config_get(r))
+app.router.add_post("/api/config", lambda r: get_server().handle_config_save(r))
+app.router.add_post("/api/xiaomi/login", lambda r: get_server().handle_xiaomi_login(r))
+app.router.add_post("/api/xiaomi/qr/complete", lambda r: get_server().handle_xiaomi_qr_complete(r))
+app.router.add_post("/api/xiaomi/beaconkey", lambda r: get_server().handle_xiaomi_beaconkey(r))
+
+
+async def on_startup(app_):
+    _cache_static_files()
+    _LOGGER.info("Static files cached: %d files (%.1f KB raw / %.1f KB gzip)",
+                 len(_static_cache),
+                 sum(len(v["raw"]) for v in _static_cache.values()) / 1024,
+                 sum(len(v["gzipped"] or v["raw"]) for v in _static_cache.values()) / 1024)
+    s = get_server()
+    async with s._start_lock:
+        s.loop = asyncio.get_running_loop()
+        set_status_cache_invalidator(s.invalidate_status_cache)
+        s.ble.set_sse_emitter(s.sse)
+        # 认证连续失败到上限时让 BLE 层回调这里重启：Linux 走 os.execv（本机没有
+        # systemd/supervisor 也能自愈），win32 干净退出交给拉起方 —— 具体分流在
+        # _restart() 里。不注册的话 BLE 层只能 os._exit(1) 等外部管理器，而本机没有。
+        s.ble.set_restart_handler(s._restart)
+        s.ble.set_quality_provider(lambda: {
+            "ble": s.ble.connection_quality(),
+            "mqtt": s.mqtt_quality(),
+            "bemfa": s.bemfa.quality() if s.bemfa else {"score": 0, "uptime": 0, "ping_lost": 0, "reconnect_count": 0},
+        })
+        s.history.connect()
+        # connect() 内部已经收尾了上次强杀/崩溃遗留的未闭合会话（见 history.py），
+        # 这里不再重复调用：清理只有一个入口，免得两处口径不一致。
+        s.ble.set_history(s.history)
+        # 加载充电会话记录开关（history.db meta 单源，默认开启，即时切换无需重启）
+        s.ble.record_sessions = s.history.get_session_recording()
+        # 加载充电量阈值（history.db meta 单源，即时生效无需重启）。
+        # 重启本身不算"会话终止"：once 限额只在"观察到真实会话终止"（端口关闭/
+        # 拔出/充电自然结束）或"触发关断"时消费，因此这里直接读取、不做任何清零。
+        # 代价：进程被强杀期间若用户已拔插（未被观测到），限额会留到下次充电。
+        s.ble.set_charge_limits(s.history.get_charge_limits())
+        # 加载端口模式（长期供电 / 充满即停，history.db meta 单源）。
+        # 顺序：先常供再即停 —— set_permanent_ports 会剔除同口的即停标记（互斥）。
+        s.ble.set_permanent_ports(s.history.get_permanent_ports())
+        s.ble.set_full_off(s.history.get_full_off())
+        await s.setup_mqtt()
+        if s.mqtt_client:
+            s.setup_mqtt_subscriptions()
+        if s.config.bemfa.enabled:
+            await s.setup_bemfa()
+        s._ble_task = asyncio.create_task(s.ble.start())
+        # 回填历史会话的均压/均流：旧版本闭合会话时落库的是"断电瞬间"的瞬时值
+        # (≈0)，导致历史摘要恒为 0。有采样点的已闭合会话重算一次。
+        # 放在 MQTT/BLE 起来之后再跑（fire-and-forget），避免维护性任务拖慢就绪；
+        # 修正值只被历史接口消费，晚几秒无影响。
+        async def _backfill_session_avg():
+            try:
+                fixed = await asyncio.get_running_loop().run_in_executor(
+                    None, s.history.backfill_session_avg_vi)
+                if fixed:
+                    _LOGGER.info("Session avg backfill done: %d sessions", fixed)
+            except Exception as e:
+                _LOGGER.warning("Session avg backfill failed: %s", e)
+
+        s._backfill_task = asyncio.create_task(_backfill_session_avg())
+
+
+async def on_shutdown(app_):
+    _LOGGER.info("Shutting down...")
+    s = get_server()
+    # Close active sessions first. 必须标注 shutdown 原因：只有"用户意图终止"
+    # （端口关闭/拔出/充电自然结束）才消费 once 限额，服务停止不是用户意图终止。
+    s.ble._close_active_sessions(END_REASON_SHUTDOWN)
+    # BLE disconnect with timeout
+    try:
+        await asyncio.wait_for(s.ble.request_stop(), timeout=5.0)
+    except asyncio.TimeoutError:
+        _LOGGER.warning("BLE stop timed out, forcing disconnect")
+        await asyncio.wait_for(s.ble._disconnect(), timeout=3.0)
+    except Exception as e:
+        _LOGGER.error("BLE stop error: %s", e)
+    if s.bemfa:
+        try:
+            await asyncio.wait_for(s.bemfa.stop(), timeout=3.0)
+        except Exception:
+            pass
+    ble_task = s._ble_task
+    if ble_task:
+        ble_task.cancel()
+        try:
+            await ble_task
+        except asyncio.CancelledError:
+            pass
+    # 回填任务同样要收尾：它跑在 executor 线程里访问 history 连接，
+    # 若不取消/等待就 close() 连接，会与在途查询/写入竞争（报错且工作静默丢弃，
+    # 事件循环还可能报 "Task was destroyed but it is pending"）。
+    backfill_task = s._backfill_task
+    if backfill_task and not backfill_task.done():
+        backfill_task.cancel()
+        try:
+            await backfill_task
+        except asyncio.CancelledError:
+            pass
+        except Exception as e:
+            _LOGGER.warning("Backfill task error during shutdown: %s", e)
+    if s.mqtt_client:
+        s.mqtt_client.loop_stop()
+        s.mqtt_client.disconnect()
+    s.history.close()
+
+
+app.on_startup.append(on_startup)
+app.on_shutdown.append(on_shutdown)
+
+if __name__ == "__main__":
+    s = get_server()
+    web.run_app(app, host="0.0.0.0", port=s.config.server.port)

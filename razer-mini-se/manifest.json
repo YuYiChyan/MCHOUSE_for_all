@@ -1,0 +1,346 @@
+{
+  "id": "razer",
+  "title": "Razer Viper Mini SE",
+  "version": "0.1.0",
+  "files": [
+    {
+      "path": "payload/cards.js",
+      "sha256": "4ad4be2470aa165f052ec4fcb255481ae9fd5f164398c87ff7d29891d7dad0eb"
+    },
+    {
+      "path": "payload/host.cjs",
+      "sha256": "dd92224b96a981ac485250899c4786b407d8d3952e6905b4daee160ee4590495"
+    },
+    {
+      "path": "payload/lab-preload.cjs",
+      "sha256": "3015a2ad0a348b20e50bfe68753751496e54c3a22a86c90c4b10b0157e619aa6"
+    },
+    {
+      "path": "payload/local-server.cjs",
+      "sha256": "3cf4b25e36007b29f5cd8ea08d33adb160c223132c37276c8d7fbe62f2e55815"
+    },
+    {
+      "path": "payload/main-preload.cjs",
+      "sha256": "9042b7371de70888265aa2c8127279bfc2dc948e1d2d0da648e9bf45019a3169"
+    },
+    {
+      "path": "payload/mchose-ui/mchose-ui.css",
+      "sha256": "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
+    },
+    {
+      "path": "payload/mchose-ui/razer-theme.css",
+      "sha256": "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
+    },
+    {
+      "path": "payload/native-cards.js",
+      "sha256": "75eebcf75f66b179c324a8b571620540d37613315b90a44b43e9b1c372af3ffa"
+    },
+    {
+      "path": "payload/openrazer-win/LICENSE",
+      "sha256": "aaf135472f81c5b4a0dca9367e5bb5e9750032b5bebe5442b36e4c0a47430df3"
+    },
+    {
+      "path": "payload/openrazer-win/LICENSES/CC-BY-SA-4.0.txt",
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "path": "payload/openrazer-win/LICENSES/GPL-2.0-or-later.txt",
+      "sha256": "aaf135472f81c5b4a0dca9367e5bb5e9750032b5bebe5442b36e4c0a47430df3"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/ble/transport.py",
+      "sha256": "147ec5b90c220db391725bc2ee3270810d62b0763bfec71ab6be25d238a113a1"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/ble/__init__.py",
+      "sha256": "3711b7cc3966b942853caa72e57f73365f0676896c900a5452c4aab646806f90"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/cli/__init__.py",
+      "sha256": "07a07292ba9e1afc27412e35a62765d72ddf121c871287156b243fe1d7afe900"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/client/rpc.py",
+      "sha256": "d25e37908c28c2034451653fcda0ecd2cee7074164dd01af40e7c86daa502fc5"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/client/__init__.py",
+      "sha256": "b0900f760339452b9571ff564035f2798de85d6c3ec6f07b2c7c7c10557aba2d"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/ble_device.py",
+      "sha256": "a3bc496a68c718d3440ef5ba6712defcd3340375702b555964402504019f1307"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/device.py",
+      "sha256": "6e60641c08cf40c32bcacf74ab6287d68eebdbac8dbb2512ef90624bc073a5f2"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/kraken.py",
+      "sha256": "7d7e56521d5235ef9178cf9685813842216ea2aeae7badaa296f20765368f0a9"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/manager.py",
+      "sha256": "ee82a328654f8f4525e8a8aeed906ed574651a9608d093145e30b5d727293f62"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/persistence.py",
+      "sha256": "76c34bf0f61a4e3710be68731d0e2705ca8f309501950001fbd41bc2b42ac603"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/profiles.py",
+      "sha256": "41a22145a242bc821a6410e1081e0620d6c092d71bdbf3cc32c0df9ebb008862"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/transport.py",
+      "sha256": "c9a198b5cf4788916ae43016140ee35430c6329f2d34d3fcbc06717aec488069"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/core/__init__.py",
+      "sha256": "606cb8620fc5eea8f7398da336180d5e5549bd0c49499ab2df4142b66c513008"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/autostart.py",
+      "sha256": "0a7bd34d63e6c693cbae3dc6fb429f2e31aaf687c5f22ab83def1e6e139a2c71"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/demo.py",
+      "sha256": "80a7dc5156d3d3f3fbb0204c03b14aa090f64090518c6ddda37e7bf4af28f443"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/logs.py",
+      "sha256": "d5599e244fb5dc33dca8bb969d6837282ba2ca5ace17e95d35d49f7e120361e3"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/main.py",
+      "sha256": "c4e93283cf52ec1f80567378c87a929a096c9186542d56c63470a7d0ab8aaefa"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/protocol.py",
+      "sha256": "cf14f843241b5f1bd9f0ea7da9aa094b5de59ac3146ba9078ed843cc5dca7048"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/server.py",
+      "sha256": "e3ae1ae8aa750f54fa951be11b0dca94e5893bb771fa9ba4164d9cc08fd8cc20"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/daemon/__init__.py",
+      "sha256": "1db1a06bd41f9bb4e74badaffa169eab473ce4dce2afc7e2b7d6c6aa9aaceb99"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/data/devices.json",
+      "sha256": "2f7ae5635d5dd49bb67ff8f5c08e8166cc79836e74999df7fd7cc77342fc45c0"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/data/keymap.json",
+      "sha256": "31b30671fab8a12e932a6a2f6af5589c48286dc308b4ca49c0075cf9b2a937b4"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/data/recipes.json",
+      "sha256": "b6b52073d1b83d7de435da6bc3d50c5dd0a087cc15346a6f9a5de0a4df1e8db6"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/database.py",
+      "sha256": "0e4ebf4ea2bcdd714c97ac1618992c5266c4168fbad6ded9da3b79a51b2e931e"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/recipes.py",
+      "sha256": "fbe9600e6a4b297a4f5702d2bb0288acf0895762c9c879dcb78e3dc0e0fc5a99"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/devices/__init__.py",
+      "sha256": "fbe718f13f565d76bd508d12afa4a1e357e577373dfe52956ea261fee831b6d2"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/effects/engine.py",
+      "sha256": "666fcfc84cb3ea7979e1a71b79f77d410ea167656fdc7b18d7268d1ea95aa6b2"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/effects/frame.py",
+      "sha256": "44f23d36ccc140a9f2d6f01a63ea8e003956bcf9e89d48a41630e0c75c4c221a"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/effects/keyboard_hook.py",
+      "sha256": "d7cda1156ad2957cafc02920620581853748bd8c485d0ceb1db2c141d14fbb07"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/effects/__init__.py",
+      "sha256": "1b4d939bb9de5dad330e31aee434f990c0b29c1ef08dd42974c48a16ff19ddeb"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/hid/base.py",
+      "sha256": "6fa98f5340ff7f8d77f8f4bbe8c2fc50a007bb0384c948a57be1c5091098a49c"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/hid/devices.py",
+      "sha256": "8eab0476e6d76e3067dc9471b76355132a05cea39c5ca1e077485a7a25963c3b"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/hid/fake.py",
+      "sha256": "f162b3b8edef557f110e41336b1ccacc2596db362fa18176bf329ca9b3bb4a99"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/hid/win32.py",
+      "sha256": "a88ddd9adbf803f206f2d5090ce0d08dbf8596e996335a4943fbab79bdf4b9b8"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/hid/__init__.py",
+      "sha256": "a1f890c4613fbdee05876839cd4734af7260b0602509b42bf58eea97cf6cbad8"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/protocol/chroma.py",
+      "sha256": "02c54acceafeaadc0daee1069a3b47817c63dc9ae41551fe53dd60dac271350e"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/protocol/kraken.py",
+      "sha256": "f85d22540d97ab3aa792e554a5fedc9a28e4dc9978cbe837bd9be49a4eb964fa"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/protocol/razer_ble.py",
+      "sha256": "603b040ef787cb346761c3686612fecdc2648a38dd88561b271130161828a91c"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/protocol/report.py",
+      "sha256": "2ebc685d4fa008cdddcdbc82a346fd6baca3db3eafad3c3eaa5cf013e45fd157"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/protocol/__init__.py",
+      "sha256": "33f6f3ad3f97a38421577cc6cca8cf3f5b333c4aafd0bbec992466c7408b36ce"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/tray/gui.py",
+      "sha256": "9f75e0c09ec9df504f3e2eb658ef0451de52a47acd03fb4a8a819ad2ac96a2ee"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/tray/__init__.py",
+      "sha256": "0f02026efdff1348004ec3d64f95442b640086d070a31cd92e1030cfada64c51"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/_version.py",
+      "sha256": "f162bf254295cb241d5e0ea18648a170b2416d671430173f67e13852d60aa57d"
+    },
+    {
+      "path": "payload/openrazer-win/openrazer_win/__init__.py",
+      "sha256": "d9ea5affd901af06613cc4b159f6009d04f75f909a84f2d2e3ac3ae471ccc700"
+    },
+    {
+      "path": "payload/openrazer-win/pyproject.toml",
+      "sha256": "cf6c58b6524facad2d9d808aab556db14d33f93c77309a9f8faa2edbb10294b6"
+    },
+    {
+      "path": "payload/openrazer-win/README.md",
+      "sha256": "6fb762846cf5b8834f702b881cbe79b61973a8277f3654e8fbe2d0e08ecc7848"
+    },
+    {
+      "path": "payload/product-assets/razer-black.webp",
+      "sha256": "a8136c95969a4eea836662022204bda2ffe5cb71b1429d72af7120fb3091cc5e"
+    },
+    {
+      "path": "payload/product-assets/razer-white.webp",
+      "sha256": "3eb52ef8f83fbda4ebf32590ffa19b15b8214de48dd6f2437b32ade215bb9b1b"
+    },
+    {
+      "path": "payload/razer-control.py",
+      "sha256": "fe9c6ab3e764d24dcbf05a412e2e3c20924a4cfb9f2ee3429e56c15214374aef"
+    },
+    {
+      "path": "payload/razer-page.js",
+      "sha256": "b20425dc846f9a80330bb0b09e9cb1fb19d057263c9fdcaa889d907f246a180b"
+    },
+    {
+      "path": "payload/razer.html",
+      "sha256": "839245ce89428104b32edc9f84a6f46b90be1bc20ad8d53a586eee18eccecfa3"
+    },
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+    }
+  ],
+  "bundles": [
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "destination": "python"
+    }
+  ],
+  "assets": [
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Regular.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Regular.woff2",
+      "sha256": "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d"
+    },
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Semibold.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Semibold.woff2",
+      "sha256": "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6"
+    },
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Bold.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Bold.woff2",
+      "sha256": "1c5a7515b61bc82baaa2e2c2fdae2032479fb9a99e09d4d021dc17314fc5939b"
+    }
+  ],
+  "pluginFiles": [
+    "cards.js",
+    "host.cjs",
+    "lab-preload.cjs",
+    "local-server.cjs",
+    "main-preload.cjs",
+    "mchose-ui/mchose-ui.css",
+    "mchose-ui/razer-theme.css",
+    "native-cards.js",
+    "openrazer-win/LICENSE",
+    "openrazer-win/LICENSES/CC-BY-SA-4.0.txt",
+    "openrazer-win/LICENSES/GPL-2.0-or-later.txt",
+    "openrazer-win/openrazer_win/ble/transport.py",
+    "openrazer-win/openrazer_win/ble/__init__.py",
+    "openrazer-win/openrazer_win/cli/__init__.py",
+    "openrazer-win/openrazer_win/client/rpc.py",
+    "openrazer-win/openrazer_win/client/__init__.py",
+    "openrazer-win/openrazer_win/core/ble_device.py",
+    "openrazer-win/openrazer_win/core/device.py",
+    "openrazer-win/openrazer_win/core/kraken.py",
+    "openrazer-win/openrazer_win/core/manager.py",
+    "openrazer-win/openrazer_win/core/persistence.py",
+    "openrazer-win/openrazer_win/core/profiles.py",
+    "openrazer-win/openrazer_win/core/transport.py",
+    "openrazer-win/openrazer_win/core/__init__.py",
+    "openrazer-win/openrazer_win/daemon/autostart.py",
+    "openrazer-win/openrazer_win/daemon/demo.py",
+    "openrazer-win/openrazer_win/daemon/logs.py",
+    "openrazer-win/openrazer_win/daemon/main.py",
+    "openrazer-win/openrazer_win/daemon/protocol.py",
+    "openrazer-win/openrazer_win/daemon/server.py",
+    "openrazer-win/openrazer_win/daemon/__init__.py",
+    "openrazer-win/openrazer_win/devices/data/devices.json",
+    "openrazer-win/openrazer_win/devices/data/keymap.json",
+    "openrazer-win/openrazer_win/devices/data/recipes.json",
+    "openrazer-win/openrazer_win/devices/database.py",
+    "openrazer-win/openrazer_win/devices/recipes.py",
+    "openrazer-win/openrazer_win/devices/__init__.py",
+    "openrazer-win/openrazer_win/effects/engine.py",
+    "openrazer-win/openrazer_win/effects/frame.py",
+    "openrazer-win/openrazer_win/effects/keyboard_hook.py",
+    "openrazer-win/openrazer_win/effects/__init__.py",
+    "openrazer-win/openrazer_win/hid/base.py",
+    "openrazer-win/openrazer_win/hid/devices.py",
+    "openrazer-win/openrazer_win/hid/fake.py",
+    "openrazer-win/openrazer_win/hid/win32.py",
+    "openrazer-win/openrazer_win/hid/__init__.py",
+    "openrazer-win/openrazer_win/protocol/chroma.py",
+    "openrazer-win/openrazer_win/protocol/kraken.py",
+    "openrazer-win/openrazer_win/protocol/razer_ble.py",
+    "openrazer-win/openrazer_win/protocol/report.py",
+    "openrazer-win/openrazer_win/protocol/__init__.py",
+    "openrazer-win/openrazer_win/tray/gui.py",
+    "openrazer-win/openrazer_win/tray/__init__.py",
+    "openrazer-win/openrazer_win/_version.py",
+    "openrazer-win/openrazer_win/__init__.py",
+    "openrazer-win/pyproject.toml",
+    "openrazer-win/README.md",
+    "product-assets/razer-black.webp",
+    "product-assets/razer-white.webp",
+    "razer-control.py",
+    "razer-page.js",
+    "razer.html"
+  ]
+}

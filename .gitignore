@@ -1,0 +1,11 @@
+**/__pycache__/
+**/*.pyc
+/data/
+/*/payload/cuktech/data/
+**/profile/
+**/lab-config.json
+**/razer-state.json
+**/*.log
+**/history.db*
+**/config.yaml
+.DS_Store

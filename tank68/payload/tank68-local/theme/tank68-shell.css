@@ -1,0 +1,23 @@
+:root { --shell-bg:#0c0c0c; --shell-text:#fff; --shell-hover:#141414; --shell-muted:#a0a5b1; --shell-line:#2b2b2b; }
+:root[data-dc-theme="light"] { --shell-bg:#fff; --shell-text:#151515; --shell-hover:#f2f3f7; --shell-muted:#737780; --shell-line:#e5e7eb; }
+body, .dc-page, .dc-official-header { background:var(--shell-bg); color:var(--shell-text); }
+.dc-official-header .left.back { padding:0; border:0; background:transparent; color:var(--shell-text); font:inherit; }
+.dc-official-header .name, .dc-sidebar-name, .dc-sidebar-meta, .dc-nav-item { color:var(--shell-text); }
+.dc-nav-item:hover, .dc-nav-item.active { background:var(--shell-hover); }
+.dc-nav-item:focus-visible, #backHome:focus-visible { outline:2px solid #226bee; outline-offset:3px; }
+.dc-nav { overflow-y:auto; align-items:stretch; padding:16px 24px 24px; }
+.dc-nav-item { width:100%; flex-shrink:0; gap:8px; }
+.dc-nav-item.active { color:#226bee; }
+.dc-nav-icon { flex-shrink:0; }
+.dc-sidebar-name { font-size:26px; }
+.dc-sidebar-meta-item { gap:5px; }
+.dc-menu { justify-content:space-between; gap:12px; }
+.dc-menu h1 { margin:0; font-size:16px; font-weight:600; }
+#panelStatus { color:var(--shell-muted); font-size:12px; }
+.dc-vendor-panel { position:relative; flex:1; min-width:0; min-height:0; overflow:hidden; border:1px solid var(--shell-line); border-radius:8px; background:var(--shell-bg); }
+#vendorFrame { display:block; width:100%; height:100%; border:0; background:var(--shell-bg); }
+.dc-frame-error { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:var(--shell-bg); }
+.dc-frame-error[hidden] { display:none; }
+.dc-frame-error button { border:0; border-radius:6px; padding:8px 18px; background:#226bee; color:#fff; font:inherit; cursor:pointer; }
+@media(max-width:1100px) { .dc-sidebar, .dc-sidebar-header { width:240px; flex-basis:240px; } .dc-nav { padding-right:16px; padding-left:16px; } .dc-sidebar-header { padding-left:16px; } .dc-sidebar-name { font-size:22px; } .dc-right { padding-right:16px; padding-bottom:16px; } }
+@media(max-width:650px) { .dc-sidebar, .dc-sidebar-header { width:176px; flex-basis:176px; } .dc-sidebar-name { font-size:18px; } .dc-nav { padding-left:8px; padding-right:8px; gap:8px; } .dc-nav-item { padding:8px; } .dc-menu { padding:0 12px; } .dc-right { padding-right:8px; } }

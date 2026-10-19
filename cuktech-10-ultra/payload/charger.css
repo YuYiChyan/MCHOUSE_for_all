@@ -1,0 +1,46 @@
+.dc-official-header .left.back { padding:0; border:0; font:inherit; background:transparent; }
+.dc-sidebar-name { font-size:25px; }
+.dc-menu { justify-content:space-between; gap:16px; }
+.dc-menu h1 { margin:0; font-size:16px; font-weight:600; }
+#feedback { color:var(--rz-muted); font-size:12px; }
+.dc-stage { position:relative; gap:72px; }
+#chargerArt[hidden], #artPlaceholder[hidden], #qrImage[hidden] { display:none; }
+#chargerArt { width:240px; height:240px; }
+#artPlaceholder { width:240px; height:240px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; color:var(--rz-muted); }
+#artPlaceholder i { font-size:88px; line-height:1; }
+#powerOverview { display:flex; flex-direction:column; color:var(--rz-muted); }
+#totalPower { font-size:46px; font-weight:600; line-height:1.4; color:var(--rz-text); font-variant-numeric:tabular-nums; }
+#totalPower small { font-size:18px; font-weight:400; }
+.dc-config { display:block; padding:24px; }
+.charger-port-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.charger-port { min-width:0; padding:20px; border:1px solid var(--rz-border); border-radius:8px; }
+.charger-port h2 { display:flex; justify-content:space-between; margin:0 0 14px; font-size:16px; }
+.port-protocol { font-size:13px; font-weight:400; color:var(--rz-muted); }
+.port-power { display:block; margin:0 0 16px; font-size:32px; line-height:1.3; font-weight:600; color:var(--rz-text); font-variant-numeric:tabular-nums; }
+.port-power small { font-size:14px; font-weight:400; }
+.charger-port .dc-row { margin-top:8px; }
+.charger-message { margin:0 0 20px; color:var(--rz-muted); }
+.charger-action { min-height:36px; padding:8px 16px; border:1px solid var(--rz-border); border-radius:6px; background:var(--rz-button); color:var(--rz-text); font:inherit; cursor:pointer; }
+.charger-action.primary { background:#226bee; border-color:#226bee; color:white; }
+.charger-action:disabled { opacity:.5; cursor:wait; }
+.charger-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+.charger-info { max-width:720px; }
+.charger-info .dc-row { min-height:42px; border-bottom:1px solid var(--rz-border); }
+.charger-chart { width:100%; height:180px; margin-top:20px; }
+.charger-chart svg { display:block; width:100%; height:100%; }
+.chart-line { stroke:#226bee; stroke-width:2; fill:none; vector-effect:non-scaling-stroke; }
+.chart-baseline { stroke:var(--rz-border); vector-effect:non-scaling-stroke; }
+.chart-caption { margin-top:8px; color:var(--rz-muted); font-size:12px; }
+dialog { width:min(440px,calc(100vw - 40px)); max-height:90vh; padding:24px; border:1px solid var(--rz-border); border-radius:8px; background:var(--rz-panel); color:var(--rz-text); font:inherit; }
+dialog::backdrop { background:rgba(0,0,0,.55); }
+dialog header { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+dialog h2 { margin:0; font-size:18px; }
+dialog header button { padding:0 6px; border:0; background:none; color:var(--rz-text); font-size:28px; cursor:pointer; }
+dialog p { color:var(--rz-muted); }
+#qrImage { display:block; width:240px; height:240px; margin:20px auto; background:white; }
+#newQr { display:block; margin:16px auto 0; padding:8px 20px; border:0; border-radius:6px; background:#226bee; color:white; font:inherit; cursor:pointer; }
+#deviceChoices { display:flex; flex-direction:column; gap:10px; }
+#deviceChoices button { width:100%; }
+button:focus-visible { outline:2px solid #226bee; outline-offset:3px; }
+@media(max-width:1100px) { .dc-sidebar-name { font-size:20px; } .dc-stage { gap:24px; } .dc-config { margin:0 16px 16px; padding:16px; } .charger-port-grid { gap:16px; } }
+@media(max-width:850px) { .charger-port-grid { grid-template-columns:minmax(0,1fr); } .dc-stage { height:220px; flex-basis:220px; gap:0; } #chargerArt,#artPlaceholder { width:160px; height:180px; } #totalPower { font-size:34px; } }

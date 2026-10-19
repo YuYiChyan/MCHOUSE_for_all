@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  const client=window.One4AllDeviceClient.charger(window.charger);
   const $ = id => document.getElementById(id);
   const categories = [
     ['monitor','实时监控','icon-lighting_linear'],
@@ -20,8 +21,7 @@
   function online() { return !!(state?.connected && state?.authenticated && Date.now() - lastRead < 8000); }
   function number(value, digits=1) { return typeof value === 'number' && Number.isFinite(value) ? value.toFixed(digits) : '—'; }
   function totalPower() { return Object.values(state?.ports || {}).reduce((sum, port) => sum + (Number(port.power) || 0), 0); }
-  function node(tag, className, text) { const element=document.createElement(tag); if(className)element.className=className; if(text!=null)element.textContent=text; return element; }
-  function row(label, value) { const element=node('div','dc-row'); element.append(node('span','dc-muted',label),node('span','',value)); return element; }
+  const {node,row}=window.One4AllUI;
   function button(label, onClick, primary=false) { const element=node('button',`charger-action${primary?' primary':''}`,label);element.type='button';element.addEventListener('click',onClick);return element; }
 
   for (const [id,label,icon] of categories) {
@@ -64,7 +64,7 @@
       const info=node('div','charger-info');
       info.append(row('设备名称','CUKTECH 10 Ultra'),row('连接方式','蓝牙'),row('连接状态',connected?'已连接':state?.configured?'等待连接':'尚未绑定'),row('设备型号',state?.device_model||'—'),row('固件版本',state?.firmware_version||'—'));
       const actions=node('div','charger-actions');
-      actions.append(button(state?.configured?'重新扫码绑定':'米家扫码连接',openPair,true),button('重新连接',async()=>{try{await window.charger.reconnect();$('feedback').textContent='正在重新连接…';}catch(error){$('feedback').textContent=errorMessage(error);}}));
+      actions.append(button(state?.configured?'重新扫码绑定':'米家扫码连接',openPair,true),button('重新连接',async()=>{try{await client.reconnect();$('feedback').textContent='正在重新连接…';}catch(error){$('feedback').textContent=errorMessage(error);}}));
       info.append(actions);host.append(info);
     }
   }
@@ -73,7 +73,7 @@
     if(busy)return;
     busy=true;
     try {
-      state=await window.charger.status();lastRead=Date.now();$('feedback').textContent='';
+      state=await client.status();lastRead=Date.now();$('feedback').textContent='';
       if(online()) { samples.push({at:Date.now(),power:totalPower()});while(samples.length&&samples[0].at<Date.now()-600000)samples.shift(); }
     } catch(error) { $('feedback').textContent='设备数据暂不可用'; }
     finally { busy=false;render(); }
@@ -87,7 +87,7 @@
     const revision=++qrRevision;clearTimeout(qrTimer);
     $('qrStatus').textContent='正在获取米家二维码…';$('qrImage').hidden=true;$('deviceChoices').replaceChildren();$('newQr').disabled=true;
     try {
-      const result=await window.charger.startQr();if(revision!==qrRevision)return;
+      const result=await client.startQr();if(revision!==qrRevision)return;
       $('qrImage').src=result.image;$('qrImage').hidden=false;
       $('qrStatus').textContent='请使用米家 App 扫码，并在手机上确认登录。';
       qrTimer=setTimeout(()=>checkQr(revision),2000);
@@ -99,14 +99,14 @@
     if(qrChecking){qrTimer=setTimeout(()=>checkQr(revision),300);return;}
     qrChecking=true;
     try {
-      const result=await window.charger.checkQr();if(revision!==qrRevision)return;
+      const result=await client.checkQr();if(revision!==qrRevision)return;
       if(result.waiting) { qrTimer=setTimeout(()=>checkQr(revision),2000);return; }
       $('qrImage').hidden=true;
       if(!result.devices.length) { $('qrStatus').textContent='这个米家账户里没有找到 CUKTECH 10 Ultra，请确认充电器已绑定到中国大陆地区。';return; }
       $('qrStatus').textContent='选择要连接的充电器';
       for(const device of result.devices) $('deviceChoices').append(button(device.name||'CUKTECH 10 Ultra',async(event)=>{
         const selected=event.currentTarget;selected.disabled=true;$('qrStatus').textContent='正在保存设备认证并连接蓝牙…';
-        try { await window.charger.pair(device.did);$('pairDialog').close();$('feedback').textContent='正在连接充电器…';setTimeout(refresh,2500); }
+        try { await client.pair(device.did);$('pairDialog').close();$('feedback').textContent='正在连接充电器…';setTimeout(refresh,2500); }
         catch(error) { $('qrStatus').textContent=errorMessage(error);selected.disabled=false; }
       },true));
     } catch(error) { if(revision===qrRevision)$('qrStatus').textContent=errorMessage(error); }
@@ -116,12 +116,12 @@
   $('newQr').addEventListener('click',startQr);
   $('closePair').addEventListener('click',()=>$('pairDialog').close());
   $('pairDialog').addEventListener('close',()=>{qrRevision++;clearTimeout(qrTimer);});
-  $('backHome').addEventListener('click',()=>window.charger.back());
+  $('backHome').addEventListener('click',()=>client.back());
   window.addEventListener('pagehide',()=>clearTimeout(qrTimer),{once:true});
   const initialTheme=new URLSearchParams(location.search).get('dcTheme');
   if(initialTheme==='light'||initialTheme==='dark')document.documentElement.dataset.dcTheme=initialTheme;
   const selectedColor=new URLSearchParams(location.search).get('color')||'cuktech-10-ultra';
-  async function loadArt(){try{const art=await window.charger.art(selectedColor);if(art){$('chargerArt').src=`data:${art.mimeType};base64,${art.base64}`;$('chargerArt').hidden=false;$('artPlaceholder').hidden=true;}}catch{}}
+  async function loadArt(){try{const art=await client.art(selectedColor);if(art){$('chargerArt').src=`data:${art.mimeType};base64,${art.base64}`;$('chargerArt').hidden=false;$('artPlaceholder').hidden=true;}}catch{}}
   loadArt();setInterval(loadArt,15000);
   render();refresh();
   setInterval(()=>{if(!document.hidden)refresh();},2000);

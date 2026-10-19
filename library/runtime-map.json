@@ -1,0 +1,115 @@
+[
+  {
+    "source": "host/host.cjs",
+    "target": "payload/host.cjs"
+  },
+  {
+    "source": "host/cards.js",
+    "target": "payload/cards.js"
+  },
+  {
+    "source": "host/native-cards.js",
+    "target": "payload/native-cards.js"
+  },
+  {
+    "source": "host/main-preload.cjs",
+    "target": "payload/main-preload.cjs"
+  },
+  {
+    "source": "host/local-server.cjs",
+    "target": "payload/local-server.cjs"
+  },
+  {
+    "source": "install/Manage.ps1",
+    "target": "scripts/Manage.ps1"
+  },
+  {
+    "source": "install/Install.ps1",
+    "target": "Install.ps1"
+  },
+  {
+    "source": "install/Install.cmd",
+    "target": "Install.cmd"
+  },
+  {
+    "source": "install/Repair.ps1",
+    "target": "Repair.ps1"
+  },
+  {
+    "source": "install/Repair.cmd",
+    "target": "Repair.cmd"
+  },
+  {
+    "source": "install/Uninstall.ps1",
+    "target": "Uninstall.ps1"
+  },
+  {
+    "source": "install/Uninstall.cmd",
+    "target": "Uninstall.cmd"
+  },
+  {
+    "source": "ui/mchose-ui.css",
+    "target": "payload/mchose-ui/mchose-ui.css"
+  },
+  {
+    "source": "ui/theme.css",
+    "target": "payload/mchose-ui/razer-theme.css"
+  },
+  {
+    "source": "ui/components.js",
+    "target": "payload/mchose-ui/components.js"
+  },
+  {
+    "source": "ui/device-client.js",
+    "target": "payload/mchose-ui/device-client.js"
+  },
+  {
+    "source": "web-driver/theme.js",
+    "target": "payload/tank68-local/theme/theme.js",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/tank68-shell.js",
+    "target": "payload/tank68-local/theme/tank68-shell.js",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/tank68-shell.css",
+    "target": "payload/tank68-local/theme/tank68-shell.css",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/vendor-bridge.js",
+    "target": "payload/tank68-local/theme/vendor-bridge.js",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/vendor-frame.css",
+    "target": "payload/tank68-local/theme/vendor-frame.css",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/vendor-theme-init.js",
+    "target": "payload/tank68-local/theme/vendor-theme-init.js",
+    "projects": [
+      "tank68"
+    ]
+  },
+  {
+    "source": "web-driver/mchose-shell.css",
+    "target": "payload/tank68-local/theme/mchose-shell.css",
+    "projects": [
+      "tank68"
+    ]
+  }
+]

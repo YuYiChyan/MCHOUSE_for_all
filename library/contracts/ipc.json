@@ -1,0 +1,44 @@
+{
+  "namespace": "dc-lab",
+  "mainPage": {
+    "global": "driveCenterLab",
+    "methods": {
+      "open": "dc-lab:open",
+      "closeEmbedded": "dc-lab:close-embedded",
+      "productArt": "dc-lab:product-art",
+      "razerCardStatus": "dc-lab:razer-card-status",
+      "razerSetDpiStage": "dc-lab:razer-set-dpi-stage"
+    },
+    "event": "dc-lab:embedded-state",
+    "chargerSummary": "driveCenterCharger.status -> dc-lab:charger-card-status"
+  },
+  "razerPage": {
+    "global": "driveCenterLab",
+    "methods": {
+      "razerStatus": "dc-lab:razer-status",
+      "razerSetDpiStage": "dc-lab:razer-set-dpi-stage",
+      "razerSetPollRate": "dc-lab:razer-set-poll-rate",
+      "closeEmbedded": "dc-lab:close-embedded"
+    }
+  },
+  "chargerPage": {
+    "global": "charger",
+    "methods": {
+      "status": "dc-lab:charger-status",
+      "art": "dc-lab:charger-art",
+      "startQr": "dc-lab:charger-qr-start",
+      "checkQr": "dc-lab:charger-qr-check",
+      "pair": "dc-lab:charger-pair",
+      "reconnect": "dc-lab:charger-reconnect",
+      "back": "dc-lab:close-embedded"
+    }
+  },
+  "keyboardPage": {
+    "global": "driveCenterPage",
+    "methods": {
+      "back": "dc-lab:close-embedded",
+      "clickVendor": "dc-lab:tank-click-vendor"
+    }
+  },
+  "boundary": "Each IPC handler validates the sender page/origin. Never expose arbitrary channel names, raw ipcRenderer, shell execution, account tokens, BLE keys, or QR sessions to renderer pages. New methods must be registered explicitly in preload and main."
+}

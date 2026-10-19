@@ -1,3 +1,4 @@
+const device=window.One4AllDeviceClient.razer(window.driveCenterLab);
 const colorOptions = [
   { id: 'razer-black', label: '黑色', swatch: '#16181D' },
   { id: 'razer-white', label: '白色', swatch: '#F2F2F2' },
@@ -99,42 +100,7 @@ function renderTabs() {
   });
 }
 
-function row(label, value) {
-  const item = document.createElement('div');
-  item.className = 'dc-row';
-  const labelNode = document.createElement('span');
-  labelNode.className = 'dc-muted';
-  labelNode.textContent = label;
-  const valueNode = document.createElement('span');
-  valueNode.textContent = value;
-  item.append(labelNode, valueNode);
-  return item;
-}
-
-function card(title) {
-  const node = document.createElement('div');
-  node.className = 'dc-card';
-  const heading = document.createElement('h3');
-  heading.className = 'dc-card-title';
-  heading.textContent = title;
-  node.append(heading);
-  return node;
-}
-
-function segmented(values, active, formatter, onSelect) {
-  const box = document.createElement('div');
-  box.className = 'dc-segmented';
-  values.forEach(value => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'dc-segment';
-    button.textContent = formatter(value);
-    button.classList.toggle('active', value === active);
-    button.addEventListener('click', () => onSelect(value));
-    box.append(button);
-  });
-  return box;
-}
+const {row,card,segmented}=window.One4AllUI;
 
 function renderMeta() {
   const battery = Number(data?.battery_percent);
@@ -241,7 +207,7 @@ async function applyDpiStage(stage) {
   feedback = '正在应用灵敏度…';
   renderContent();
   try {
-    data = await window.driveCenterLab.razerSetDpiStage(stage);
+    data = await device.setDpiStage(stage);
     feedback = `已切换到 ${data?.dpi?.[0] ?? '--'} DPI。`;
   } catch (error) {
     feedback = `应用失败：${error.message}`;
@@ -253,7 +219,7 @@ async function applyPollRate(rate) {
   feedback = '正在应用回报率…';
   renderContent();
   try {
-    data = await window.driveCenterLab.razerSetPollRate(rate);
+    data = await device.setPollRate(rate);
     feedback = `已确认 ${data?.poll_rate ?? '--'} Hz。`;
   } catch (error) {
     feedback = `应用失败：${error.message}`;
@@ -266,7 +232,7 @@ async function refresh() {
   for (let attempt = 0; attempt < 4; attempt += 1) {
     try {
       data = await Promise.race([
-        window.driveCenterLab.razerStatus(),
+        device.status(),
         new Promise((_, reject) => setTimeout(() => reject(new Error('设备状态读取超时')), 4000)),
       ]);
       if (Array.isArray(data.dpi_stages) && data.dpi_stages.length &&
@@ -293,7 +259,7 @@ async function refresh() {
 }
 
 applyColor(selectedColor);
-$('backHome').addEventListener('click', () => window.driveCenterLab.closeEmbedded());
+$('backHome').addEventListener('click', () => device.back());
 renderCategoryNav();
 renderTabs();
 renderContent();

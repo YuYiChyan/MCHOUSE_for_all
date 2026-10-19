@@ -1,0 +1,10 @@
+{
+  "name": "@mchouse-for-all/kit",
+  "version": "0.1.1",
+  "description": "Reusable device UI, explicit frontend bridges and MCHOSE injection source",
+  "main": "bridge/adapter.cjs",
+  "types": "contracts/adapter.d.ts",
+  "license": "MIT",
+  "files": ["ui", "bridge", "contracts", "host", "web-driver", "install", "examples", "runtime-map.json", "README.md", "LICENSE"],
+  "repository": {"type": "git", "url": "https://github.com/YuYiChyan/MCHOUSE_for_all.git", "directory": "library"}
+}

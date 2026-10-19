@@ -1,5 +1,7 @@
 # Third-party sources
 
+- One4All Kit (`library/`): original integration UI, widgets, frontend adapters, demo host and installer source extracted from this project, MIT. The device-specific open-source controllers and proprietary vendor binaries are not included in the standalone kit. Theme values document this project's implementation, not an official vendor design specification.
+
 - MCHOSE HUB: proprietary, used from the user's existing installation. No app executables, vendor bundles, iconfont, or MiSans binaries are redistributed. Installer extracts icons locally and downloads fonts from the public vendor CDN with hashes.
 - EWEADN HFD HUB: proprietary site https://hub.eweadn.cn/hfd68/web/. Original JS/CSS/images are downloaded to the user's machine during Tank68 installation, verified against the manifest; only the integration shell is included here.
 - openrazer-win: https://github.com/Ar4ikov/openrazer-win, commit 6a626b2d11069ec8be6a7eda6e0dd8ee3ece0998. GPL-2.0-or-later. Python source, pyproject, upstream LICENSE and LICENSES retained in razer-mini-se/payload/openrazer-win.

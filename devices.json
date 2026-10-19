@@ -1,0 +1,23 @@
+[
+  {
+    "id": "keyboard",
+    "folder": "tank68",
+    "title": "TANK68 HE",
+    "route": "web-hid",
+    "asset": "tank68"
+  },
+  {
+    "id": "razer",
+    "folder": "razer-mini-se",
+    "title": "Razer Viper Mini SE",
+    "route": "private-usb",
+    "asset": "razer-mini-se"
+  },
+  {
+    "id": "charger",
+    "folder": "cuktech-10-ultra",
+    "title": "CUKTECH 10 Ultra",
+    "route": "ble",
+    "asset": "cuktech-10-ultra"
+  }
+]

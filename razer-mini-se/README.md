@@ -4,7 +4,7 @@
 
 ## 使用
 
-Windows 10/11 x64，已安装使用解包 resources/app 的 MCHOSE HUB。下载整个仓库 ZIP 并解压，双击本目录的 **Install.cmd**；需要时 Windows 会要求管理员权限。安装器自动定位默认安装位置，安装本卡片并注册登录时启动的修复任务。支持和另外两个卡片任意顺序安装。
+Windows 10/11 x64，已安装使用解包 resources/app 的 MCHOSE HUB。从根 README 或发布页下载本设备的独立 ZIP 并完整解压，无需下载其他项目，双击本目录的 **Install.cmd**；需要时 Windows 会要求管理员权限。安装器自动定位默认安装位置，安装本卡片并注册登录时启动的修复任务。支持和另外两个卡片任意顺序安装。
 
 - **Repair.cmd**：恢复被官方更新覆盖的入口。
 - **Uninstall.cmd**：停用本卡片；最后一个卡片卸载时恢复厂商入口，保留配对、鼠标状态和备份。
@@ -25,3 +25,5 @@ Windows 10/11 x64，已安装使用解包 resources/app 的 MCHOSE HUB。下载�
 openrazer-win 源码固定在 6a626b2d11069ec8be6a7eda6e0dd8ee3ece0998，按 GPL-2.0-or-later 保留源代码与许可证。
 
 具体第三方来源见根目录 THIRD_PARTY.md；验证记录见根目录 VALIDATION.md。
+
+共用控件和接口在 [One4All Kit](../library) 维护；本独立包已包含所需库文件，不需要另装开发库。

@@ -6,7 +6,8 @@ function Hash-File($Path){
   try{return ([BitConverter]::ToString($algorithm.ComputeHash($stream))).Replace('-','').ToLowerInvariant()}
   finally{$stream.Dispose();$algorithm.Dispose()}
 }
-foreach($project in @('tank68','razer-mini-se','cuktech-10-ultra')){
+$catalog=Get-Content -LiteralPath (Join-Path $root 'devices.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+foreach($project in @($catalog | ForEach-Object {$_.folder})){
   $dir=Join-Path $root $project
   $file=Join-Path $dir 'manifest.json'
   $manifest=Get-Content -LiteralPath $file -Raw -Encoding UTF8 | ConvertFrom-Json

@@ -1,11 +1,63 @@
-**/__pycache__/
-**/*.pyc
-/data/
-/*/payload/cuktech/data/
-**/profile/
+# Local pairing, account credentials and environment secrets.
+.env
+.env.*
+!.env.example
+!.env.template
+**/auth.json
+**/hosts.yml
+**/*credentials*.json
+**/*.token
+**/*.key
+**/*.pem
+**/config.yaml
+**/config.local.*
 **/lab-config.json
 **/razer-state.json
+
+# Runtime state is external to the vendor installation.
+# Do not use **/data/: openrazer_win/devices/data is public source data.
+/data/
+/state/
+/backups/
+/appdata/
+/localappdata/
+/runtime/
+/electron-official/
+/*/payload/data/
+/*/payload/cuktech/data/
+**/profile/
+**/profile-*/
 **/*.log
-**/history.db*
-**/config.yaml
+**/*.log.*
+**/*.db
+**/*.db-shm
+**/*.db-wal
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite3-*
+
+# Developer environments, caches and isolated integration test output.
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/venv/
+**/node_modules/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.cache/
+**/htmlcov/
+**/.coverage*
+**/coverage/
+/.one4all-*/
+/test-*/
+/One4All-validation-*/
+/dist/
+
+# Offline vendor/*.zip dependencies are intentionally committed.
+# Only generated release ZIPs under dist/ are excluded.
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db
+desktop.ini

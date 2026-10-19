@@ -1,7 +1,7 @@
 {
   "id": "keyboard",
   "title": "TANK68 HE",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     {
       "path": "payload/cards.js",
@@ -78,6 +78,14 @@
     {
       "path": "payload/tank68-local/vendor.html",
       "sha256": "d87e0894d71b7cff0f9ba3d2142fa3cf07df1344dceb63c2d74174d6763482ff"
+    },
+    {
+      "path": "payload/mchose-ui/components.js",
+      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+    },
+    {
+      "path": "payload/mchose-ui/device-client.js",
+      "sha256": "b1c60de7e8a84bcfcafa8fe61a66be096b758a0ff962cbfe2056d9ce4abcfc02"
     }
   ],
   "bundles": [],
@@ -507,6 +515,8 @@
     "tank68-local/theme/vendor-bridge.js",
     "tank68-local/theme/vendor-frame.css",
     "tank68-local/theme/vendor-theme-init.js",
-    "tank68-local/vendor.html"
+    "tank68-local/vendor.html",
+    "mchose-ui/components.js",
+    "mchose-ui/device-client.js"
   ]
 }

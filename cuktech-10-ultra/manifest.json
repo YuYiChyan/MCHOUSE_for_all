@@ -1,7 +1,7 @@
 {
   "id": "charger",
   "title": "CUKTECH 10 Ultra",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     {
       "path": "payload/cards.js",
@@ -13,7 +13,7 @@
     },
     {
       "path": "payload/charger-page.js",
-      "sha256": "7693d1aad5a80a3fe827bb461983592cc23006fbb8618156f0d7324c7597a75d"
+      "sha256": "c80d4eb1e5957a5d499d56499e4d09aa7cc49b05aea9641d04e30c6a3289374b"
     },
     {
       "path": "payload/charger-preload.cjs",
@@ -29,7 +29,7 @@
     },
     {
       "path": "payload/charger.html",
-      "sha256": "0e80e571b68ff63a27f110665adb5e974a4f2e94249964356992583e5461356d"
+      "sha256": "a620539f83b866a709fe72ad4c366e9a4459404291226d2ee36bc4b2ae463e2d"
     },
     {
       "path": "payload/cuktech/backend.py",
@@ -154,6 +154,14 @@
     {
       "path": "vendor/python-3.13.16-win64.zip",
       "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+    },
+    {
+      "path": "payload/mchose-ui/components.js",
+      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+    },
+    {
+      "path": "payload/mchose-ui/device-client.js",
+      "sha256": "b1c60de7e8a84bcfcafa8fe61a66be096b758a0ff962cbfe2056d9ce4abcfc02"
     }
   ],
   "bundles": [
@@ -219,6 +227,8 @@
     "mchose-ui/razer-theme.css",
     "native-cards.js",
     "product-assets/cuktech-10-ultra-black.png",
-    "product-assets/cuktech-10-ultra.png"
+    "product-assets/cuktech-10-ultra.png",
+    "mchose-ui/components.js",
+    "mchose-ui/device-client.js"
   ]
 }

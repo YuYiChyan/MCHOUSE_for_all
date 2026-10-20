@@ -1,15 +1,15 @@
 {
   "id": "razer",
   "title": "Razer Viper Mini SE",
-  "version": "0.1.1",
+  "version": "0.2.0-handoff.1",
   "files": [
     {
       "path": "payload/cards.js",
-      "sha256": "4ad4be2470aa165f052ec4fcb255481ae9fd5f164398c87ff7d29891d7dad0eb"
+      "sha256": "7d45be7d8cbe28c0d2d1ea9caafaecd14a667665da30b6d32cb015c68a1a73af"
     },
     {
       "path": "payload/host.cjs",
-      "sha256": "dd92224b96a981ac485250899c4786b407d8d3952e6905b4daee160ee4590495"
+      "sha256": "f454cb78a5eac17e10d246f176d025a44934b6c83805edfc8ed298155646fe34"
     },
     {
       "path": "payload/lab-preload.cjs",
@@ -21,7 +21,7 @@
     },
     {
       "path": "payload/main-preload.cjs",
-      "sha256": "9042b7371de70888265aa2c8127279bfc2dc948e1d2d0da648e9bf45019a3169"
+      "sha256": "055dc606fdedf3e2632ed7a033f2e2d329e1ca1800484a42b2ffdc641e00e975"
     },
     {
       "path": "payload/mchose-ui/mchose-ui.css",
@@ -33,7 +33,7 @@
     },
     {
       "path": "payload/native-cards.js",
-      "sha256": "75eebcf75f66b179c324a8b571620540d37613315b90a44b43e9b1c372af3ffa"
+      "sha256": "8105e8504afcacefd27bded30e843b21f22fb0b5082ac3292bc36dceba157f8c"
     },
     {
       "path": "payload/openrazer-win/LICENSE",
@@ -261,7 +261,7 @@
     },
     {
       "path": "payload/mchose-ui/device-client.js",
-      "sha256": "b1c60de7e8a84bcfcafa8fe61a66be096b758a0ff962cbfe2056d9ce4abcfc02"
+      "sha256": "a40d9ef1f8c852c7890fbd0a23c6bc300a157e131af4c65648e9b698544f2ecc"
     }
   ],
   "bundles": [

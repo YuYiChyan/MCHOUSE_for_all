@@ -1,0 +1,222 @@
+{
+  "id": "g309",
+  "title": "Logitech G309",
+  "version": "0.2.0-handoff.1",
+  "stage": "hardware-validation",
+  "files": [
+    {
+      "path": "payload/g309.html",
+      "sha256": "a9c25a7812d314135f89e79c48eea03d67e54be94007bca4c89218789a0326d1"
+    },
+    {
+      "path": "payload/g309_backend.py",
+      "sha256": "04f06a179ecf0989759cc25cbb8f7bd11e87b12f4c4caf511bc1b406a658ec22"
+    },
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+    },
+    {
+      "path": "vendor/g309-deps.zip",
+      "sha256": "f6771763969d3931ea7a0617c55ca3cb54de169ded4ae9b309ce57cc766214cc"
+    },
+    {
+      "path": "payload/product-assets/g309.svg",
+      "sha256": "c57c0017a5b1b6916f62425fa68b92238bb8a9c1b7dbfcf65faa2f6cf9cf098f"
+    },
+    {
+      "path": "vendor/Solaar-source.zip",
+      "sha256": "7026b943d9e203903bafbc3a472e488702a3d50860f797f88b69e4a2343d01a8"
+    },
+    {
+      "path": "vendor/hidapi-0.15.0-cp313-cp313-win_amd64.whl",
+      "sha256": "04e0c1ed6d742bc6e1d00599394bec6b2afb8ee2fc5a0a183d3c4c2d4e315c34"
+    },
+    {
+      "path": "payload/host.cjs",
+      "sha256": "f454cb78a5eac17e10d246f176d025a44934b6c83805edfc8ed298155646fe34"
+    },
+    {
+      "path": "payload/cards.js",
+      "sha256": "7d45be7d8cbe28c0d2d1ea9caafaecd14a667665da30b6d32cb015c68a1a73af"
+    },
+    {
+      "path": "payload/native-cards.js",
+      "sha256": "8105e8504afcacefd27bded30e843b21f22fb0b5082ac3292bc36dceba157f8c"
+    },
+    {
+      "path": "payload/main-preload.cjs",
+      "sha256": "055dc606fdedf3e2632ed7a033f2e2d329e1ca1800484a42b2ffdc641e00e975"
+    },
+    {
+      "path": "payload/local-server.cjs",
+      "sha256": "3cf4b25e36007b29f5cd8ea08d33adb160c223132c37276c8d7fbe62f2e55815"
+    },
+    {
+      "path": "payload/mchose-ui/mchose-ui.css",
+      "sha256": "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
+    },
+    {
+      "path": "payload/mchose-ui/razer-theme.css",
+      "sha256": "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
+    },
+    {
+      "path": "payload/mchose-ui/components.js",
+      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+    },
+    {
+      "path": "payload/mchose-ui/device-client.js",
+      "sha256": "a40d9ef1f8c852c7890fbd0a23c6bc300a157e131af4c65648e9b698544f2ecc"
+    },
+    {
+      "path": "payload/adapter.cjs",
+      "sha256": "d7d5dd7edc250ccaa486a568643d09d25e35611cb430d2640d83427f0a03a952"
+    },
+    {
+      "path": "payload/device-service.cjs",
+      "sha256": "3502ec4be84bd4da62463687900fe15a01229274574984d0bfe5bb783d916c15"
+    },
+    {
+      "path": "payload/device-preload.cjs",
+      "sha256": "f121a89ed0dfd95ac57cfa7fc132dd09acbef56b2113b844c20aa21c4491a4f1"
+    },
+    {
+      "path": "payload/mchose-ui/handoff-page.js",
+      "sha256": "97895137e1bf39552e70adea0227cf8a81a26225914dad52939cbab48cf56c51"
+    },
+    {
+      "path": "payload/mchose-ui/handoff-page.css",
+      "sha256": "76bfdc18682ee3d8fb8577fd5026963f4f8514550aea6c8978c0af66e36e1611"
+    },
+    {
+      "path": "acceptance.example.json",
+      "sha256": "ecedb28aec598abc293c78c584e5546ac2efaea157112bd6d11eb6d89a966f41"
+    },
+    {
+      "path": "DEPENDENCIES.json",
+      "sha256": "3f0fbd78f0ff3ed9e1a1ac9d8d621f19d020763808d176764a34608f8b981a8a"
+    },
+    {
+      "path": "design/layout-report.json",
+      "sha256": "00379f686fb68f884cb6607cdeec2d4d5cf535a26a3da414d7e77bc8f6f9637b"
+    },
+    {
+      "path": "design/previews/g309-dark-1280-about.png",
+      "sha256": "aa44814c83b3a11949f7d128c0ab78796dba8b3e39cac3e2ab2e611139015399"
+    },
+    {
+      "path": "design/previews/g309-dark-1280-connection.png",
+      "sha256": "a98ee75af1cb75ed6df1e2b239bf066fce3e6abae68b84e53455a2f11949b002"
+    },
+    {
+      "path": "design/previews/g309-dark-1280-performance.png",
+      "sha256": "7de5fda1757d2ed9bca41f2db5e8c47ff3f0352e4dcef78401880abaee04b3ff"
+    },
+    {
+      "path": "design/previews/g309-light-1280-about.png",
+      "sha256": "0ceeee3c4fede36b1134b060c707300365a04a30f0aac53ff3e2c55f6400be10"
+    },
+    {
+      "path": "design/previews/g309-light-1280-connection.png",
+      "sha256": "2d9d807a80d126d1fb535a5809cbc0c82d7dc971a9bb3c0a13a4906b75fdcc33"
+    },
+    {
+      "path": "design/previews/g309-light-1280-performance.png",
+      "sha256": "908e17e5e2db28401981a71a55e56f216927ae1357f08e0f8ce941c0b33b272a"
+    },
+    {
+      "path": "design/previews/home-dark-grid-fixture.png",
+      "sha256": "958d928b8c9d9c2a47590b4a1f2fc0fb404bf60705b3ff4a6ffcbb8533e7f541"
+    },
+    {
+      "path": "design/previews/home-dark-list-fixture.png",
+      "sha256": "f22a1ce808170b6f8eb5f4f08968f5aa6f8c191db432c52a3029732cf032129a"
+    },
+    {
+      "path": "design/previews/home-light-grid-fixture.png",
+      "sha256": "4014f814fd671ffdd0890575cf7b0ff00ca861799be7cd0e2b780cd7dcac314b"
+    },
+    {
+      "path": "design/previews/home-light-list-fixture.png",
+      "sha256": "b03721db20fca776c22c4f1a11ff65a7d427587f208a7e7eabad06ae753641cd"
+    },
+    {
+      "path": "design/SPEC.md",
+      "sha256": "67503d8d9515883ae93642382ddc1d3c7e6d691385227e8019ecd08b3ca7acf8"
+    },
+    {
+      "path": "Diagnose.ps1",
+      "sha256": "445d38eed84d36708cbb3d019258574bd038bdd14239129c20046439bda444db"
+    },
+    {
+      "path": "HANDOFF.md",
+      "sha256": "0c2182ffdfe69b70baee4e07f58d23e5152cdb6b4db4b101c7b114a2382ac098"
+    },
+    {
+      "path": "Install.ps1",
+      "sha256": "cfcea401b5c297daa9ef4d8d9d792f451e9cec7c3037c5950a9fe931952e4177"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    },
+    {
+      "path": "LICENSE-COMMON",
+      "sha256": "b89530b8a64c79952711179a735e06d75eecf53f381d47f2109c90a6318d2c6e"
+    },
+    {
+      "path": "PYTHON-SOURCE.json",
+      "sha256": "c425181552ff17553ffa29a09e7d1d68d72bf381fbd02512f4f3ccdcea0fcf74"
+    },
+    {
+      "path": "README.md",
+      "sha256": "18e84907cf051daed1ae96be0c3737a96d362be57eed454efdb700a761bd1724"
+    },
+    {
+      "path": "Repair.ps1",
+      "sha256": "e57d463497be0936f8954feb2b56bb4a919339691cfad9ec17a21463e712729e"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "sha256": "38578c6d0afadd4ce46011f9e51dc6c178a65d8c3ba8d2c320f0b041989310ea"
+    },
+    {
+      "path": "scripts/Manage.ps1",
+      "sha256": "330e6f002e336e44216e2ce1299683934d7d131044becca6694aff44e9f9a7be"
+    },
+    {
+      "path": "Uninstall.ps1",
+      "sha256": "f72840ae7e375daeb0a77110576fefce9343e8a649a17f6a1f95a8af15b4d8ce"
+    }
+  ],
+  "bundles": [
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "destination": "python"
+    },
+    {
+      "path": "vendor/g309-deps.zip",
+      "destination": "g309-deps"
+    }
+  ],
+  "assets": [],
+  "pluginFiles": [
+    "g309.html",
+    "g309_backend.py",
+    "product-assets/g309.svg",
+    "host.cjs",
+    "cards.js",
+    "native-cards.js",
+    "main-preload.cjs",
+    "local-server.cjs",
+    "mchose-ui/mchose-ui.css",
+    "mchose-ui/razer-theme.css",
+    "mchose-ui/components.js",
+    "mchose-ui/device-client.js",
+    "adapter.cjs",
+    "device-service.cjs",
+    "device-preload.cjs",
+    "mchose-ui/handoff-page.js",
+    "mchose-ui/handoff-page.css"
+  ]
+}

@@ -61,3 +61,12 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Upstream research clones and local handoff outputs.
+/.research/
+/.handoff-work/
+**/eq-provider.json
+**/eq-settings.json
+**/blackshark-eq.txt
+**/*.one4all-*.bak
+**/acceptance.local.json

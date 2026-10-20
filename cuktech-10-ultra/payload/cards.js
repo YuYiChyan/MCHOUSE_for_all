@@ -79,7 +79,7 @@
 
   const productArtCache = new Map();
   async function requestProductArt(kinds) {
-    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black']);
+    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','blackshark']);
     const list = (Array.isArray(kinds) ? kinds : [...allowed]).filter(kind => allowed.has(kind));
     await Promise.all(list.map(async kind => {
       try {
@@ -105,6 +105,9 @@
         requestRazerCardStatus();
         return;
       }
+      if(data.type==='device-status-request'&&['g309','blackshark'].includes(data.kind)){
+        window.driveCenterLab?.deviceCardStatus(data.kind).then(status=>postToVendor({source:'drivecenter',type:'device-status',kind:data.kind,status})).catch(()=>postToVendor({source:'drivecenter',type:'device-status',kind:data.kind,status:{connected:false}}));return;
+      }
       if(data.type==='charger-status-request') {
         window.driveCenterCharger?.status().then(status=>postToVendor({source:'drivecenter',type:'charger-status',status})).catch(()=>postToVendor({source:'drivecenter',type:'charger-status',status:{error:true}}));
         return;
@@ -114,7 +117,7 @@
         return;
       }
       if (data.type !== 'open') return;
-      if (!['keyboard', 'razer','charger'].includes(data.kind)) return;
+      if (!['keyboard','razer','charger','g309','blackshark'].includes(data.kind)) return;
       window.driveCenterLab?.open(data.kind, data.color).catch(error => {
         const title = document.getElementById('drivecenter-embedded-title');
         if (title) title.textContent = `打开失败：${error.message}`;

@@ -6,6 +6,7 @@
 
   const enabled = new Set(window.__one4allEnabled || []);
   const art = {
+    g309:"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22300%22%20viewBox%3D%220%200%20520%20300%22%3E%3Cg%20fill%3D%22%23282d35%22%20stroke%3D%22%238793a5%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22M260%2027c-61%200-91%2037-91%20104v46c0%2060%2031%2098%2091%2098s91-38%2091-98v-46c0-67-30-104-91-104Z%22%2F%3E%3Cpath%20d%3D%22M260%2027v96M174%20134h172%22%20fill%3D%22none%22%2F%3E%3Crect%20x%3D%22251%22%20y%3D%2263%22%20width%3D%2218%22%20height%3D%2238%22%20rx%3D%227%22%20fill%3D%22%238d98a9%22%2F%3E%3Cpath%20d%3D%22M178%20146v34m0-42v-18%22%2F%3E%3Cpath%20d%3D%22M245%20209h30%22%20fill%3D%22none%22%2F%3E%3C%2Fg%3E%3Ctext%20x%3D%22260%22%20y%3D%22246%22%20text-anchor%3D%22middle%22%20fill%3D%22%23b0b9c7%22%20font-family%3D%22sans-serif%22%20font-size%3D%2214%22%3EG309%3C%2Ftext%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A",blackshark:"data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22300%22%20viewBox%3D%220%200%20520%20300%22%3E%3Cg%20fill%3D%22%23282d35%22%20stroke%3D%22%238793a5%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22M157%20161v-28a103%20103%200%200%201%20206%200v28%22%20fill%3D%22none%22%20stroke-width%3D%2219%22%2F%3E%3Cpath%20d%3D%22M168%20153v-20a92%2092%200%200%201%20184%200v20%22%20fill%3D%22none%22%20stroke%3D%22%234e5866%22%20stroke-width%3D%227%22%2F%3E%3Crect%20x%3D%22140%22%20y%3D%22139%22%20width%3D%2262%22%20height%3D%22116%22%20rx%3D%2224%22%2F%3E%3Crect%20x%3D%22318%22%20y%3D%22139%22%20width%3D%2262%22%20height%3D%22116%22%20rx%3D%2224%22%2F%3E%3Cpath%20d%3D%22M158%20214c-9%2048%2050%2056%2081%2051%22%20fill%3D%22none%22%20stroke-width%3D%226%22%2F%3E%3Crect%20x%3D%22229%22%20y%3D%22256%22%20width%3D%2233%22%20height%3D%2216%22%20rx%3D%228%22%20fill%3D%22%236c7788%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E%0A",
     keyboard: `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300">
         <defs>
@@ -51,11 +52,13 @@
   };
 
   const cards = {
+    g309:{label:'Logitech G309',status:'等待检测',icon:'icon-wifi_linear'},blackshark:{label:'BlackShark V2',status:'等待检测',icon:'icon-usb_linear'},
     keyboard: { label: 'TANK68HE', status: 'USB', icon: 'a-keybordcharging_linear' },
     razer: { label: 'Razer Viper Mini SE', status: '2.4G', icon: 'icon-wifi_linear' },
     charger:{label:'CUKTECH 10 Ultra',status:'等待绑定',icon:'icon-a-bluetooth2_char'},
   };
   const colorOptions = {
+    g309:[{id:'g309',label:'黑色示意图',swatch:'#202124'}],blackshark:[{id:'blackshark',label:'黑色示意图',swatch:'#202124'}],
     keyboard: [
       { id: 'tank68-purple', label: '紫色', swatch: '#7C4DFF' },
       { id: 'tank68-black', label: '黑色', swatch: '#202124' },
@@ -67,6 +70,7 @@
     charger:[{id:'cuktech-10-ultra',label:'银色',swatch:'#c6c9cc'},{id:'cuktech-10-ultra-black',label:'黑色纪念版',swatch:'#202124'}],
   };
   const selectedColors = {
+    g309:'g309',blackshark:'blackshark',
     keyboard: readSavedColor('keyboard', 'tank68-purple'),
     razer: readSavedColor('razer', 'razer-black'),
     charger:readSavedColor('charger','cuktech-10-ultra'),
@@ -98,6 +102,7 @@
     if (!button) return;
     const options = colorOptions[kind];
     const current = options.find(option => option.id === selectedColors[kind]) || options[0];
+    if(options.length===1){button.disabled=true;button.title=current.label;button.setAttribute('aria-label',current.label);button.style.setProperty('--dc-color-gradient',current.swatch);return;}
     const next = options[(options.indexOf(current) + 1) % options.length];
     button.title = `切换颜色：${current.label} / ${next.label}`;
     button.setAttribute('aria-label', button.title);
@@ -355,6 +360,7 @@
     }
 
     const status = card.querySelector('.device-card-status');
+    if(status&&['g309','blackshark'].includes(kind)){const item=document.createElement('li');item.className='device-card-status-item connection';item.dataset.dcHandoff=kind;item.textContent='等待检测';status.replaceChildren(item);}
     if(status&&kind==='charger')status.innerHTML='<li class="device-card-status-item connection"><i class="iconfont icon-a-bluetooth2_char"></i><span data-dc-charger="connection">等待绑定</span></li><li class="device-card-status-item"><span data-dc-charger="power">— W</span></li>';
     if (status && kind === 'keyboard') {
       const item = document.createElement('li');
@@ -410,7 +416,7 @@
 
   function acceptProductArt(payload) {
     const artKey = payload?.kind;
-    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black']);
+    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','blackshark']);
     if (!productUrls.has(artKey) && allowed.has(artKey) && payload?.base64) {
       try {
         const binary = atob(payload.base64);
@@ -422,7 +428,7 @@
     }
     applyProductArt('keyboard');
     applyProductArt('razer');
-    applyProductArt('charger');
+    applyProductArt('charger');applyProductArt('g309');applyProductArt('blackshark');
   }
 
   function requestProductArt() {
@@ -489,6 +495,14 @@
     card.querySelector('[data-dc-charger="power"]').textContent=connected&&Number.isFinite(status.power)?`${status.power.toFixed(1)} W`:'— W';
   }
 
+  const deviceStates=new Map();
+  function updateDeviceStatus(kind,status){
+    if(!['g309','blackshark'].includes(kind))return;deviceStates.set(kind,status);
+    const node=document.querySelector('[data-dc-handoff="'+kind+'"]');if(!node)return;
+    node.textContent=status?.connected?(kind==='g309'?(status.transport==='lightspeed'?'LIGHTSPEED':'蓝牙')+' · '+(typeof status.values?.battery==='number'?status.values.battery+'%':'电量未知'):'USB 声卡 · 已连接'):'未连接';
+  }
+  function requestDevices(){if(document.hidden)return;for(const kind of ['g309','blackshark'])if(enabled.has(kind))window.parent.postMessage({source:'drivecenter',type:'device-status-request',kind},'*');}
+  setInterval(requestDevices,15000);
   function ensure() {
     const list = document.querySelector('.device-list');
     if (!list) return false;
@@ -507,7 +521,7 @@
       if (lastRazerStatus) updateRazerStatus(lastRazerStatus);
       if(lastChargerStatus)updateChargerStatus(lastChargerStatus);
       requestChargerStatus();
-      requestRazerStatus();
+      requestRazerStatus();requestDevices();for(const [kind,status] of deviceStates)updateDeviceStatus(kind,status);
       if (!productUrls.has(selectedColors.keyboard) || !productUrls.has(selectedColors.razer)) requestProductArt();
     }
     return true;
@@ -532,6 +546,7 @@
     if (!data || data.source !== 'drivecenter') return;
     if (data.type === 'razer-status') updateRazerStatus(data.status);
     if(data.type==='charger-status')updateChargerStatus(data.status);
+    if(data.type==='device-status')updateDeviceStatus(data.kind,data.status);
     if (data.type === 'product-art') acceptProductArt(data);
   });
   if (!window.__dcColorPopoverOutside) {

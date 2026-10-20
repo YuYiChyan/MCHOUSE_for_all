@@ -10,6 +10,13 @@ function Hash-File($Path){
   try{return ([BitConverter]::ToString($algorithm.ComputeHash($stream))).Replace('-','').ToLowerInvariant()}
   finally{$stream.Dispose();$algorithm.Dispose()}
 }
+function Normalize-Text($Path){
+  $extension=[IO.Path]::GetExtension($Path).ToLowerInvariant()
+  if($extension -in @('.zip','.png','.webp','.whl','.exe','.dll','.pyd')){return}
+  $text=[IO.File]::ReadAllText($Path).Replace("`r`n","`n")
+  if($extension -eq '.cmd'){$text=$text.Replace("`n","`r`n")}
+  [IO.File]::WriteAllText($Path,$text,$utf8)
+}
 $catalog=Get-Content -LiteralPath (Join-Path $root 'devices.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 foreach($project in @($catalog | ForEach-Object {$_.folder})){
   $dir=Join-Path $root $project
@@ -18,6 +25,7 @@ foreach($project in @($catalog | ForEach-Object {$_.folder})){
   foreach($entry in $mapping){
     if($entry.projects -and $project -notin $entry.projects){continue}
     $source=Join-Path $library $entry.source
+    Normalize-Text $source
     $dest=Join-Path $dir $entry.target
     [IO.Directory]::CreateDirectory((Split-Path -Parent $dest))|Out-Null
     Copy-Item -LiteralPath $source -Destination $dest -Force
@@ -25,9 +33,9 @@ foreach($project in @($catalog | ForEach-Object {$_.folder})){
       $manifest.files+=@([pscustomobject]@{path=$entry.target;sha256=(Hash-File $dest)})
     }
   }
-  foreach($file in $manifest.files){$file.sha256=Hash-File (Join-Path $dir $file.path)}
+  foreach($file in $manifest.files){$filePath=Join-Path $dir $file.path;Normalize-Text $filePath;$file.sha256=Hash-File $filePath}
   $manifest.version=$Version
   $manifest.pluginFiles=@($manifest.files | Where-Object {$_.path.StartsWith('payload/')} | ForEach-Object {$_.path.Substring(8)})
-  [IO.File]::WriteAllText($manifestPath,($manifest|ConvertTo-Json -Depth 24)+"`n",$utf8)
+  [IO.File]::WriteAllText($manifestPath,($manifest|ConvertTo-Json -Depth 24).Replace("`r`n","`n")+"`n",$utf8)
 }
 Write-Output ('Library '+$Version+' copied into all independent packages; hashes updated.')

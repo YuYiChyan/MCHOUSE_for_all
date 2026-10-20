@@ -17,7 +17,7 @@ foreach($project in @($catalog | ForEach-Object {$_.folder})){
     $checked++
   }
 }
-Get-ChildItem -LiteralPath $root -Recurse -Filter '*.ps1' | ForEach-Object {
+Get-ChildItem -LiteralPath $root -Recurse -Filter '*.ps1' | Where-Object {$_.FullName -notmatch '[\\/]\.(research|handoff-work)[\\/]'} | ForEach-Object {
   $tokens=$null;$errors=$null
   [Management.Automation.Language.Parser]::ParseFile($_.FullName,[ref]$tokens,[ref]$errors)|Out-Null
   if($errors){throw ($errors|ForEach-Object{$_.ToString()}|Out-String)}

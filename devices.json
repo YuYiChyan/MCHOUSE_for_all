@@ -19,5 +19,21 @@
     "title": "CUKTECH 10 Ultra",
     "route": "ble",
     "asset": "cuktech-10-ultra"
+  },
+  {
+    "id": "g309",
+    "folder": "logitech-g309",
+    "title": "Logitech G309",
+    "route": "hidpp",
+    "asset": "logitech-g309",
+    "stage": "hardware-validation"
+  },
+  {
+    "id": "blackshark",
+    "folder": "blackshark-v2",
+    "title": "Razer BlackShark V2 USB Sound Card",
+    "route": "usb-audio",
+    "asset": "blackshark-v2",
+    "stage": "hardware-validation"
   }
 ]

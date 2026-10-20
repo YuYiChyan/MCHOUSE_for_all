@@ -1,0 +1,20 @@
+{
+  "device": "g309 or blackshark",
+  "recipient": "肥鱼（DSH）",
+  "release": "v0.2.0-handoff.1",
+  "osVersion": "fill in",
+  "mchoseVersion": "fill in",
+  "driverOrFirmwareVersion": "fill in",
+  "transport": "fill in",
+  "checks": [
+    {"name": "device identity and read-only detection", "result": "not-tested", "evidence": ""},
+    {"name": "write and hardware readback", "result": "not-tested", "evidence": ""},
+    {"name": "layout and theme", "result": "not-tested", "evidence": ""},
+    {"name": "install repair coexist uninstall", "result": "not-tested", "evidence": ""},
+    {"name": "optional EQ decision", "result": "not-selected", "evidence": ""},
+    {"name": "optional EQ audible verification", "result": "not-tested", "evidence": ""}
+  ],
+  "limitations": [],
+  "fixCommit": "",
+  "hardwareAccepted": false
+}

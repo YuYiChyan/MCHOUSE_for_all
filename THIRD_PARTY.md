@@ -12,3 +12,17 @@
 - Product photographs: supplied by the user for their device cards; original image and trademark rights belong to their respective owners. They are not covered by the code license.
 
 The current account's Mi Home token, BLE key, account data, device address, and binding configuration are not included in this repository or its packages.
+# 新交接设备的依赖与来源（0.2.0-handoff.1）
+
+| 项目 | 固定版本／提交 | 使用方式与许可 |
+| --- | --- | --- |
+| pwr-Solaar/Solaar | e7304c4c451cc9bb4f206a914844525e67856a28 | HID++ 后端参考与适配，GPL-2.0-or-later；完整源码快照随 G309 包携带 |
+| trezor/cython-hidapi | wheel 0.15.0 cp313 win_amd64 | Windows HID 传输；保留 BSD／GPL／原始 HIDAPI 等上游许可文件 |
+| AndreMiras/pycaw | wheel 20260927；源码 2890e07ab205adbe31346c5ee05b24743f1ba83c | Core Audio 端点接口，MIT；源码快照随耳机包携带 |
+| enthought/comtypes | 1.4.17 | Windows COM 运行库，MIT；wheel 元数据中保留许可 |
+| giampaolo/psutil | 7.2.2 win_amd64 | pycaw 依赖，BSD-3-Clause；wheel 元数据中保留许可 |
+| Equalizer APO | 官方 Git bbfcc3e5024cbb9d61ba75fc88d78605cc4c9687 | 可选独立 GPL-2.0-or-later 引擎源码包；本项目通过文本配置适配，不复制 THX 模块 |
+
+每个必要 Python wheel 的 SHA256 记录在设备 DEPENDENCIES.json 与 requirements-lock.txt。离线依赖解包 ZIP、原始 wheels、Python 运行时、上游源码和许可证随各自设备包提供。可选 EQ 的官方安装器下载受 403 限制未打包；SOURCE.json 记录来源与源码哈希。产品轮廓 SVG 为项目原创，未使用未经许可的品牌商品图片。
+
+---

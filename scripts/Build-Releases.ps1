@@ -28,7 +28,7 @@ function Write-Package($Destination,$Files){
     }
   }finally{$zip.Dispose()}
 }
-$docs=@('.gitignore','THIRD_PARTY.md','VALIDATION.md','CONTRIBUTING.md','docs/DEVELOPMENT.md','docs/PACKAGING.md')
+$docs=@('.gitignore','THIRD_PARTY.md','VALIDATION.md','CONTRIBUTING.md','docs/DEVELOPMENT.md','docs/PACKAGING.md','handoff/README.md','handoff/acceptance.example.json')
 $common=@($docs | ForEach-Object {@{source=(Join-Path $root $_);archive=$_}})
 $artifacts=@()
 $devices=Get-Content -LiteralPath (Join-Path $root 'devices.json') -Raw -Encoding UTF8 | ConvertFrom-Json

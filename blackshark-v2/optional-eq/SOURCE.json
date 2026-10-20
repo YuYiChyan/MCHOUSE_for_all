@@ -1,0 +1,10 @@
+{
+  "project": "Equalizer APO",
+  "source": "https://git.code.sf.net/p/equalizerapo/code",
+  "commit": "bbfcc3e5024cbb9d61ba75fc88d78605cc4c9687",
+  "sha256": "955e838a97e3549d0b3991564c5362131cd073ccb038f92dc03e745764e439de",
+  "license": "GPL-2.0-or-later; see bundled source",
+  "officialInstaller": "https://sourceforge.net/projects/equalizerapo/files/1.4.2/EqualizerAPO-x64-1.4.2.exe/download",
+  "installerBundled": false,
+  "reason": "Official mirrors returned HTTP 403 during packaging; optional engine remains recipient choice"
+}

@@ -111,5 +111,45 @@
     "projects": [
       "tank68"
     ]
+  },
+  {
+    "source": "bridge/adapter.cjs",
+    "target": "payload/adapter.cjs",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
+  },
+  {
+    "source": "bridge/device-service.cjs",
+    "target": "payload/device-service.cjs",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
+  },
+  {
+    "source": "bridge/device-preload.cjs",
+    "target": "payload/device-preload.cjs",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
+  },
+  {
+    "source": "ui/handoff-page.js",
+    "target": "payload/mchose-ui/handoff-page.js",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
+  },
+  {
+    "source": "ui/handoff-page.css",
+    "target": "payload/mchose-ui/handoff-page.css",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
   }
 ]

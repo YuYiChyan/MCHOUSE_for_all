@@ -10,6 +10,7 @@ if(allowed){
   contextBridge.exposeInMainWorld('driveCenterLab',{
     open:(kind,color)=>ipcRenderer.invoke('dc-lab:open',kind,color),
     closeEmbedded:()=>ipcRenderer.invoke('dc-lab:close-embedded'),
+    deviceCardStatus:id=>ipcRenderer.invoke('dc-device:card-status',id),
     razerCardStatus:()=>ipcRenderer.invoke('dc-lab:razer-card-status'),
     productArt:kind=>ipcRenderer.invoke('dc-lab:product-art',kind),
     razerSetDpiStage:stage=>ipcRenderer.invoke('dc-lab:razer-set-dpi-stage',stage),

@@ -1,0 +1,7 @@
+[
+  {
+    "wheel": "hidapi-0.15.0-cp313-cp313-win_amd64.whl",
+    "sha256": "04e0c1ed6d742bc6e1d00599394bec6b2afb8ee2fc5a0a183d3c4c2d4e315c34",
+    "project": "https://github.com/trezor/cython-hidapi"
+  }
+]

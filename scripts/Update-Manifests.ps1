@@ -12,6 +12,6 @@ foreach($project in @($catalog | ForEach-Object {$_.folder})){
   $file=Join-Path $dir 'manifest.json'
   $manifest=Get-Content -LiteralPath $file -Raw -Encoding UTF8 | ConvertFrom-Json
   foreach($entry in $manifest.files){$entry.sha256=Hash-File (Join-Path $dir $entry.path)}
-  [IO.File]::WriteAllText($file,($manifest|ConvertTo-Json -Depth 24),$utf8)
+  [IO.File]::WriteAllText($file,($manifest|ConvertTo-Json -Depth 24).Replace("`r`n","`n")+"`n",$utf8)
 }
 Write-Output 'Package hashes updated. Run tests/Installers.ps1 against a fixture before distributing.'

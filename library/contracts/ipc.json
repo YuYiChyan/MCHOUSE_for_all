@@ -7,7 +7,8 @@
       "closeEmbedded": "dc-lab:close-embedded",
       "productArt": "dc-lab:product-art",
       "razerCardStatus": "dc-lab:razer-card-status",
-      "razerSetDpiStage": "dc-lab:razer-set-dpi-stage"
+      "razerSetDpiStage": "dc-lab:razer-set-dpi-stage",
+      "deviceCardStatus": "dc-device:card-status"
     },
     "event": "dc-lab:embedded-state",
     "chargerSummary": "driveCenterCharger.status -> dc-lab:charger-card-status"
@@ -40,5 +41,29 @@
       "clickVendor": "dc-lab:tank-click-vendor"
     }
   },
-  "boundary": "Each IPC handler validates the sender page/origin. Never expose arbitrary channel names, raw ipcRenderer, shell execution, account tokens, BLE keys, or QR sessions to renderer pages. New methods must be registered explicitly in preload and main."
+  "boundary": "Each IPC handler validates the sender page/origin. Never expose arbitrary channel names, raw ipcRenderer, shell execution, account tokens, BLE keys, or QR sessions to renderer pages. New methods must be registered explicitly in preload and main.",
+  "g309Page": {
+    "global": "one4allDevice",
+    "methods": {
+      "status": "dc-device:status",
+      "setDpi": "dc-device:setDpi",
+      "setReportRate": "dc-device:setReportRate",
+      "setHostMode": "dc-device:setHostMode",
+      "back": "dc-lab:close-embedded"
+    },
+    "boundary": "Matching top-level local device file only; device id is fixed in preload, command whitelist in main; shared serialized backend"
+  },
+  "blacksharkPage": {
+    "global": "one4allDevice",
+    "methods": {
+      "status": "dc-device:status",
+      "setOutputVolume": "dc-device:setOutputVolume",
+      "setInputVolume": "dc-device:setInputVolume",
+      "setOutputMute": "dc-device:setOutputMute",
+      "setInputMute": "dc-device:setInputMute",
+      "setEq": "dc-device:setEq",
+      "back": "dc-lab:close-embedded"
+    },
+    "boundary": "Matching top-level local device file only; device id is fixed in preload, command whitelist in main; shared serialized backend"
+  }
 }

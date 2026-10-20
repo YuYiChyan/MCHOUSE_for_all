@@ -1,5 +1,9 @@
 # One4All Kit
 
+`0.2.0-handoff.1` 另外增加了 G309／BlackShark 的显式客户端、隔离 preload、Python 服务桥接和完整页面。它们目前是交接实现，真机验收尚未完成。`bridge/device-service.cjs` 在安装 payload 中与 `bridge/adapter.cjs` 一同使用；它不会自行注册任意插件。canonical 宿主已经显式登记这两个新设备，只有 registry 中启用的设备才启动后端。
+
+新页面共用 `ui/handoff-page.js` 与 `handoff-page.css`，产品图使用各设备包中的自绘 SVG。BlackShark 的 EQ provider 位于设备后端，不属于通用库的依赖；默认 export-only。视觉、注入与接口清单见仓库 handoff/README.md。
+
 可单独下载的共用开发库：设计语言、DOM 控件、前端设备调用接口、当前示范宿主、网页驱动桥接源码，以及安装/修复/卸载脚本。原创代码按 MIT 许可；不含迈从主程序、原厂压缩 JS/CSS、字体字库或设备绑定数据。
 
 ## 目录
@@ -11,7 +15,7 @@
 | `ui/components.js` | 页面外壳、导航按钮、配置卡、信息行、分段按钮、主题切换 |
 | `ui/device-client.js` | 当前鼠标、充电器、键盘 preload 的显式调用适配，页面不接触原始 IPC |
 | `bridge/adapter.cjs`、`contracts/adapter.d.ts` | 新控制器的串行状态/命令/清理接口，带固定命令白名单 |
-| `contracts/ipc.json` | 当前三个示范的真实频道和来源限制对照表 |
+| `contracts/ipc.json` | 已登记设备的真实频道和来源限制对照表 |
 | `host/` | 当前设备卡片、主题同步、WebContentsView、来源校验及 preload 的共用源码 |
 | `web-driver/` | TANK68 原创外壳和原厂网页菜单/主题桥接源码；供其他网页驱动改编 |
 | `install/` | 可复用的安装、修复、卸载、后台恢复入口脚本 |
@@ -65,7 +69,7 @@ const adapter = createAdapter({
 
 `createAdapter` 串行执行已接受的状态读取和命令，固定操作白名单；`close()` 等待已接受任务并只清理一次。实际超时、参数取值验证、凭据隔离、取消和重连由控制器负责。推荐的状态结构见类型声明；适配器不会自动清洗不合适的后端字段，必须在返回前移除账号凭据。
 
-现有鼠标和充电器页面已使用这里提取的 DOM 控件和前端客户端。新的后端适配器是一份可复用接口，**还需要在宿主中注册卡片、preload 和主进程频道**；它本身不会自动安装或识别设备。当前 `host/host.cjs` 是三个示范的共用宿主源码，打包时放进安装包的 `payload`，不是从开发库目录直接启动的独立应用。
+现有鼠标和充电器页面已使用这里提取的 DOM 控件和前端客户端。新的后端适配器是一份可复用接口，**还需要在宿主中注册卡片、preload 和主进程频道**；它本身不会自动安装或识别设备。当前 `host/host.cjs` 共用宿主显式登记原三个示范及 G309／BlackShark 交接卡，打包时放进安装包的 `payload`，不是从开发库目录直接启动的独立应用。
 
 修改共用文件后运行根目录 `scripts/Sync-Library.ps1`，同步到各个独立包并更新哈希。打包和贡献说明见随包附带的 `docs/` 与 `CONTRIBUTING.md`。
 

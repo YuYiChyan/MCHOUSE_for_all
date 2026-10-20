@@ -3,3 +3,7 @@
 *.zip -text
 *.png -text
 *.webp -text
+*.whl -text
+*.exe -text
+*.dll -text
+*.pyd -text

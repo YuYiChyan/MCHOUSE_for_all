@@ -1,7 +1,7 @@
 param(
   [ValidateSet('Install','Repair','Uninstall','Watch')][string]$Action='Install',
   [string]$Target='',
-  [string]$StateRoot=(Join-Path $env:LOCALAPPDATA 'One4All'),
+  [string]$StateRoot=(Join-Path $env:USERPROFILE 'One4All'),
   [switch]$NoWatch,
   [switch]$SkipAssets
 )
@@ -137,7 +137,7 @@ function Install-Watcher {
   $sid=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value
   $name='One4All-MCHOSE-'+$sid
   $args='-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "'+(Join-Path $engine 'Manage.ps1')+'" -Action Watch -StateRoot "'+$StateRoot+'"'
-  $taskAction=New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $args
+  $taskAction=New-ScheduledTaskAction -Execute (Join-Path $env:WINDIR 'System32\WindowsPowerShell\v1.0\powershell.exe') -Argument $args -WorkingDirectory $env:WINDIR
   $trigger=New-ScheduledTaskTrigger -AtLogOn -User ([Security.Principal.WindowsIdentity]::GetCurrent().Name)
   $principal=New-ScheduledTaskPrincipal -UserId $sid -LogonType Interactive -RunLevel Highest
   $settings=New-ScheduledTaskSettingsSet -MultipleInstances IgnoreNew -ExecutionTimeLimit ([TimeSpan]::Zero) -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries
@@ -230,6 +230,13 @@ try {
     Write-Output 'MCHOSE entry checked and repaired.'
   }elseif($Action -eq 'Uninstall'){
     $manifest=Read-Json (Join-Path $PSScriptRoot '..\manifest.json')
+    if($manifest.id -eq 'blackshark'){
+      $eqMetadata=Join-Path $StateRoot 'data\blackshark\eq-provider.json'
+      if(Test-Path -LiteralPath $eqMetadata){
+        $eqProvider=Read-Json $eqMetadata
+        & (Join-Path $PSScriptRoot '..\Optional-EQ.ps1') -Action Disable -ConfigDirectory $eqProvider.configRoot -StateRoot $StateRoot
+      }
+    }
     $removed=@($reg.plugins | Where-Object {$_.id -eq $manifest.id})
     $reg.plugins=@($reg.plugins | Where-Object {$_.id -ne $manifest.id})
     Save-Json $registryPath $reg

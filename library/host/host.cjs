@@ -11,6 +11,7 @@ global.__one4allHostStarted = true;
 const base = __dirname;
 const registry = JSON.parse(fs.readFileSync(path.join(stateRoot,'registry.json'),'utf8'));
 const enabled = new Set(registry.plugins.map(plugin=>plugin.id));
+const deviceServices = Object.fromEntries(['g309','blackshark'].filter(id=>enabled.has(id)).map(id=>[id,require('./device-service.cjs').createService(id,base)]));
 const dataRoot=path.join(stateRoot,'data');
 fs.mkdirSync(dataRoot,{recursive:true});
 const chargerService = enabled.has('charger') ? require('./charger-service.cjs')(base, app, path.join(dataRoot,'charger')) : null;
@@ -50,13 +51,15 @@ function keyboardOrigin(url) {
   } catch { return false; }
 }
 const mainPageUrl = pathToFileURL(path.join(base, 'razer.html')).href;
-const topPageTitles = { keyboard: 'TANK68HE', razer: 'Razer Viper Mini SE · 本地控制器', charger:'CUKTECH 10 Ultra' };
+const topPageTitles = { g309:'Logitech G309',blackshark:'Razer BlackShark V2', keyboard: 'TANK68HE', razer: 'Razer Viper Mini SE · 本地控制器', charger:'CUKTECH 10 Ultra' };
 const productColors = {
+  g309:{default:'g309',allowed:new Set(['g309'])},blackshark:{default:'blackshark',allowed:new Set(['blackshark'])},
   keyboard: { default: 'tank68-purple', allowed: new Set(['tank68-purple', 'tank68-black']) },
   razer: { default: 'razer-black', allowed: new Set(['razer-black', 'razer-white']) },
   charger: {default:'cuktech-10-ultra', allowed:new Set(['cuktech-10-ultra','cuktech-10-ultra-black'])},
 };
 const productAssets = {
+  g309:path.join(base,'product-assets','g309.svg'),blackshark:path.join(base,'product-assets','blackshark.svg'),
   'tank68-purple': path.join(base, 'product-assets', 'tank68-purple.webp'),
   'tank68-black': path.join(base, 'product-assets', 'tank68-black.webp'),
   'razer-black': path.join(base, 'product-assets', 'razer-black.webp'),
@@ -79,7 +82,7 @@ function getProductArt(kind) {
   if (!productArtCache.has(kind)) {
     productArtCache.set(kind, {
       kind,
-      mimeType: 'image/webp',
+      mimeType: file.endsWith('.svg')?'image/svg+xml':'image/webp',
       base64: fs.readFileSync(file).toString('base64'),
     });
   }
@@ -205,7 +208,9 @@ async function openEmbedded(sender, kind, requestedColor) {
   const tankServer = kind === 'keyboard' ? await getTankServer() : null;
   const initialTheme = await readMchoseTheme(sender);
   const color = productColors[kind].allowed.has(requestedColor) ? requestedColor : productColors[kind].default;
-  const webPreferences = kind === 'keyboard'
+  const webPreferences = ['g309','blackshark'].includes(kind)
+    ? {session:session.fromPartition('persist:one4all-'+kind),preload:path.join(base,'device-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
+    : kind === 'keyboard'
     ? { session: ensureKeyboardSession(), preload: path.join(base, 'keyboard-preload.cjs'), sandbox: true, contextIsolation: true, nodeIntegration: false }
     : kind === 'charger'
     ? {session:session.fromPartition('persist:drivecenter-charger-lab'),preload:path.join(base,'charger-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
@@ -258,6 +263,8 @@ async function openEmbedded(sender, kind, requestedColor) {
     view.webContents.loadURL(keyboardUrl)
       .then(() => log('keyboard-view-resolved', view.webContents.getURL()))
       .catch(error => log('keyboard-view-error', error.message));
+  } else if (['g309','blackshark'].includes(kind)) {
+    view.webContents.loadURL(`${pathToFileURL(path.join(base,kind+'.html')).href}?dcTheme=${initialTheme}`).catch(error=>log('device-view-error',error.message));
   } else if (kind === 'charger') {
     view.webContents.loadURL(`${pathToFileURL(path.join(base,'charger.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}`)
       .catch(error=>log('charger-view-error',error.message));
@@ -339,7 +346,8 @@ ipcMain.handle('dc-lab:close-embedded', event => {
     isEmbeddedPage = Boolean(
       (tankLocalOrigin && parsed.origin === tankLocalOrigin) ||
       (parsed.protocol === 'file:' && parsed.pathname === new URL(pathToFileURL(path.join(base,'charger.html')).href).pathname) ||
-      (parsed.protocol === 'file:' && parsed.pathname === new URL(mainPageUrl).pathname)
+      (parsed.protocol === 'file:' && parsed.pathname === new URL(mainPageUrl).pathname) ||
+      (parsed.protocol === 'file:' && ['g309','blackshark'].some(id=>parsed.pathname===pathToFileURL(path.join(base,id+'.html')).pathname))
     );
   } catch {}
   if (!trusted(url) && !isEmbeddedPage) throw new Error('Untrusted origin');
@@ -353,6 +361,22 @@ ipcMain.handle('dc-lab:product-art', (event, kind) => {
   return getProductArt(kind);
 });
 
+function assertDevicePage(event,id){
+  if(!Object.prototype.hasOwnProperty.call(deviceServices,id))throw Error('Device is not installed');
+  const actual=new URL(event.senderFrame?.url||'');
+  if(event.senderFrame!==event.sender.mainFrame||actual.protocol!=='file:'||actual.pathname!==pathToFileURL(path.join(base,id+'.html')).pathname)throw Error('Device page only');
+}
+ipcMain.handle('dc-device:status',(event,id)=>{assertDevicePage(event,id);return deviceServices[id].status();});
+ipcMain.handle('dc-device:card-status',async(event,id)=>{
+  if(!trusted(event.senderFrame?.url||'')||!Object.prototype.hasOwnProperty.call(deviceServices,id))throw Error('Untrusted device request');
+  try{return await deviceServices[id].status();}catch{return {connected:false,sampledAt:null,values:{},capabilities:{}};}
+});
+for(const [id,commands] of Object.entries({g309:['setDpi','setReportRate','setHostMode'],blackshark:['setOutputVolume','setInputVolume','setOutputMute','setInputMute','setEq']})){
+  for(const command of commands)ipcMain.handle('dc-device:'+command,(event,requested,value)=>{
+    if(requested!==id)throw Error('Wrong device');assertDevicePage(event,id);return deviceServices[id].invoke(command,value);
+  });
+}
+app.on('before-quit',()=>{for(const service of Object.values(deviceServices))service.close().catch(()=>{});});
 function assertChargerPage(event) {
   const actual = new URL(event.senderFrame?.url || '');
   const expected = pathToFileURL(path.join(base,'charger.html'));

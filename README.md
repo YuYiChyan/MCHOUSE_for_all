@@ -1,5 +1,7 @@
 # MCHOUSE_for_all
 
+> 本分支是 G309／有线 BlackShark V2 的实机交接预发布；请见文末下载表与 handoff/README.md，稳定版仍为 v0.1.1。
+
 让不同品牌的设备使用同一套 MCHOSE HUB 卡片和设置界面。TANK68 HE、Razer Viper Mini SE 和 CUKTECH 10 Ultra 是三种接入路线的示范：网页驱动、厂商私有协议、蓝牙。共用设计语言、控件、前端接口和注入源码已整理为 [One4All Kit 开发库](library)。
 
 | 按设备独立下载 | 接入路线 | 解压后运行 |
@@ -69,7 +71,7 @@ flowchart LR
 
 每个设备单独维护 `manifest.json`、页面、控制器和所需依赖。发布时将共用库复制进该设备包，附带 Install / Repair / Uninstall 脚本，生成一个可单独解压使用的 ZIP。用户不必安装开发环境，也不必下载其他品牌的依赖。
 
-安装器定位当前 MCHOSE 运行目录，将设备代码与数据部署到 `%LOCALAPPDATA%/One4All`，备份原始入口，再用小型加载器接入原厂主进程。官方更新覆盖入口后，后台检查在应用关闭且文件稳定时重新注入；卸载最后一个卡片时恢复原厂入口，保留绑定数据。共享宿主源码统一在 `library` 维护，通过同步脚本生成各设备包，避免分别修改三份共用代码。
+安装器定位当前 MCHOSE 运行目录，将设备代码与数据部署到 `%USERPROFILE%/One4All`，备份原始入口，再用小型加载器接入原厂主进程。官方更新覆盖入口后，后台检查在应用关闭且文件稳定时重新注入；卸载最后一个卡片时恢复原厂入口，保留绑定数据。共享宿主源码统一在 `library` 维护，通过同步脚本生成各设备包，避免分别修改各份共用代码。
 
 ```powershell
 .\scripts\Sync-Library.ps1
@@ -82,3 +84,17 @@ flowchart LR
 ## 欢迎添加其他品牌的设备安装包
 
 非常欢迎大家为这个库贡献其他品牌、其他设备类型的独立安装包，也欢迎完善共用控件和接入接口。可以先提 Issue 交流设备型号、已有网页驱动或开源控制器，再通过 PR 添加示范、测试记录和单独下载入口。具体步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+# 新设备交接分支：肥鱼（DSH）接收
+
+本分支增加 **Logitech G309** 与 **有线 BlackShark V2 原配 USB 声卡**的前端、协议／系统接口与独立注入包。阶段为 `v0.2.0-handoff.1` 预发布；尚未完成这两款设备的实机调试与验收。原正式发行版仍见 v0.1.1。
+
+| 项目 | 独立下载 | 接收文档 |
+| --- | --- | --- |
+| Logitech G309 | [Win64 交接包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.1/logitech-g309-v0.2.0-handoff.1-win64.zip) | [实现、注入与清单](logitech-g309/HANDOFF.md) |
+| BlackShark V2 USB 声卡 | [Win64 交接包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.1/blackshark-v2-v0.2.0-handoff.1-win64.zip) | [实现、注入与清单](blackshark-v2/HANDOFF.md) |
+| 可选 Equalizer APO | [固定源码与许可](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.1/blackshark-v2-optional-eq-v0.2.0-handoff.1.zip) | [选择、启用和撤销](blackshark-v2/OPTIONAL-EQ.md) |
+| 共用开发库 | [Kit](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.1/one4all-kit-v0.2.0-handoff.1.zip) | [肥鱼交接入口](handoff/README.md) |
+
+两款设备包已经包含各自 Python 运行时、必要依赖、前端、注入／修复／卸载脚本、产品轮廓素材与结构化视觉规格。BlackShark 基础功能不依赖雷云；THX 原生声场控制尚无已验证接口。可选 EQ 的页面和配置适配已实现，默认只导出，安装音频引擎由接收方选择。可选源码包不含安装器；官方镜像本次下载返回 403，文档给出了官方来源。
+
+---

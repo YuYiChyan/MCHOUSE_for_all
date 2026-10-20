@@ -79,7 +79,7 @@
 
   const productArtCache = new Map();
   async function requestProductArt(kinds) {
-    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','blackshark']);
+    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','g309-white','blackshark','blackshark-green','blackshark-white']);
     const list = (Array.isArray(kinds) ? kinds : [...allowed]).filter(kind => allowed.has(kind));
     await Promise.all(list.map(async kind => {
       try {
@@ -135,5 +135,8 @@
     });
   }
 
+  if(window.driveCenterLab?.onDeviceColor&&!window.__one4allColorBound){
+    window.__one4allColorBound=true;window.driveCenterLab.onDeviceColor(state=>postToVendor({source:'drivecenter',type:'device-color',...state}));
+  }
   return { bar: true, bridge: !!window.driveCenterLab };
 })();

@@ -18,11 +18,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 392.1875,
+          "y": 416.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 432.1875
+          "bottom": 456.1875
         },
         "panel": {
           "x": 320,
@@ -63,11 +63,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 448.1875,
+          "y": 472.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 488.1875
+          "bottom": 512.1875
         },
         "panel": {
           "x": 320,
@@ -108,11 +108,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 504.1875,
+          "y": 528.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 544.1875
+          "bottom": 568.1875
         },
         "panel": {
           "x": 320,
@@ -153,11 +153,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 560.1875,
+          "y": 584.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 600.1875
+          "bottom": 624.1875
         },
         "panel": {
           "x": 320,
@@ -198,11 +198,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 616.1875,
+          "y": 640.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 656.1875
+          "bottom": 680.1875
         },
         "panel": {
           "x": 320,
@@ -243,11 +243,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 387.390625,
+          "y": 411.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 427.390625
+          "bottom": 451.390625
         },
         "panel": {
           "x": 240,
@@ -288,11 +288,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 443.390625,
+          "y": 467.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 483.390625
+          "bottom": 507.390625
         },
         "panel": {
           "x": 240,
@@ -333,11 +333,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 499.390625,
+          "y": 523.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 539.390625
+          "bottom": 563.390625
         },
         "panel": {
           "x": 240,
@@ -378,11 +378,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 555.390625,
+          "y": 579.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 595.390625
+          "bottom": 619.390625
         },
         "panel": {
           "x": 240,
@@ -423,11 +423,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 611.390625,
+          "y": 635.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 651.390625
+          "bottom": 675.390625
         },
         "panel": {
           "x": 240,
@@ -468,11 +468,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 432,
+          "y": 472,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 472
+          "bottom": 512
         },
         "panel": {
           "x": 188,
@@ -513,11 +513,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 488,
+          "y": 528,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 528
+          "bottom": 568
         },
         "panel": {
           "x": 188,
@@ -558,11 +558,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 544,
+          "y": 584,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 584
+          "bottom": 624
         },
         "panel": {
           "x": 188,
@@ -603,11 +603,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 600,
+          "y": 640,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 640
+          "bottom": 680
         },
         "panel": {
           "x": 188,
@@ -648,11 +648,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 656,
+          "y": 696,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 696
+          "bottom": 736
         },
         "panel": {
           "x": 188,
@@ -693,11 +693,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 392.1875,
+          "y": 416.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 432.1875
+          "bottom": 456.1875
         },
         "panel": {
           "x": 320,
@@ -738,11 +738,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 448.1875,
+          "y": 472.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 488.1875
+          "bottom": 512.1875
         },
         "panel": {
           "x": 320,
@@ -783,11 +783,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 504.1875,
+          "y": 528.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 544.1875
+          "bottom": 568.1875
         },
         "panel": {
           "x": 320,
@@ -828,11 +828,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 560.1875,
+          "y": 584.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 600.1875
+          "bottom": 624.1875
         },
         "panel": {
           "x": 320,
@@ -873,11 +873,11 @@
         },
         "nav": {
           "x": 24,
-          "y": 616.1875,
+          "y": 640.1875,
           "width": 272,
           "height": 40,
           "right": 296,
-          "bottom": 656.1875
+          "bottom": 680.1875
         },
         "panel": {
           "x": 320,
@@ -918,11 +918,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 387.390625,
+          "y": 411.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 427.390625
+          "bottom": 451.390625
         },
         "panel": {
           "x": 240,
@@ -963,11 +963,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 443.390625,
+          "y": 467.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 483.390625
+          "bottom": 507.390625
         },
         "panel": {
           "x": 240,
@@ -1008,11 +1008,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 499.390625,
+          "y": 523.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 539.390625
+          "bottom": 563.390625
         },
         "panel": {
           "x": 240,
@@ -1053,11 +1053,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 555.390625,
+          "y": 579.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 595.390625
+          "bottom": 619.390625
         },
         "panel": {
           "x": 240,
@@ -1098,11 +1098,11 @@
         },
         "nav": {
           "x": 16,
-          "y": 611.390625,
+          "y": 635.390625,
           "width": 208,
           "height": 40,
           "right": 224,
-          "bottom": 651.390625
+          "bottom": 675.390625
         },
         "panel": {
           "x": 240,
@@ -1143,11 +1143,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 432,
+          "y": 472,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 472
+          "bottom": 512
         },
         "panel": {
           "x": 188,
@@ -1188,11 +1188,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 488,
+          "y": 528,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 528
+          "bottom": 568
         },
         "panel": {
           "x": 188,
@@ -1233,11 +1233,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 544,
+          "y": 584,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 584
+          "bottom": 624
         },
         "panel": {
           "x": 188,
@@ -1278,11 +1278,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 600,
+          "y": 640,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 640
+          "bottom": 680
         },
         "panel": {
           "x": 188,
@@ -1323,11 +1323,11 @@
         },
         "nav": {
           "x": 12,
-          "y": 656,
+          "y": 696,
           "width": 156,
           "height": 40,
           "right": 168,
-          "bottom": 696
+          "bottom": 736
         },
         "panel": {
           "x": 188,
@@ -1358,7 +1358,7 @@
       "tab": "home-grid-fixture",
       "geometry": {
         "width": 352,
-        "height": 310,
+        "height": 360,
         "list": false,
         "dark": false
       }
@@ -1380,7 +1380,7 @@
       "tab": "home-grid-fixture",
       "geometry": {
         "width": 352,
-        "height": 310,
+        "height": 360,
         "list": false,
         "dark": true
       }
@@ -1399,6 +1399,48 @@
     {
       "id": "blackshark",
       "tab": "synthetic-api-interaction",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "light",
+      "tab": "artwork-blackshark",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "light",
+      "tab": "artwork-blackshark-green",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "light",
+      "tab": "artwork-blackshark-white",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "dark",
+      "tab": "artwork-blackshark",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "dark",
+      "tab": "artwork-blackshark-green",
+      "passed": true,
+      "hardwareVerified": false
+    },
+    {
+      "id": "blackshark",
+      "theme": "dark",
+      "tab": "artwork-blackshark-white",
       "passed": true,
       "hardwareVerified": false
     }

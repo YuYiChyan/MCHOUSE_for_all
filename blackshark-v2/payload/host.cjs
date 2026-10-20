@@ -53,13 +53,14 @@ function keyboardOrigin(url) {
 const mainPageUrl = pathToFileURL(path.join(base, 'razer.html')).href;
 const topPageTitles = { g309:'Logitech G309',blackshark:'Razer BlackShark V2', keyboard: 'TANK68HE', razer: 'Razer Viper Mini SE · 本地控制器', charger:'CUKTECH 10 Ultra' };
 const productColors = {
-  g309:{default:'g309',allowed:new Set(['g309'])},blackshark:{default:'blackshark',allowed:new Set(['blackshark'])},
+  g309:{default:'g309',allowed:new Set(['g309','g309-white'])},blackshark:{default:'blackshark',allowed:new Set(['blackshark','blackshark-green','blackshark-white'])},
   keyboard: { default: 'tank68-purple', allowed: new Set(['tank68-purple', 'tank68-black']) },
   razer: { default: 'razer-black', allowed: new Set(['razer-black', 'razer-white']) },
   charger: {default:'cuktech-10-ultra', allowed:new Set(['cuktech-10-ultra','cuktech-10-ultra-black'])},
 };
 const productAssets = {
-  g309:path.join(base,'product-assets','g309.svg'),blackshark:path.join(base,'product-assets','blackshark.svg'),
+  g309:path.join(base,'product-assets','g309-black.png'),'g309-white':path.join(base,'product-assets','g309-white.png'),
+  blackshark:path.join(base,'product-assets','blackshark-black.png'),'blackshark-green':path.join(base,'product-assets','blackshark-green.png'),'blackshark-white':path.join(base,'product-assets','blackshark-white.png'),
   'tank68-purple': path.join(base, 'product-assets', 'tank68-purple.webp'),
   'tank68-black': path.join(base, 'product-assets', 'tank68-black.webp'),
   'razer-black': path.join(base, 'product-assets', 'razer-black.webp'),
@@ -82,7 +83,7 @@ function getProductArt(kind) {
   if (!productArtCache.has(kind)) {
     productArtCache.set(kind, {
       kind,
-      mimeType: file.endsWith('.svg')?'image/svg+xml':'image/webp',
+      mimeType: file.endsWith('.png')?'image/png':file.endsWith('.svg')?'image/svg+xml':'image/webp',
       base64: fs.readFileSync(file).toString('base64'),
     });
   }
@@ -264,7 +265,7 @@ async function openEmbedded(sender, kind, requestedColor) {
       .then(() => log('keyboard-view-resolved', view.webContents.getURL()))
       .catch(error => log('keyboard-view-error', error.message));
   } else if (['g309','blackshark'].includes(kind)) {
-    view.webContents.loadURL(`${pathToFileURL(path.join(base,kind+'.html')).href}?dcTheme=${initialTheme}`).catch(error=>log('device-view-error',error.message));
+    view.webContents.loadURL(`${pathToFileURL(path.join(base,kind+'.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}`).catch(error=>log('device-view-error',error.message));
   } else if (kind === 'charger') {
     view.webContents.loadURL(`${pathToFileURL(path.join(base,'charger.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}`)
       .catch(error=>log('charger-view-error',error.message));
@@ -367,6 +368,13 @@ function assertDevicePage(event,id){
   if(event.senderFrame!==event.sender.mainFrame||actual.protocol!=='file:'||actual.pathname!==pathToFileURL(path.join(base,id+'.html')).pathname)throw Error('Device page only');
 }
 ipcMain.handle('dc-device:status',(event,id)=>{assertDevicePage(event,id);return deviceServices[id].status();});
+ipcMain.handle('dc-device:set-color',(event,id,color)=>{
+  assertDevicePage(event,id);
+  if(!productColors[id].allowed.has(color))throw Error('Unknown artwork color');
+  if(embedded?.kind!==id||embedded.view.webContents!==event.sender)throw Error('Active device view only');
+  embedded.win.webContents.send('dc-lab:device-color',{kind:id,color});
+  return {kind:id,color};
+});
 ipcMain.handle('dc-device:card-status',async(event,id)=>{
   if(!trusted(event.senderFrame?.url||'')||!Object.prototype.hasOwnProperty.call(deviceServices,id))throw Error('Untrusted device request');
   try{return await deviceServices[id].status();}catch{return {connected:false,sampledAt:null,values:{},capabilities:{}};}

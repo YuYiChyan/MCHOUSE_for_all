@@ -13,8 +13,26 @@
   const banner=UI.node('div','handoff-banner','实机验收版 · '+(client?'正在读取设备':'离线设计预览，未连接设备接口'));
   banner.setAttribute('role','status');shell.content.before(banner);
   const preview=UI.node('div','dc-sidebar-preview handoff-preview');
-  const image=UI.node('img');image.src=mouse?'product-assets/g309.svg':'product-assets/blackshark.svg';image.alt=mouse?'G309 鼠标轮廓示意图':'BlackShark V2 耳机轮廓示意图';
-  preview.append(image,UI.node('span','dc-muted','黑色 · 轮廓示意'));
+  const art=window.One4AllProductArt;
+  let savedColor=null;try{savedColor=localStorage.getItem('dc-color-'+id);}catch{}
+  let selectedArt=art.select(id,params.get('color')||savedColor);
+  const image=UI.node('img');image.dataset.productImage=id;
+  const colorLabel=UI.node('span','dc-muted');
+  const colors=UI.node('div','handoff-colors');colors.setAttribute('role','group');colors.setAttribute('aria-label','外观贴图配色');
+  function updateArt(){
+    image.src='product-assets/'+selectedArt.file;image.alt=(mouse?'Logitech G309':'BlackShark V2')+' · '+selectedArt.label;
+    colorLabel.textContent=selectedArt.label;
+    colors.querySelectorAll('button').forEach(button=>{const active=button.dataset.color===selectedArt.id;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+  }
+  for(const option of art.catalog[id]){
+    const swatch=UI.node('button','handoff-swatch');swatch.type='button';swatch.dataset.color=option.id;swatch.title=option.label;swatch.setAttribute('aria-label',option.label+'贴图');
+    swatch.style.setProperty('--swatch-color',option.swatch);
+    swatch.addEventListener('click',()=>{
+      selectedArt=option;try{localStorage.setItem('dc-color-'+id,option.id);const url=new URL(location.href);url.searchParams.set('color',option.id);history.replaceState(null,'',url.href);}catch{}updateArt();
+      client?.setColor(option.id).catch(error=>{failure='贴图同步失败：'+error.message;render();});
+    });colors.append(swatch);
+  }
+  updateArt();preview.append(image,colorLabel,colors);
   shell.nav.before(preview);
   const options=mouse?[['performance','性能设置'],['connection','连接与电量'],['about','设备信息']]:[['output','声音输出'],['input','麦克风'],['eq','均衡器（可选）'],['spatial','声场与扩展'],['about','设备信息']];
   const errorBox=UI.node('div','handoff-error');errorBox.setAttribute('role','alert');shell.content.before(errorBox);
@@ -103,7 +121,7 @@
       const c=card('THX 空间声场');c.append(UI.row('原生内嵌控制','尚无已验证接口'),note('THX 确实有独立应用和驱动内的 APO 模块。当前未找到可稳定调用此型号声场设置的公开接口，因此这里不提供无效开关。'),note('基础音量与麦克风不依赖雷云。后续若有已安装、已授权且接口可验证的模块，可从接收清单继续集成。'));
       c.append(UI.row('THX 模块线索',state?.spatial?.installedComponents?.join('、')||'未发现独立应用登记（不代表没有驱动 APO）'));
     }else{
-      const c=card('设备信息');c.append(UI.row('设备',mouse?'Logitech G309 LIGHTSPEED':'Razer BlackShark V2 · 有线 USB 声卡'),UI.row('接口',mouse?'Solaar 协议适配 · Windows HIDAPI':'pycaw · Windows Core Audio'),note(mouse?'首版覆盖读取与主机模式下的 DPI／回报率。按键映射、宏和板载配置写入待单独验证。':'只匹配 1532:0529 的 USB 声卡端点。3.5mm 直连电脑不能可靠识别这款耳机。'),note('产品图为项目自绘示意，最终图片与实机验证由接收方补充。'));
+      const c=card('设备信息');c.append(UI.row('设备',mouse?'Logitech G309 LIGHTSPEED':'Razer BlackShark V2 · 有线 USB 声卡'),UI.row('接口',mouse?'Solaar 协议适配 · Windows HIDAPI':'pycaw · Windows Core Audio'),note(mouse?'首版覆盖读取与主机模式下的 DPI／回报率。按键映射、宏和板载配置写入待单独验证。':'只匹配 1532:0529 的 USB 声卡端点。3.5mm 直连电脑不能可靠识别这款耳机。'),note('外观贴图由用户提供，配色选择仅更换显示图片。实机功能仍需接收方验证。'));
     }
     const refresh=button(busy?'读取中…':'重新读取',()=>poll());refresh.disabled=busy||!client;refresh.classList.add('handoff-refresh');banner.append(refresh);
   }

@@ -2,7 +2,7 @@
 
 `0.2.0-handoff.1` 另外增加了 G309／BlackShark 的显式客户端、隔离 preload、Python 服务桥接和完整页面。它们目前是交接实现，真机验收尚未完成。`bridge/device-service.cjs` 在安装 payload 中与 `bridge/adapter.cjs` 一同使用；它不会自行注册任意插件。canonical 宿主已经显式登记这两个新设备，只有 registry 中启用的设备才启动后端。
 
-新页面共用 `ui/handoff-page.js` 与 `handoff-page.css`，产品图使用各设备包中的自绘 SVG。BlackShark 的 EQ provider 位于设备后端，不属于通用库的依赖；默认 export-only。视觉、注入与接口清单见仓库 handoff/README.md。
+新页面共用 `ui/handoff-page.js` 与 `handoff-page.css`，产品图使用各设备包内用户提供的透明 PNG；原有 SVG 保留为首页图片加载前的示意。BlackShark 的 EQ provider 位于设备后端，不属于通用库的依赖；默认 export-only。视觉、注入与接口清单见仓库 handoff/README.md。
 
 可单独下载的共用开发库：设计语言、DOM 控件、前端设备调用接口、当前示范宿主、网页驱动桥接源码，以及安装/修复/卸载脚本。原创代码按 MIT 许可；不含迈从主程序、原厂压缩 JS/CSS、字体字库或设备绑定数据。
 

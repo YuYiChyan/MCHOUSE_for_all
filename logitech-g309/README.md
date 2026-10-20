@@ -1,6 +1,6 @@
 # Logitech G309 · 交接验收包
 
-接收方：**肥鱼（DSH）**。阶段：前端与协议适配已实现，尚无 G309 实机验收。此包属于 `v0.2.0-handoff.1` 预发布，不代表 Windows 硬件兼容性已经确认。
+接收方：**肥鱼（DSH）**。阶段：前端与协议适配已实现，黑／白透明贴图已接入，尚无 G309 实机验收。此包属于 `v0.2.0-handoff.2` 预发布，不代表 Windows 硬件兼容性已经确认。
 
 先读 [HANDOFF.md](HANDOFF.md)，再查看 [design/SPEC.md](design/SPEC.md)。前端可直接打开 `payload/g309.html`，离线时不显示伪造设备数据。
 

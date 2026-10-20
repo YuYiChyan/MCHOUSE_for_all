@@ -12,8 +12,8 @@
     return Object.freeze(client);
   }
   return Object.freeze({
-    g309:api=>bind(api,{status:'status',setDpi:'setDpi',setReportRate:'setReportRate',setHostMode:'setHostMode',back:'back'}),
-    blackshark:api=>bind(api,{status:'status',setOutputVolume:'setOutputVolume',setInputVolume:'setInputVolume',setOutputMute:'setOutputMute',setInputMute:'setInputMute',setEq:'setEq',back:'back'}),
+    g309:api=>bind(api,{status:'status',setColor:'setColor',setDpi:'setDpi',setReportRate:'setReportRate',setHostMode:'setHostMode',back:'back'}),
+    blackshark:api=>bind(api,{status:'status',setColor:'setColor',setOutputVolume:'setOutputVolume',setInputVolume:'setInputVolume',setOutputMute:'setOutputMute',setInputMute:'setInputMute',setEq:'setEq',back:'back'}),
     razer:api=>bind(api,{status:'razerStatus',setDpiStage:'razerSetDpiStage',setPollRate:'razerSetPollRate',back:'closeEmbedded'}),
     charger:api=>bind(api,{status:'status',art:'art',startQr:'startQr',checkQr:'checkQr',pair:'pair',reconnect:'reconnect',back:'back'}),
     keyboard:api=>bind(api,{back:'back',clickVendor:'clickVendor'})

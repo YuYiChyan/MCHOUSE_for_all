@@ -1,8 +1,8 @@
 # Razer BlackShark V2 USB 声卡 · 交接验收包
 
-接收方：**肥鱼（DSH）**。确定型号为有线 BlackShark V2：3.5mm 耳机接原配 USB 声卡，目标 `1532:0529`。不依赖雷云。阶段为 `v0.2.0-handoff.1` 实机验收预发布。
+接收方：**肥鱼（DSH）**。确定型号为有线 BlackShark V2：3.5mm 耳机接原配 USB 声卡，目标 `1532:0529`。不依赖雷云。阶段为 `v0.2.0-handoff.2` 实机验收预发布。
 
-先读 [HANDOFF.md](HANDOFF.md) 和 [design/SPEC.md](design/SPEC.md)。打开 `payload/blackshark.html` 可看离线界面：声音输出、麦克风、可选 EQ、声场与扩展、设备信息。
+先读 [HANDOFF.md](HANDOFF.md) 和 [design/SPEC.md](design/SPEC.md)。黑／绿／白三色透明贴图已接入首页与设置页，配色可以切换并记住。打开 `payload/blackshark.html` 可看离线界面：声音输出、麦克风、可选 EQ、声场与扩展、设备信息。
 
 解压本设备 ZIP，运行 `Install.cmd`。也可明确指定：
 

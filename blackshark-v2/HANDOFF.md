@@ -68,4 +68,8 @@ EQ 后端依据当前匹配输出端点生成 GUID 条件及 post-mix 条件，�
 
 脚本已写好：Install／Repair／Uninstall、scripts/Manage.ps1、Optional-EQ.ps1。扩展存放于 `%USERPROFILE%/One4All`，恢复任务使用绝对 PowerShell 路径与工作目录，规避应用容器 LocalAppData 路径视图差异。共用加载器先启动本卡宿主，再执行原厂入口；异常时保留原应用启动路径。无需重写原厂网页。
 
-本分支已经修改 devices.json、四个共用 host／preload 文件、runtime-map 和公共客户端。修改 canonical 文件后执行 Sync-Library；当前包的版本固定为 0.2.0-handoff.1。未经过实机验收，不合并成稳定版，不关闭 Issue。
+本分支已经修改 devices.json、四个共用 host／preload 文件、runtime-map 和公共客户端。修改 canonical 文件后执行 Sync-Library；当前包的版本固定为 0.2.0-handoff.2。未经过实机验收，不合并成稳定版，不关闭 Issue。
+
+## handoff.2 贴图交接
+
+已按用户提供原图接入透明 PNG，元数据在 ARTWORK.json。首页点击配色按钮循环，设置页点击独立色块；选择持久化并通过独立 setColor IPC 同步回首页，不向硬件发送任何配色命令。不要将这两色／三色重新降级成单色示意图。接口与素材已随独立包打包。

@@ -1,12 +1,12 @@
 {
   "id": "blackshark",
   "title": "Razer BlackShark V2",
-  "version": "0.2.0-handoff.1",
+  "version": "0.2.0-handoff.2",
   "stage": "hardware-validation",
   "files": [
     {
       "path": "payload/blackshark.html",
-      "sha256": "ee6b8b29b7ba41af51a4078ff60ab6bcb37a8dc7e014a7012daaa9d0120dd114"
+      "sha256": "4ee3a9e534a4583ec1f2aff9401595d184466aced9ddc4334b1c2084fdc5c138"
     },
     {
       "path": "payload/blackshark_backend.py",
@@ -42,19 +42,19 @@
     },
     {
       "path": "payload/host.cjs",
-      "sha256": "f454cb78a5eac17e10d246f176d025a44934b6c83805edfc8ed298155646fe34"
+      "sha256": "a6177ac67998d6b593ca8a5fec08d1f46b0114f281160f1ea46423eca9422dbe"
     },
     {
       "path": "payload/cards.js",
-      "sha256": "7d45be7d8cbe28c0d2d1ea9caafaecd14a667665da30b6d32cb015c68a1a73af"
+      "sha256": "d730c46b5ef5c5aa44c474d26bdacb2a2d5a832833a846b2700eeeb7033dcbaa"
     },
     {
       "path": "payload/native-cards.js",
-      "sha256": "8105e8504afcacefd27bded30e843b21f22fb0b5082ac3292bc36dceba157f8c"
+      "sha256": "213df9d108b48df32ef5b085a25ee2859d9d2b5afaa0d095f81dc00a2e138278"
     },
     {
       "path": "payload/main-preload.cjs",
-      "sha256": "055dc606fdedf3e2632ed7a033f2e2d329e1ca1800484a42b2ffdc641e00e975"
+      "sha256": "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
     },
     {
       "path": "payload/local-server.cjs",
@@ -74,7 +74,7 @@
     },
     {
       "path": "payload/mchose-ui/device-client.js",
-      "sha256": "a40d9ef1f8c852c7890fbd0a23c6bc300a157e131af4c65648e9b698544f2ecc"
+      "sha256": "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
     },
     {
       "path": "payload/adapter.cjs",
@@ -86,15 +86,15 @@
     },
     {
       "path": "payload/device-preload.cjs",
-      "sha256": "f121a89ed0dfd95ac57cfa7fc132dd09acbef56b2113b844c20aa21c4491a4f1"
+      "sha256": "ed792fdcad2d40ec165da0899bc12624c91b1bc3d6595d6b7aee0d37d465b732"
     },
     {
       "path": "payload/mchose-ui/handoff-page.js",
-      "sha256": "97895137e1bf39552e70adea0227cf8a81a26225914dad52939cbab48cf56c51"
+      "sha256": "4e2f5ba4018c0588d7a8be397118197c992fe25cd1bd127ca90c3b4ba0e0e344"
     },
     {
       "path": "payload/mchose-ui/handoff-page.css",
-      "sha256": "76bfdc18682ee3d8fb8577fd5026963f4f8514550aea6c8978c0af66e36e1611"
+      "sha256": "afd0227320fc5c2c4a96ecaaee3036addf923c47a4556d745cf8b72846a8cd98"
     },
     {
       "path": "payload/eq_provider.py",
@@ -102,7 +102,7 @@
     },
     {
       "path": "acceptance.example.json",
-      "sha256": "ecedb28aec598abc293c78c584e5546ac2efaea157112bd6d11eb6d89a966f41"
+      "sha256": "ecc5cd155f71b27241a1fc51c01d21c8bfe1c88fefebd5af8dfc0b08845f4550"
     },
     {
       "path": "DEPENDENCIES.json",
@@ -110,75 +110,75 @@
     },
     {
       "path": "design/layout-report.json",
-      "sha256": "374e4fe24e6958ee30394dcdc57b577ce1ba829c89e15ec6c499af430edc9137"
+      "sha256": "a879000cde4d6a6954e0e339a1da1428fd34e7de82f64df1d608ad94b8d1e68f"
     },
     {
       "path": "design/previews/blackshark-dark-1280-about.png",
-      "sha256": "8310be97544bf032e64c05b4778f767abcb3d7de4dc09a2634ab4005e9f2926a"
+      "sha256": "34bccf9467c292cdd184cda36ad3ce1a42923ce10d164c6f973c4170672a101c"
     },
     {
       "path": "design/previews/blackshark-dark-1280-eq.png",
-      "sha256": "cb07c051b6038cb69fedbf00897537b037460fbb7a13e1aa940961aaa32289d4"
+      "sha256": "608b29ece9b77f698915663f65dc8593d85151427b8858e075b317c5b05239e8"
     },
     {
       "path": "design/previews/blackshark-dark-1280-input.png",
-      "sha256": "f1641c3205346ece20e64aa70938895ab912a26004d2113ad7e96e2fa08a2d3e"
+      "sha256": "5a6309ea05bc261e009949b6fefe95ac6a06e458638e5cfb55d78da5d56026eb"
     },
     {
       "path": "design/previews/blackshark-dark-1280-output.png",
-      "sha256": "a30f7fdc81a16a1092c8079ff0c16858aad8bf29c7a907a5494c8a1582821d83"
+      "sha256": "b41cb4de25663d1241d11591f3d0fb779356e4d6ba5076c1d9a83d850c5f3f4f"
     },
     {
       "path": "design/previews/blackshark-dark-1280-spatial.png",
-      "sha256": "d3a10dc3ca1f49f844354f5338d5ccd62866c9f65496d5e38025c3f2417f1afd"
+      "sha256": "5c8a2ab21bd2c6a2b518a0bc8bd4233e80ea7369315b89242e59be211fece119"
     },
     {
       "path": "design/previews/blackshark-dark-720-eq.png",
-      "sha256": "58ef17800b846ba8a07854d0d4751b94eb5001677a84831f7e8541dba9328e0c"
+      "sha256": "9b6672d7741be8f88931a95bf64ff4cc152a6c4b1bf25a7fdaf1a69346b8fba9"
     },
     {
       "path": "design/previews/blackshark-light-1280-about.png",
-      "sha256": "38470a8dd4915250a202f9cd82c1486e3dea1fb2eb86b120ded7c41c45c02199"
+      "sha256": "0280031f57f163bbff5fc69cc483adddf205befa6332a9312377072b033385da"
     },
     {
       "path": "design/previews/blackshark-light-1280-eq.png",
-      "sha256": "66a4feeb0bb124b1a8aeeb176f3195f8cd9e27fb4b2d913db376c71f7953c0cf"
+      "sha256": "66516361a11d83491c95ed20b8ca1aad824f3439496a1064d6d3414b3a509add"
     },
     {
       "path": "design/previews/blackshark-light-1280-input.png",
-      "sha256": "50c156ef7a482f2503942e0b5740ff0daced6785b52431e04cc2fad40096ff87"
+      "sha256": "a75ad2addd763b2968375fb7ec4d3b99b732055a6724addcd74652790763b880"
     },
     {
       "path": "design/previews/blackshark-light-1280-output.png",
-      "sha256": "74a5f19b4b54d962b03bedd5b742daab4ab568b1f03257a37be5f5479af6b5d4"
+      "sha256": "643c63889ccd572bd4a152779b0f400e807a840294ed13914fc16d7cb694c684"
     },
     {
       "path": "design/previews/blackshark-light-1280-spatial.png",
-      "sha256": "50c3b929c730ba1f92581839db7c647e574a84889e209f2fef0fb5cd45c082cd"
+      "sha256": "13e0e90ceddc7c02ef2b9200dd571c9b3d2226e3016a6f58c437e8c839600451"
     },
     {
       "path": "design/previews/blackshark-light-720-eq.png",
-      "sha256": "a3935c495c0b7b4bace042722490c066e0eb8ce28ea29505efef36539b3a9706"
+      "sha256": "a50b8d88604f611be943538aa9f6081996933c3dd8a9e0510e9cb4b63f9a040d"
     },
     {
       "path": "design/previews/home-dark-grid-fixture.png",
-      "sha256": "958d928b8c9d9c2a47590b4a1f2fc0fb404bf60705b3ff4a6ffcbb8533e7f541"
+      "sha256": "8048ac2349ff55cd713ef8dcf29e1ff54b62ec01646b43536ccfd93e16e9a936"
     },
     {
       "path": "design/previews/home-dark-list-fixture.png",
-      "sha256": "f22a1ce808170b6f8eb5f4f08968f5aa6f8c191db432c52a3029732cf032129a"
+      "sha256": "838ccc4248ed7a9cbf444ecb34145e03997947a3dc0ed6c73252328ad655dc12"
     },
     {
       "path": "design/previews/home-light-grid-fixture.png",
-      "sha256": "4014f814fd671ffdd0890575cf7b0ff00ca861799be7cd0e2b780cd7dcac314b"
+      "sha256": "a71dada86f47c56112f07714f3908e730f5bda651c8e9ef783abfa515b7fabf6"
     },
     {
       "path": "design/previews/home-light-list-fixture.png",
-      "sha256": "b03721db20fca776c22c4f1a11ff65a7d427587f208a7e7eabad06ae753641cd"
+      "sha256": "ff96e48c506571e35a984f63b7d8654779501ace8e78663116e9656b210c7e0d"
     },
     {
       "path": "design/SPEC.md",
-      "sha256": "67503d8d9515883ae93642382ddc1d3c7e6d691385227e8019ecd08b3ca7acf8"
+      "sha256": "7eb71bb7b694d1da8b31d480edfe3c4b5a3d21485942b4dc4bfda08ae03be921"
     },
     {
       "path": "Diagnose.ps1",
@@ -186,7 +186,7 @@
     },
     {
       "path": "HANDOFF.md",
-      "sha256": "649bb93949e1286025d0d1bf2cf036f95b0a9a3687d41a6cabedbe3d59de020d"
+      "sha256": "23257d7a69b0fb705ab22c831ec9b0ece9078e447263b256baee75810f3d19c3"
     },
     {
       "path": "Install.ps1",
@@ -214,7 +214,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "e1ac36f392183b4be78c455e1ee9f1d92b2eb54d20f79e442f2c0793685c36e1"
+      "sha256": "500f79ca0d7624a752869e4c94e5ac55fd431076c6d5574338483b67d09dde4a"
     },
     {
       "path": "Repair.ps1",
@@ -231,6 +231,54 @@
     {
       "path": "Uninstall.ps1",
       "sha256": "f72840ae7e375daeb0a77110576fefce9343e8a649a17f6a1f95a8af15b4d8ce"
+    },
+    {
+      "path": "ARTWORK.json",
+      "sha256": "8574b24d5a22be84cf3d6f8563fe8fe020c4a5739042904f94e35307526ad7ad"
+    },
+    {
+      "path": "payload/product-assets/README.md",
+      "sha256": "ba45490041b8e1df249e490af8ff7de697b3e5afa2f9e779f7c5ac1eaf5a5433"
+    },
+    {
+      "path": "payload/product-assets/blackshark-black.png",
+      "sha256": "16f67d4bd088d9e06b38a24525df39f7c884ba3e7e67f603571a1cc406c1aee5"
+    },
+    {
+      "path": "payload/product-assets/blackshark-green.png",
+      "sha256": "24a1e149f0c85738eed0c88d41d1c83e0222e6cc0f658fac48daaa8b5c0717ac"
+    },
+    {
+      "path": "payload/product-assets/blackshark-white.png",
+      "sha256": "72dfbe18eb6a244e79f64cc6cbd1990f5f8878418b163dc6de7a523f27fb97bc"
+    },
+    {
+      "path": "payload/mchose-ui/product-art.js",
+      "sha256": "ed78a52719e956cf215cb35065f012f70c412b3638380b74b6f065cb39946535"
+    },
+    {
+      "path": "design/previews/blackshark-dark-1280-art-blackshark-green.png",
+      "sha256": "880f1a9b6f6d4a92c8ce70139b4b658716380ed294b20a4dff10b50d069576f7"
+    },
+    {
+      "path": "design/previews/blackshark-dark-1280-art-blackshark-white.png",
+      "sha256": "401e4c2be1a4197d1de84d0c58b80b49d3421206649528f91b21fef62a601d33"
+    },
+    {
+      "path": "design/previews/blackshark-dark-1280-art-blackshark.png",
+      "sha256": "b41cb4de25663d1241d11591f3d0fb779356e4d6ba5076c1d9a83d850c5f3f4f"
+    },
+    {
+      "path": "design/previews/blackshark-light-1280-art-blackshark-green.png",
+      "sha256": "b17f5345ed584dc3d87e9eb79b9d1520bd520102804969f9473ab8c6486b6856"
+    },
+    {
+      "path": "design/previews/blackshark-light-1280-art-blackshark-white.png",
+      "sha256": "5166c7a6f860f96433ab368a5eb1f717e2c2880e6d26876a8645ea8073983f05"
+    },
+    {
+      "path": "design/previews/blackshark-light-1280-art-blackshark.png",
+      "sha256": "643c63889ccd572bd4a152779b0f400e807a840294ed13914fc16d7cb694c684"
     }
   ],
   "bundles": [
@@ -262,6 +310,11 @@
     "device-preload.cjs",
     "mchose-ui/handoff-page.js",
     "mchose-ui/handoff-page.css",
-    "eq_provider.py"
+    "eq_provider.py",
+    "product-assets/README.md",
+    "product-assets/blackshark-black.png",
+    "product-assets/blackshark-green.png",
+    "product-assets/blackshark-white.png",
+    "mchose-ui/product-art.js"
   ]
 }

@@ -151,5 +151,13 @@
       "logitech-g309",
       "blackshark-v2"
     ]
+  },
+  {
+    "source": "ui/product-art.js",
+    "target": "payload/mchose-ui/product-art.js",
+    "projects": [
+      "logitech-g309",
+      "blackshark-v2"
+    ]
   }
 ]

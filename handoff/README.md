@@ -1,6 +1,6 @@
 # 给肥鱼（DSH）的两设备交接入口
 
-此分支为 `handoff/g309-blackshark-v2`，预发布 `v0.2.0-handoff.1`。两个设备分别有独立 ZIP、README、HANDOFF、视觉规格、参考渲染图、布局报告、离线依赖、注入和卸载脚本。请按设备回复对应 Issue；基础功能和可选 EQ 的验收分开记录。
+此分支为 `handoff/g309-blackshark-v2`，预发布 `v0.2.0-handoff.2`。两个设备分别有独立 ZIP、README、HANDOFF、视觉规格、参考渲染图、布局报告、离线依赖、注入和卸载脚本。请按设备回复对应 Issue；基础功能和可选 EQ 的验收分开记录。
 
 ## 接手顺序
 

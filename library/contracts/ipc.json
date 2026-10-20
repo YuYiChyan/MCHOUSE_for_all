@@ -11,7 +11,8 @@
       "deviceCardStatus": "dc-device:card-status"
     },
     "event": "dc-lab:embedded-state",
-    "chargerSummary": "driveCenterCharger.status -> dc-lab:charger-card-status"
+    "chargerSummary": "driveCenterCharger.status -> dc-lab:charger-card-status",
+    "deviceColorEvent": "dc-lab:device-color"
   },
   "razerPage": {
     "global": "driveCenterLab",
@@ -49,7 +50,8 @@
       "setDpi": "dc-device:setDpi",
       "setReportRate": "dc-device:setReportRate",
       "setHostMode": "dc-device:setHostMode",
-      "back": "dc-lab:close-embedded"
+      "back": "dc-lab:close-embedded",
+      "setColor": "dc-device:set-color"
     },
     "boundary": "Matching top-level local device file only; device id is fixed in preload, command whitelist in main; shared serialized backend"
   },
@@ -62,7 +64,8 @@
       "setOutputMute": "dc-device:setOutputMute",
       "setInputMute": "dc-device:setInputMute",
       "setEq": "dc-device:setEq",
-      "back": "dc-lab:close-embedded"
+      "back": "dc-lab:close-embedded",
+      "setColor": "dc-device:set-color"
     },
     "boundary": "Matching top-level local device file only; device id is fixed in preload, command whitelist in main; shared serialized backend"
   }

@@ -1,11 +1,11 @@
 {
   "id": "charger",
   "title": "CUKTECH 10 Ultra",
-  "version": "0.2.0-handoff.1",
+  "version": "0.2.0-handoff.2",
   "files": [
     {
       "path": "payload/cards.js",
-      "sha256": "7d45be7d8cbe28c0d2d1ea9caafaecd14a667665da30b6d32cb015c68a1a73af"
+      "sha256": "d730c46b5ef5c5aa44c474d26bdacb2a2d5a832833a846b2700eeeb7033dcbaa"
     },
     {
       "path": "payload/charger-credentials.cjs",
@@ -117,7 +117,7 @@
     },
     {
       "path": "payload/host.cjs",
-      "sha256": "f454cb78a5eac17e10d246f176d025a44934b6c83805edfc8ed298155646fe34"
+      "sha256": "a6177ac67998d6b593ca8a5fec08d1f46b0114f281160f1ea46423eca9422dbe"
     },
     {
       "path": "payload/local-server.cjs",
@@ -125,7 +125,7 @@
     },
     {
       "path": "payload/main-preload.cjs",
-      "sha256": "055dc606fdedf3e2632ed7a033f2e2d329e1ca1800484a42b2ffdc641e00e975"
+      "sha256": "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
     },
     {
       "path": "payload/mchose-ui/mchose-ui.css",
@@ -137,7 +137,7 @@
     },
     {
       "path": "payload/native-cards.js",
-      "sha256": "8105e8504afcacefd27bded30e843b21f22fb0b5082ac3292bc36dceba157f8c"
+      "sha256": "213df9d108b48df32ef5b085a25ee2859d9d2b5afaa0d095f81dc00a2e138278"
     },
     {
       "path": "payload/product-assets/cuktech-10-ultra-black.png",
@@ -161,7 +161,7 @@
     },
     {
       "path": "payload/mchose-ui/device-client.js",
-      "sha256": "a40d9ef1f8c852c7890fbd0a23c6bc300a157e131af4c65648e9b698544f2ecc"
+      "sha256": "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
     }
   ],
   "bundles": [

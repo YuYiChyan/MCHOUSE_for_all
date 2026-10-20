@@ -58,7 +58,8 @@
     charger:{label:'CUKTECH 10 Ultra',status:'等待绑定',icon:'icon-a-bluetooth2_char'},
   };
   const colorOptions = {
-    g309:[{id:'g309',label:'黑色示意图',swatch:'#202124'}],blackshark:[{id:'blackshark',label:'黑色示意图',swatch:'#202124'}],
+    g309:[{id:'g309',label:'黑色',swatch:'#202124'},{id:'g309-white',label:'白色',swatch:'#f2f2f2'}],
+    blackshark:[{id:'blackshark',label:'黑色',swatch:'#202124'},{id:'blackshark-green',label:'绿色',swatch:'#50e600'},{id:'blackshark-white',label:'白色',swatch:'#f2f2f2'}],
     keyboard: [
       { id: 'tank68-purple', label: '紫色', swatch: '#7C4DFF' },
       { id: 'tank68-black', label: '黑色', swatch: '#202124' },
@@ -70,7 +71,7 @@
     charger:[{id:'cuktech-10-ultra',label:'银色',swatch:'#c6c9cc'},{id:'cuktech-10-ultra-black',label:'黑色纪念版',swatch:'#202124'}],
   };
   const selectedColors = {
-    g309:'g309',blackshark:'blackshark',
+    g309:readSavedColor('g309','g309'),blackshark:readSavedColor('blackshark','blackshark'),
     keyboard: readSavedColor('keyboard', 'tank68-purple'),
     razer: readSavedColor('razer', 'razer-black'),
     charger:readSavedColor('charger','cuktech-10-ultra'),
@@ -416,7 +417,7 @@
 
   function acceptProductArt(payload) {
     const artKey = payload?.kind;
-    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','blackshark']);
+    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','g309-white','blackshark','blackshark-green','blackshark-white']);
     if (!productUrls.has(artKey) && allowed.has(artKey) && payload?.base64) {
       try {
         const binary = atob(payload.base64);
@@ -547,6 +548,7 @@
     if (data.type === 'razer-status') updateRazerStatus(data.status);
     if(data.type==='charger-status')updateChargerStatus(data.status);
     if(data.type==='device-status')updateDeviceStatus(data.kind,data.status);
+    if(data.type==='device-color'&&['g309','blackshark'].includes(data.kind)){setColor(data.kind,data.color);if(!productUrls.has(data.color))requestProductArt([data.color]);}
     if (data.type === 'product-art') acceptProductArt(data);
   });
   if (!window.__dcColorPopoverOutside) {

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "blackshark",
+    "color": "黑色",
+    "file": "blackshark-black.png",
+    "width": 1185,
+    "height": 1327,
+    "format": "PNG",
+    "mode": "RGBA",
+    "sha256": "16f67d4bd088d9e06b38a24525df39f7c884ba3e7e67f603571a1cc406c1aee5",
+    "source": "User-provided artwork; original bytes retained"
+  },
+  {
+    "id": "blackshark-green",
+    "color": "绿色",
+    "file": "blackshark-green.png",
+    "width": 1186,
+    "height": 1327,
+    "format": "PNG",
+    "mode": "RGBA",
+    "sha256": "24a1e149f0c85738eed0c88d41d1c83e0222e6cc0f658fac48daaa8b5c0717ac",
+    "source": "User-provided artwork; original bytes retained"
+  },
+  {
+    "id": "blackshark-white",
+    "color": "白色",
+    "file": "blackshark-white.png",
+    "width": 1185,
+    "height": 1327,
+    "format": "PNG",
+    "mode": "RGBA",
+    "sha256": "72dfbe18eb6a244e79f64cc6cbd1990f5f8878418b163dc6de7a523f27fb97bc",
+    "source": "User-provided artwork; original bytes retained"
+  }
+]

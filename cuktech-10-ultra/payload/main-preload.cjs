@@ -11,6 +11,10 @@ if(allowed){
     open:(kind,color)=>ipcRenderer.invoke('dc-lab:open',kind,color),
     closeEmbedded:()=>ipcRenderer.invoke('dc-lab:close-embedded'),
     deviceCardStatus:id=>ipcRenderer.invoke('dc-device:card-status',id),
+    onDeviceColor:callback=>{
+      const listener=(_event,state)=>callback(state);ipcRenderer.on('dc-lab:device-color',listener);
+      return ()=>ipcRenderer.removeListener('dc-lab:device-color',listener);
+    },
     razerCardStatus:()=>ipcRenderer.invoke('dc-lab:razer-card-status'),
     productArt:kind=>ipcRenderer.invoke('dc-lab:product-art',kind),
     razerSetDpiStage:stage=>ipcRenderer.invoke('dc-lab:razer-set-dpi-stage',stage),

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "g309",
+    "color": "黑色",
+    "file": "g309-black.png",
+    "width": 1415,
+    "height": 1112,
+    "format": "PNG",
+    "mode": "RGBA",
+    "sha256": "41309d4399177edb713b923ebe09e9d66dc5278e1798a8b94d8edeb5b2de31fa",
+    "source": "User-provided artwork; original bytes retained"
+  },
+  {
+    "id": "g309-white",
+    "color": "白色",
+    "file": "g309-white.png",
+    "width": 1415,
+    "height": 1112,
+    "format": "PNG",
+    "mode": "RGBA",
+    "sha256": "779c4a8b3e4ca23f78fb5d12912a3fb7ed111c3bc84cc476c3e1d0786e76eddb",
+    "source": "User-provided artwork; original bytes retained"
+  }
+]

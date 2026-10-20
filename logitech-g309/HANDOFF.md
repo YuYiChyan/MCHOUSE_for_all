@@ -44,7 +44,7 @@
 - [ ] 电量与参考读数合理，未知等级不冒充精确百分比。
 - [ ] 主机／板载模式切换、恢复、重启后的行为已记录。
 - [ ] 蓝牙能力单独验收；不支持项禁用并说明原因。
-- [ ] 原厂首页列表／网格、亮／暗／毛玻璃继承正常，只有一个黑色示意按钮。
+- [ ] 原厂首页列表／网格、亮／暗／毛玻璃继承正常，黑／白贴图切换与持久化正常。
 - [ ] 全部菜单、返回、Esc、主题同步、窗口缩放和断开错误展示正常。
 - [ ] 单独安装、与 BlackShark／原三卡共存、修复、卸载不互相破坏。
 - [ ] 原厂更新后入口恢复、卡片数据保留；最后卸载恢复原入口。
@@ -52,6 +52,10 @@
 
 ## 注入交接
 
-Install／Repair／Uninstall 和 `scripts/Manage.ps1` 已备齐；不需要重新设计安装入口。`devices.json`、`library/host/{host.cjs,cards.js,native-cards.js,main-preload.cjs}`、`library/runtime-map.json` 已显式登记新卡片。修改公共源码后运行 `scripts/Sync-Library.ps1 -Version 0.2.0-handoff.1`，不要只改某个生成包。测试必须使用副本或临时夹具。
+Install／Repair／Uninstall 和 `scripts/Manage.ps1` 已备齐；不需要重新设计安装入口。`devices.json`、`library/host/{host.cjs,cards.js,native-cards.js,main-preload.cjs}`、`library/runtime-map.json` 已显式登记新卡片。修改公共源码后运行 `scripts/Sync-Library.ps1 -Version 0.2.0-handoff.2`，不要只改某个生成包。测试必须使用副本或临时夹具。
 
 目前无此设备，协议单测、离线布局和模拟接口检查不能替代以上硬件清单。保持 Issue 开放，直至接收方完成实际验收。
+
+## handoff.2 贴图交接
+
+已按用户提供原图接入透明 PNG，元数据在 ARTWORK.json。首页点击配色按钮循环，设置页点击独立色块；选择持久化并通过独立 setColor IPC 同步回首页，不向硬件发送任何配色命令。不要将这两色／三色重新降级成单色示意图。接口与素材已随独立包打包。

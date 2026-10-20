@@ -1,4 +1,4 @@
-param([string]$Version='0.2.0-handoff.1')
+param([string]$Version='0.2.0-handoff.2')
 $ErrorActionPreference='Stop'
 $root=Split-Path -Parent $PSScriptRoot
 & (Join-Path $PSScriptRoot 'Sync-Library.ps1') -Version $Version

@@ -1,90 +1,101 @@
 # MCHOUSE_for_all
 
-让不同品牌的设备使用同一套 MCHOSE HUB 卡片和设置界面。当前版本 **0.2.0**：G309 与有线 BlackShark V2 已完成开发，设备基础功能经对方验证，App 视觉由项目主人验收，现纳入主分支。详细范围见 [验收记录](docs/ACCEPTANCE-0.2.0.md) 和 [验证记录](VALIDATION.md)。
+**让 MCHOSE HUB 成为跨品牌、跨协议的统一设备控制平台。**
 
-| 按设备独立下载 | 接入方式 | 源码 |
-| --- | --- | --- |
-| [TANK68 HE](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/tank68-v0.2.0-win64.zip) | 网页驱动 / USB 磁轴键盘 | [tank68](tank68) |
-| [Razer Viper Mini SE](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/razer-mini-se-v0.2.0-win64.zip) | 私有 USB/HID 协议 | [razer-mini-se](razer-mini-se) |
-| [CUKTECH 10 Ultra](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/cuktech-10-ultra-v0.2.0-win64.zip) | BLE 蓝牙 | [cuktech-10-ultra](cuktech-10-ultra) |
-| [Logitech G309](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/logitech-g309-v0.2.0-win64.zip) | HID++ / LIGHTSPEED；蓝牙能力单独核对 | [logitech-g309](logitech-g309) |
-| [BlackShark V2 有线 USB 声卡](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-v0.2.0-win64.zip) | Core Audio；可选 Equalizer APO | [blackshark-v2](blackshark-v2) |
-| [One4All Kit 开发库](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/one4all-kit-v0.2.0.zip) | 共用设计语言、控件、前端桥接与注入源码 | [library](library) |
+我们的目标是覆盖市面上大部分外设，并将设备控制的范围延伸到外设之外：键盘、鼠标、耳机、充电器，以及任何具备可用网页驱动、开放接口、开放协议或开源通信库的设备，都可以成为这个平台的一部分。
 
-**只下载所需设备的 ZIP，完整解压后运行该设备目录内的 Install.cmd。无需下载整个仓库、安装开发环境或另装开发库。** 每包自带共用代码；需要 Python 的设备带离线运行时、依赖、源码及许可。所有下载与 SHA256 见 [发布页](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/tag/v0.2.0)。
+理论上，只要设备存在能够合法使用的控制入口，就可以开发适配层，把它的状态、设置与交互接入 MCHOSE HUB。项目希望把分散在不同品牌客户端、网页驱动和开源工具中的能力，汇集到统一的卡片、导航、主题与设置体验中。每完成一项适配，就提供一个可以单独下载安装的设备包，并持续扩展支持列表。
 
-G309 提供黑／白贴图，BlackShark 提供黑／绿／白贴图，首页与设置页同步配色并保存选择，支持列表／网格及亮暗主题。BlackShark 基础音量、麦克风与静音控制无需雷云；十段 EQ 页面已接入独立开源引擎 Equalizer APO。耳机包现已包含其官方安装器、对应源码和许可，按需运行 Install-EQ.cmd，选择目标 USB 输出后在 App 内调节。也可[单独下载 EQ 套件](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-optional-eq-v0.2.0.zip)，基础卡片不要求启用 EQ。
+[下载独立设备包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/latest) · [开发库](library) · [开发指南](docs/DEVELOPMENT.md) · [参与贡献](CONTRIBUTING.md)
 
-每包提供 Install、Repair、Uninstall。更新恢复任务在 App 关闭后修复加载入口；扩展与绑定数据放在官方更新目录之外。仅取消某张卡片时不影响其他卡片，最后卸载恢复原厂入口。首次安装键盘会下载原厂网页，图标与字体从本机安装及公开厂商资源准备。
+## 当前支持列表
 
-非官方扩展，目前支持资源解包存放的 Windows x64 MCHOSE HUB。厂商改变页面、协议或打包结构后可能需要适配。项目不含账号凭据、原厂主程序或原厂网页压缩 JS/CSS。原创公共代码默认 MIT；设备与第三方协议源码遵循各子项目许可，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+**更新时间：2026-10-22 · 当前发布版本：0.2.0**
 
-## 开发思路：把设备接入同一套界面
+下表列出已经完成适配、提供独立安装包的设备。项目的扩展目标覆盖所有满足接入条件的设备；具体型号的功能范围与验证记录随适配持续更新。
 
-### 迈从驱动的本质
+| 设备 | 接入方式 | 独立安装包 | 实现与说明 |
+| --- | --- | --- | --- |
+| TANK68 HE | USB / 原厂网页驱动 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/tank68-v0.2.0-win64.zip) | [tank68](tank68) |
+| Razer Viper Mini SE | USB / 2.4G 接收器 / 开源私有协议库 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/razer-mini-se-v0.2.0-win64.zip) | [razer-mini-se](razer-mini-se) |
+| CUKTECH 10 Ultra | BLE / 开源蓝牙控制器 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/cuktech-10-ultra-v0.2.0-win64.zip) | [cuktech-10-ultra](cuktech-10-ultra) |
+| Logitech G309 | HID++ / LIGHTSPEED；蓝牙能力按设备与接口确认 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/logitech-g309-v0.2.0-win64.zip) | [logitech-g309](logitech-g309) |
+| BlackShark V2 有线 USB 声卡 | Windows Core Audio / 可选 Equalizer APO | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-v0.2.0-win64.zip) | [blackshark-v2](blackshark-v2) |
 
-本次检查的 MCHOSE HUB 是基于 Electron 的桌面应用，可以理解为 **Chromium 浏览器核心 + 网页界面 + Node.js 主进程 + 厂商设备通信及系统依赖库**。本机安装目录可见 `resources/app/out/main`、`out/preload`、网页资源以及 `koffi`、`usb`、`win-audio` 等依赖；当前主入口还使用了字节码加载器。这个判断针对已检查版本，不代表所有历史或未来版本的实现都相同。
+**只下载需要的设备包，完整解压后运行设备目录内的 `Install.cmd`。** 每包自带共用代码及所需运行依赖，无需下载整个仓库或另装开发环境。各包提供安装、修复与卸载入口，支持多张卡片共存。
 
-浏览器负责绘制界面，主进程和本地库负责访问设备。网页通过受限的 preload / IPC 接口调用本地能力，因此可以保持统一的外观，同时接入不同品牌的底层协议。Electron 的 [进程模型](https://www.electronjs.org/docs/latest/tutorial/process-model) 和 [WebContentsView](https://www.electronjs.org/docs/latest/api/web-contents-view) 说明了这层分工。
+开发者可单独下载 [One4All Kit](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/one4all-kit-v0.2.0.zip)。可选 [EQ 套件](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-optional-eq-v0.2.0.zip)包含 Equalizer APO 官方安装器、对应源码与许可，耳机独立包也已携带；按需运行 `Install-EQ.cmd` 后，在 App 内调节十段 EQ。基础声卡控制无需雷云或 EQ 引擎。
+
+发布附件与 SHA256 校验文件见 [发布页](https://github.com/YuYiChyan/MCHOUSE_for_all/releases)。已有适配的功能与验收范围见各设备说明、[验证记录](VALIDATION.md)及 [0.2.0 验收记录](docs/ACCEPTANCE-0.2.0.md)。新增设备时同步更新本表日期、版本与下载入口。
+
+## 开发思路
+
+### 以浏览器界面为宿主，以设备适配层连接硬件
+
+已检查的 MCHOSE HUB 基于 Electron：Chromium 浏览器核心负责绘制网页界面，Node.js 主进程与本地依赖库负责设备通信和系统能力。安装资源中可见主进程、preload、网页资源，以及 `koffi`、`usb`、`win-audio` 等依赖。
+
+这套结构提供了清晰的扩展位置：保留宿主的主界面与运行环境，通过设备卡片打开设置页面，再由受限的 preload / IPC 接口连接本地适配器。页面统一呈现状态和操作；适配器负责身份识别、协议交互、参数验证、设备回读、重连与退出清理。
 
 ```mermaid
 flowchart LR
-    UI[迈从主页卡片与统一设计语言] --> View[内嵌设置页面]
-    View --> Web[原厂网页控件与 WebHID]
-    View --> IPC[受限 preload 与 IPC]
-    IPC --> USB[开源私有协议控制库]
-    IPC --> BLE[开源 BLE 控制器]
+    UI[统一设备卡片与设置界面] --> View[设备页面与共用控件]
+    View --> Web[网页驱动与原厂组件]
+    View --> Bridge[受限 preload / IPC]
+    Bridge --> Adapter[设备适配层]
+    Adapter --> Protocol[开放协议与开源通信库]
+    Adapter --> System[系统设备与音频接口]
     Web --> Device[目标设备]
-    USB --> Device
-    BLE --> Device
+    Protocol --> Device
+    System --> Device
 ```
 
-### 三个示范分别解决什么问题
+### 根据设备的控制入口选择接入方式
 
-| 路线 | 示范 | 前端怎么做 | 设备通信由谁处理 |
-| --- | --- | --- | --- |
-| 有原厂网页驱动的 USB 磁轴键盘 | TANK68 HE | 映射原厂菜单，左侧使用统一导航，右侧嵌入同源原厂页面，保留键盘和原有设置控件 | 原厂网页及其 WebHID 逻辑 |
-| 厂商私有协议设备 | Razer Viper Mini SE | 使用共用控件重建设置页，将电量、DPI、回报率映射为前端字段与操作 | 已有开源通信库 openrazer-win；私有协议不等于必须重写内核驱动 |
-| BLE 蓝牙设备 | CUKTECH 10 Ultra | 使用同一设计语言呈现端口、功率曲线和连接入口 | 开源 CUKTECH BLE 控制器及 Bleak；认证信息留在本机服务 |
+| 设备已有的控制能力 | 接入方法 | 前端实现 |
+| --- | --- | --- |
+| 可用的网页驱动 | 复用网页中的设备组件与通信逻辑，按所用 WebHID、WebUSB、Web Serial 等能力处理权限 | 将原厂功能区域嵌入右侧内容框，映射左侧导航、视口和主题 |
+| 开源 USB / HID 或厂商私有协议控制库 | 保留成熟协议实现，增加薄适配层，暴露经过校验的设备操作 | 使用公共控件呈现状态、参数和设备能力支持的选项 |
+| BLE / 其他可编程通信接口 | 复用开源控制器，处理设备发现、认证、通知订阅、重连与凭据保存 | 映射连接入口、实时状态、图表和可写设置 |
+| 操作系统提供标准设备接口 | 通过系统接口关联目标设备，完成控制与回读 | 使用同一套设置框与交互反馈 |
+| 独立开源处理引擎 | 通过其配置、命令行或正式接口接入，打包必要依赖与启用入口 | 在项目页面提供参数编辑、保存、旁路和撤销操作 |
 
-后两条路线复用的是开源**通信库/控制器**，其原有界面不一定能直接当控件使用。应保留成熟的协议实现，只增加薄适配层，把结果交给统一前端。前一条路线尽量复用原厂网页里的完整功能区域，减少重新实现复杂键盘设置产生的回归。
+设备类型可以超出传统外设。具有合适控制入口的音频设备、电源设备、传感器、桌面配件及其他可编程硬件，都可以沿这些路线开发集成。接入前需要确认硬件接口、系统权限、组件授权、设备身份及可回读能力；当前版本的安装器和权限规则仍需为新增设备逐项登记。
 
-### 面向哪些设备扩展
+### 复用网页与组件，保留成熟的设备控制能力
 
-项目希望覆盖所有具有可用网页驱动的其他品牌外设、其他网页驱动设备，以及具有可用开源控制器的 USB、私有协议和 BLE 设备。这是**可扩展的候选范围**；当前实测示范仍是上面的三个型号，并非所有设备已经自动兼容。
+有网页驱动的设备优先复用原有功能区域，保留组件状态、事件、校准及通信逻辑。统一界面负责导航映射、重复区域隐藏、主题同步和内容框布局，减少重新实现复杂设置造成的功能回归。
 
-接入前先确认实际使用的是 WebHID、WebUSB、Web Serial、Web Bluetooth，还是本地辅助程序。网页能在浏览器打开不等于内嵌后就有硬件权限。还要检查 Chromium 版本、系统权限、VID/PID、独占访问、认证流程，以及网页是否允许嵌入。不能嵌入 iframe 的页面可评估独立 WebContentsView 或官方支持的集成方式；应遵守站点授权和资源许可。
+网页嵌入需确认同源关系、站点许可和硬件访问方式。允许嵌入的页面可使用 iframe；需要独立页面环境时，可评估 Electron 的 WebContentsView。新的品牌和型号必须单独登记设备权限，避免扩大为允许访问全部硬件。
 
-当前宿主的自动硬件授权只适配示范键盘的 VID/PID。其他设备需要单独实现与验证相应权限处理，不能直接扩大成允许访问全部设备。
+有开源控制器的设备复用其协议与传输实现，由适配层把底层数据整理成稳定的状态模型和命令接口。原库的界面不一定适合直接嵌入，前端可以用共用控件重新呈现。写入后读取设备确认结果，断线或读取失败时清除过期状态，按设备上报的能力开放选项。
 
-### 怎样开发同款控件
+### 用同一套设计语言组织设备体验
 
-1. 从 [开发库](library) 取用布局、亮暗样式与 `One4AllUI`。保持 60px 顶栏、320px 侧栏、40px 菜单、统一卡片/分段按钮和主题色；窄窗口使用对应响应式规则。先打开 `library/examples/widgets.html` 看可运行的控件示例。
-2. 首页克隆迈从当前原生卡片，继承 scoped 样式；同步 `is-list`、`is-dark` 和玻璃效果状态。平铺和列表分别检查，不把图片高度写死到全部视图。
-3. 网页驱动路线：保持原厂组件的状态、事件和通信逻辑，优先做菜单映射、重复导航隐藏、视口调整和原厂主题映射。跨源页面不能直接操作 DOM；同源本地资源也需要遵守许可。
-4. 开源控制器路线：把连接、只读状态、命令写入与回读、重连和退出清理放在适配层；前端只显示状态和触发白名单操作。可参考 `library/bridge/adapter.cjs` 和接口说明。
-5. 跟随主程序主题，在设备回读确认后更新按钮状态；断线或缺失数据显示“—”。蓝牙协议与通知刷新率依设备决定，不能用重复显示旧数值冒充实时刷新。
+[One4All Kit](library)提供共用样式、控件、主题与前端桥接接口。设备页面遵循宿主的顶栏、左侧设备区与菜单、右侧设置框布局；沿用统一的间距、字号、卡片、分段按钮、滑块和交互反馈。
 
-开发库已有的复用接口见 [IPC 对照表](library/contracts/ipc.json)；新增设备的注册位置、数据模型和注意事项见 [开发指南](docs/DEVELOPMENT.md)。目前示范宿主使用显式设备白名单，新增品牌仍需注册卡片和通信接口；开发库不是未经适配就能加载任意外设的通用驱动。
+首页复用宿主当前的原生卡片模板，继承 scoped 样式及 `is-list`、`is-dark`、毛玻璃等状态，分别适配列表与网格。设备贴图、配色选择和设置页同步，并保存用户选择。页面跟随宿主亮暗主题，窗口缩小时保持导航和主要操作可用。
 
-### 独立打包与注入
+共用控件入口见 [组件示例](library/examples/widgets.html)，接口映射见 [IPC 对照表](library/contracts/ipc.json)，设备注册位置与数据模型见 [开发指南](docs/DEVELOPMENT.md)。公共代码集中维护在 `library`，再同步生成各设备包，保证独立安装时也能复用同一套实现。
 
-每个设备单独维护 `manifest.json`、页面、控制器和所需依赖。发布时将共用库复制进该设备包，附带 Install / Repair / Uninstall 脚本，生成一个可单独解压使用的 ZIP。用户不必安装开发环境，也不必下载其他品牌的依赖。
+### 按设备独立打包与注入
 
-安装器定位当前 MCHOSE 运行目录，将设备代码与数据部署到 `%USERPROFILE%/One4All`，备份原始入口，再用小型加载器接入原厂主进程。官方更新覆盖入口后，后台检查在应用关闭且文件稳定时重新注入；卸载最后一个卡片时恢复原厂入口，保留绑定数据。共享宿主源码统一在 `library` 维护，通过同步脚本生成各设备包，避免分别修改各份共用代码。
+每款设备独立维护 `manifest.json`、页面、适配器、所需运行时和依赖。发布时将必要的公共库复制进设备包，附带 `Install`、`Repair`、`Uninstall` 脚本，生成可单独下载使用的 ZIP。开源依赖随包保留版本、来源、哈希及许可。
+
+安装器定位当前 MCHOSE HUB 目录，将扩展与数据部署到官方更新目录之外，备份原始入口，再通过小型加载器接入主进程。更新恢复任务在应用关闭、入口文件稳定后修复加载入口；卸载单个设备只取消对应卡片，最后一个卸载后恢复原厂入口。绑定信息与账号凭据留在本机，禁止进入源码和公开发布包。
 
 ```powershell
 .\scripts\Sync-Library.ps1
 .\tests\Verify-Packages.ps1
-.\scripts\Build-Releases.ps1 -Version 0.2.0
+.\scripts\Build-Handoff.ps1 -Version 0.2.0
+.\tests\Release-Packages.ps1 -Version 0.2.0
 ```
 
-完整步骤、依赖离线打包和新增设备发布约定见 [打包与注入指南](docs/PACKAGING.md)。
+当前安装器支持资源解包存放的 Windows x64 MCHOSE HUB。宿主打包形式、页面结构或协议变化时，需要更新相应适配。完整的离线依赖、注入、验证与发布约定见 [打包指南](docs/PACKAGING.md)。
 
-## 欢迎添加其他品牌的设备安装包
+## 一起扩展设备支持范围
 
-非常欢迎大家为这个库贡献其他品牌、其他设备类型的独立安装包，也欢迎完善共用控件和接入接口。可以先提 Issue 交流设备型号、已有网页驱动或开源控制器，再通过 PR 添加示范、测试记录和单独下载入口。具体步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎为更多品牌、更多设备形态贡献独立安装包，也欢迎补充开源控制器、网页驱动入口、协议文档和实机测试结果。
 
-## G309 与 BlackShark 的实现和维护
+可以先提交 Issue，说明设备型号、连接方式、现有网页驱动或开源接口，再通过 PR 加入设备页面、适配器、依赖与独立安装脚本。设备贡献沿用公共设计语言，补齐功能回读、共存安装、修复、卸载和主题布局验证，随后更新支持列表与单独下载入口。具体要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-新设备沿用共用设计语言、独立安装和显式接口白名单。协议与系统音频接口、视觉规格、注入与排错清单分别见 [G309](logitech-g309/HANDOFF.md)、[BlackShark](blackshark-v2/HANDOFF.md)；公共入口见 [handoff](handoff/README.md)。保留原交接研究资料供扩展，当前完成状态以 [0.2.0 验收记录](docs/ACCEPTANCE-0.2.0.md) 为准。THX 原生控制尚未开放，可选 EQ 的频响不在本次测量结论内。
+本项目是非官方扩展，与设备品牌无隶属关系。原创公共代码默认 MIT；各设备及第三方代码按对应目录许可使用。原厂程序、网页组件、商标与商品图遵循各自权利和授权，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。

@@ -23,6 +23,6 @@ The current account's Mi Home token, BLE key, account data, device address, and 
 | giampaolo/psutil | 7.2.2 win_amd64 | pycaw 依赖，BSD-3-Clause；wheel 元数据中保留许可 |
 | Equalizer APO | 官方 Git bbfcc3e5024cbb9d61ba75fc88d78605cc4c9687 | 可选独立 GPL-2.0-or-later 引擎源码包；本项目通过文本配置适配，不复制 THX 模块 |
 
-每个必要 Python wheel 的 SHA256 记录在设备 DEPENDENCIES.json 与 requirements-lock.txt。离线依赖解包 ZIP、原始 wheels、Python 运行时、上游源码和许可证随各自设备包提供。可选 EQ 的官方安装器下载受 403 限制未打包；SOURCE.json 记录来源与源码哈希。原有轮廓 SVG 为项目原创；handoff.2 新增五张用户提供的透明 PNG，保留原始文件字节并在 ARTWORK.json 记录尺寸和哈希。品牌图像版权归原权利人，不属于代码 MIT 许可。
+每个必要 Python wheel 的 SHA256 记录在设备 DEPENDENCIES.json 与 requirements-lock.txt。离线依赖解包 ZIP、原始 wheels、Python 运行时、上游源码和许可证随各自设备包提供。rc.1 已随耳机独立包提供 Equalizer APO 1.4.2 官方 x64 安装器与对应官方完整源码，SHA256 均与 SourceForge 发布元数据一致；SOURCE.json 记录来源、版本及哈希。原有轮廓 SVG 为项目原创；handoff.2 新增五张用户提供的透明 PNG，保留原始文件字节并在 ARTWORK.json 记录尺寸和哈希。品牌图像版权归原权利人，不属于代码 MIT 许可。
 
 ---

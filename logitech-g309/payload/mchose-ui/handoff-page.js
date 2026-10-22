@@ -10,7 +10,7 @@
   let state=null,busy=false,tab=mouse?'performance':'output',disposed=false,eqDraft=null,eqEnabled=null,eqResult=null;
   const shell=UI.shell({title:mouse?'Logitech G309':'BlackShark V2',status:'等待设备',onBack:()=>client?.back()});
   document.body.append(shell.root);
-  const banner=UI.node('div','handoff-banner','实机验收版 · '+(client?'正在读取设备':'离线设计预览，未连接设备接口'));
+  const banner=UI.node('div','handoff-banner',client?'正在读取设备':'离线设计预览，未连接设备接口');
   banner.setAttribute('role','status');shell.content.before(banner);
   const preview=UI.node('div','dc-sidebar-preview handoff-preview');
   const art=window.One4AllProductArt;
@@ -62,7 +62,7 @@
   function render(){
     shell.nav.replaceChildren();shell.tabs.replaceChildren();shell.content.replaceChildren();
     shell.status.textContent=busy?'正在应用…':state?.connected?(mouse?(state.transport==='lightspeed'?'LIGHTSPEED · 已连接':'蓝牙 · 已连接'):'USB 声卡 · 已连接'):'未连接';
-    banner.textContent=window.__one4allVisualFixture?'视觉测试样本（非实机）':client?'实机验收版 · '+(state?.sampledAt?'更新于 '+new Date(state.sampledAt).toLocaleTimeString():'等待设备响应'):'离线设计预览，未连接设备接口';
+    banner.textContent=window.__one4allVisualFixture?'视觉测试样本（非实机）':client?(state?.sampledAt?'更新于 '+new Date(state.sampledAt).toLocaleTimeString():'等待设备响应'):'离线设计预览，未连接设备接口';
     errorBox.textContent=failure||state?.error||'';errorBox.hidden=!errorBox.textContent;
     for(const [key,label] of options)shell.nav.append(UI.navButton({id:key,label,active:tab===key,onSelect:()=>{tab=key;render();}}));
     const current=options.find(([key])=>key===tab)[1];
@@ -96,6 +96,7 @@
       if(!eqDraft)eqDraft=[...(state?.eq?.gains||Array(10).fill(0))];
       if(eqEnabled===null)eqEnabled=!!state?.eq?.enabledConfiguration;
       c.append(note('独立开源 EQ 选项，不是雷蛇原生 EQ。未选择并安装引擎时，只生成配置，不改变声音。'));
+      if(!state?.eq?.configured)c.append(note('首次启用：运行耳机安装包中的 Install-EQ.cmd，选择 BlackShark USB 输出设备，再回到这里保存曲线。'));
       if(state?.eq?.error)c.append(note('可选 EQ 状态异常：'+state.eq.error));
       const grid=UI.node('div','handoff-eq-grid');
       frequencies.forEach((frequency,index)=>{

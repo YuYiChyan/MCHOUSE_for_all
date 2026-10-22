@@ -1,6 +1,6 @@
 {
   "name": "@mchouse-for-all/kit",
-  "version": "0.2.0-handoff.2",
+  "version": "0.2.0",
   "description": "Reusable device UI, explicit frontend bridges and MCHOSE injection source",
   "main": "bridge/adapter.cjs",
   "types": "contracts/adapter.d.ts",

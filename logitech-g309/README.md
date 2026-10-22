@@ -1,6 +1,6 @@
-# Logitech G309 · 交接验收包
+# Logitech G309
 
-接收方：**肥鱼（DSH）**。阶段：前端与协议适配已实现，黑／白透明贴图已接入，尚无 G309 实机验收。此包属于 `v0.2.0-handoff.2` 预发布，不代表 Windows 硬件兼容性已经确认。
+版本：**0.2.0**。设备基础功能经对方验证，项目主人已在 App 内完成视觉验收并授权发布；见 [验收记录](../docs/ACCEPTANCE-0.2.0.md)。黑／白透明贴图、配色切换与保存已接入。
 
 先读 [HANDOFF.md](HANDOFF.md)，再查看 [design/SPEC.md](design/SPEC.md)。前端可直接打开 `payload/g309.html`，离线时不显示伪造设备数据。
 

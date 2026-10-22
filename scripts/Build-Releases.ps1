@@ -5,6 +5,7 @@ if(-not $Version){$Version=(Get-Content -LiteralPath (Join-Path $root 'library/p
 if(-not $OutputDirectory){$OutputDirectory=Join-Path $root ('dist/v'+$Version)}
 $OutputDirectory=[IO.Path]::GetFullPath($OutputDirectory)
 [IO.Directory]::CreateDirectory($OutputDirectory)|Out-Null
+Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 function Hash-File($Path){
   $stream=[IO.File]::OpenRead($Path);$algorithm=[Security.Cryptography.SHA256]::Create()
@@ -23,12 +24,17 @@ function Write-Package($Destination,$Files){
   if(Test-Path -LiteralPath $Destination){Remove-Item -LiteralPath $Destination -Force}
   $zip=[IO.Compression.ZipFile]::Open($Destination,[IO.Compression.ZipArchiveMode]::Create)
   try{
-    foreach($file in $Files | Sort-Object archive -Unique){
+    # Windows PowerShell 5.1 does not sort hashtable keys as object properties.
+    # Deduplicate by the actual archive path before sorting string keys.
+    $byArchive=@{}
+    foreach($file in $Files){$byArchive[[string]$file.archive]=$file}
+    foreach($archivePath in @($byArchive.Keys | Sort-Object)){
+      $file=$byArchive[$archivePath]
       [IO.Compression.ZipFileExtensions]::CreateEntryFromFile($zip,$file.source,$file.archive,[IO.Compression.CompressionLevel]::Optimal)|Out-Null
     }
   }finally{$zip.Dispose()}
 }
-$docs=@('.gitignore','THIRD_PARTY.md','VALIDATION.md','CONTRIBUTING.md','docs/DEVELOPMENT.md','docs/PACKAGING.md','handoff/README.md','handoff/acceptance.example.json')
+$docs=@('.gitignore','THIRD_PARTY.md','VALIDATION.md','CONTRIBUTING.md','docs/DEVELOPMENT.md','docs/PACKAGING.md','docs/ACCEPTANCE-0.2.0.md','handoff/README.md','handoff/acceptance.example.json')
 $common=@($docs | ForEach-Object {@{source=(Join-Path $root $_);archive=$_}})
 $artifacts=@()
 $devices=Get-Content -LiteralPath (Join-Path $root 'devices.json') -Raw -Encoding UTF8 | ConvertFrom-Json

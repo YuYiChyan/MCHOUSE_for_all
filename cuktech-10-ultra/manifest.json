@@ -1,234 +1,234 @@
 {
-  "id": "charger",
-  "title": "CUKTECH 10 Ultra",
-  "version": "0.2.0-handoff.2",
-  "files": [
-    {
-      "path": "payload/cards.js",
-      "sha256": "d730c46b5ef5c5aa44c474d26bdacb2a2d5a832833a846b2700eeeb7033dcbaa"
-    },
-    {
-      "path": "payload/charger-credentials.cjs",
-      "sha256": "761a13f5a493e0b72fa4333b1ad5d1d544b37f7ae8b1d77985e7a79324987814"
-    },
-    {
-      "path": "payload/charger-page.js",
-      "sha256": "c80d4eb1e5957a5d499d56499e4d09aa7cc49b05aea9641d04e30c6a3289374b"
-    },
-    {
-      "path": "payload/charger-preload.cjs",
-      "sha256": "4e9942f8f4d221ea915167dba4c9788d77d4ca2d0ee1fa3f6c13e83249394207"
-    },
-    {
-      "path": "payload/charger-service.cjs",
-      "sha256": "990478d6c38abbadb88982a641fb635cd90479ea2c5a17b5ee414bb1c284cd19"
-    },
-    {
-      "path": "payload/charger.css",
-      "sha256": "a53525eafaaa0698f50fdf087ba18d5574ba848f5f36e960f260a4e5798d3e62"
-    },
-    {
-      "path": "payload/charger.html",
-      "sha256": "a620539f83b866a709fe72ad4c366e9a4459404291226d2ee36bc4b2ae463e2d"
-    },
-    {
-      "path": "payload/cuktech/backend.py",
-      "sha256": "7256b83015cba5725d2a8512545216003c2ff83b4ed02d9db039c070c00341c3"
-    },
-    {
-      "path": "payload/cuktech/upstream/bemfa_client.py",
-      "sha256": "46f834ab802e4472b87bc658d56d9cfe4a6157af36bfefa50442dbc6ccf99c97"
-    },
-    {
-      "path": "payload/cuktech/upstream/ble_manager.py",
-      "sha256": "01e7a36b75b833eb1baeea4d6fb7aee84d4bd70679eb357718cbe5f1f831e347"
-    },
-    {
-      "path": "payload/cuktech/upstream/config.py",
-      "sha256": "8e32a813f10978db76ed6e73ef4c78d79d892de53dc1dffc6a927d4048877d45"
-    },
-    {
-      "path": "payload/cuktech/upstream/config.yaml.example",
-      "sha256": "db5c5c13f80497d2764f43fe5ffcf7116462e171912dc53540b0dd6951bb0543"
-    },
-    {
-      "path": "payload/cuktech/upstream/downsample.py",
-      "sha256": "40fd2bcadee2258a3163bb4b9ed00567dd364a57ea64bcd76cae19acf64ef866"
-    },
-    {
-      "path": "payload/cuktech/upstream/energy.py",
-      "sha256": "1e4d793d0a7b4ba0eccdeb6288ede01481d0c52f43a321a8e8a876b9a5c0e155"
-    },
-    {
-      "path": "payload/cuktech/upstream/ha_server.py",
-      "sha256": "45b70b281b2693257ef49a91eff1412969258991762b86b1370b8a3728ff2864"
-    },
-    {
-      "path": "payload/cuktech/upstream/history.py",
-      "sha256": "417acfbf4492b75759cc18a6e0dafaef814e16d823a8dee26eb775dbb509ff90"
-    },
-    {
-      "path": "payload/cuktech/upstream/pyproject.toml",
-      "sha256": "91ccb3d16e209199724c2d6c25969ac3d73ed169b790933e8e01ba8ac9cb602d"
-    },
-    {
-      "path": "payload/cuktech/upstream/README.md",
-      "sha256": "09663744f32116e37a0de5096a0e3c89b6b8d4233576293f679390520416023c"
-    },
-    {
-      "path": "payload/cuktech/upstream/REFERENCE-LICENSE",
-      "sha256": "41090dea48650f3a7ac670d50da30f765cfe0ba47aa5508301fe35ac277ed06c"
-    },
-    {
-      "path": "payload/cuktech/upstream/requirements.txt",
-      "sha256": "70f2cb4430cd3447909f23bca032bb2032a139e9833317f041f8fdc1f2d9a0be"
-    },
-    {
-      "path": "payload/cuktech/upstream/src/cuktech_ble/cli.py",
-      "sha256": "0fa5270456cf8a577a8834ac3db3cd4d7f4ecbae67872f65179a5fd66a1b6e3f"
-    },
-    {
-      "path": "payload/cuktech/upstream/src/cuktech_ble/controller.py",
-      "sha256": "d479d0fef55e40faa4cc725cf4353ae2d4a0ec0497fc9eabf5cbc67858e04fac"
-    },
-    {
-      "path": "payload/cuktech/upstream/src/cuktech_ble/protocol.py",
-      "sha256": "fcf3b8f63b8102031e80b2c20d672fb632cef379ca9034de6fc7f285f8a69d70"
-    },
-    {
-      "path": "payload/cuktech/upstream/src/cuktech_ble/__init__.py",
-      "sha256": "2ed98c8daa7bcc600319ed46cb26d35fbe0d8cb951f50f96631887e8ad869a14"
-    },
-    {
-      "path": "payload/cuktech/upstream/state.py",
-      "sha256": "601935054cf734c2eb920746baaeac1bce8c5ddab9ebaa3ee48a004683322c0d"
-    },
-    {
-      "path": "payload/cuktech/upstream/state_protocol_v2.py",
-      "sha256": "9ccb641422367232fc4ec4d8d4346f593a65a0d369f4eacf5b18d275fc795a2e"
-    },
-    {
-      "path": "payload/cuktech/upstream/UPSTREAM.json",
-      "sha256": "d93c79a7b3ed086c960cfe4fa29d7d9239c3c367d2c61d72126fe7fa8668363b"
-    },
-    {
-      "path": "payload/cuktech/upstream/xiaomi_cloud.py",
-      "sha256": "f7ec63da831b8515e72cc0d7cf13e7f9a9cc9f0c0ab5a7e5eccceb693cc0a2ca"
-    },
-    {
-      "path": "payload/host.cjs",
-      "sha256": "a6177ac67998d6b593ca8a5fec08d1f46b0114f281160f1ea46423eca9422dbe"
-    },
-    {
-      "path": "payload/local-server.cjs",
-      "sha256": "3cf4b25e36007b29f5cd8ea08d33adb160c223132c37276c8d7fbe62f2e55815"
-    },
-    {
-      "path": "payload/main-preload.cjs",
-      "sha256": "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
-    },
-    {
-      "path": "payload/mchose-ui/mchose-ui.css",
-      "sha256": "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
-    },
-    {
-      "path": "payload/mchose-ui/razer-theme.css",
-      "sha256": "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
-    },
-    {
-      "path": "payload/native-cards.js",
-      "sha256": "213df9d108b48df32ef5b085a25ee2859d9d2b5afaa0d095f81dc00a2e138278"
-    },
-    {
-      "path": "payload/product-assets/cuktech-10-ultra-black.png",
-      "sha256": "446ea76a1cdcf2b67eb84003d446ad5d20e48636a33eb989996c57ca6eabc82b"
-    },
-    {
-      "path": "payload/product-assets/cuktech-10-ultra.png",
-      "sha256": "5d6a0b8576211717a31fa8ddd4b06841be24b1c9174aa1ed89091940eb0cca3a"
-    },
-    {
-      "path": "vendor/charger-deps.zip",
-      "sha256": "2954eec6f3d6a4d62b2bbc6346d53e506970320cb2cd2de8cf549250c939bf68"
-    },
-    {
-      "path": "vendor/python-3.13.16-win64.zip",
-      "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
-    },
-    {
-      "path": "payload/mchose-ui/components.js",
-      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
-    },
-    {
-      "path": "payload/mchose-ui/device-client.js",
-      "sha256": "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
-    }
-  ],
-  "bundles": [
-    {
-      "path": "vendor/charger-deps.zip",
-      "destination": "cuktech/python-deps"
-    },
-    {
-      "path": "vendor/python-3.13.16-win64.zip",
-      "destination": "python"
-    }
-  ],
-  "assets": [
-    {
-      "path": "tank68-local/static/fonts/mchose/MiSans-Regular.woff2",
-      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Regular.woff2",
-      "sha256": "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d"
-    },
-    {
-      "path": "tank68-local/static/fonts/mchose/MiSans-Semibold.woff2",
-      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Semibold.woff2",
-      "sha256": "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6"
-    },
-    {
-      "path": "tank68-local/static/fonts/mchose/MiSans-Bold.woff2",
-      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Bold.woff2",
-      "sha256": "1c5a7515b61bc82baaa2e2c2fdae2032479fb9a99e09d4d021dc17314fc5939b"
-    }
-  ],
-  "pluginFiles": [
-    "cards.js",
-    "charger-credentials.cjs",
-    "charger-page.js",
-    "charger-preload.cjs",
-    "charger-service.cjs",
-    "charger.css",
-    "charger.html",
-    "cuktech/backend.py",
-    "cuktech/upstream/bemfa_client.py",
-    "cuktech/upstream/ble_manager.py",
-    "cuktech/upstream/config.py",
-    "cuktech/upstream/config.yaml.example",
-    "cuktech/upstream/downsample.py",
-    "cuktech/upstream/energy.py",
-    "cuktech/upstream/ha_server.py",
-    "cuktech/upstream/history.py",
-    "cuktech/upstream/pyproject.toml",
-    "cuktech/upstream/README.md",
-    "cuktech/upstream/REFERENCE-LICENSE",
-    "cuktech/upstream/requirements.txt",
-    "cuktech/upstream/src/cuktech_ble/cli.py",
-    "cuktech/upstream/src/cuktech_ble/controller.py",
-    "cuktech/upstream/src/cuktech_ble/protocol.py",
-    "cuktech/upstream/src/cuktech_ble/__init__.py",
-    "cuktech/upstream/state.py",
-    "cuktech/upstream/state_protocol_v2.py",
-    "cuktech/upstream/UPSTREAM.json",
-    "cuktech/upstream/xiaomi_cloud.py",
-    "host.cjs",
-    "local-server.cjs",
-    "main-preload.cjs",
-    "mchose-ui/mchose-ui.css",
-    "mchose-ui/razer-theme.css",
-    "native-cards.js",
-    "product-assets/cuktech-10-ultra-black.png",
-    "product-assets/cuktech-10-ultra.png",
-    "mchose-ui/components.js",
-    "mchose-ui/device-client.js"
-  ]
+    "id":  "charger",
+    "title":  "CUKTECH 10 Ultra",
+    "version":  "0.2.0",
+    "files":  [
+                  {
+                      "path":  "payload/cards.js",
+                      "sha256":  "d730c46b5ef5c5aa44c474d26bdacb2a2d5a832833a846b2700eeeb7033dcbaa"
+                  },
+                  {
+                      "path":  "payload/charger-credentials.cjs",
+                      "sha256":  "761a13f5a493e0b72fa4333b1ad5d1d544b37f7ae8b1d77985e7a79324987814"
+                  },
+                  {
+                      "path":  "payload/charger-page.js",
+                      "sha256":  "c80d4eb1e5957a5d499d56499e4d09aa7cc49b05aea9641d04e30c6a3289374b"
+                  },
+                  {
+                      "path":  "payload/charger-preload.cjs",
+                      "sha256":  "4e9942f8f4d221ea915167dba4c9788d77d4ca2d0ee1fa3f6c13e83249394207"
+                  },
+                  {
+                      "path":  "payload/charger-service.cjs",
+                      "sha256":  "990478d6c38abbadb88982a641fb635cd90479ea2c5a17b5ee414bb1c284cd19"
+                  },
+                  {
+                      "path":  "payload/charger.css",
+                      "sha256":  "a53525eafaaa0698f50fdf087ba18d5574ba848f5f36e960f260a4e5798d3e62"
+                  },
+                  {
+                      "path":  "payload/charger.html",
+                      "sha256":  "a620539f83b866a709fe72ad4c366e9a4459404291226d2ee36bc4b2ae463e2d"
+                  },
+                  {
+                      "path":  "payload/cuktech/backend.py",
+                      "sha256":  "7256b83015cba5725d2a8512545216003c2ff83b4ed02d9db039c070c00341c3"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/bemfa_client.py",
+                      "sha256":  "46f834ab802e4472b87bc658d56d9cfe4a6157af36bfefa50442dbc6ccf99c97"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/ble_manager.py",
+                      "sha256":  "01e7a36b75b833eb1baeea4d6fb7aee84d4bd70679eb357718cbe5f1f831e347"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/config.py",
+                      "sha256":  "8e32a813f10978db76ed6e73ef4c78d79d892de53dc1dffc6a927d4048877d45"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/config.yaml.example",
+                      "sha256":  "db5c5c13f80497d2764f43fe5ffcf7116462e171912dc53540b0dd6951bb0543"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/downsample.py",
+                      "sha256":  "40fd2bcadee2258a3163bb4b9ed00567dd364a57ea64bcd76cae19acf64ef866"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/energy.py",
+                      "sha256":  "1e4d793d0a7b4ba0eccdeb6288ede01481d0c52f43a321a8e8a876b9a5c0e155"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/ha_server.py",
+                      "sha256":  "45b70b281b2693257ef49a91eff1412969258991762b86b1370b8a3728ff2864"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/history.py",
+                      "sha256":  "417acfbf4492b75759cc18a6e0dafaef814e16d823a8dee26eb775dbb509ff90"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/pyproject.toml",
+                      "sha256":  "91ccb3d16e209199724c2d6c25969ac3d73ed169b790933e8e01ba8ac9cb602d"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/README.md",
+                      "sha256":  "09663744f32116e37a0de5096a0e3c89b6b8d4233576293f679390520416023c"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/REFERENCE-LICENSE",
+                      "sha256":  "41090dea48650f3a7ac670d50da30f765cfe0ba47aa5508301fe35ac277ed06c"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/requirements.txt",
+                      "sha256":  "70f2cb4430cd3447909f23bca032bb2032a139e9833317f041f8fdc1f2d9a0be"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/src/cuktech_ble/cli.py",
+                      "sha256":  "0fa5270456cf8a577a8834ac3db3cd4d7f4ecbae67872f65179a5fd66a1b6e3f"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/src/cuktech_ble/controller.py",
+                      "sha256":  "d479d0fef55e40faa4cc725cf4353ae2d4a0ec0497fc9eabf5cbc67858e04fac"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/src/cuktech_ble/protocol.py",
+                      "sha256":  "fcf3b8f63b8102031e80b2c20d672fb632cef379ca9034de6fc7f285f8a69d70"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/src/cuktech_ble/__init__.py",
+                      "sha256":  "2ed98c8daa7bcc600319ed46cb26d35fbe0d8cb951f50f96631887e8ad869a14"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/state.py",
+                      "sha256":  "601935054cf734c2eb920746baaeac1bce8c5ddab9ebaa3ee48a004683322c0d"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/state_protocol_v2.py",
+                      "sha256":  "9ccb641422367232fc4ec4d8d4346f593a65a0d369f4eacf5b18d275fc795a2e"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/UPSTREAM.json",
+                      "sha256":  "d93c79a7b3ed086c960cfe4fa29d7d9239c3c367d2c61d72126fe7fa8668363b"
+                  },
+                  {
+                      "path":  "payload/cuktech/upstream/xiaomi_cloud.py",
+                      "sha256":  "f7ec63da831b8515e72cc0d7cf13e7f9a9cc9f0c0ab5a7e5eccceb693cc0a2ca"
+                  },
+                  {
+                      "path":  "payload/host.cjs",
+                      "sha256":  "a6177ac67998d6b593ca8a5fec08d1f46b0114f281160f1ea46423eca9422dbe"
+                  },
+                  {
+                      "path":  "payload/local-server.cjs",
+                      "sha256":  "3cf4b25e36007b29f5cd8ea08d33adb160c223132c37276c8d7fbe62f2e55815"
+                  },
+                  {
+                      "path":  "payload/main-preload.cjs",
+                      "sha256":  "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
+                  },
+                  {
+                      "path":  "payload/mchose-ui/mchose-ui.css",
+                      "sha256":  "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
+                  },
+                  {
+                      "path":  "payload/mchose-ui/razer-theme.css",
+                      "sha256":  "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
+                  },
+                  {
+                      "path":  "payload/native-cards.js",
+                      "sha256":  "213df9d108b48df32ef5b085a25ee2859d9d2b5afaa0d095f81dc00a2e138278"
+                  },
+                  {
+                      "path":  "payload/product-assets/cuktech-10-ultra-black.png",
+                      "sha256":  "446ea76a1cdcf2b67eb84003d446ad5d20e48636a33eb989996c57ca6eabc82b"
+                  },
+                  {
+                      "path":  "payload/product-assets/cuktech-10-ultra.png",
+                      "sha256":  "5d6a0b8576211717a31fa8ddd4b06841be24b1c9174aa1ed89091940eb0cca3a"
+                  },
+                  {
+                      "path":  "vendor/charger-deps.zip",
+                      "sha256":  "2954eec6f3d6a4d62b2bbc6346d53e506970320cb2cd2de8cf549250c939bf68"
+                  },
+                  {
+                      "path":  "vendor/python-3.13.16-win64.zip",
+                      "sha256":  "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+                  },
+                  {
+                      "path":  "payload/mchose-ui/components.js",
+                      "sha256":  "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+                  },
+                  {
+                      "path":  "payload/mchose-ui/device-client.js",
+                      "sha256":  "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
+                  }
+              ],
+    "bundles":  [
+                    {
+                        "path":  "vendor/charger-deps.zip",
+                        "destination":  "cuktech/python-deps"
+                    },
+                    {
+                        "path":  "vendor/python-3.13.16-win64.zip",
+                        "destination":  "python"
+                    }
+                ],
+    "assets":  [
+                   {
+                       "path":  "tank68-local/static/fonts/mchose/MiSans-Regular.woff2",
+                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Regular.woff2",
+                       "sha256":  "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d"
+                   },
+                   {
+                       "path":  "tank68-local/static/fonts/mchose/MiSans-Semibold.woff2",
+                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Semibold.woff2",
+                       "sha256":  "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6"
+                   },
+                   {
+                       "path":  "tank68-local/static/fonts/mchose/MiSans-Bold.woff2",
+                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Bold.woff2",
+                       "sha256":  "1c5a7515b61bc82baaa2e2c2fdae2032479fb9a99e09d4d021dc17314fc5939b"
+                   }
+               ],
+    "pluginFiles":  [
+                        "cards.js",
+                        "charger-credentials.cjs",
+                        "charger-page.js",
+                        "charger-preload.cjs",
+                        "charger-service.cjs",
+                        "charger.css",
+                        "charger.html",
+                        "cuktech/backend.py",
+                        "cuktech/upstream/bemfa_client.py",
+                        "cuktech/upstream/ble_manager.py",
+                        "cuktech/upstream/config.py",
+                        "cuktech/upstream/config.yaml.example",
+                        "cuktech/upstream/downsample.py",
+                        "cuktech/upstream/energy.py",
+                        "cuktech/upstream/ha_server.py",
+                        "cuktech/upstream/history.py",
+                        "cuktech/upstream/pyproject.toml",
+                        "cuktech/upstream/README.md",
+                        "cuktech/upstream/REFERENCE-LICENSE",
+                        "cuktech/upstream/requirements.txt",
+                        "cuktech/upstream/src/cuktech_ble/cli.py",
+                        "cuktech/upstream/src/cuktech_ble/controller.py",
+                        "cuktech/upstream/src/cuktech_ble/protocol.py",
+                        "cuktech/upstream/src/cuktech_ble/__init__.py",
+                        "cuktech/upstream/state.py",
+                        "cuktech/upstream/state_protocol_v2.py",
+                        "cuktech/upstream/UPSTREAM.json",
+                        "cuktech/upstream/xiaomi_cloud.py",
+                        "host.cjs",
+                        "local-server.cjs",
+                        "main-preload.cjs",
+                        "mchose-ui/mchose-ui.css",
+                        "mchose-ui/razer-theme.css",
+                        "native-cards.js",
+                        "product-assets/cuktech-10-ultra-black.png",
+                        "product-assets/cuktech-10-ultra.png",
+                        "mchose-ui/components.js",
+                        "mchose-ui/device-client.js"
+                    ]
 }

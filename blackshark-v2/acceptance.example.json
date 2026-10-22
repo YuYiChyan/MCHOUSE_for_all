@@ -1,7 +1,7 @@
 {
   "device": "g309 or blackshark",
   "recipient": "肥鱼（DSH）",
-  "release": "v0.2.0-handoff.2",
+  "release": "v0.2.0",
   "osVersion": "fill in",
   "mchoseVersion": "fill in",
   "driverOrFirmwareVersion": "fill in",

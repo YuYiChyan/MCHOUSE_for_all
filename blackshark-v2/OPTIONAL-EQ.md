@@ -4,9 +4,9 @@
 
 ## 启用路径
 
-1. 使用 [Equalizer APO 官方 1.4.2 文件目录](https://sourceforge.net/projects/equalizerapo/files/1.4.2/)中的 x64 安装器，检查来源。下载器本次返回 403，交接包未混入第三方镜像的安装器。另提供固定官方源码快照、GPL 许可证与哈希；源码包不是预编译引擎。
-2. 由设备主人决定安装，在 Device Selector 中仅选择 BlackShark 的 USB **输出**端点，按工具要求完成音频服务重启或系统重启。本卡片不偷偷安装 APO，也不设置其他默认播放设备。
-3. 在管理员 PowerShell 中，以该用户的 StateRoot 运行本包 `Optional-EQ.ps1 -Action Enable -ConfigDirectory 'C:\Program Files\EqualizerAPO\config' -StateRoot (Join-Path $env:USERPROFILE 'One4All')`。不同安装路径必须据实传入。若提权使用另一管理员账号，StateRoot 必须明确指向原用户目录。
+1. 耳机独立包现已携带 [Equalizer APO 官方 1.4.2](https://sourceforge.net/projects/equalizerapo/files/1.4.2/) x64 安装器、对应版本完整源码和 GPL 许可，无需另行下载。`optional-eq/SOURCE.json` 记录官方来源及官方公布的 SHA256；安装入口先校验文件。
+2. 安装耳机卡片后，按需运行 `Install-EQ.cmd`。它申请管理员权限，打开原始安装器。在 Device Selector 中仅选择 BlackShark USB **输出**端点，按工具要求完成音频服务重启或系统重启。
+3. 安装完成后，入口自动调用配置桥接，默认读取 `C:\Program Files\EqualizerAPO\config`，并保持 EQ 旁路，直到你在 App 内保存曲线。自定义引擎位置可用 `Install-EQ.ps1 -ConfigDirectory '实际目录\config'`；已有引擎也可直接使用 `Optional-EQ.ps1 -Action Enable -ConfigDirectory '实际目录\config' -StateRoot (Join-Path $env:USERPROFILE 'One4All')`。提权前会保留当前用户的 StateRoot。
 4. 脚本备份原 config.txt，仅追加有标记的 Include；创建 `One4All-BlackShark-V2` 子目录，仅赋予当前操作者对该目录的修改权限。不会扩大整个 Equalizer APO 目录权限。
 5. 回到卡片，读取状态，勾选「在生成的配置中启用 EQ」并保存。参数被限制在 ±12dB，自动按最大正增益加预衰减；后端以匹配 USB 设备的输出端点 GUID 约束 `If` 条件，只在 post-mix 阶段处理，不影响话筒。
 

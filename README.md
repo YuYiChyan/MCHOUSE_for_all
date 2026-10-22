@@ -1,23 +1,23 @@
 # MCHOUSE_for_all
 
-> 本分支是 G309／有线 BlackShark V2 的实机交接预发布；请见文末下载表与 handoff/README.md，稳定版仍为 v0.1.1。
+让不同品牌的设备使用同一套 MCHOSE HUB 卡片和设置界面。当前版本 **0.2.0**：G309 与有线 BlackShark V2 已完成开发，设备基础功能经对方验证，App 视觉由项目主人验收，现纳入主分支。详细范围见 [验收记录](docs/ACCEPTANCE-0.2.0.md) 和 [验证记录](VALIDATION.md)。
 
-让不同品牌的设备使用同一套 MCHOSE HUB 卡片和设置界面。TANK68 HE、Razer Viper Mini SE 和 CUKTECH 10 Ultra 是三种接入路线的示范：网页驱动、厂商私有协议、蓝牙。共用设计语言、控件、前端接口和注入源码已整理为 [One4All Kit 开发库](library)。
-
-| 按设备独立下载 | 接入路线 | 解压后运行 |
+| 按设备独立下载 | 接入方式 | 源码 |
 | --- | --- | --- |
-| [TANK68 HE 安装包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.1.1/tank68-v0.1.1-win64.zip) · [源码](tank68) | USB 磁轴键盘，保留原厂网页控件 | tank68/Install.cmd |
-| [Razer Viper Mini SE 安装包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.1.1/razer-mini-se-v0.1.1-win64.zip) · [源码](razer-mini-se) | 厂商私有 USB/HID 协议，复用 openrazer-win | razer-mini-se/Install.cmd |
-| [CUKTECH 10 Ultra 安装包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.1.1/cuktech-10-ultra-v0.1.1-win64.zip) · [源码](cuktech-10-ultra) | BLE 蓝牙，复用开源 CUKTECH 控制器 | cuktech-10-ultra/Install.cmd |
-| [One4All Kit 开发库](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.1.1/one4all-kit-v0.1.1.zip) · [说明](library) | 共用样式、控件、接口、网页桥接与打包注入源码 | 供开发者复用，无需安装到设备 |
+| [TANK68 HE](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/tank68-v0.2.0-win64.zip) | 网页驱动 / USB 磁轴键盘 | [tank68](tank68) |
+| [Razer Viper Mini SE](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/razer-mini-se-v0.2.0-win64.zip) | 私有 USB/HID 协议 | [razer-mini-se](razer-mini-se) |
+| [CUKTECH 10 Ultra](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/cuktech-10-ultra-v0.2.0-win64.zip) | BLE 蓝牙 | [cuktech-10-ultra](cuktech-10-ultra) |
+| [Logitech G309](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/logitech-g309-v0.2.0-win64.zip) | HID++ / LIGHTSPEED；蓝牙能力单独核对 | [logitech-g309](logitech-g309) |
+| [BlackShark V2 有线 USB 声卡](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-v0.2.0-win64.zip) | Core Audio；可选 Equalizer APO | [blackshark-v2](blackshark-v2) |
+| [One4All Kit 开发库](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/one4all-kit-v0.2.0.zip) | 共用设计语言、控件、前端桥接与注入源码 | [library](library) |
 
-**只下载需要的安装包即可，无需下载整个仓库，也无需先安装开发库。** 每个设备包包含运行所需的共用代码；鼠标和充电器另带 Python 与依赖。完整解压后双击对应目录的 Install.cmd。键盘首次安装自动获取原厂网页；各卡片首次安装会准备本机图标及字体。更多版本和校验文件见 [发布页](https://github.com/YuYiChyan/MCHOUSE_for_all/releases)。
+**只下载所需设备的 ZIP，完整解压后运行该设备目录内的 Install.cmd。无需下载整个仓库、安装开发环境或另装开发库。** 每包自带共用代码；需要 Python 的设备带离线运行时、依赖、源码及许可。所有下载与 SHA256 见 [发布页](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/tag/v0.2.0)。
 
-每个项目有 Install、Repair、Uninstall 三个入口。更新恢复任务在应用关闭后修复被覆盖的加载入口；绑定、依赖和项目文件存放在官方更新目录之外。无需修改硬件固件。
+G309 提供黑／白贴图，BlackShark 提供黑／绿／白贴图，首页与设置页同步配色并保存选择，支持列表／网格及亮暗主题。BlackShark 基础音量、麦克风与静音控制无需雷云；十段 EQ 页面已接入独立开源引擎 Equalizer APO。耳机包现已包含其官方安装器、对应源码和许可，按需运行 Install-EQ.cmd，选择目标 USB 输出后在 App 内调节。也可[单独下载 EQ 套件](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-optional-eq-v0.2.0.zip)，基础卡片不要求启用 EQ。
 
-**状态：0.1.1，非官方扩展。** 目前适配资源解包存放的 Windows x64 MCHOSE HUB，厂商更改 DOM、页面地址或打包结构后可能需要调整。验证范围见 [VALIDATION.md](VALIDATION.md)。本仓库不包含账号凭据、原厂主程序或原厂驱动压缩 JS/CSS。
+每包提供 Install、Repair、Uninstall。更新恢复任务在 App 关闭后修复加载入口；扩展与绑定数据放在官方更新目录之外。仅取消某张卡片时不影响其他卡片，最后卸载恢复原厂入口。首次安装键盘会下载原厂网页，图标与字体从本机安装及公开厂商资源准备。
 
-项目原创代码默认 MIT；鼠标项目及其 openrazer-win 依赖按该子目录 GPL-2.0-or-later 许可。第三方包、商标、商品图及厂商资源遵循各自权利和许可证，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+非官方扩展，目前支持资源解包存放的 Windows x64 MCHOSE HUB。厂商改变页面、协议或打包结构后可能需要适配。项目不含账号凭据、原厂主程序或原厂网页压缩 JS/CSS。原创公共代码默认 MIT；设备与第三方协议源码遵循各子项目许可，详见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
 ## 开发思路：把设备接入同一套界面
 
@@ -76,7 +76,7 @@ flowchart LR
 ```powershell
 .\scripts\Sync-Library.ps1
 .\tests\Verify-Packages.ps1
-.\scripts\Build-Releases.ps1 -Version 0.1.1
+.\scripts\Build-Releases.ps1 -Version 0.2.0
 ```
 
 完整步骤、依赖离线打包和新增设备发布约定见 [打包与注入指南](docs/PACKAGING.md)。
@@ -84,17 +84,7 @@ flowchart LR
 ## 欢迎添加其他品牌的设备安装包
 
 非常欢迎大家为这个库贡献其他品牌、其他设备类型的独立安装包，也欢迎完善共用控件和接入接口。可以先提 Issue 交流设备型号、已有网页驱动或开源控制器，再通过 PR 添加示范、测试记录和单独下载入口。具体步骤见 [CONTRIBUTING.md](CONTRIBUTING.md)。
-# 新设备交接分支：肥鱼（DSH）接收
 
-本分支增加 **Logitech G309** 与 **有线 BlackShark V2 原配 USB 声卡**的前端、协议／系统接口与独立注入包。阶段为 `v0.2.0-handoff.2` 预发布；尚未完成这两款设备的实机调试与验收。原正式发行版仍见 v0.1.1。
+## G309 与 BlackShark 的实现和维护
 
-| 项目 | 独立下载 | 接收文档 |
-| --- | --- | --- |
-| Logitech G309 | [Win64 交接包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.2/logitech-g309-v0.2.0-handoff.2-win64.zip) | [实现、注入与清单](logitech-g309/HANDOFF.md) |
-| BlackShark V2 USB 声卡 | [Win64 交接包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.2/blackshark-v2-v0.2.0-handoff.2-win64.zip) | [实现、注入与清单](blackshark-v2/HANDOFF.md) |
-| 可选 Equalizer APO | [固定源码与许可](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.2/blackshark-v2-optional-eq-v0.2.0-handoff.2.zip) | [选择、启用和撤销](blackshark-v2/OPTIONAL-EQ.md) |
-| 共用开发库 | [Kit](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0-handoff.2/one4all-kit-v0.2.0-handoff.2.zip) | [肥鱼交接入口](handoff/README.md) |
-
-两款设备包已经包含各自 Python 运行时、必要依赖、前端、注入／修复／卸载脚本、用户提供的五张透明贴图、配色切换与结构化视觉规格。BlackShark 基础功能不依赖雷云；THX 原生声场控制尚无已验证接口。可选 EQ 的页面和配置适配已实现，默认只导出，安装音频引擎由接收方选择。可选源码包不含安装器；官方镜像本次下载返回 403，文档给出了官方来源。
-
----
+新设备沿用共用设计语言、独立安装和显式接口白名单。协议与系统音频接口、视觉规格、注入与排错清单分别见 [G309](logitech-g309/HANDOFF.md)、[BlackShark](blackshark-v2/HANDOFF.md)；公共入口见 [handoff](handoff/README.md)。保留原交接研究资料供扩展，当前完成状态以 [0.2.0 验收记录](docs/ACCEPTANCE-0.2.0.md) 为准。THX 原生控制尚未开放，可选 EQ 的频响不在本次测量结论内。

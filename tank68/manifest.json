@@ -1,524 +1,522 @@
 {
-    "id":  "keyboard",
-    "title":  "TANK68 HE",
-    "version":  "0.2.0",
-    "files":  [
-                  {
-                      "path":  "payload/cards.js",
-                      "sha256":  "d730c46b5ef5c5aa44c474d26bdacb2a2d5a832833a846b2700eeeb7033dcbaa"
-                  },
-                  {
-                      "path":  "payload/host.cjs",
-                      "sha256":  "a6177ac67998d6b593ca8a5fec08d1f46b0114f281160f1ea46423eca9422dbe"
-                  },
-                  {
-                      "path":  "payload/keyboard-preload.cjs",
-                      "sha256":  "7a61fc1b48ffaf4b5134a432efe74ded995b810ea9ee2d81dc41c079274cca37"
-                  },
-                  {
-                      "path":  "payload/local-server.cjs",
-                      "sha256":  "3cf4b25e36007b29f5cd8ea08d33adb160c223132c37276c8d7fbe62f2e55815"
-                  },
-                  {
-                      "path":  "payload/main-preload.cjs",
-                      "sha256":  "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
-                  },
-                  {
-                      "path":  "payload/mchose-ui/mchose-ui.css",
-                      "sha256":  "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
-                  },
-                  {
-                      "path":  "payload/mchose-ui/razer-theme.css",
-                      "sha256":  "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
-                  },
-                  {
-                      "path":  "payload/native-cards.js",
-                      "sha256":  "213df9d108b48df32ef5b085a25ee2859d9d2b5afaa0d095f81dc00a2e138278"
-                  },
-                  {
-                      "path":  "payload/product-assets/tank68-black.webp",
-                      "sha256":  "34db24c40335f1dd57094522fa2ed4733a10220926719a5eb2bdbbc372f6246c"
-                  },
-                  {
-                      "path":  "payload/product-assets/tank68-purple.webp",
-                      "sha256":  "6234d6bcbbaa3b882c8668b9cc6590dd463932ed0e3f2a11bdfd912327c25fc7"
-                  },
-                  {
-                      "path":  "payload/tank68-local/index.html",
-                      "sha256":  "cdca5b71698c943bea618d5e33ae4672d9d1da1a318cf9b75d5a8e882e982555"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/mchose-shell.css",
-                      "sha256":  "4b3c9296d3639d02d1cc016f3c5fc16ac0d178086b04858a1dd468e10764b5d5"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/tank68-shell.css",
-                      "sha256":  "1935065d25e37e3998d5b25162ef0aafd600d4fce268e6f3f66b487f49f058bb"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/tank68-shell.js",
-                      "sha256":  "b96053e89778dd6a440ab52da16a506b4b403c1c7a7b202702e10b81b285d049"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/theme.js",
-                      "sha256":  "86c4f0feb3b688f66c1f146e4af7f7c602a62554eae246f55c478244e305ca05"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/vendor-bridge.js",
-                      "sha256":  "5840252b0f31534f20092e09529f829baea46f2f26b97ef71abc3a950c7675bd"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/vendor-frame.css",
-                      "sha256":  "3587bfa43496fd1570d239db038be11b5da1c80452fa93eef891e889f8244874"
-                  },
-                  {
-                      "path":  "payload/tank68-local/theme/vendor-theme-init.js",
-                      "sha256":  "0a099399ba2c377e0b77b8a5bd29c87b72fd1369ac917d65e0bec0837ff510fe"
-                  },
-                  {
-                      "path":  "payload/tank68-local/vendor.html",
-                      "sha256":  "d87e0894d71b7cff0f9ba3d2142fa3cf07df1344dceb63c2d74174d6763482ff"
-                  },
-                  {
-                      "path":  "payload/mchose-ui/components.js",
-                      "sha256":  "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
-                  },
-                  {
-                      "path":  "payload/mchose-ui/device-client.js",
-                      "sha256":  "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
-                  }
-              ],
-    "bundles":  [
-
-                ],
-    "assets":  [
-                   {
-                       "path":  "tank68-local/static/fonts/mchose/MiSans-Regular.woff2",
-                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Regular.woff2",
-                       "sha256":  "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d"
-                   },
-                   {
-                       "path":  "tank68-local/static/fonts/mchose/MiSans-Semibold.woff2",
-                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Semibold.woff2",
-                       "sha256":  "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6"
-                   },
-                   {
-                       "path":  "tank68-local/static/fonts/mchose/MiSans-Bold.woff2",
-                       "url":  "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Bold.woff2",
-                       "sha256":  "1c5a7515b61bc82baaa2e2c2fdae2032479fb9a99e09d4d021dc17314fc5939b"
-                   },
-                   {
-                       "path":  "tank68-local/static/css/app.689c0f6a.css",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/css/app.689c0f6a.css",
-                       "sha256":  "dcd42a0783d65f00394149e3a34762fd5d2282e1920fe3f34700f39e4410dbc9"
-                   },
-                   {
-                       "path":  "tank68-local/static/css/chunk-vendors.f09e744d.css",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/css/chunk-vendors.f09e744d.css",
-                       "sha256":  "0c37769530d60b49157133a8da099e87edf00de4d62d1b747059925437d4bd53"
-                   },
-                   {
-                       "path":  "tank68-local/static/fonts/element-icons.f1a45d74.ttf",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/fonts/element-icons.f1a45d74.ttf",
-                       "sha256":  "a30f5b3ba6a48822eae041e0ca5412a289125e4ba661d047dae565ac43b4a6b2"
-                   },
-                   {
-                       "path":  "tank68-local/static/fonts/element-icons.ff18efd1.woff",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/fonts/element-icons.ff18efd1.woff",
-                       "sha256":  "ab40a58972be2ceab32e7e35dab3131b959aae63835d7bda1a79ae51f9a73c17"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/de.aa556c13.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/de.aa556c13.svg",
-                       "sha256":  "ba6e2a243cb579dea5a8d9b5a87970782f708cfe7b90e82ebd9292f89daa37ab"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/en.38a1cd9c.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/en.38a1cd9c.svg",
-                       "sha256":  "c1e9f6641224d686aa854ec1b89912cb372095f11257d14314596fea358c8664"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/es-ES.fb40c038.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/es-ES.fb40c038.svg",
-                       "sha256":  "4d6752fdfbd1605c29b7bd47af4011615f868bb903068c971ca82d0cf5eef581"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/fighting67.ce131cb7.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/fighting67.ce131cb7.png",
-                       "sha256":  "8f7b6d0239bfc339f4e515adf2547b9b2204f81758d695d94455ab6da7138c73"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/fighting68.df3d131a.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/fighting68.df3d131a.png",
-                       "sha256":  "b0dd254b17d9b33d08e30b81d95ea7e8df8d23b209f8029cc7318dac067d1d37"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/fr.0e877b43.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/fr.0e877b43.svg",
-                       "sha256":  "06c38629007db9db2ca9fd821f3d8c5d56f30c9f86588e034bd070d1ea439113"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/Galaxy65.3bb1a3e9.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/Galaxy65.3bb1a3e9.png",
-                       "sha256":  "ea22fba60dfdcc7ebc33926b4b7175fb2bccee7e81546957ea22f34dba7e2e16"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/GK8156G.855f0e3f.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/GK8156G.855f0e3f.png",
-                       "sha256":  "bcd3b81d2aa89670c6ad5b7c62225e982adfe4d7968ba48a07f64203b84bb95e"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/goods_1.f92ad741.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/goods_1.f92ad741.png",
-                       "sha256":  "1025e7b4c136ac413f1531c872f40ea9feaf4095aa4049867e0a8ad669760a9b"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/goods_2.dbefca01.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/goods_2.dbefca01.png",
-                       "sha256":  "11bd57fd738064a5a0129bca0f0d72a387b3851ca4d1c4aa683fea262e2ee030"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/gs68.d630c292.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/gs68.d630c292.png",
-                       "sha256":  "bb5e8ae081d9f205a282454dd6a20e1c560dc821834ac0ea87e32e11d09c705d"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_1.8d8acaa5.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_1.8d8acaa5.png",
-                       "sha256":  "5a48f02f06f8620634ba7194db4740bf09fa96b2ac8277d3e0ec333ae266440e"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_2.83fb8ef5.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_2.83fb8ef5.png",
-                       "sha256":  "2b3459a9b343b62b4184e22f673664121beb9233506a5ffe8e3d336001b8945f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_3.cc9ef1cb.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_3.cc9ef1cb.png",
-                       "sha256":  "d90f6e07b03dbcdcf36fcae0a41b9e8ba8f3a2034ea57c6126db70c8cb9d83cf"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_4.dcf424a3.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_4.dcf424a3.png",
-                       "sha256":  "1880e5106da0e89bf78e6b642dc975ff3b3dbc780c03cc41f58508088a40794a"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_5.5dce14b8.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_5.5dce14b8.png",
-                       "sha256":  "a65c21fb3b80c6b0cb43f344572b70f829e059842b79b65a92244bead81990f8"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_6.087d078f.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_6.087d078f.png",
-                       "sha256":  "3638b03ff8a2444a856c32a36e600d10826b35c882e459e4921ebb8f71d3148f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_7.870aa86c.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_7.870aa86c.png",
-                       "sha256":  "a5c0044ff588b04aa540544bfcf7882f2f5f73c1a9254630cb8af7fdb6a9457a"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/img_8.bda6032b.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/img_8.bda6032b.png",
-                       "sha256":  "4dc7170fda5a8ce0a6fe9dff0f012a3c59de8bc2d49c7b8e2912da354153b270"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/it.5a366ed0.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/it.5a366ed0.svg",
-                       "sha256":  "e81d94d0106f2dfe6619c669c85568191732d588f6b02a5044b77c767821ea31"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/ja.17b08d2e.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/ja.17b08d2e.svg",
-                       "sha256":  "ce3d1e4c28f4fcfc35378428ef3ce11c2ae88bb046520262ff1748b470c0da16"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/k75.66d5e030.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/k75.66d5e030.png",
-                       "sha256":  "fd516866f412930489c523b6d9b496505f92031f48f85bafb09968e8ff429116"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/k980.87738402.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/k980.87738402.png",
-                       "sha256":  "ee9f93cb24e04e8ba6a89b65a6b2eb1fb3d57f2fb83c90a2abe3fdc5b9c9724d"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/kb_bg.93d6a58e.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/kb_bg.93d6a58e.png",
-                       "sha256":  "5a3634f1fb23608e17d3de2d9ce7965f94a3647b4eb5f9a8910e14237168b0fd"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/key.3c3da156.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/key.3c3da156.png",
-                       "sha256":  "a671879c7cfc074870d74d7af390e5d6e6343403411d1351e2d826f394a4592e"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/key98.c66ce3fe.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/key98.c66ce3fe.png",
-                       "sha256":  "acb125888bba447c908b1754955db2c3f287c483a995b5b6ed9ad7b7c74f43b4"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_10.2c3a58e8.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_10.2c3a58e8.png",
-                       "sha256":  "38edb063788e6987e56bb8fd13b712ea95f0fd92676e82765d94863eea6529d1"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_10@.7dc4b494.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_10@.7dc4b494.png",
-                       "sha256":  "ca2912af8041bec4ff3d6245b19b073501101687e31b92745d09dedecfee6cc5"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_11.c9d1ca4a.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_11.c9d1ca4a.png",
-                       "sha256":  "23f2382441cb358c230f70bcd69fe6f72a7cee18c4856ad963f9cf9d711ddc39"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_11@.248b02cf.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_11@.248b02cf.png",
-                       "sha256":  "58c3cda0e4f78ce94261ec24c64432fcab0361e78435e3a5b6c5623dcfe65849"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_12.c8a6ca7f.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_12.c8a6ca7f.png",
-                       "sha256":  "b5a4ef3b4faccf7218f6cbda3d671a117e7e4217fe68794b29fd76c7e26825bc"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_128.4d9c1796.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_128.4d9c1796.png",
-                       "sha256":  "d8978cc2230e76f8f1e5dfe7b404b88911ecec250dd294c6a5007b53ee892faa"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_128@.b0310008.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_128@.b0310008.png",
-                       "sha256":  "e08319e47664218caa64b0f42dabe7ec8317c0903531630d35442956a09bf4c6"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_12@.4aba735b.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_12@.4aba735b.png",
-                       "sha256":  "bcb0454bb864228c6237f3931ec734a1eb6b37f06d915a87300114e2b3858376"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_13.a99a4905.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_13.a99a4905.png",
-                       "sha256":  "ee85fad20c113a2d1adab688df6ee326aae43d2ec240837cd80d604843c20130"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_13@.5282b503.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_13@.5282b503.png",
-                       "sha256":  "0bca1d26870e01e8bec766f5adceb612bd8e8dc089c0167e25b361b08a6ed73f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_14.3bce0dc1.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_14.3bce0dc1.png",
-                       "sha256":  "62e679583404b07285834917858e55e6c94c817f48262a99181dd9e8d2e16513"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_14@.b62b53cf.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_14@.b62b53cf.png",
-                       "sha256":  "b6c00135b32d30c89663c4500ba65d711055b9294af60042b1da89a767bd6ec4"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_15.bdd2aed7.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_15.bdd2aed7.png",
-                       "sha256":  "f96e58c830ad7a105c8e5edb043e2bf8fa980523904d1467ef509fa75ae02662"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_15@.1c74fea5.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_15@.1c74fea5.png",
-                       "sha256":  "abb5f366a9c3d3cdc37ae641224b376e9ab7c4614af115a02932ff442182c32c"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_16.283e0760.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_16.283e0760.png",
-                       "sha256":  "f88ea88fc9c4f7237e6cd266eb38255e420bc1887e1ed15dccacff24b08e5df0"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_16@.297b63f3.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_16@.297b63f3.png",
-                       "sha256":  "ae90a7c2999a83b29874904c6a2134d3447c809fbda9f5367332e4e539e934dd"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_17.556774b8.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_17.556774b8.png",
-                       "sha256":  "79eea1c91f21f484de8bd4c6636c4d81fe02ce035898d8c6a0f337515eb5cef9"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_17@.920ce40c.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_17@.920ce40c.png",
-                       "sha256":  "bc0de4c0fbfda0c7258324b821edaa380c87bb713c46981af7022ae8033ea075"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_18.7255f8e9.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_18.7255f8e9.png",
-                       "sha256":  "d99205b444c433e3aeec93b05d4ad7a7a7a73f24f8130022f839b55a654902f3"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_18@.4e94f688.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_18@.4e94f688.png",
-                       "sha256":  "ee1aed1b1ba0fd999604cc5d4983a0ef1db2a5683b50359459c8ea841d3f176f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_19.e6ce19ce.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_19.e6ce19ce.png",
-                       "sha256":  "4eeca9dedd434e0cdbdd54a8a94d83cdc39ce275501d9a43d13886e1d0e7d09f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_19@.f6a460ed.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_19@.f6a460ed.png",
-                       "sha256":  "8a492654737e2e9d61db6c22cb5db95a732a791c859523fa28e73fc05cc11e92"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_2.e53bc475.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_2.e53bc475.png",
-                       "sha256":  "97ec5ae6a9bc8c9890ae45c53ec42b32e4805dde906a497d607de4c8cf40c185"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_2@.029286bf.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_2@.029286bf.png",
-                       "sha256":  "a45395715cd18d3d457ce2020e8b0911909601caf93aa6f0de00e8b3da604c78"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_3.b36b7fea.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_3.b36b7fea.png",
-                       "sha256":  "8e968a33a1a56caed8331b2cc0e865336fa0faa597b36b87fd5384f6177f72fc"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_3@.427b2a08.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_3@.427b2a08.png",
-                       "sha256":  "c1f144141811238c16b956597c152017bb7ee3bd11086a151ad16f5f89cea40f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_4.0d71a69f.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_4.0d71a69f.png",
-                       "sha256":  "aac9878379f5abbbc9cfabc490533102bde8e8e54ab55d7c00fd85a25bacc19f"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_4@.86a52777.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_4@.86a52777.png",
-                       "sha256":  "017250258d2d9c6aeb4abb042d54173c6d941b58ce7ab0dce89ab98ed3243534"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_5.23833e73.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_5.23833e73.png",
-                       "sha256":  "e237a0800f6fbaa2c99f84aacfc4f686fc99612aeb8787cbb381b367ea995267"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_5@.cb435089.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_5@.cb435089.png",
-                       "sha256":  "71c9ffeff8eb868cc02febb67b6dca0d97ba55bd22df83bebf10623d404de3d8"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_6.b402fe16.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_6.b402fe16.png",
-                       "sha256":  "7b16ab3d7d079bf6e0bbc6da2aab854a866a9f49873753668a77636953fdeb4a"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_6@.cf287d82.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_6@.cf287d82.png",
-                       "sha256":  "27585446976d18526c64fa283c0956dfd5ac798a30c89c7d70ff9e83eddaf072"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_7.7c8acd97.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_7.7c8acd97.png",
-                       "sha256":  "ddaa7ea0027f8bfd587d62ac626d8bfd15c9418c1d8ac7129de67a2b3919e668"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_7@.72859d83.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_7@.72859d83.png",
-                       "sha256":  "ead64eca3928c596d2151ce2a8560ab0480c40b6d240d5fab7da45f46963d012"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_8.c2cebe81.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_8.c2cebe81.png",
-                       "sha256":  "89cbc86150152c4b5395bd34479fb1997032492da6d7b907797395f622bf13be"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_8@.c463cae9.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_8@.c463cae9.png",
-                       "sha256":  "d357604c978ebc5be1fb7346a14d6c448aa450d7cc9b90b0fae87e7f96dc669c"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_9.dc0202a4.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_9.dc0202a4.png",
-                       "sha256":  "5583efc2b1e797d3f9d4537b9c5e53fff644f877aee8f60a1d6c069ce5903f6e"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/light_icon_9@.7389cedb.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_9@.7389cedb.png",
-                       "sha256":  "dd7cfad1113a75ff662c1b93e61b08444e16bc3b92dc3b5fde6168545cb5c9da"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/looting63.aadfddc1.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/looting63.aadfddc1.png",
-                       "sha256":  "fa9a673a08091070e533dcf3e69f9ceba78fb2cb395757228beab543d6549ffe"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/pt-BR.46418120.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/pt-BR.46418120.svg",
-                       "sha256":  "0275675207e1cbe0942575bb368bd504397c4a9647c49fb83a3ebd1db0d8aac3"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/rk762.60eb45e5.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/rk762.60eb45e5.png",
-                       "sha256":  "1142e1fedbc694d92295d041fe3b6bf89c6c9576fcfeaec2d59e7954b25aace7"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/ru.8751026a.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/ru.8751026a.svg",
-                       "sha256":  "4033e098e97df640d0a2b6a02d632ac8d084734f67ceed782e434a5273f989ab"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/si_bg.3a8f2f8c.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/si_bg.3a8f2f8c.png",
-                       "sha256":  "602f11e0f0355cd9f4ec6f755ca2c706c7862c5d7efb652f9a03171fdc58b382"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/x82_bg.0993f93c.png",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/x82_bg.0993f93c.png",
-                       "sha256":  "be394c81cb2c7e9041f88bde0af9d9ef1a07c9b4fa392937e250b54423f54ea5"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/zh-CN.f8a94f6c.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/zh-CN.f8a94f6c.svg",
-                       "sha256":  "c593f52da3c5354cdc2012b87a240ae8e350fb6b18ec97a88ff999d7297796d5"
-                   },
-                   {
-                       "path":  "tank68-local/static/img/zh-TW.df73aecc.svg",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/img/zh-TW.df73aecc.svg",
-                       "sha256":  "5be7a5abc6f6172da4af3585ad345549073e015ab6f1940b0b242d65fb975e25"
-                   },
-                   {
-                       "path":  "tank68-local/static/js/app.5ebc7dcc.js",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/js/app.5ebc7dcc.js",
-                       "sha256":  "45007b371ce9fd35aa1aeccc0b35ae7031132f36fd97a16ce131d01a2f9578f3"
-                   },
-                   {
-                       "path":  "tank68-local/static/js/chunk-vendors.9110ac86.js",
-                       "url":  "https://hub.eweadn.cn/hfd68/web/static/js/chunk-vendors.9110ac86.js",
-                       "sha256":  "54d438c7e4112c60b9b10cb40d0c79d397aac49442a359a9af989748473d5ff8"
-                   }
-               ],
-    "pluginFiles":  [
-                        "cards.js",
-                        "host.cjs",
-                        "keyboard-preload.cjs",
-                        "local-server.cjs",
-                        "main-preload.cjs",
-                        "mchose-ui/mchose-ui.css",
-                        "mchose-ui/razer-theme.css",
-                        "native-cards.js",
-                        "product-assets/tank68-black.webp",
-                        "product-assets/tank68-purple.webp",
-                        "tank68-local/index.html",
-                        "tank68-local/theme/mchose-shell.css",
-                        "tank68-local/theme/tank68-shell.css",
-                        "tank68-local/theme/tank68-shell.js",
-                        "tank68-local/theme/theme.js",
-                        "tank68-local/theme/vendor-bridge.js",
-                        "tank68-local/theme/vendor-frame.css",
-                        "tank68-local/theme/vendor-theme-init.js",
-                        "tank68-local/vendor.html",
-                        "mchose-ui/components.js",
-                        "mchose-ui/device-client.js"
-                    ]
+  "id": "keyboard",
+  "title": "TANK68 HE",
+  "version": "0.2.0",
+  "files": [
+    {
+      "path": "payload/cards.js",
+      "sha256": "e1b86a80d6f1a4e9d4fc63b567397d68a9d47a6aa4f00b97898cade872cbb492"
+    },
+    {
+      "path": "payload/host.cjs",
+      "sha256": "4dccfe9aca6ccf41d43eecee66ec1866fc89c59a0284cb88bb3dd7fdc7abad61"
+    },
+    {
+      "path": "payload/keyboard-preload.cjs",
+      "sha256": "7a61fc1b48ffaf4b5134a432efe74ded995b810ea9ee2d81dc41c079274cca37"
+    },
+    {
+      "path": "payload/local-server.cjs",
+      "sha256": "6994c1f7484e105fd754932ebab0e523cf162ea951bf082bdaca81dfaf8b5a4a"
+    },
+    {
+      "path": "payload/main-preload.cjs",
+      "sha256": "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
+    },
+    {
+      "path": "payload/mchose-ui/mchose-ui.css",
+      "sha256": "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
+    },
+    {
+      "path": "payload/mchose-ui/razer-theme.css",
+      "sha256": "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
+    },
+    {
+      "path": "payload/native-cards.js",
+      "sha256": "b560a10e10b4744c72646c2dbdca119bce34928442d9f54da2490a7b9b4bfda0"
+    },
+    {
+      "path": "payload/product-assets/tank68-black.webp",
+      "sha256": "34db24c40335f1dd57094522fa2ed4733a10220926719a5eb2bdbbc372f6246c"
+    },
+    {
+      "path": "payload/product-assets/tank68-purple.webp",
+      "sha256": "6234d6bcbbaa3b882c8668b9cc6590dd463932ed0e3f2a11bdfd912327c25fc7"
+    },
+    {
+      "path": "payload/tank68-local/index.html",
+      "sha256": "cdca5b71698c943bea618d5e33ae4672d9d1da1a318cf9b75d5a8e882e982555"
+    },
+    {
+      "path": "payload/tank68-local/theme/mchose-shell.css",
+      "sha256": "4b3c9296d3639d02d1cc016f3c5fc16ac0d178086b04858a1dd468e10764b5d5"
+    },
+    {
+      "path": "payload/tank68-local/theme/tank68-shell.css",
+      "sha256": "1935065d25e37e3998d5b25162ef0aafd600d4fce268e6f3f66b487f49f058bb"
+    },
+    {
+      "path": "payload/tank68-local/theme/tank68-shell.js",
+      "sha256": "b96053e89778dd6a440ab52da16a506b4b403c1c7a7b202702e10b81b285d049"
+    },
+    {
+      "path": "payload/tank68-local/theme/theme.js",
+      "sha256": "86c4f0feb3b688f66c1f146e4af7f7c602a62554eae246f55c478244e305ca05"
+    },
+    {
+      "path": "payload/tank68-local/theme/vendor-bridge.js",
+      "sha256": "5840252b0f31534f20092e09529f829baea46f2f26b97ef71abc3a950c7675bd"
+    },
+    {
+      "path": "payload/tank68-local/theme/vendor-frame.css",
+      "sha256": "3587bfa43496fd1570d239db038be11b5da1c80452fa93eef891e889f8244874"
+    },
+    {
+      "path": "payload/tank68-local/theme/vendor-theme-init.js",
+      "sha256": "0a099399ba2c377e0b77b8a5bd29c87b72fd1369ac917d65e0bec0837ff510fe"
+    },
+    {
+      "path": "payload/tank68-local/vendor.html",
+      "sha256": "d87e0894d71b7cff0f9ba3d2142fa3cf07df1344dceb63c2d74174d6763482ff"
+    },
+    {
+      "path": "payload/mchose-ui/components.js",
+      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+    },
+    {
+      "path": "payload/mchose-ui/device-client.js",
+      "sha256": "b7ab2da006d0ccc65f404c79a3e4b65b8c1260081b20988849b3ad76ac9ed041"
+    }
+  ],
+  "bundles": [],
+  "assets": [
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Regular.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Regular.woff2",
+      "sha256": "d704c1a932c0bd7e8a071d276cd81c0ed0c9fecfa26ac234f4bed0559fe1cb2d"
+    },
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Semibold.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Semibold.woff2",
+      "sha256": "78227c6ec59566785c65ac0b5312328bfa2f879918f3d7403725785615a9a8f6"
+    },
+    {
+      "path": "tank68-local/static/fonts/mchose/MiSans-Bold.woff2",
+      "url": "https://cdn.mchose.com.cn/configCenter/pcAssets/fonts/misans/MiSans-Bold.woff2",
+      "sha256": "1c5a7515b61bc82baaa2e2c2fdae2032479fb9a99e09d4d021dc17314fc5939b"
+    },
+    {
+      "path": "tank68-local/static/css/app.689c0f6a.css",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/css/app.689c0f6a.css",
+      "sha256": "dcd42a0783d65f00394149e3a34762fd5d2282e1920fe3f34700f39e4410dbc9"
+    },
+    {
+      "path": "tank68-local/static/css/chunk-vendors.f09e744d.css",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/css/chunk-vendors.f09e744d.css",
+      "sha256": "0c37769530d60b49157133a8da099e87edf00de4d62d1b747059925437d4bd53"
+    },
+    {
+      "path": "tank68-local/static/fonts/element-icons.f1a45d74.ttf",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/fonts/element-icons.f1a45d74.ttf",
+      "sha256": "a30f5b3ba6a48822eae041e0ca5412a289125e4ba661d047dae565ac43b4a6b2"
+    },
+    {
+      "path": "tank68-local/static/fonts/element-icons.ff18efd1.woff",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/fonts/element-icons.ff18efd1.woff",
+      "sha256": "ab40a58972be2ceab32e7e35dab3131b959aae63835d7bda1a79ae51f9a73c17"
+    },
+    {
+      "path": "tank68-local/static/img/de.aa556c13.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/de.aa556c13.svg",
+      "sha256": "ba6e2a243cb579dea5a8d9b5a87970782f708cfe7b90e82ebd9292f89daa37ab"
+    },
+    {
+      "path": "tank68-local/static/img/en.38a1cd9c.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/en.38a1cd9c.svg",
+      "sha256": "c1e9f6641224d686aa854ec1b89912cb372095f11257d14314596fea358c8664"
+    },
+    {
+      "path": "tank68-local/static/img/es-ES.fb40c038.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/es-ES.fb40c038.svg",
+      "sha256": "4d6752fdfbd1605c29b7bd47af4011615f868bb903068c971ca82d0cf5eef581"
+    },
+    {
+      "path": "tank68-local/static/img/fighting67.ce131cb7.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/fighting67.ce131cb7.png",
+      "sha256": "8f7b6d0239bfc339f4e515adf2547b9b2204f81758d695d94455ab6da7138c73"
+    },
+    {
+      "path": "tank68-local/static/img/fighting68.df3d131a.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/fighting68.df3d131a.png",
+      "sha256": "b0dd254b17d9b33d08e30b81d95ea7e8df8d23b209f8029cc7318dac067d1d37"
+    },
+    {
+      "path": "tank68-local/static/img/fr.0e877b43.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/fr.0e877b43.svg",
+      "sha256": "06c38629007db9db2ca9fd821f3d8c5d56f30c9f86588e034bd070d1ea439113"
+    },
+    {
+      "path": "tank68-local/static/img/Galaxy65.3bb1a3e9.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/Galaxy65.3bb1a3e9.png",
+      "sha256": "ea22fba60dfdcc7ebc33926b4b7175fb2bccee7e81546957ea22f34dba7e2e16"
+    },
+    {
+      "path": "tank68-local/static/img/GK8156G.855f0e3f.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/GK8156G.855f0e3f.png",
+      "sha256": "bcd3b81d2aa89670c6ad5b7c62225e982adfe4d7968ba48a07f64203b84bb95e"
+    },
+    {
+      "path": "tank68-local/static/img/goods_1.f92ad741.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/goods_1.f92ad741.png",
+      "sha256": "1025e7b4c136ac413f1531c872f40ea9feaf4095aa4049867e0a8ad669760a9b"
+    },
+    {
+      "path": "tank68-local/static/img/goods_2.dbefca01.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/goods_2.dbefca01.png",
+      "sha256": "11bd57fd738064a5a0129bca0f0d72a387b3851ca4d1c4aa683fea262e2ee030"
+    },
+    {
+      "path": "tank68-local/static/img/gs68.d630c292.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/gs68.d630c292.png",
+      "sha256": "bb5e8ae081d9f205a282454dd6a20e1c560dc821834ac0ea87e32e11d09c705d"
+    },
+    {
+      "path": "tank68-local/static/img/img_1.8d8acaa5.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_1.8d8acaa5.png",
+      "sha256": "5a48f02f06f8620634ba7194db4740bf09fa96b2ac8277d3e0ec333ae266440e"
+    },
+    {
+      "path": "tank68-local/static/img/img_2.83fb8ef5.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_2.83fb8ef5.png",
+      "sha256": "2b3459a9b343b62b4184e22f673664121beb9233506a5ffe8e3d336001b8945f"
+    },
+    {
+      "path": "tank68-local/static/img/img_3.cc9ef1cb.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_3.cc9ef1cb.png",
+      "sha256": "d90f6e07b03dbcdcf36fcae0a41b9e8ba8f3a2034ea57c6126db70c8cb9d83cf"
+    },
+    {
+      "path": "tank68-local/static/img/img_4.dcf424a3.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_4.dcf424a3.png",
+      "sha256": "1880e5106da0e89bf78e6b642dc975ff3b3dbc780c03cc41f58508088a40794a"
+    },
+    {
+      "path": "tank68-local/static/img/img_5.5dce14b8.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_5.5dce14b8.png",
+      "sha256": "a65c21fb3b80c6b0cb43f344572b70f829e059842b79b65a92244bead81990f8"
+    },
+    {
+      "path": "tank68-local/static/img/img_6.087d078f.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_6.087d078f.png",
+      "sha256": "3638b03ff8a2444a856c32a36e600d10826b35c882e459e4921ebb8f71d3148f"
+    },
+    {
+      "path": "tank68-local/static/img/img_7.870aa86c.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_7.870aa86c.png",
+      "sha256": "a5c0044ff588b04aa540544bfcf7882f2f5f73c1a9254630cb8af7fdb6a9457a"
+    },
+    {
+      "path": "tank68-local/static/img/img_8.bda6032b.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/img_8.bda6032b.png",
+      "sha256": "4dc7170fda5a8ce0a6fe9dff0f012a3c59de8bc2d49c7b8e2912da354153b270"
+    },
+    {
+      "path": "tank68-local/static/img/it.5a366ed0.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/it.5a366ed0.svg",
+      "sha256": "e81d94d0106f2dfe6619c669c85568191732d588f6b02a5044b77c767821ea31"
+    },
+    {
+      "path": "tank68-local/static/img/ja.17b08d2e.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/ja.17b08d2e.svg",
+      "sha256": "ce3d1e4c28f4fcfc35378428ef3ce11c2ae88bb046520262ff1748b470c0da16"
+    },
+    {
+      "path": "tank68-local/static/img/k75.66d5e030.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/k75.66d5e030.png",
+      "sha256": "fd516866f412930489c523b6d9b496505f92031f48f85bafb09968e8ff429116"
+    },
+    {
+      "path": "tank68-local/static/img/k980.87738402.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/k980.87738402.png",
+      "sha256": "ee9f93cb24e04e8ba6a89b65a6b2eb1fb3d57f2fb83c90a2abe3fdc5b9c9724d"
+    },
+    {
+      "path": "tank68-local/static/img/kb_bg.93d6a58e.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/kb_bg.93d6a58e.png",
+      "sha256": "5a3634f1fb23608e17d3de2d9ce7965f94a3647b4eb5f9a8910e14237168b0fd"
+    },
+    {
+      "path": "tank68-local/static/img/key.3c3da156.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/key.3c3da156.png",
+      "sha256": "a671879c7cfc074870d74d7af390e5d6e6343403411d1351e2d826f394a4592e"
+    },
+    {
+      "path": "tank68-local/static/img/key98.c66ce3fe.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/key98.c66ce3fe.png",
+      "sha256": "acb125888bba447c908b1754955db2c3f287c483a995b5b6ed9ad7b7c74f43b4"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_10.2c3a58e8.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_10.2c3a58e8.png",
+      "sha256": "38edb063788e6987e56bb8fd13b712ea95f0fd92676e82765d94863eea6529d1"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_10@.7dc4b494.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_10@.7dc4b494.png",
+      "sha256": "ca2912af8041bec4ff3d6245b19b073501101687e31b92745d09dedecfee6cc5"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_11.c9d1ca4a.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_11.c9d1ca4a.png",
+      "sha256": "23f2382441cb358c230f70bcd69fe6f72a7cee18c4856ad963f9cf9d711ddc39"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_11@.248b02cf.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_11@.248b02cf.png",
+      "sha256": "58c3cda0e4f78ce94261ec24c64432fcab0361e78435e3a5b6c5623dcfe65849"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_12.c8a6ca7f.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_12.c8a6ca7f.png",
+      "sha256": "b5a4ef3b4faccf7218f6cbda3d671a117e7e4217fe68794b29fd76c7e26825bc"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_128.4d9c1796.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_128.4d9c1796.png",
+      "sha256": "d8978cc2230e76f8f1e5dfe7b404b88911ecec250dd294c6a5007b53ee892faa"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_128@.b0310008.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_128@.b0310008.png",
+      "sha256": "e08319e47664218caa64b0f42dabe7ec8317c0903531630d35442956a09bf4c6"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_12@.4aba735b.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_12@.4aba735b.png",
+      "sha256": "bcb0454bb864228c6237f3931ec734a1eb6b37f06d915a87300114e2b3858376"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_13.a99a4905.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_13.a99a4905.png",
+      "sha256": "ee85fad20c113a2d1adab688df6ee326aae43d2ec240837cd80d604843c20130"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_13@.5282b503.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_13@.5282b503.png",
+      "sha256": "0bca1d26870e01e8bec766f5adceb612bd8e8dc089c0167e25b361b08a6ed73f"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_14.3bce0dc1.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_14.3bce0dc1.png",
+      "sha256": "62e679583404b07285834917858e55e6c94c817f48262a99181dd9e8d2e16513"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_14@.b62b53cf.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_14@.b62b53cf.png",
+      "sha256": "b6c00135b32d30c89663c4500ba65d711055b9294af60042b1da89a767bd6ec4"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_15.bdd2aed7.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_15.bdd2aed7.png",
+      "sha256": "f96e58c830ad7a105c8e5edb043e2bf8fa980523904d1467ef509fa75ae02662"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_15@.1c74fea5.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_15@.1c74fea5.png",
+      "sha256": "abb5f366a9c3d3cdc37ae641224b376e9ab7c4614af115a02932ff442182c32c"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_16.283e0760.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_16.283e0760.png",
+      "sha256": "f88ea88fc9c4f7237e6cd266eb38255e420bc1887e1ed15dccacff24b08e5df0"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_16@.297b63f3.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_16@.297b63f3.png",
+      "sha256": "ae90a7c2999a83b29874904c6a2134d3447c809fbda9f5367332e4e539e934dd"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_17.556774b8.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_17.556774b8.png",
+      "sha256": "79eea1c91f21f484de8bd4c6636c4d81fe02ce035898d8c6a0f337515eb5cef9"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_17@.920ce40c.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_17@.920ce40c.png",
+      "sha256": "bc0de4c0fbfda0c7258324b821edaa380c87bb713c46981af7022ae8033ea075"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_18.7255f8e9.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_18.7255f8e9.png",
+      "sha256": "d99205b444c433e3aeec93b05d4ad7a7a7a73f24f8130022f839b55a654902f3"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_18@.4e94f688.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_18@.4e94f688.png",
+      "sha256": "ee1aed1b1ba0fd999604cc5d4983a0ef1db2a5683b50359459c8ea841d3f176f"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_19.e6ce19ce.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_19.e6ce19ce.png",
+      "sha256": "4eeca9dedd434e0cdbdd54a8a94d83cdc39ce275501d9a43d13886e1d0e7d09f"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_19@.f6a460ed.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_19@.f6a460ed.png",
+      "sha256": "8a492654737e2e9d61db6c22cb5db95a732a791c859523fa28e73fc05cc11e92"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_2.e53bc475.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_2.e53bc475.png",
+      "sha256": "97ec5ae6a9bc8c9890ae45c53ec42b32e4805dde906a497d607de4c8cf40c185"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_2@.029286bf.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_2@.029286bf.png",
+      "sha256": "a45395715cd18d3d457ce2020e8b0911909601caf93aa6f0de00e8b3da604c78"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_3.b36b7fea.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_3.b36b7fea.png",
+      "sha256": "8e968a33a1a56caed8331b2cc0e865336fa0faa597b36b87fd5384f6177f72fc"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_3@.427b2a08.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_3@.427b2a08.png",
+      "sha256": "c1f144141811238c16b956597c152017bb7ee3bd11086a151ad16f5f89cea40f"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_4.0d71a69f.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_4.0d71a69f.png",
+      "sha256": "aac9878379f5abbbc9cfabc490533102bde8e8e54ab55d7c00fd85a25bacc19f"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_4@.86a52777.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_4@.86a52777.png",
+      "sha256": "017250258d2d9c6aeb4abb042d54173c6d941b58ce7ab0dce89ab98ed3243534"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_5.23833e73.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_5.23833e73.png",
+      "sha256": "e237a0800f6fbaa2c99f84aacfc4f686fc99612aeb8787cbb381b367ea995267"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_5@.cb435089.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_5@.cb435089.png",
+      "sha256": "71c9ffeff8eb868cc02febb67b6dca0d97ba55bd22df83bebf10623d404de3d8"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_6.b402fe16.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_6.b402fe16.png",
+      "sha256": "7b16ab3d7d079bf6e0bbc6da2aab854a866a9f49873753668a77636953fdeb4a"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_6@.cf287d82.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_6@.cf287d82.png",
+      "sha256": "27585446976d18526c64fa283c0956dfd5ac798a30c89c7d70ff9e83eddaf072"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_7.7c8acd97.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_7.7c8acd97.png",
+      "sha256": "ddaa7ea0027f8bfd587d62ac626d8bfd15c9418c1d8ac7129de67a2b3919e668"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_7@.72859d83.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_7@.72859d83.png",
+      "sha256": "ead64eca3928c596d2151ce2a8560ab0480c40b6d240d5fab7da45f46963d012"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_8.c2cebe81.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_8.c2cebe81.png",
+      "sha256": "89cbc86150152c4b5395bd34479fb1997032492da6d7b907797395f622bf13be"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_8@.c463cae9.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_8@.c463cae9.png",
+      "sha256": "d357604c978ebc5be1fb7346a14d6c448aa450d7cc9b90b0fae87e7f96dc669c"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_9.dc0202a4.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_9.dc0202a4.png",
+      "sha256": "5583efc2b1e797d3f9d4537b9c5e53fff644f877aee8f60a1d6c069ce5903f6e"
+    },
+    {
+      "path": "tank68-local/static/img/light_icon_9@.7389cedb.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/light_icon_9@.7389cedb.png",
+      "sha256": "dd7cfad1113a75ff662c1b93e61b08444e16bc3b92dc3b5fde6168545cb5c9da"
+    },
+    {
+      "path": "tank68-local/static/img/looting63.aadfddc1.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/looting63.aadfddc1.png",
+      "sha256": "fa9a673a08091070e533dcf3e69f9ceba78fb2cb395757228beab543d6549ffe"
+    },
+    {
+      "path": "tank68-local/static/img/pt-BR.46418120.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/pt-BR.46418120.svg",
+      "sha256": "0275675207e1cbe0942575bb368bd504397c4a9647c49fb83a3ebd1db0d8aac3"
+    },
+    {
+      "path": "tank68-local/static/img/rk762.60eb45e5.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/rk762.60eb45e5.png",
+      "sha256": "1142e1fedbc694d92295d041fe3b6bf89c6c9576fcfeaec2d59e7954b25aace7"
+    },
+    {
+      "path": "tank68-local/static/img/ru.8751026a.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/ru.8751026a.svg",
+      "sha256": "4033e098e97df640d0a2b6a02d632ac8d084734f67ceed782e434a5273f989ab"
+    },
+    {
+      "path": "tank68-local/static/img/si_bg.3a8f2f8c.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/si_bg.3a8f2f8c.png",
+      "sha256": "602f11e0f0355cd9f4ec6f755ca2c706c7862c5d7efb652f9a03171fdc58b382"
+    },
+    {
+      "path": "tank68-local/static/img/x82_bg.0993f93c.png",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/x82_bg.0993f93c.png",
+      "sha256": "be394c81cb2c7e9041f88bde0af9d9ef1a07c9b4fa392937e250b54423f54ea5"
+    },
+    {
+      "path": "tank68-local/static/img/zh-CN.f8a94f6c.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/zh-CN.f8a94f6c.svg",
+      "sha256": "c593f52da3c5354cdc2012b87a240ae8e350fb6b18ec97a88ff999d7297796d5"
+    },
+    {
+      "path": "tank68-local/static/img/zh-TW.df73aecc.svg",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/img/zh-TW.df73aecc.svg",
+      "sha256": "5be7a5abc6f6172da4af3585ad345549073e015ab6f1940b0b242d65fb975e25"
+    },
+    {
+      "path": "tank68-local/static/js/app.5ebc7dcc.js",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/js/app.5ebc7dcc.js",
+      "sha256": "45007b371ce9fd35aa1aeccc0b35ae7031132f36fd97a16ce131d01a2f9578f3"
+    },
+    {
+      "path": "tank68-local/static/js/chunk-vendors.9110ac86.js",
+      "url": "https://hub.eweadn.cn/hfd68/web/static/js/chunk-vendors.9110ac86.js",
+      "sha256": "54d438c7e4112c60b9b10cb40d0c79d397aac49442a359a9af989748473d5ff8"
+    }
+  ],
+  "pluginFiles": [
+    "cards.js",
+    "host.cjs",
+    "keyboard-preload.cjs",
+    "local-server.cjs",
+    "main-preload.cjs",
+    "mchose-ui/mchose-ui.css",
+    "mchose-ui/razer-theme.css",
+    "native-cards.js",
+    "product-assets/tank68-black.webp",
+    "product-assets/tank68-purple.webp",
+    "tank68-local/index.html",
+    "tank68-local/theme/mchose-shell.css",
+    "tank68-local/theme/tank68-shell.css",
+    "tank68-local/theme/tank68-shell.js",
+    "tank68-local/theme/theme.js",
+    "tank68-local/theme/vendor-bridge.js",
+    "tank68-local/theme/vendor-frame.css",
+    "tank68-local/theme/vendor-theme-init.js",
+    "tank68-local/vendor.html",
+    "mchose-ui/components.js",
+    "mchose-ui/device-client.js"
+  ]
 }

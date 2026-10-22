@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/the-via/app",
+  "commit": "935106a990af39bdd1ade881c02366eac486240d",
+  "date": "2026-10-22",
+  "license": "GPL-3.0",
+  "definitions": 2061,
+  "changes": [
+    "normalize Windows definition glob paths in a separate source copy",
+    "remove remote font links and imports",
+    "bundle local Draco decoder and dependency license notices",
+    "initialize theme from host dcTheme query",
+    "use WebHID in embedded Electron iframe",
+    "allow unlisted Raw HID devices while retaining protocol validation",
+    "enable manufacturer JSON design import and direct design route"
+  ],
+  "sourceArchive": "via-corresponding-source.zip",
+  "runtimeArchive": "via-offline.zip"
+}

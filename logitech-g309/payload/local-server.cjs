@@ -8,6 +8,8 @@ const mime = {
   '.js': 'application/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.wasm': 'application/wasm',
+  '.glb': 'model/gltf-binary',
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
@@ -21,7 +23,7 @@ const mime = {
   '.otf': 'font/otf',
 };
 
-function startServer(root) {
+function startServer(root,{port=0,spaFallback=false}={}) {
   const base = path.resolve(root);
   return new Promise((resolve, reject) => {
     const server = http.createServer((request, response) => {
@@ -33,13 +35,14 @@ function startServer(root) {
         return;
       }
       if (pathname === '/') pathname = '/index.html';
-      const file = path.resolve(base, `.${pathname}`);
+      let file = path.resolve(base, `.${pathname}`);
       if (!file.startsWith(`${base}${path.sep}`)) {
         response.writeHead(403).end('Forbidden');
         return;
       }
       fs.stat(file, (error, stat) => {
         if (error || !stat.isFile()) {
+          if(spaFallback&&!path.extname(file)){file=path.join(base,'index.html');const bytes=fs.readFileSync(file);response.writeHead(200,{'content-type':mime['.html'],'cache-control':'no-store','content-length':bytes.length});response.end(bytes);return;}
           response.writeHead(404).end('Not found');
           return;
         }
@@ -52,7 +55,7 @@ function startServer(root) {
       });
     });
     server.once('error', reject);
-    server.listen(0, '127.0.0.1', () => {
+    server.listen(port, '127.0.0.1', () => {
       const { port } = server.address();
       resolve({
         origin: `http://127.0.0.1:${port}`,

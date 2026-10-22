@@ -70,3 +70,9 @@ desktop.ini
 **/blackshark-eq.txt
 **/*.one4all-*.bak
 **/acceptance.local.json
+**/keyboard-appearance.json
+**/keyboard-appearance.json.*.tmp
+**/one4all-hid-keyboard/
+**/via-port.json
+# Generated GPL corresponding-source archive ships inside installers / Release assets.
+/library/vendor/via/via-corresponding-source.zip

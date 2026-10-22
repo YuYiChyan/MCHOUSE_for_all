@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/shawon9324/keyboard-mouse-tester-webApp",
+  "commit": "5f93005652b3dfbe770ae4b0742c133e7e572eb7",
+  "retrieved": "2026-10-22",
+  "runtimeFiles": [
+    "keymaps.js"
+  ],
+  "referenceOnly": [
+    "app.reference.js"
+  ]
+}

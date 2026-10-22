@@ -1,0 +1,31 @@
+/* SPDX-License-Identifier: MIT. Inherits the established One4All theme. */
+.dc-hid-preview{display:grid;grid-template-columns:repeat(14,1fr);gap:3px;align-self:center;width:calc(100% - 48px);margin:32px 24px;padding:12px;box-sizing:border-box;border:1px solid var(--rz-border);border-radius:10px;background:var(--rz-panel)}
+.dc-hid-preview span{height:12px;border:1px solid var(--rz-border);border-radius:2px;background:var(--rz-config,var(--rz-input))}
+.dc-hid-preview.has-image{display:flex;align-items:center;justify-content:center;height:140px;padding:0;border:0;background:transparent}
+.dc-hid-preview img{display:block;width:100%;height:100%;object-fit:contain}
+.dc-hid-personalize{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:0 12px 24px}
+.dc-sidebar-name{overflow-wrap:anywhere}
+.dc-hid-notice{margin:0 24px;color:var(--rz-muted);line-height:1.6}
+.dc-hid-notice:empty{display:none}
+.dc-hid-note{font-size:13px;line-height:1.7;max-width:64ch;margin:0}
+.dc-hid-picker.dc-card{flex-basis:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 24px;border-right:0;border-bottom:1px solid var(--rz-border)}
+.dc-hid-picker .dc-card-title{margin:0}
+.dc-hid-select,.dc-hid-name{box-sizing:border-box;display:block;max-width:100%;width:100%;padding:10px;margin:0;border:1px solid var(--rz-border);border-radius:8px;color:var(--rz-text);background:var(--rz-input)}
+.dc-hid-label{display:grid;gap:10px;max-width:420px;font-size:13px}
+.dc-hid-subtitle{font-size:14px;font-weight:500;margin:8px 0 0}
+.dc-hid-actions{display:flex;flex-wrap:wrap;gap:12px}
+.dc-hid-via-frame{width:100%;height:600px;border:1px solid var(--rz-border);border-radius:8px;background:var(--rz-panel)}
+.dc-hid-personalize button:disabled,.dc-hid-actions button:disabled{opacity:.45;cursor:default}
+.dc-hid-wide{flex-basis:100%;min-width:0}
+.dc-hid-table-wrap{width:100%;overflow-x:auto}
+.dc-hid-table{width:100%;border-collapse:collapse;font-size:13px;text-align:left;white-space:nowrap}
+.dc-hid-table th,.dc-hid-table td{padding:14px 10px;border-bottom:1px solid var(--rz-border)}
+.dc-hid-table th{font-weight:500;color:var(--rz-muted)}
+.dc-hid-testpad{margin:0;padding:24px;min-height:140px;border:1px solid var(--rz-border);border-radius:10px;background:var(--rz-panel);outline-offset:3px}
+.dc-hid-testpad.testing{border-color:#226bee}
+.dc-hid-key-output{font-size:22px;line-height:1.6;min-height:42px;overflow-wrap:anywhere}
+.dc-hid-history{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.dc-hid-key{padding:6px 10px;border:1px solid var(--rz-border);border-radius:5px;color:var(--rz-text);font-size:12px;background:var(--rz-input)}
+.dc-hid-select:focus-visible,.dc-hid-testpad:focus-visible{outline:2px solid #226bee}
+@media(max-width:720px){.dc-sidebar,.dc-sidebar-header{width:180px;flex-basis:180px}.dc-nav-item{width:156px}.dc-sidebar-name{font-size:18px}.dc-hid-preview{margin:24px 12px;width:calc(100% - 24px)}.dc-config{padding:12px;margin:0 8px 8px}.dc-right{padding:0 8px}.dc-card{min-width:0;flex-basis:100%}.dc-hid-testpad{padding:16px}}
+@media(max-width:960px){.dc-hid-picker.dc-card{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:16px}.dc-hid-picker .dc-card-title{grid-column:1/-1}}

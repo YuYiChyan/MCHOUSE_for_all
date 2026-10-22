@@ -1,6 +1,8 @@
 # One4All Kit
 
-`0.2.0-handoff.1` 另外增加了 G309／BlackShark 的显式客户端、隔离 preload、Python 服务桥接和完整页面。它们目前是交接实现，真机验收尚未完成。`bridge/device-service.cjs` 在安装 payload 中与 `bridge/adapter.cjs` 一同使用；它不会自行注册任意插件。canonical 宿主已经显式登记这两个新设备，只有 registry 中启用的设备才启动后端。
+`0.2.0` 包含 G309／BlackShark 的显式客户端、隔离 preload、Python 服务桥接和完整页面。设备主人已确认技术可用，本机视觉验收完成，包内说明保留各功能的验证范围。`bridge/device-service.cjs` 在安装 payload 中与 `bridge/adapter.cjs` 一同使用；它不会自行注册任意插件。canonical 宿主已经显式登记这两个新设备，只有 registry 中启用的设备才启动后端。
+
+通用 HID 外设组件位于 `hid/` 与 `ui/hid-keyboard.*`，提供系统描述诊断、键鼠类型识别、标准按键状态与高亮检测，以及内置命名、商品图上传和本机保存。独立预览包见 [generic-hid](../generic-hid)，包含离线 VIA 按键测试、连接与厂商 JSON 导入；官方型号表不作为连接门槛，是否能连接由实际接口与固件协议决定。接入与能力边界见 [通用 HID 外设开发说明](../docs/GENERIC-HID-KEYBOARD.md)，其他改键方案见 [VIA / Vial / 软件改键路线](../docs/KEY-REMAPPING-OPTIONS.md)。
 
 新页面共用 `ui/handoff-page.js` 与 `handoff-page.css`，产品图使用各设备包内用户提供的透明 PNG；原有 SVG 保留为首页图片加载前的示意。BlackShark 的 EQ provider 位于设备后端，不属于通用库的依赖；默认 export-only。视觉、注入与接口清单见仓库 handoff/README.md。
 

@@ -1,0 +1,12 @@
+{
+  "kind": "offline-via-iframe-fixture",
+  "hardwareVerified": false,
+  "state": {
+    "hidAvailable": true,
+    "hidAllowed": true,
+    "authorized": 0,
+    "text": "配置\n键盘测试\n设计\n设置\nENGLISH\n中文\n한국어\n日本語\nESPAÑOL\nDEUTSCH\nFIRMWARE + DOCS\nDISCORD\nGITHUB\n选择键盘"
+  },
+  "manualImportRoute": true,
+  "externalRequests": 0
+}

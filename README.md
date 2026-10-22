@@ -10,7 +10,7 @@
 
 ## 当前支持列表
 
-**更新时间：2026-10-22 · 当前发布版本：0.2.0**
+**更新时间：2026-10-22 · 设备适配包：0.2.0 · 通用控件：0.3.0-preview.4**
 
 下表列出已经完成适配、提供独立安装包的设备。项目的扩展目标覆盖所有满足接入条件的设备；具体型号的功能范围与验证记录随适配持续更新。
 
@@ -21,6 +21,9 @@
 | CUKTECH 10 Ultra | BLE / 开源蓝牙控制器 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/cuktech-10-ultra-v0.2.0-win64.zip) | [cuktech-10-ultra](cuktech-10-ultra) |
 | Logitech G309 | HID++ / LIGHTSPEED；蓝牙能力按设备与接口确认 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/logitech-g309-v0.2.0-win64.zip) | [logitech-g309](logitech-g309) |
 | BlackShark V2 有线 USB 声卡 | Windows Core Audio / 可选 Equalizer APO | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-v0.2.0-win64.zip) | [blackshark-v2](blackshark-v2) |
+| 通用 HID 键鼠控件 | Windows 标准 HID / 内置 VIA | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.3.0-preview.4/One4All-Generic-HID-0.3.0-preview.4.zip) | [generic-hid](generic-hid) |
+
+通用控件提供标准按键状态检测、键盘/鼠标按下高亮、HID 设备与接口信息显示、名称和商品图设置，以及内置 VIA 的按键测试、连接和厂商 JSON 导入。不要求型号已被 VIA 官方收录；实际连接与硬件改键仍需设备固件支持 VIA 协议。它不代表所有标准 HID 设备都支持灯效或硬件改键，详细范围见 [通用控件说明](docs/GENERIC-HID-KEYBOARD.md)。
 
 **只下载需要的设备包，完整解压后运行设备目录内的 `Install.cmd`。** 每包自带共用代码及所需运行依赖，无需下载整个仓库或另装开发环境。各包提供安装、修复与卸载入口，支持多张卡片共存。
 

@@ -8,6 +8,8 @@
   "files": [
     "ui",
     "bridge",
+    "hid",
+    "vendor",
     "contracts",
     "host",
     "web-driver",

@@ -1,0 +1,438 @@
+{
+  "kind": "offline-component-fixture",
+  "hardwareVerified": false,
+  "results": [
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "overview",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "test",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "mouse",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "remap",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "interfaces",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 1280,
+      "tab": "appearance",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "overview",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "test",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "mouse",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "remap",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "interfaces",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 960,
+      "tab": "appearance",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "overview",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "test",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "mouse",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "remap",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "interfaces",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "light",
+      "width": 720,
+      "tab": "appearance",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "light"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "overview",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "test",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "mouse",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "remap",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "interfaces",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 1280,
+      "tab": "appearance",
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "sidebar": 320,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "overview",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "test",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "mouse",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "remap",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "interfaces",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 960,
+      "tab": "appearance",
+      "layout": {
+        "width": 960,
+        "scrollWidth": 960,
+        "sidebar": 240,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "overview",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "test",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "mouse",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "remap",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "interfaces",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    },
+    {
+      "theme": "dark",
+      "width": 720,
+      "tab": "appearance",
+      "layout": {
+        "width": 720,
+        "scrollWidth": 720,
+        "sidebar": 180,
+        "nav": 40,
+        "theme": "dark"
+      }
+    }
+  ]
+}

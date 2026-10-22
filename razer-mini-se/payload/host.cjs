@@ -14,6 +14,14 @@ const enabled = new Set(registry.plugins.map(plugin=>plugin.id));
 const deviceServices = Object.fromEntries(['g309','blackshark'].filter(id=>enabled.has(id)).map(id=>[id,require('./device-service.cjs').createService(id,base)]));
 const dataRoot=path.join(stateRoot,'data');
 fs.mkdirSync(dataRoot,{recursive:true});
+let hidService=null;
+function getHidService(){
+  if(!enabled.has('hid'))throw Error('HID card is not installed');
+  if(!hidService){const viaCatalog=JSON.parse(fs.readFileSync(path.join(base,'generic-hid','vendor','via','catalog.json'),'utf8'));hidService=require('./generic-hid/hid/keyboard-service.cjs').createKeyboardService({python:path.join(base,'python','python.exe'),profileDirectory:path.join(dataRoot,'one4all-hid-keyboard'),viaCatalog});}
+  return hidService;
+}
+const hidPageUrl=pathToFileURL(path.join(base,'generic-hid','examples','hid-keyboard.html')).href;
+const hidTest=enabled.has('hid')?require('./generic-hid/hid/test-session.cjs').createTestSession({python:path.join(base,'python','python.exe')}):null;
 const chargerService = enabled.has('charger') ? require('./charger-service.cjs')(base, app, path.join(dataRoot,'charger')) : null;
 const logFile = path.join(stateRoot, 'host.log');
 try { if(fs.statSync(logFile).size>2*1024*1024)fs.renameSync(logFile,logFile+'.previous'); } catch {}
@@ -52,7 +60,9 @@ function keyboardOrigin(url) {
 }
 const mainPageUrl = pathToFileURL(path.join(base, 'razer.html')).href;
 const topPageTitles = { g309:'Logitech G309',blackshark:'Razer BlackShark V2', keyboard: 'TANK68HE', razer: 'Razer Viper Mini SE · 本地控制器', charger:'CUKTECH 10 Ultra' };
+topPageTitles.hid='通用 HID 外设';
 const productColors = {
+  hid:{default:'hid',allowed:new Set(['hid'])},
   g309:{default:'g309',allowed:new Set(['g309','g309-white'])},blackshark:{default:'blackshark',allowed:new Set(['blackshark','blackshark-green','blackshark-white'])},
   keyboard: { default: 'tank68-purple', allowed: new Set(['tank68-purple', 'tank68-black']) },
   razer: { default: 'razer-black', allowed: new Set(['razer-black', 'razer-white']) },
@@ -70,6 +80,31 @@ const productAssets = {
 };
 const productArtCache = new Map();
 let embedded = null;
+let viaServer=null,viaOrigin=null,viaTarget=null;
+function genericHidSession(){
+  const ses=session.fromPartition('persist:one4all-generic-hid');
+  if(ses.__one4allVia)return ses;ses.__one4allVia=true;
+  const allowed=origin=>{try{return viaOrigin&&new URL(origin).origin===viaOrigin&&viaTarget&&embedded?.kind==='hid';}catch{return false;}};
+  ses.setPermissionCheckHandler((_wc,permission,origin)=>permission==='hid'&&!!allowed(origin));
+  ses.setPermissionRequestHandler((_wc,permission,callback,details)=>callback(permission==='hid'&&!!allowed(details.requestingUrl)));
+  ses.setDevicePermissionHandler(details=>details.deviceType==='hid'&&!!allowed(details.origin)&&!viaTarget.multiple&&details.device.vendorId===viaTarget.vendorId&&details.device.productId===viaTarget.productId);
+  ses.on('select-hid-device',async(event,details,callback)=>{
+    event.preventDefault();const target=viaTarget,wc=embedded?.view.webContents;
+    const notify=value=>{if(wc&&!wc.isDestroyed()&&viaTarget===target)wc.send('one4all-keyboard:via-result',value);};
+    if(!target){callback();return;}
+    const matches=details.deviceList.filter(d=>d.vendorId===target.vendorId&&d.productId===target.productId);
+    if(!matches.length){notify({status:'no-interface'});callback();return;}
+    let selected=matches[0];
+    if(matches.length>1){
+      const result=await dialog.showMessageBox({type:'question',title:'选择 VIA 设备',message:'发现多个同型号接口，请选择要连接的设备',buttons:[...matches.map((d,i)=>(d.name||d.productName||'HID 设备')+' '+(i+1)),'取消'],cancelId:matches.length,noLink:true});
+      if(viaTarget!==target||result.response>=matches.length){notify({status:'cancelled'});callback();return;}
+      selected=matches[result.response];
+    }
+    notify({status:'selected'});callback(selected.deviceId);
+  });
+  ses.webRequest.onBeforeRequest((details,callback)=>{let ok=false;try{const u=new URL(details.url);ok=['file:','data:','blob:'].includes(u.protocol)||(u.protocol==='http:'&&u.origin===viaOrigin);}catch{}callback({cancel:!ok});});
+  return ses;
+}
 
 function getProductArt(kind) {
   let file = productAssets[kind];
@@ -144,10 +179,13 @@ function protectWebContents(wc, allowed) {
 
 function closeEmbedded() {
   if (!embedded) return;
+  hidTest?.stop();
+  viaTarget=null;
   const { win, view, layout, themeTimer } = embedded;
   embedded = null;
   if (themeTimer) clearInterval(themeTimer);
   try { for(const event of ['resize','show','restore','focus'])win.off(event,layout); } catch {}
+  try { win.off('blur',stopHidTest); } catch {}
   try { win.contentView.removeChildView(view); } catch (error) { log('embedded-remove-error', error.message); }
   try { if (!view.webContents.isDestroyed()) view.webContents.close(); } catch (error) { log('embedded-close-error', error.message); }
   sendEmbeddedState(win, { open: false });
@@ -209,7 +247,9 @@ async function openEmbedded(sender, kind, requestedColor) {
   const tankServer = kind === 'keyboard' ? await getTankServer() : null;
   const initialTheme = await readMchoseTheme(sender);
   const color = productColors[kind].allowed.has(requestedColor) ? requestedColor : productColors[kind].default;
-  const webPreferences = ['g309','blackshark'].includes(kind)
+  const webPreferences = kind==='hid'
+    ? {session:genericHidSession(),preload:path.join(base,'generic-hid','examples','hid-keyboard-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
+    : ['g309','blackshark'].includes(kind)
     ? {session:session.fromPartition('persist:one4all-'+kind),preload:path.join(base,'device-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
     : kind === 'keyboard'
     ? { session: ensureKeyboardSession(), preload: path.join(base, 'keyboard-preload.cjs'), sandbox: true, contextIsolation: true, nodeIntegration: false }
@@ -217,7 +257,9 @@ async function openEmbedded(sender, kind, requestedColor) {
     ? {session:session.fromPartition('persist:drivecenter-charger-lab'),preload:path.join(base,'charger-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
     : { session: ensureRazerSession(), preload: path.join(base, 'lab-preload.cjs'), sandbox: true, contextIsolation: true, nodeIntegration: false };
   const view = new WebContentsView({ webPreferences });
-  protectWebContents(view.webContents, kind === 'keyboard'
+  protectWebContents(view.webContents, kind==='hid'
+    ? url=>url.split('?')[0]===hidPageUrl
+    : kind === 'keyboard'
     ? keyboardOrigin
     : url => url.startsWith('file:') || url.startsWith('about:'));
   win.contentView.addChildView(view);
@@ -230,10 +272,16 @@ async function openEmbedded(sender, kind, requestedColor) {
   };
   layout();
   for(const event of ['resize','show','restore','focus'])win.on(event,layout);
+  if(kind==='hid')win.on('blur',stopHidTest);
   setTimeout(layout,150);
   view.webContents.on('dom-ready',layout);
   view.webContents.on('before-input-event', (event, input) => {
-    if (input.type === 'keyDown' && input.key === 'Escape') {
+    if(kind==='hid'&&hidTest?.active&&input.code&&['keyDown','keyUp'].includes(input.type)){
+      event.preventDefault();
+      view.webContents.send('one4all-keyboard:test-key',{code:input.code,down:input.type==='keyDown',ctrlKey:!!input.control,metaKey:!!input.meta,altKey:!!input.alt,shiftKey:!!input.shift});
+      return;
+    }
+    if (kind!=='hid' && input.type === 'keyDown' && input.key === 'Escape') {
       event.preventDefault();
       closeEmbedded();
     }
@@ -259,7 +307,9 @@ async function openEmbedded(sender, kind, requestedColor) {
     theme: initialTheme,
   });
   sendEmbeddedState(win, { open: true, kind, title: topPageTitles[kind], theme: initialTheme, nativeHeader: true });
-  if (kind === 'keyboard') {
+  if(kind==='hid'){
+    view.webContents.loadURL(`${hidPageUrl}?dcTheme=${initialTheme}`).catch(error=>log('hid-view-error',error.message));
+  } else if (kind === 'keyboard') {
     const keyboardUrl = `${tankServer.origin}/index.html?dcTheme=${initialTheme}&dcColor=${encodeURIComponent(color)}#/?productId=32837&vendorId=3141&productName=Tank68%20HE`;
     view.webContents.loadURL(keyboardUrl)
       .then(() => log('keyboard-view-resolved', view.webContents.getURL()))
@@ -333,6 +383,38 @@ async function openEmbedded(sender, kind, requestedColor) {
   setTimeout(logViewState, 11000);
   return true;
 }
+
+function assertHidPage(event){
+  if(!enabled.has('hid')||embedded?.kind!=='hid'||embedded.view.webContents!==event.sender||event.senderFrame!==event.sender.mainFrame||event.senderFrame.url.split('?')[0]!==hidPageUrl)throw Error('Active local HID view only');
+}
+function stopHidTest(){
+  hidTest?.stop();
+  if(embedded?.kind==='hid'&&!embedded.view.webContents.isDestroyed())embedded.view.webContents.send('one4all-keyboard:test-stopped',{reason:'focus-lost'});
+}
+ipcMain.handle('one4all-keyboard:test-start',event=>{
+  assertHidPage(event);const wc=event.sender;
+  return hidTest.start({onKey:value=>{if(!wc.isDestroyed())wc.send('one4all-keyboard:test-key',value);},onStopped:value=>{if(!wc.isDestroyed())wc.send('one4all-keyboard:test-stopped',value);}});
+});
+ipcMain.handle('one4all-keyboard:test-stop',event=>{assertHidPage(event);hidTest.stop();return true;});
+ipcMain.handle('one4all-keyboard:status',event=>{assertHidPage(event);return getHidService().status();});
+ipcMain.handle('one4all-keyboard:appearance',(event,value)=>{assertHidPage(event);return getHidService().saveAppearance(value);});
+ipcMain.handle('one4all-keyboard:via-open',async(event,id,mode='connect')=>{
+  assertHidPage(event);hidTest.stop();
+  if(!['connect','design'].includes(mode))throw Error('未知 VIA 页面');
+  const state=await getHidService().status(),device=state.devices.find(d=>d.id===id);
+  if(!device)throw Error('设备已断开，请刷新后重试');
+  if(!viaServer){
+    const portFile=path.join(dataRoot,'one4all-hid-keyboard','via-port.json');let port=0;
+    try{const saved=JSON.parse(fs.readFileSync(portFile,'utf8')).port;if(Number.isInteger(saved)&&saved>=1024&&saved<=65535)port=saved;}catch{}
+    viaServer=startServer(path.join(base,'generic-hid','vendor','via','app'),{port,spaFallback:true}).catch(error=>{if(port&&error.code==='EADDRINUSE')return startServer(path.join(base,'generic-hid','vendor','via','app'),{spaFallback:true});throw error;}).then(value=>{
+      viaOrigin=value.origin;fs.mkdirSync(path.dirname(portFile),{recursive:true});fs.writeFileSync(portFile,JSON.stringify({port:Number(new URL(value.origin).port)}));return value;
+    }).catch(error=>{viaServer=null;throw error;});
+  }
+  const server=await viaServer;assertHidPage(event);viaTarget={vendorId:device.vendorId,productId:device.productId,multiple:state.devices.filter(d=>d.vendorId===device.vendorId&&d.productId===device.productId).length>1};
+  return {url:server.origin+'/?'+new URLSearchParams({dcTheme:embedded.theme,one4allEmbedded:'1',one4allMode:mode})};
+});
+ipcMain.handle('one4all-keyboard:close',event=>{assertHidPage(event);closeEmbedded();return true;});
+app.on('before-quit',()=>{hidTest?.stop();hidService?.close().catch(()=>{});});
 
 ipcMain.handle('dc-lab:open', (event, kind, color) => {
   if (!trusted(event.senderFrame?.url || '')) throw new Error('Untrusted origin');
@@ -572,6 +654,7 @@ app.on('web-contents-created', (_event, wc) => {
 });
 
 app.on('will-quit', () => {
+  viaServer?.then(server=>server.close()).catch(()=>{});
   if (!tankServerPromise) return;
   tankServerPromise.then(server => server.close()).catch(() => {});
 });

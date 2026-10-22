@@ -51,13 +51,16 @@
     `)}`,
   };
 
+  art.hid=art.keyboard;
   const cards = {
+    hid:{label:'通用 HID 外设',status:'本机诊断与自定义',icon:'icon-usb_linear'},
     g309:{label:'Logitech G309',status:'等待检测',icon:'icon-wifi_linear'},blackshark:{label:'BlackShark V2',status:'等待检测',icon:'icon-usb_linear'},
     keyboard: { label: 'TANK68HE', status: 'USB', icon: 'a-keybordcharging_linear' },
     razer: { label: 'Razer Viper Mini SE', status: '2.4G', icon: 'icon-wifi_linear' },
     charger:{label:'CUKTECH 10 Ultra',status:'等待绑定',icon:'icon-a-bluetooth2_char'},
   };
   const colorOptions = {
+    hid:[{id:'hid',label:'自定义外观',swatch:'#aeb3bd'}],
     g309:[{id:'g309',label:'黑色',swatch:'#202124'},{id:'g309-white',label:'白色',swatch:'#f2f2f2'}],
     blackshark:[{id:'blackshark',label:'黑色',swatch:'#202124'},{id:'blackshark-green',label:'绿色',swatch:'#50e600'},{id:'blackshark-white',label:'白色',swatch:'#f2f2f2'}],
     keyboard: [
@@ -71,6 +74,7 @@
     charger:[{id:'cuktech-10-ultra',label:'银色',swatch:'#c6c9cc'},{id:'cuktech-10-ultra-black',label:'黑色纪念版',swatch:'#202124'}],
   };
   const selectedColors = {
+    hid:'hid',
     g309:readSavedColor('g309','g309'),blackshark:readSavedColor('blackshark','blackshark'),
     keyboard: readSavedColor('keyboard', 'tank68-purple'),
     razer: readSavedColor('razer', 'razer-black'),
@@ -317,7 +321,8 @@
     card.setAttribute('aria-label', `打开 ${data.label}`);
     card.style.cursor = 'pointer';
     const switchWrapper = card.querySelector('.device-card-switch-wrapper');
-    if (switchWrapper) {
+    if(switchWrapper&&kind==='hid')switchWrapper.replaceChildren();
+    if (switchWrapper&&kind!=='hid') {
       switchWrapper.replaceChildren();
       const colorButton = document.createElement('button');
       colorButton.type = 'button';
@@ -363,7 +368,7 @@
     const status = card.querySelector('.device-card-status');
     if(status&&['g309','blackshark'].includes(kind)){const item=document.createElement('li');item.className='device-card-status-item connection';item.dataset.dcHandoff=kind;item.textContent='等待检测';status.replaceChildren(item);}
     if(status&&kind==='charger')status.innerHTML='<li class="device-card-status-item connection"><i class="iconfont icon-a-bluetooth2_char"></i><span data-dc-charger="connection">等待绑定</span></li><li class="device-card-status-item"><span data-dc-charger="power">— W</span></li>';
-    if (status && kind === 'keyboard') {
+    if (status && ['keyboard','hid'].includes(kind)) {
       const item = document.createElement('li');
       item.className = 'device-card-status-item connection';
       item.innerHTML = `<i class="iconfont ${data.icon}"></i><span>${data.status}</span>`;
@@ -436,7 +441,7 @@
     window.parent.postMessage({
       source: 'drivecenter',
       type: 'product-art-request',
-      kinds: [...enabled].flatMap(kind=>colorOptions[kind].map(option=>option.id)),
+      kinds: [...enabled].filter(kind=>kind!=='hid').flatMap(kind=>colorOptions[kind].map(option=>option.id)),
     }, '*');
   }
 

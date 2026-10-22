@@ -117,7 +117,7 @@
         return;
       }
       if (data.type !== 'open') return;
-      if (!['keyboard','razer','charger','g309','blackshark'].includes(data.kind)) return;
+      if (!['keyboard','razer','charger','g309','blackshark','hid'].includes(data.kind)) return;
       window.driveCenterLab?.open(data.kind, data.color).catch(error => {
         const title = document.getElementById('drivecenter-embedded-title');
         if (title) title.textContent = `打开失败：${error.message}`;

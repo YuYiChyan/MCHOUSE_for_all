@@ -35,5 +35,125 @@
     "route": "usb-audio",
     "asset": "blackshark-v2",
     "stage": "hardware-validation"
+  },
+  {
+    "id": "xiberia-t10",
+    "folder": "xiberia-devices/xiberia-t10",
+    "title": "XIBERIA T10 有线",
+    "route": "usb-audio-native",
+    "asset": "xiberia-t10",
+    "stage": "unverified",
+    "validation": {
+      "visual": "homepage-and-tabs-observed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t10g",
+    "folder": "xiberia-devices/xiberia-t10g",
+    "title": "XIBERIA T10G",
+    "route": "usb-audio-native",
+    "asset": "xiberia-t10g",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t10-wireless",
+    "folder": "xiberia-devices/xiberia-t10-wireless",
+    "title": "XIBERIA T10 无线",
+    "route": "usb-audio-native",
+    "asset": "xiberia-t10-wireless",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "k03s",
+    "folder": "xiberia-devices/xiberia-k03s",
+    "title": "XIBERIA K03S 超竞版",
+    "route": "usb-audio-native",
+    "asset": "xiberia-k03s",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-k03-wired",
+    "folder": "xiberia-devices/xiberia-k03-wired",
+    "title": "XIBERIA K03 有线二代",
+    "route": "usb-audio-native",
+    "asset": "xiberia-k03-wired",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-k06s",
+    "folder": "xiberia-devices/xiberia-k06s",
+    "title": "XIBERIA K06S",
+    "route": "usb-audio-native",
+    "asset": "xiberia-k06s",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t7",
+    "folder": "xiberia-devices/xiberia-t7",
+    "title": "CROCIRIS T7",
+    "route": "usb-audio-native",
+    "asset": "xiberia-t7",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t7-gt",
+    "folder": "xiberia-devices/xiberia-t7-gt",
+    "title": "CROCIRIS T7 GT",
+    "route": "usb-audio-native",
+    "asset": "xiberia-t7-gt",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-s21",
+    "folder": "xiberia-devices/xiberia-s21",
+    "title": "XIBERIA S21 无线智充版",
+    "route": "usb-audio-native",
+    "asset": "xiberia-s21",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-w30",
+    "folder": "xiberia-devices/xiberia-w30",
+    "title": "XIBERIA W30",
+    "route": "usb-audio-native",
+    "asset": "xiberia-w30",
+    "stage": "unverified",
+    "validation": {
+      "visual": "not-reviewed",
+      "hardware": "unverified"
+    }
   }
 ]

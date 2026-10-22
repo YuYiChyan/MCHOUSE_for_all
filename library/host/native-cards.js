@@ -80,6 +80,13 @@
     razer: readSavedColor('razer', 'razer-black'),
     charger:readSavedColor('charger','cuktech-10-ultra'),
   };
+  const xiberiaCatalog=window.__one4allXiberiaCatalog||[];
+  const xiberiaIds=xiberiaCatalog.map(model=>model.id);
+  for(const model of xiberiaCatalog){
+    cards[model.id]={label:model.title,status:'USB',icon:'icon-usb_linear'};
+    colorOptions[model.id]=model.colors;
+    selectedColors[model.id]=readSavedColor(model.id,model.colors[0].id);
+  }
   let lastRazerStatus = null;
   let lastChargerStatus = null;
   const productUrls = new Map();
@@ -422,7 +429,7 @@
 
   function acceptProductArt(payload) {
     const artKey = payload?.kind;
-    const allowed = new Set(['tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','g309-white','blackshark','blackshark-green','blackshark-white']);
+    const allowed = new Set([...xiberiaCatalog.flatMap(model=>model.colors.map(color=>color.id)),'tank68-purple', 'tank68-black', 'razer-black', 'razer-white','cuktech-10-ultra','cuktech-10-ultra-black','g309','g309-white','blackshark','blackshark-green','blackshark-white']);
     if (!productUrls.has(artKey) && allowed.has(artKey) && payload?.base64) {
       try {
         const binary = atob(payload.base64);
@@ -434,7 +441,7 @@
     }
     applyProductArt('keyboard');
     applyProductArt('razer');
-    applyProductArt('charger');applyProductArt('g309');applyProductArt('blackshark');
+    applyProductArt('charger');applyProductArt('g309');applyProductArt('blackshark');for(const kind of xiberiaIds)applyProductArt(kind);
   }
 
   function requestProductArt() {
@@ -528,7 +535,7 @@
       if(lastChargerStatus)updateChargerStatus(lastChargerStatus);
       requestChargerStatus();
       requestRazerStatus();requestDevices();for(const [kind,status] of deviceStates)updateDeviceStatus(kind,status);
-      if (!productUrls.has(selectedColors.keyboard) || !productUrls.has(selectedColors.razer)) requestProductArt();
+      if ([...enabled].some(kind=>colorOptions[kind]&&!productUrls.has(selectedColors[kind]))) requestProductArt();
     }
     return true;
   }
@@ -553,7 +560,7 @@
     if (data.type === 'razer-status') updateRazerStatus(data.status);
     if(data.type==='charger-status')updateChargerStatus(data.status);
     if(data.type==='device-status')updateDeviceStatus(data.kind,data.status);
-    if(data.type==='device-color'&&['g309','blackshark'].includes(data.kind)){setColor(data.kind,data.color);if(!productUrls.has(data.color))requestProductArt([data.color]);}
+    if(data.type==='device-color'&&['g309','blackshark',...xiberiaIds].includes(data.kind)){setColor(data.kind,data.color);if(!productUrls.has(data.color))requestProductArt([data.color]);}
     if (data.type === 'product-art') acceptProductArt(data);
   });
   if (!window.__dcColorPopoverOutside) {

@@ -19,6 +19,7 @@ function validate(id,command,value){
   }else if(!Number.isFinite(value)||value<0||value>100)throw Error('音量范围为 0–100');
 }
 function createService(id,base,{run,dataRoot=path.join(base,'..','data',id)}={}){
+  if(fs.existsSync(path.join(base,'xiberia-runtime','catalog.json'))&&require('./xiberia-runtime/catalog.json').some(model=>model.id===id))return require('./xiberia-runtime/service.cjs').createService(base,{id});
   const spec=specifications[id];if(!spec)throw Error('Unknown device');
   const execute=run||((command,value)=>new Promise((resolve,reject)=>{
     const config=JSON.parse(fs.readFileSync(path.join(base,'lab-config.json'),'utf8'));

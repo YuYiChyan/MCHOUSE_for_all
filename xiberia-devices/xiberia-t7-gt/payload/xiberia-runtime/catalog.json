@@ -1,0 +1,473 @@
+[
+  {
+    "id": "xiberia-t10",
+    "folder": "xiberia-t10",
+    "title": "XIBERIA T10 有线",
+    "officialKey": "t10",
+    "usbIds": [
+      "36F9:D003"
+    ],
+    "aliases": [
+      "XIBERIA T10"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-t10-000000-0",
+        "label": "玄墨黑",
+        "swatch": "#000000",
+        "file": "xiberia-t10-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_000000_0.png",
+        "sha256": "1e60a007633a7a9529a50efa0cfa60fb1bffde2ffedb70a1ca647d0ba93f1e98"
+      },
+      {
+        "id": "xiberia-t10-ffe251-1",
+        "label": "蚀金黑",
+        "swatch": "#ffe251",
+        "file": "xiberia-t10-ffe251-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_FFE251_1.png",
+        "sha256": "57161b3ffba362f1ecc96e3977ffa1d080a5ff05fcf9763a21c98fe6c7c9d635"
+      },
+      {
+        "id": "xiberia-t10-919393-2",
+        "label": "凌空灰",
+        "swatch": "#919393",
+        "file": "xiberia-t10-919393-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_919393_2.png",
+        "sha256": "912a854c4c45b7a710863916dfb50a9c02284341a7f511af442f090d5d149ddc"
+      },
+      {
+        "id": "xiberia-t10-b7b7b7-3",
+        "label": "皓月银",
+        "swatch": "#b7b7b7",
+        "file": "xiberia-t10-b7b7b7-3.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_B7B7B7_3.png",
+        "sha256": "47ddb8b2ba639c2beb7ad9bfef4022151eedec02b195d838420202201e45a3c9"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t10g",
+    "folder": "xiberia-t10g",
+    "title": "XIBERIA T10G",
+    "officialKey": "t10g",
+    "usbIds": [
+      "36F9:D003"
+    ],
+    "aliases": [
+      "XIBERIA T10G"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-t10g-000000-0",
+        "label": "玄墨黑",
+        "swatch": "#000000",
+        "file": "xiberia-t10g-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_000000_0.png",
+        "sha256": "1e60a007633a7a9529a50efa0cfa60fb1bffde2ffedb70a1ca647d0ba93f1e98"
+      },
+      {
+        "id": "xiberia-t10g-ffe251-1",
+        "label": "蚀金黑",
+        "swatch": "#ffe251",
+        "file": "xiberia-t10g-ffe251-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_FFE251_1.png",
+        "sha256": "57161b3ffba362f1ecc96e3977ffa1d080a5ff05fcf9763a21c98fe6c7c9d635"
+      },
+      {
+        "id": "xiberia-t10g-919393-2",
+        "label": "凌空灰",
+        "swatch": "#919393",
+        "file": "xiberia-t10g-919393-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_919393_2.png",
+        "sha256": "912a854c4c45b7a710863916dfb50a9c02284341a7f511af442f090d5d149ddc"
+      },
+      {
+        "id": "xiberia-t10g-b7b7b7-3",
+        "label": "皓月银",
+        "swatch": "#b7b7b7",
+        "file": "xiberia-t10g-b7b7b7-3.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_B7B7B7_3.png",
+        "sha256": "47ddb8b2ba639c2beb7ad9bfef4022151eedec02b195d838420202201e45a3c9"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t10-wireless",
+    "folder": "xiberia-t10-wireless",
+    "title": "XIBERIA T10 无线",
+    "officialKey": "t10_wireless",
+    "usbIds": [
+      "36F9:F001",
+      "36F9:F010"
+    ],
+    "aliases": [
+      "XIBERIA T10",
+      "XIBERIA T10 Wireless"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-t10-wireless-000000-0",
+        "label": "玄墨黑",
+        "swatch": "#000000",
+        "file": "xiberia-t10-wireless-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_000000_0.png",
+        "sha256": "b8bad543b8c0b758e8ea348e8758289ad7fc2dc455e626dbc3caf37928871f0c"
+      },
+      {
+        "id": "xiberia-t10-wireless-fcdeb2-1",
+        "label": "香槟金",
+        "swatch": "#fcdeb2",
+        "file": "xiberia-t10-wireless-fcdeb2-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_FCDEB2_1.png",
+        "sha256": "3f5ac8e64987a5515bcd0e900d9ae2eba0228d4b3239b055fa7d7f2ba964b254"
+      },
+      {
+        "id": "xiberia-t10-wireless-b7b7b7-2",
+        "label": "皓月银",
+        "swatch": "#b7b7b7",
+        "file": "xiberia-t10-wireless-b7b7b7-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_B7B7B7_2.png",
+        "sha256": "ea93d04570555293a8b1818ef6e626dcdbd95aaf815c28eda7443aa70b8fe8f8"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "k03s",
+    "folder": "xiberia-k03s",
+    "title": "XIBERIA K03S 超竞版",
+    "officialKey": "k03s",
+    "usbIds": [
+      "36F9:F016",
+      "36F9:F017"
+    ],
+    "aliases": [
+      "XIBERIA K03S",
+      "XIBERIA K03"
+    ],
+    "colors": [
+      {
+        "id": "k03s-000000-0",
+        "label": "武士黑",
+        "swatch": "#000000",
+        "file": "k03s-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_000000_0.png",
+        "sha256": "00339a1439f305311cc936229ad4a7b1b55d1b3a0546b108e394884c8293c426"
+      },
+      {
+        "id": "k03s-ffffff-1",
+        "label": "熊猫白",
+        "swatch": "#ffffff",
+        "file": "k03s-ffffff-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_FFFFFF_1.png",
+        "sha256": "039c465166efdbbc74037e88df3c8772cec84def798d33634cd2cf9ea454dca5"
+      },
+      {
+        "id": "k03s-f9cad6-2",
+        "label": "极光粉",
+        "swatch": "#f9cad6",
+        "file": "k03s-f9cad6-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_F9CAD6_2.png",
+        "sha256": "6e8aef0c15398250d94181442c914e302fd1195f85c318e1ac612ce0cadedfb5"
+      },
+      {
+        "id": "k03s-6ba6c6-3",
+        "label": "宝石蓝",
+        "swatch": "#6ba6c6",
+        "file": "k03s-6ba6c6-3.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_6BA6C6_3.png",
+        "sha256": "9270d2050d617a4d03a3d1778bc5a27d63d286852e00a0eb6d30856347cc3398"
+      },
+      {
+        "id": "k03s-fb7099-4",
+        "label": "烈焰粉",
+        "swatch": "#fb7099",
+        "file": "k03s-fb7099-4.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_Super_homePage_RGB_FB7099_4.png",
+        "sha256": "f36a8bbbbec34198014bb8dd15cb339be28d4a4b98b21a626f7c03efdb973d64"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-k03-wired",
+    "folder": "xiberia-k03-wired",
+    "title": "XIBERIA K03 有线二代",
+    "officialKey": "k03",
+    "usbIds": [
+      "36F9:E003"
+    ],
+    "aliases": [
+      "XIBERIA K03"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-k03-wired-000000-0",
+        "label": "武士黑",
+        "swatch": "#000000",
+        "file": "xiberia-k03-wired-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_000000_0.png",
+        "sha256": "6cd6b42323e5bac00b5888278c16add2594de26287e70b3f07ef9c4aa53ab480"
+      },
+      {
+        "id": "xiberia-k03-wired-ffffff-1",
+        "label": "熊猫白",
+        "swatch": "#ffffff",
+        "file": "xiberia-k03-wired-ffffff-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_FFFFFF_1.png",
+        "sha256": "113658daae30d9798b2765914d6914fa5ced359ee29763f17fc7a1feb3b5ab1b"
+      },
+      {
+        "id": "xiberia-k03-wired-f9cad6-2",
+        "label": "极光粉",
+        "swatch": "#f9cad6",
+        "file": "xiberia-k03-wired-f9cad6-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_F9CAD6_2.png",
+        "sha256": "b0ca24604b3684c716672593c63bbc23b5d43c59b5373e2014b616caef4358fc"
+      },
+      {
+        "id": "xiberia-k03-wired-bbbebf-3",
+        "label": "冰川白",
+        "swatch": "#bbbebf",
+        "file": "xiberia-k03-wired-bbbebf-3.png",
+        "source": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_BBBEBF_3.png",
+        "sha256": "a2d6ced62278581252fb6ebfc1b1c237a37de3e878c456c2b259206784227673"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-k06s",
+    "folder": "xiberia-k06s",
+    "title": "XIBERIA K06S",
+    "officialKey": "k06s",
+    "usbIds": [
+      "36F9:F002",
+      "36F9:F011"
+    ],
+    "aliases": [
+      "XIBERIA K06S Wireless"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-k06s-000000-0",
+        "label": "黑色",
+        "swatch": "#000000",
+        "file": "xiberia-k06s-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/K06S_homePage_RGB_000000_0.png",
+        "sha256": "39d0f35bfc6368d227d451e135cdd0f2665d2ebbdd746617abc91c4f493f1350"
+      },
+      {
+        "id": "xiberia-k06s-ffffff-1",
+        "label": "云贝白",
+        "swatch": "#ffffff",
+        "file": "xiberia-k06s-ffffff-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/K06S_homePage_RGB_FFFFFF_1.png",
+        "sha256": "94907774c170ab96a028402079bf9e0036fe08b35132ca0e44670f42ecc3da98"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t7",
+    "folder": "xiberia-t7",
+    "title": "CROCIRIS T7",
+    "officialKey": "t7",
+    "usbIds": [
+      "36F9:F008",
+      "36F9:F014"
+    ],
+    "aliases": [
+      "CROCIRIS T7"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-t7-000000-0",
+        "label": "玄墨黑",
+        "swatch": "#000000",
+        "file": "xiberia-t7-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_000000_0.png",
+        "sha256": "f673fd6f5e932943b090cc58c43ac987ab3e85bb53e357773da2213881ab4968"
+      },
+      {
+        "id": "xiberia-t7-c7c0b8-1",
+        "label": "香槟金",
+        "swatch": "#c7c0b8",
+        "file": "xiberia-t7-c7c0b8-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_C7C0B8_1.png",
+        "sha256": "73bf7ce14da1cb62b29a35bafa99d2d3b46ea6fed9ebc3ddd897888b558d2c92"
+      },
+      {
+        "id": "xiberia-t7-d7c3cf-2",
+        "label": "雪山粉",
+        "swatch": "#d7c3cf",
+        "file": "xiberia-t7-d7c3cf-2.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_D7C3CF_2.png",
+        "sha256": "25c7b36c753d4feec08e8e856c57a4613a0047a555007bca4953e7d1ee1a6a95"
+      },
+      {
+        "id": "xiberia-t7-ffc652-3",
+        "label": "闪电黄",
+        "swatch": "#ffc652",
+        "file": "xiberia-t7-ffc652-3.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_FFC652_3.png",
+        "sha256": "cf9827dfde3f5620a65823e996d767ce00a3f76b5860b52eb85fb8a9a3fd57ee"
+      },
+      {
+        "id": "xiberia-t7-50756a-4",
+        "label": "云杉绿",
+        "swatch": "#50756a",
+        "file": "xiberia-t7-50756a-4.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_50756A_4.png",
+        "sha256": "edb19bbcd7d319b851a7b67ed5ef0ffd8c2c433d6bc9e1f8ba3930ac2c737144"
+      },
+      {
+        "id": "xiberia-t7-4bc3d7-5",
+        "label": "卡布里蓝",
+        "swatch": "#4bc3d7",
+        "file": "xiberia-t7-4bc3d7-5.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_4BC3D7_5.png",
+        "sha256": "60ffe4a41ef6c9ee7e80b78a87800a567a759516f207aec40e8578c73dd12c32"
+      },
+      {
+        "id": "xiberia-t7-bd353f-6",
+        "label": "赤芒红",
+        "swatch": "#bd353f",
+        "file": "xiberia-t7-bd353f-6.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_BD353F_6.png",
+        "sha256": "2bd077eabedf50b1c13cdabc56661c9438ad4cb3251defd93e919b3073dfdda0"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-t7-gt",
+    "folder": "xiberia-t7-gt",
+    "title": "CROCIRIS T7 GT",
+    "officialKey": "t7_gt",
+    "usbIds": [
+      "36F9:F009",
+      "36F9:F015"
+    ],
+    "aliases": [
+      "CROCIRIS T7",
+      "CROCIRIS T7 GT"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-t7-gt-000000-0",
+        "label": "玄墨黑",
+        "swatch": "#000000",
+        "file": "xiberia-t7-gt-000000-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7GT_homePage_RGB_000000_0.png",
+        "sha256": "87ae143d9d704978c8ec11ca34e356c601f425ae03180d1180985d916dfe3954"
+      },
+      {
+        "id": "xiberia-t7-gt-acb1b9-1",
+        "label": "太空银",
+        "swatch": "#acb1b9",
+        "file": "xiberia-t7-gt-acb1b9-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/T7GT_homePage_RGB_ACB1B9_1.png",
+        "sha256": "5729c95a50e33faae1c0b58eccb1e7d1caa6ddefaf4ab846e3ae508fe809ac3d"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-s21",
+    "folder": "xiberia-s21",
+    "title": "XIBERIA S21 无线智充版",
+    "officialKey": "s21",
+    "usbIds": [
+      "36F9:C001"
+    ],
+    "aliases": [
+      "XIBERIA S21 Wireless 7.1"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-s21-e1e3d6-0",
+        "label": "铁灰色",
+        "swatch": "#e1e3d6",
+        "file": "xiberia-s21-e1e3d6-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/S21Wireless_7_1_homePage_RGB_E1E3D6_0.png",
+        "sha256": "e7fbcaf96bbb54aaf7f60961f4624a25d389d15164a3619a403a9dd2c3f880a0"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  },
+  {
+    "id": "xiberia-w30",
+    "folder": "xiberia-w30",
+    "title": "XIBERIA W30",
+    "officialKey": "w30",
+    "usbIds": [
+      "36F9:F026"
+    ],
+    "aliases": [
+      "XIBERIA W30 游戏模式",
+      "XIBERIA W30 Game"
+    ],
+    "colors": [
+      {
+        "id": "xiberia-w30-ffffff-0",
+        "label": "雪域白",
+        "swatch": "#ffffff",
+        "file": "xiberia-w30-ffffff-0.png",
+        "source": ":/Skin/Images/DevSel/homePage/W30_homePage_RGB_FFFFFF_0.png",
+        "sha256": "3e0363eb3f6a00dc923edc1a445f0078bbd7d1eab57842bc8152a2bb2fc6d391"
+      },
+      {
+        "id": "xiberia-w30-000000-1",
+        "label": "暗影黑",
+        "swatch": "#000000",
+        "file": "xiberia-w30-000000-1.png",
+        "source": ":/Skin/Images/DevSel/homePage/W30_homePage_RGB_000000_1.png",
+        "sha256": "2c07c0c8023ed47a258e51dbc92982f18e2460ce68188fdacb13dcb20e618f22"
+      }
+    ],
+    "stage": "unverified",
+    "validation": {
+      "visual": "pending",
+      "hardware": "unverified"
+    }
+  }
+]

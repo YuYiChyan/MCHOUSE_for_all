@@ -76,3 +76,8 @@ desktop.ini
 **/via-port.json
 # Generated GPL corresponding-source archive ships inside installers / Release assets.
 /library/vendor/via/via-corresponding-source.zip
+
+# Complete XIBERIA product archives include the unchanged official installer.
+# Keep that installer and the compiled local bridge in release assets only.
+/xiberia-devices/*/vendor/
+/xiberia-devices/*/payload/xiberia-runtime/XiberiaBridge.exe

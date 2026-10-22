@@ -1,0 +1,44 @@
+name: XIBERIA 型号验证
+description: 反馈独立设备包在对应实机上的卡片和控制结果
+title: "[XIBERIA 验证] "
+body:
+  - type: dropdown
+    id: model
+    attributes:
+      label: 设备型号
+      options:
+        - T10 有线
+        - T10G
+        - T10 无线
+        - K03S 超竞版
+        - K03 有线二代
+        - K06S
+        - CROCIRIS T7
+        - CROCIRIS T7 GT
+        - S21 无线智充版
+        - W30
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      description: Windows、MCHOSE HUB、设备固件版本及连接方式
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: 逐项结果
+      description: 每项注明通过、失败或未测试；故障时请附操作步骤和报错。
+      value: |
+        首页卡片与商品图：
+        打开设备页与返回：
+        耳机音量与静音：
+        麦克风音量与静音：
+        EQ 与预设：
+        空间音效：
+        官方 APP 按钮：
+        卸载该型号卡片：
+    validations:
+      required: true

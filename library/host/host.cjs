@@ -11,7 +11,11 @@ global.__one4allHostStarted = true;
 const base = __dirname;
 const registry = JSON.parse(fs.readFileSync(path.join(stateRoot,'registry.json'),'utf8'));
 const enabled = new Set(registry.plugins.map(plugin=>plugin.id));
-const deviceServices = Object.fromEntries(['g309','blackshark'].filter(id=>enabled.has(id)).map(id=>[id,require('./device-service.cjs').createService(id,base)]));
+const xiberiaCatalog=fs.existsSync(path.join(base,'xiberia-runtime','catalog.json'))
+  ? require('./xiberia-runtime/catalog.json').filter(model=>enabled.has(model.id)) : [];
+const xiberiaIds=xiberiaCatalog.map(model=>model.id);
+const deviceIds=['g309','blackshark',...xiberiaIds];
+const deviceServices=Object.fromEntries(deviceIds.filter(id=>enabled.has(id)).map(id=>[id,require('./device-service.cjs').createService(id,base)]));
 const dataRoot=path.join(stateRoot,'data');
 fs.mkdirSync(dataRoot,{recursive:true});
 let hidService=null;
@@ -78,6 +82,11 @@ const productAssets = {
   'cuktech-10-ultra':path.join(base,'product-assets','cuktech-10-ultra.png'),
   'cuktech-10-ultra-black':path.join(base,'product-assets','cuktech-10-ultra-black.png'),
 };
+for(const model of xiberiaCatalog){
+  topPageTitles[model.id]=model.title;
+  productColors[model.id]={default:model.colors[0].id,allowed:new Set(model.colors.map(color=>color.id))};
+  for(const color of model.colors)productAssets[color.id]=path.join(base,'product-assets',color.file);
+}
 const productArtCache = new Map();
 let embedded = null;
 let viaServer=null,viaOrigin=null,viaTarget=null;
@@ -249,7 +258,7 @@ async function openEmbedded(sender, kind, requestedColor) {
   const color = productColors[kind].allowed.has(requestedColor) ? requestedColor : productColors[kind].default;
   const webPreferences = kind==='hid'
     ? {session:genericHidSession(),preload:path.join(base,'generic-hid','examples','hid-keyboard-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
-    : ['g309','blackshark'].includes(kind)
+    : deviceIds.includes(kind)
     ? {session:session.fromPartition('persist:one4all-'+kind),preload:path.join(base,'device-preload.cjs'),sandbox:true,contextIsolation:true,nodeIntegration:false}
     : kind === 'keyboard'
     ? { session: ensureKeyboardSession(), preload: path.join(base, 'keyboard-preload.cjs'), sandbox: true, contextIsolation: true, nodeIntegration: false }
@@ -314,8 +323,8 @@ async function openEmbedded(sender, kind, requestedColor) {
     view.webContents.loadURL(keyboardUrl)
       .then(() => log('keyboard-view-resolved', view.webContents.getURL()))
       .catch(error => log('keyboard-view-error', error.message));
-  } else if (['g309','blackshark'].includes(kind)) {
-    view.webContents.loadURL(`${pathToFileURL(path.join(base,kind+'.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}`).catch(error=>log('device-view-error',error.message));
+  } else if (deviceIds.includes(kind)) {
+    view.webContents.loadURL(`${pathToFileURL(path.join(base,kind+'.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}&displayName=${encodeURIComponent(topPageTitles[kind])}`).catch(error=>log('device-view-error',error.message));
   } else if (kind === 'charger') {
     view.webContents.loadURL(`${pathToFileURL(path.join(base,'charger.html')).href}?dcTheme=${initialTheme}&color=${encodeURIComponent(color)}`)
       .catch(error=>log('charger-view-error',error.message));
@@ -430,7 +439,7 @@ ipcMain.handle('dc-lab:close-embedded', event => {
       (tankLocalOrigin && parsed.origin === tankLocalOrigin) ||
       (parsed.protocol === 'file:' && parsed.pathname === new URL(pathToFileURL(path.join(base,'charger.html')).href).pathname) ||
       (parsed.protocol === 'file:' && parsed.pathname === new URL(mainPageUrl).pathname) ||
-      (parsed.protocol === 'file:' && ['g309','blackshark'].some(id=>parsed.pathname===pathToFileURL(path.join(base,id+'.html')).pathname))
+      (parsed.protocol === 'file:' && deviceIds.some(id=>parsed.pathname===pathToFileURL(path.join(base,id+'.html')).pathname))
     );
   } catch {}
   if (!trusted(url) && !isEmbeddedPage) throw new Error('Untrusted origin');
@@ -459,13 +468,17 @@ ipcMain.handle('dc-device:set-color',(event,id,color)=>{
 });
 ipcMain.handle('dc-device:card-status',async(event,id)=>{
   if(!trusted(event.senderFrame?.url||'')||!Object.prototype.hasOwnProperty.call(deviceServices,id))throw Error('Untrusted device request');
+  if(xiberiaIds.includes(id))return {connected:null,installed:true,transport:'usb-audio',sampledAt:null,values:{},capabilities:{}};
   try{return await deviceServices[id].status();}catch{return {connected:false,sampledAt:null,values:{},capabilities:{}};}
 });
-for(const [id,commands] of Object.entries({g309:['setDpi','setReportRate','setHostMode'],blackshark:['setOutputVolume','setInputVolume','setOutputMute','setInputMute','setEq']})){
-  for(const command of commands)ipcMain.handle('dc-device:'+command,(event,requested,value)=>{
-    if(requested!==id)throw Error('Wrong device');assertDevicePage(event,id);return deviceServices[id].invoke(command,value);
-  });
-}
+const deviceCommands={g309:['setDpi','setReportRate','setHostMode'],blackshark:['setOutputVolume','setInputVolume','setOutputMute','setInputMute','setEq']};
+for(const id of xiberiaIds)deviceCommands[id]=require('./xiberia-runtime/service.cjs').commands;
+for(const command of new Set(Object.values(deviceCommands).flat()))ipcMain.handle('dc-device:'+command,(event,id,value)=>{
+  if(!Object.prototype.hasOwnProperty.call(deviceCommands,id)||!deviceCommands[id].includes(command))throw Error('Wrong device command');
+  assertDevicePage(event,id);
+  if(command==='openOfficialApp'&&(embedded?.kind!==id||embedded.view.webContents!==event.sender))throw Error('Active device view only');
+  return deviceServices[id].invoke(command,value);
+});
 app.on('before-quit',()=>{for(const service of Object.values(deviceServices))service.close().catch(()=>{});});
 function assertChargerPage(event) {
   const actual = new URL(event.senderFrame?.url || '');
@@ -598,8 +611,9 @@ ipcMain.handle('dc-lab:razer-set-poll-rate', async (event, rate) => {
   } finally { razerBusy = false; }
 });
 
-const injected = fs.readFileSync(path.join(base, 'cards.js'), 'utf8');
-const nativeInjected = 'window.__one4allEnabled='+JSON.stringify([...enabled])+';' + fs.readFileSync(path.join(base, 'native-cards.js'), 'utf8');
+const catalogInjected='window.__one4allXiberiaCatalog='+JSON.stringify(xiberiaCatalog)+';';
+const injected=catalogInjected+fs.readFileSync(path.join(base,'cards.js'),'utf8');
+const nativeInjected=catalogInjected+'window.__one4allEnabled='+JSON.stringify([...enabled])+';'+fs.readFileSync(path.join(base,'native-cards.js'),'utf8');
 function injectNativeCards(wc) {
   if (wc.isDestroyed()) return;
   let frames = [];
@@ -614,7 +628,7 @@ function injectNativeCards(wc) {
     const url = frame.url || '';
     if (!url.startsWith('https://www.mchose.com.cn/') && !url.startsWith('https://mchose.com.cn/')) continue;
     frame.executeJavaScript(nativeInjected, true)
-      .then(result => log('native-cards-check', { id: wc.id, url, result }))
+      .then(result=>log('native-cards-check',{id:wc.id,url,result}))
       .catch(error => log('native-injection-error', { id: wc.id, url, error: error.message }));
   }
 }

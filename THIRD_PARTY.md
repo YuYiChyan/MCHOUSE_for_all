@@ -10,6 +10,8 @@
 - Python: official CPython 3.13.16 Windows x64 embeddable distribution, PSF license and included licenses inside each runtime archive. Source URLs and SHA-256 are recorded in PYTHON-SOURCE.json.
 - Python dependencies: exact installed versions in cuktech-10-ultra/DEPENDENCIES.json, wheel metadata and license files retained in vendor/charger-deps.zip. Rebuild with scripts/rebuild-deps.ps1.
 - Product photographs: supplied by the user for their device cards; original image and trademark rights belong to their respective owners. They are not covered by the code license.
+- XIBERIA X HUB 0.3.0.6: the ten XIBERIA release ZIPs contain the unchanged, signed official installer. Its SHA-256 and publisher are recorded in `library/audio/xiberia/official-source.json`. The proprietary installer and SDK are separate from this project's MIT code.
+- XIBERIA product photographs: the 34 color images were extracted unchanged from the X HUB 0.3.0.6 Qt resources. The mapping to the ten listed products and file hashes are recorded in `library/audio/xiberia/catalog.json`; image rights remain with their owner.
 
 The current account's Mi Home token, BLE key, account data, device address, and binding configuration are not included in this repository or its packages.
 # 新交接设备的依赖与来源（0.2.0-handoff.1）

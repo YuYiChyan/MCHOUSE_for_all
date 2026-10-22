@@ -10,7 +10,7 @@
 
 ## 当前支持列表
 
-**更新时间：2026-10-22 · 设备适配包：0.2.0 · 通用控件：0.3.0-preview.4**
+**更新时间：2026-10-23 · 设备适配包：0.2.0 · 通用控件：0.3.0-preview.4 · 西伯利亚独立包：0.4.0-preview.2**
 
 下表列出已经完成适配、提供独立安装包的设备。项目的扩展目标覆盖所有满足接入条件的设备；具体型号的功能范围与验证记录随适配持续更新。
 
@@ -22,6 +22,18 @@
 | Logitech G309 | HID++ / LIGHTSPEED；蓝牙能力按设备与接口确认 | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/logitech-g309-v0.2.0-win64.zip) | [logitech-g309](logitech-g309) |
 | BlackShark V2 有线 USB 声卡 | Windows Core Audio / 可选 Equalizer APO | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.2.0/blackshark-v2-v0.2.0-win64.zip) | [blackshark-v2](blackshark-v2) |
 | 通用 HID 键鼠控件 | Windows 标准 HID / 内置 VIA | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.3.0-preview.4/One4All-Generic-HID-0.3.0-preview.4.zip) | [generic-hid](generic-hid) |
+| XIBERIA T10 有线 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-t10-v0.4.0-preview.2-win64.zip) | [xiberia-t10](xiberia-devices/xiberia-t10) · 待验证 |
+| XIBERIA T10G | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-t10g-v0.4.0-preview.2-win64.zip) | [xiberia-t10g](xiberia-devices/xiberia-t10g) · 待验证 |
+| XIBERIA T10 无线 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-t10-wireless-v0.4.0-preview.2-win64.zip) | [xiberia-t10-wireless](xiberia-devices/xiberia-t10-wireless) · 待验证 |
+| XIBERIA K03S 超竞版 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-k03s-v0.4.0-preview.2-win64.zip) | [xiberia-k03s](xiberia-devices/xiberia-k03s) · 待验证 |
+| XIBERIA K03 有线二代 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-k03-wired-v0.4.0-preview.2-win64.zip) | [xiberia-k03-wired](xiberia-devices/xiberia-k03-wired) · 待验证 |
+| XIBERIA K06S | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-k06s-v0.4.0-preview.2-win64.zip) | [xiberia-k06s](xiberia-devices/xiberia-k06s) · 待验证 |
+| CROCIRIS T7 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-t7-v0.4.0-preview.2-win64.zip) | [xiberia-t7](xiberia-devices/xiberia-t7) · 待验证 |
+| CROCIRIS T7 GT | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-t7-gt-v0.4.0-preview.2-win64.zip) | [xiberia-t7-gt](xiberia-devices/xiberia-t7-gt) · 待验证 |
+| XIBERIA S21 无线智充版 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-s21-v0.4.0-preview.2-win64.zip) | [xiberia-s21](xiberia-devices/xiberia-s21) · 待验证 |
+| XIBERIA W30 | Core Audio / X HUB 原生 SDK | [下载](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/v0.4.0-preview.2/xiberia-w30-v0.4.0-preview.2-win64.zip) | [xiberia-w30](xiberia-devices/xiberia-w30) · 待验证 |
+
+西伯利亚这 10 款来自 X HUB 明确列出的型号，每款都有原厂商品图和独立安装包。每包只注册自己的固定卡片，包含所需依赖与未修改的 X HUB 0.3.0.6 安装器，无需另行下载。T10 首页卡片和五个分页已在本机确认，其余型号未逐款视觉验收；所有型号的硬件控制仍待对应耳机实机确认。旧版 S21 MAX、K03S 7.1 和仅出现在 INF 中的 USB 标识不在本批中。验证反馈请用 [型号验证 Issue](https://github.com/YuYiChyan/MCHOUSE_for_all/issues/new?template=device-validation.yml) 提交；详见 [XIBERIA 目录说明](library/audio/xiberia/README.md)。
 
 通用控件提供标准按键状态检测、键盘/鼠标按下高亮、HID 设备与接口信息显示、名称和商品图设置，以及内置 VIA 的按键测试、连接和厂商 JSON 导入。不要求型号已被 VIA 官方收录；实际连接与硬件改键仍需设备固件支持 VIA 协议。它不代表所有标准 HID 设备都支持灯效或硬件改键，详细范围见 [通用控件说明](docs/GENERIC-HID-KEYBOARD.md)。
 

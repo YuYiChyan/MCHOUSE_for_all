@@ -1,0 +1,20 @@
+/* SPDX-License-Identifier: MIT. Reuse the existing M HUB tokens and components. */
+.k03s-preview{margin:10px 22px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;flex:none;}
+.k03s-preview img{height:148px;max-width:100%;object-fit:contain;}
+.k03s-model{font-size:12px;color:var(--rz-muted);}
+.k03s-select{width:100%;padding:11px 14px;background:var(--rz-input);color:var(--rz-text);border:1px solid var(--rz-border);border-radius:8px;font:inherit;}
+.k03s-controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px;}
+.k03s-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;border-bottom:1px solid var(--rz-border);}
+.k03s-toggle-row:last-child{border-bottom:0;}
+.k03s-switch{appearance:none;width:42px;height:24px;flex:0 0 42px;border-radius:20px;background:var(--rz-border);position:relative;cursor:pointer;border:0;}
+.k03s-switch::after{content:'';position:absolute;width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%;transition:transform .15s;}
+.k03s-switch:checked{background:#226bee;}.k03s-switch:checked::after{transform:translateX(18px);}
+.k03s-switch:focus-visible{outline:2px solid #226bee;outline-offset:3px;}
+.k03s-switch:disabled{opacity:.4;cursor:default;}
+.k03s-full{flex-basis:100%;}.k03s-empty{min-height:210px;display:grid;place-items:center;color:var(--rz-muted);}
+.k03s-error[hidden]{display:none;}.k03s-error{margin:12px 0;color:#d65745;line-height:1.6;}
+.k03s-about{max-width:650px;}.k03s-official{margin-top:28px;min-height:40px;}
+.k03s-status{margin:12px 0;color:var(--rz-muted);font-size:12px;min-height:20px;}
+.dc-nav{display:flex;flex-direction:column;}.dc-nav [data-category=about]{margin-top:auto;}
+@media(max-width:720px){.k03s-preview{margin:8px;}.k03s-preview img{height:120px;}.handoff-eq-grid{grid-template-columns:repeat(var(--eq-bands,10),minmax(44px,1fr));}}
+@media(prefers-reduced-motion:reduce){.k03s-switch::after{transition:none;}}

@@ -12,6 +12,8 @@
     return Object.freeze(client);
   }
   return Object.freeze({
+    k03s:api=>bind(api,{status:'status',setColor:'setColor',setOutputVolume:'setOutputVolume',setInputVolume:'setInputVolume',setOutputMute:'setOutputMute',setInputMute:'setInputMute',setEq:'setEq',setPreset:'setPreset',setSurround:'setSurround',setBassBoost:'setBassBoost',setVoiceClarity:'setVoiceClarity',setSmartVolume:'setSmartVolume',openOfficialApp:'openOfficialApp',back:'back'}),
+    xiberia:api=>bind(api,{status:'status',setColor:'setColor',setOutputVolume:'setOutputVolume',setInputVolume:'setInputVolume',setOutputMute:'setOutputMute',setInputMute:'setInputMute',setEq:'setEq',setPreset:'setPreset',setSurround:'setSurround',setBassBoost:'setBassBoost',setVoiceClarity:'setVoiceClarity',setSmartVolume:'setSmartVolume',openOfficialApp:'openOfficialApp',back:'back'}),
     g309:api=>bind(api,{status:'status',setColor:'setColor',setDpi:'setDpi',setReportRate:'setReportRate',setHostMode:'setHostMode',back:'back'}),
     blackshark:api=>bind(api,{status:'status',setColor:'setColor',setOutputVolume:'setOutputVolume',setInputVolume:'setInputVolume',setOutputMute:'setOutputMute',setInputMute:'setInputMute',setEq:'setEq',back:'back'}),
     razer:api=>bind(api,{status:'razerStatus',setDpiStage:'razerSetDpiStage',setPollRate:'razerSetPollRate',back:'closeEmbedded'}),

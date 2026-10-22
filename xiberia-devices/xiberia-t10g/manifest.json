@@ -1,0 +1,241 @@
+{
+  "id": "xiberia-t10g",
+  "title": "XIBERIA T10G",
+  "version": "0.4.0-preview.2",
+  "stage": "unverified",
+  "validation": {
+    "visual": "not-reviewed",
+    "hardware": "unverified"
+  },
+  "files": [
+    {
+      "path": "DEPENDENCIES.json",
+      "sha256": "24f6c7a5f4d0c9aadde220e6d037aedb94675116a97c28725a506fb70994a1b4"
+    },
+    {
+      "path": "Install.cmd",
+      "sha256": "46cc36531bc38c202f77e642cf99b84d80574b3b162dbde0efdc0cd9a7ee58da"
+    },
+    {
+      "path": "Install.ps1",
+      "sha256": "cfdae7893c7732a5ff791632561b652cc86fe3b7f5080008a8148b05c4d64890"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "b89530b8a64c79952711179a735e06d75eecf53f381d47f2109c90a6318d2c6e"
+    },
+    {
+      "path": "LICENSE-COMMON",
+      "sha256": "b89530b8a64c79952711179a735e06d75eecf53f381d47f2109c90a6318d2c6e"
+    },
+    {
+      "path": "official-source.json",
+      "sha256": "f8ce8a05627c3ac8a8dfbb1ae5c8c29413c0874689d87858aa46747a09d550db"
+    },
+    {
+      "path": "payload/adapter.cjs",
+      "sha256": "d7d5dd7edc250ccaa486a568643d09d25e35611cb430d2640d83427f0a03a952"
+    },
+    {
+      "path": "payload/cards.js",
+      "sha256": "6ae8c600744b5db1dab464d51bc5ef5cdf86a07614550192860e14254e660f7c"
+    },
+    {
+      "path": "payload/device-preload.cjs",
+      "sha256": "cb1f269ad226d2352e741511bf500043f8f417c74222075d40126323f24378a6"
+    },
+    {
+      "path": "payload/device-service.cjs",
+      "sha256": "7ed035ea8499e74303b960eb9de4e569090855eff0a6a2a86844344f9125d371"
+    },
+    {
+      "path": "payload/host.cjs",
+      "sha256": "d7bbb4cb6938fc5d4403af2bd5dd811a6086fc1b2b9d6ed2a58020f5080e7267"
+    },
+    {
+      "path": "payload/local-server.cjs",
+      "sha256": "6994c1f7484e105fd754932ebab0e523cf162ea951bf082bdaca81dfaf8b5a4a"
+    },
+    {
+      "path": "payload/main-preload.cjs",
+      "sha256": "026d35137ad390e6a01ff94a1a524d09d2a199377f59412b88a0ce57103b7b41"
+    },
+    {
+      "path": "payload/mchose-ui/components.js",
+      "sha256": "f249a7606c883cbc214db6e5e4c22d520a0b863986b3de65ece70f7cca415ed4"
+    },
+    {
+      "path": "payload/mchose-ui/device-client.js",
+      "sha256": "159ec6678088cc92ac3fa56d716c942722866112067ad67a40e192b60ddbd4c8"
+    },
+    {
+      "path": "payload/mchose-ui/handoff-page.css",
+      "sha256": "afd0227320fc5c2c4a96ecaaee3036addf923c47a4556d745cf8b72846a8cd98"
+    },
+    {
+      "path": "payload/mchose-ui/handoff-page.js",
+      "sha256": "834dff44651d5be5cc1dfe023690a0bffe54d6a1a5778b46665dceb6e2544663"
+    },
+    {
+      "path": "payload/mchose-ui/k03s.css",
+      "sha256": "7018650d37f9492e313e727c903bea5a7be0d0d9eb83ac2e60d5cef0c54fc2a8"
+    },
+    {
+      "path": "payload/mchose-ui/mchose-ui.css",
+      "sha256": "c8a90d1228f4829da4ac033ce4bbd1e1e509b408997a12b602eba1f462f83ccb"
+    },
+    {
+      "path": "payload/mchose-ui/product-art.js",
+      "sha256": "ed78a52719e956cf215cb35065f012f70c412b3638380b74b6f065cb39946535"
+    },
+    {
+      "path": "payload/mchose-ui/razer-theme.css",
+      "sha256": "e6444cf1a74d9133976495bfae87489f8b9ce458f0610a4c7a686d5cf66ecb43"
+    },
+    {
+      "path": "payload/mchose-ui/xiberia-catalog.js",
+      "sha256": "366be95100bfbf7b6b7d661019ce3084642681dd17ea074fb5ce00f56cb2d885"
+    },
+    {
+      "path": "payload/mchose-ui/xiberia.js",
+      "sha256": "b2ea4f85ab6f706c4cdc5e22519be8b3f55e5240cd943975a375a1a8443133ce"
+    },
+    {
+      "path": "payload/native-cards.js",
+      "sha256": "d784774c2ca37a396772b0aa47952485456bb046c5a9458068a38eb271465a3a"
+    },
+    {
+      "path": "payload/product-assets/xiberia-t10g-000000-0.png",
+      "sha256": "1e60a007633a7a9529a50efa0cfa60fb1bffde2ffedb70a1ca647d0ba93f1e98"
+    },
+    {
+      "path": "payload/product-assets/xiberia-t10g-919393-2.png",
+      "sha256": "912a854c4c45b7a710863916dfb50a9c02284341a7f511af442f090d5d149ddc"
+    },
+    {
+      "path": "payload/product-assets/xiberia-t10g-b7b7b7-3.png",
+      "sha256": "47ddb8b2ba639c2beb7ad9bfef4022151eedec02b195d838420202201e45a3c9"
+    },
+    {
+      "path": "payload/product-assets/xiberia-t10g-ffe251-1.png",
+      "sha256": "57161b3ffba362f1ecc96e3977ffa1d080a5ff05fcf9763a21c98fe6c7c9d635"
+    },
+    {
+      "path": "payload/xiberia-runtime/audio_backend.py",
+      "sha256": "023746e8dca86c808a9d8b590858572c2c86c913a14631edad1ff7d9b7cdab65"
+    },
+    {
+      "path": "payload/xiberia-runtime/catalog.json",
+      "sha256": "fb2c1b90224ed96155b07db01379dcc550c5da13fff601367f2944fedaf8aa17"
+    },
+    {
+      "path": "payload/xiberia-runtime/NativeBridge.cs",
+      "sha256": "c14f10680ced197fbd7b4e8dfd3252e97872bea6b56356b11bafaf50e8c36a2f"
+    },
+    {
+      "path": "payload/xiberia-runtime/service.cjs",
+      "sha256": "404a4909ec877f42e91883acf04d77421415510c75622656299312f53e3a191f"
+    },
+    {
+      "path": "payload/xiberia-runtime/XiberiaBridge.exe",
+      "sha256": "ec23c6585d37a8379981289e49aca5eecb30f42ff32b95f6ea9fb3734d43f420"
+    },
+    {
+      "path": "payload/xiberia-t10g.html",
+      "sha256": "df7817e755b1cdbe06eb607c5538fd5a6bd29acdd3b3adfefa2e48d7daaf80f0"
+    },
+    {
+      "path": "PYTHON-SOURCE.json",
+      "sha256": "c425181552ff17553ffa29a09e7d1d68d72bf381fbd02512f4f3ccdcea0fcf74"
+    },
+    {
+      "path": "README.md",
+      "sha256": "10b3915f6d463b3357a42cd833def66d9fde1aea3be1994c753ca121ef7c859f"
+    },
+    {
+      "path": "Repair.cmd",
+      "sha256": "4a868d170138a956819589fc215fd0560da999866b14886a840fb9ae0eed9c82"
+    },
+    {
+      "path": "Repair.ps1",
+      "sha256": "e57d463497be0936f8954feb2b56bb4a919339691cfad9ec17a21463e712729e"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "sha256": "221a2a1a4d9961c88f9f352ad76d24a4ddf377ebe9db28607da220d8cfe9b75b"
+    },
+    {
+      "path": "scripts/Manage.ps1",
+      "sha256": "330e6f002e336e44216e2ce1299683934d7d131044becca6694aff44e9f9a7be"
+    },
+    {
+      "path": "Uninstall.cmd",
+      "sha256": "ca691b9a5f7ec8eaa2a00f7f334bbe9a4a113f516165633ee28095f3d51cff01"
+    },
+    {
+      "path": "Uninstall.ps1",
+      "sha256": "f72840ae7e375daeb0a77110576fefce9343e8a649a17f6a1f95a8af15b4d8ce"
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "ba37b16eb532c219d7dfec8f7e26652b1cf91759d893ca8f817309ca12048779"
+    },
+    {
+      "path": "vendor/blackshark-deps.zip",
+      "sha256": "e824def25815d65da5ea283cf561c6c79cb6d6254e22f375ec850258cc77a75b"
+    },
+    {
+      "path": "vendor/pycaw-source.zip",
+      "sha256": "1bebb5b31879eb84f3da07d0cafc7e17b7180682b9aa426bc53d04542caf3e5f"
+    },
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+    },
+    {
+      "path": "vendor/XIBERIA-HUB-Setup-v0.3.0.6.exe",
+      "sha256": "a8fa805c74a32d156879ac0d630b4e4abae97c20b3d1c778f57b805bcbea17d7"
+    }
+  ],
+  "bundles": [
+    {
+      "path": "vendor/python-3.13.16-win64.zip",
+      "destination": "python"
+    },
+    {
+      "path": "vendor/blackshark-deps.zip",
+      "destination": "xiberia-audio-deps"
+    }
+  ],
+  "assets": [],
+  "pluginFiles": [
+    "adapter.cjs",
+    "cards.js",
+    "device-preload.cjs",
+    "device-service.cjs",
+    "host.cjs",
+    "local-server.cjs",
+    "main-preload.cjs",
+    "mchose-ui/components.js",
+    "mchose-ui/device-client.js",
+    "mchose-ui/handoff-page.css",
+    "mchose-ui/handoff-page.js",
+    "mchose-ui/k03s.css",
+    "mchose-ui/mchose-ui.css",
+    "mchose-ui/product-art.js",
+    "mchose-ui/razer-theme.css",
+    "mchose-ui/xiberia-catalog.js",
+    "mchose-ui/xiberia.js",
+    "native-cards.js",
+    "product-assets/xiberia-t10g-000000-0.png",
+    "product-assets/xiberia-t10g-919393-2.png",
+    "product-assets/xiberia-t10g-b7b7b7-3.png",
+    "product-assets/xiberia-t10g-ffe251-1.png",
+    "xiberia-runtime/audio_backend.py",
+    "xiberia-runtime/catalog.json",
+    "xiberia-runtime/NativeBridge.cs",
+    "xiberia-runtime/service.cjs",
+    "xiberia-runtime/XiberiaBridge.exe",
+    "xiberia-t10g.html"
+  ]
+}

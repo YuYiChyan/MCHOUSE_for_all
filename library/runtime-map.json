@@ -25,7 +25,14 @@
   },
   {
     "source": "install/Install.ps1",
-    "target": "Install.ps1"
+    "target": "Install.ps1",
+    "projects": [
+      "tank68",
+      "razer-mini-se",
+      "cuktech-10-ultra",
+      "logitech-g309",
+      "blackshark-v2"
+    ]
   },
   {
     "source": "install/Install.cmd",
@@ -117,7 +124,8 @@
     "target": "payload/adapter.cjs",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
     ]
   },
   {
@@ -125,7 +133,8 @@
     "target": "payload/device-service.cjs",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
     ]
   },
   {
@@ -133,7 +142,8 @@
     "target": "payload/device-preload.cjs",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
     ]
   },
   {
@@ -141,7 +151,8 @@
     "target": "payload/mchose-ui/handoff-page.js",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
     ]
   },
   {
@@ -149,7 +160,8 @@
     "target": "payload/mchose-ui/handoff-page.css",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
     ]
   },
   {
@@ -157,7 +169,57 @@
     "target": "payload/mchose-ui/product-art.js",
     "projects": [
       "logitech-g309",
-      "blackshark-v2"
+      "blackshark-v2",
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/NativeBridge.cs",
+    "target": "payload/xiberia-runtime/NativeBridge.cs",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/audio_backend.py",
+    "target": "payload/xiberia-runtime/audio_backend.py",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/service.cjs",
+    "target": "payload/xiberia-runtime/service.cjs",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/catalog.json",
+    "target": "payload/xiberia-runtime/catalog.json",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/xiberia.js",
+    "target": "payload/mchose-ui/xiberia.js",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/k03s.css",
+    "target": "payload/mchose-ui/k03s.css",
+    "projects": [
+      "xiberia-audio"
+    ]
+  },
+  {
+    "source": "audio/xiberia/Install-Xiberia.ps1",
+    "target": "Install.ps1",
+    "projects": [
+      "xiberia-audio"
     ]
   }
 ]

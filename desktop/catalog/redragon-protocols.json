@@ -1,0 +1,475 @@
+{
+  "schema": 1,
+  "brand": "redragon",
+  "source": {
+    "name": "Redragon 原厂 QMK/VIA 型号定义与对应商品图",
+    "url": "https://redragonshop.com/pages/software",
+    "scope": "FINKE K715 PRO and ALCOR K717 PRO exact QMK/VIA editions; USB wired configuration"
+  },
+  "models": [
+    {
+      "id": "redragon-via-369b-21",
+      "brand": "redragon",
+      "name": "Redragon FINKE K715 PRO QMK/VIA",
+      "kind": "keyboard",
+      "productUrl": "https://redragonshop.com/products/finke-k715-pro?variant=46112239354078",
+      "source": {
+        "url": "https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_QMK_VIA_Software_ed804286-6f1f-42d7-8144-f9437be88e9a.zip?v=1733305340",
+        "file": "definition-1b8d9f70cfbd8d46.zip#Redragon QMK&VIA Software/FINKE K715 PRO.json",
+        "definitionName": "k715",
+        "protocol": "https://github.com/qmk/qmk_firmware/blob/master/quantum/via.h",
+        "downloadPage": "https://redragonshop.com/blogs/product-download/finke-k715-pro"
+      },
+      "support": {
+        "status": "unverified",
+        "hardwareVerified": false,
+        "provider": "official-via",
+        "protocol": "qmk-via",
+        "version": "1",
+        "vendorId": 13979,
+        "productIds": [
+          33
+        ],
+        "usagePages": [
+          65376
+        ],
+        "usage": 97,
+        "filters": [
+          {
+            "vendorId": 13979,
+            "productId": 33,
+            "usagePage": 65376,
+            "usage": 97
+          }
+        ],
+        "connection": "USB wired",
+        "capabilities": [
+          "keymap"
+        ],
+        "definition": {
+          "name": "k715",
+          "vendorId": 13979,
+          "productId": 33,
+          "matrix": {
+            "rows": 6,
+            "cols": 16
+          },
+          "layouts": {
+            "keymap": [
+              [
+                {
+                  "t": "0",
+                  "c": "#777777"
+                },
+                "0,0\nESC",
+                {
+                  "x": 1,
+                  "c": "#cccccc"
+                },
+                "0,2",
+                "0,3",
+                "0,4",
+                "0,5",
+                {
+                  "x": 0.5
+                },
+                "0,6",
+                "0,7",
+                "0,8",
+                "0,9",
+                {
+                  "x": 0.5
+                },
+                "0,10",
+                "0,11",
+                "0,12",
+                "0,13",
+                {
+                  "x": 0.5
+                },
+                "0,15\n\n\n\n\n\n\n\n\ne0"
+              ],
+              [
+                {
+                  "y": 0.05,
+                  "c": "#cccccc"
+                },
+                "1,0",
+                {
+                  "c": "#cccccc"
+                },
+                "1,1",
+                "1,2",
+                "1,3",
+                "1,4",
+                "1,5",
+                "1,6",
+                "1,7",
+                "1,8",
+                "1,9",
+                "1,10",
+                "1,11",
+                "1,12",
+                {
+                  "c": "#aaaaaa",
+                  "w": 2.25
+                },
+                "1,13",
+                {
+                  "x": 0.75
+                },
+                "1,14"
+              ],
+              [
+                {
+                  "y": 0.05,
+                  "w": 1.75
+                },
+                "2,0",
+                {
+                  "c": "#cccccc"
+                },
+                "2,1",
+                "2,2",
+                "2,3",
+                "2,4",
+                "2,5",
+                "2,6",
+                "2,7",
+                "2,8",
+                "2,9",
+                "2,10",
+                "2,11",
+                "2,12",
+                {
+                  "w": 1.5
+                },
+                "2,13",
+                {
+                  "x": 0.75,
+                  "c": "#aaaaaa"
+                },
+                "2,14"
+              ],
+              [
+                {
+                  "y": 0.05,
+                  "w": 2
+                },
+                "3,0",
+                {
+                  "c": "#cccccc"
+                },
+                "3,1",
+                "3,2",
+                "3,3",
+                "3,4",
+                "3,5",
+                "3,6",
+                "3,7",
+                "3,8",
+                "3,9",
+                "3,10",
+                "3,11",
+                {
+                  "w": 2.25,
+                  "c": "#777777"
+                },
+                "3,13",
+                {
+                  "x": 0.75,
+                  "c": "#aaaaaa"
+                },
+                "3,14"
+              ],
+              [
+                {
+                  "y": 0.05,
+                  "w": 2.5
+                },
+                "4,0",
+                {
+                  "c": "#cccccc"
+                },
+                "4,2",
+                "4,3",
+                "4,4",
+                "4,5",
+                "4,6",
+                "4,7",
+                "4,8",
+                "4,9",
+                "4,10",
+                "4,11",
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.75
+                },
+                "4,12",
+                {
+                  "x": 0.5,
+                  "c": "#777777"
+                },
+                "4,13",
+                {
+                  "x": 0.25,
+                  "c": "#aaaaaa"
+                },
+                "4,14"
+              ],
+              [
+                {
+                  "y": 0.05,
+                  "c": "#aaaaaa",
+                  "w": 1.5
+                },
+                "5,0",
+                {
+                  "w": 1.25
+                },
+                "5,1",
+                {
+                  "w": 1.25
+                },
+                "5,2",
+                {
+                  "c": "#cccccc",
+                  "w": 6
+                },
+                "5,6",
+                {
+                  "c": "#aaaaaa"
+                },
+                "5,9",
+                "5,10",
+                {
+                  "w": 1.25
+                },
+                "5,11",
+                {
+                  "x": 0.25,
+                  "c": "#777777"
+                },
+                "5,12",
+                {
+                  "x": 0.25,
+                  "c": "#777777"
+                },
+                "5,13",
+                {
+                  "x": 0.25,
+                  "c": "#777777"
+                },
+                "5,14"
+              ]
+            ]
+          }
+        },
+        "limitations": [
+          "仅适用于原厂明确的 VIA/QMK 版本，通过 USB 有线接口连接；不包含同名私有固件版本。",
+          "当前接入基础按键映射与键盘层读取，写入后回读确认。"
+        ]
+      },
+      "imageScope": "model-family"
+    },
+    {
+      "id": "redragon-via-342d-e470",
+      "brand": "redragon",
+      "name": "Redragon ALCOR K717 PRO QMK/VIA",
+      "kind": "keyboard",
+      "productUrl": "https://redragonshop.com/products/alcor-k717-pro?variant=46112173850846",
+      "source": {
+        "url": "https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_QMK_VIA_Software_ed804286-6f1f-42d7-8144-f9437be88e9a.zip?v=1733305340",
+        "file": "definition-1b8d9f70cfbd8d46.zip#Redragon QMK&VIA Software/ALCOR K717 PRO.json",
+        "definitionName": "Gaming Keyboard",
+        "protocol": "https://github.com/qmk/qmk_firmware/blob/master/quantum/via.h",
+        "downloadPage": "https://redragonshop.com/blogs/product-download/alcor-k717-pro-qmk-via"
+      },
+      "support": {
+        "status": "unverified",
+        "hardwareVerified": false,
+        "provider": "official-via",
+        "protocol": "qmk-via",
+        "version": "1",
+        "vendorId": 13357,
+        "productIds": [
+          58480
+        ],
+        "usagePages": [
+          65376
+        ],
+        "usage": 97,
+        "filters": [
+          {
+            "vendorId": 13357,
+            "productId": 58480,
+            "usagePage": 65376,
+            "usage": 97
+          }
+        ],
+        "connection": "USB wired",
+        "capabilities": [
+          "keymap"
+        ],
+        "definition": {
+          "name": "Gaming Keyboard",
+          "vendorId": 13357,
+          "productId": 58480,
+          "matrix": {
+            "rows": 5,
+            "cols": 14
+          },
+          "layouts": {
+            "keymap": [
+              [
+                {
+                  "y": 0.25,
+                  "c": "#777777"
+                },
+                "0,0",
+                {
+                  "c": "#cccccc"
+                },
+                "0,1",
+                "0,2",
+                "0,3",
+                "0,4",
+                "0,5",
+                "0,6",
+                "0,7",
+                "0,8",
+                "0,9",
+                "0,10",
+                "0,11",
+                "0,12",
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.75
+                },
+                "0,13"
+              ],
+              [
+                {
+                  "c": "#777777",
+                  "w": 1.25
+                },
+                "1,0",
+                {
+                  "c": "#cccccc"
+                },
+                "1,1",
+                "1,2",
+                "1,3",
+                "1,4",
+                "1,5",
+                "1,6",
+                "1,7",
+                "1,8",
+                "1,9",
+                "1,10",
+                "1,11",
+                "1,12",
+                {
+                  "w": 1.5
+                },
+                "1,13"
+              ],
+              [
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.5
+                },
+                "2,0",
+                {
+                  "c": "#cccccc"
+                },
+                "2,1",
+                "2,2",
+                "2,3",
+                "2,4",
+                "2,5",
+                "2,6",
+                "2,7",
+                "2,8",
+                "2,9",
+                "2,10",
+                "2,11",
+                "2,12",
+                {
+                  "w": 1.25
+                },
+                "2,13"
+              ],
+              [
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.75
+                },
+                "3,0",
+                {
+                  "c": "#cccccc"
+                },
+                "3,1",
+                "3,2",
+                "3,3",
+                "3,4",
+                "3,5",
+                "3,6",
+                "3,7",
+                "3,8",
+                "3,9",
+                "3,10",
+                "3,11",
+                "3,12",
+                "3,13"
+              ],
+              [
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.25
+                },
+                "4,0",
+                {
+                  "w": 1.25
+                },
+                "4,1",
+                {
+                  "c": "#cccccc",
+                  "w": 1.25
+                },
+                "4,2",
+                {
+                  "w": 6
+                },
+                "4,6",
+                {
+                  "w": 1.25
+                },
+                "4,10",
+                {
+                  "w": 1.25
+                },
+                "4,11",
+                {
+                  "c": "#aaaaaa",
+                  "w": 1.25
+                },
+                "4,12",
+                {
+                  "c": "#cccccc",
+                  "w": 1.25
+                },
+                "4,13"
+              ]
+            ]
+          }
+        },
+        "limitations": [
+          "仅适用于原厂明确的 VIA/QMK 版本，通过 USB 有线接口连接；不包含同名私有固件版本。",
+          "当前接入基础按键映射与键盘层读取，写入后回读确认。"
+        ]
+      },
+      "imageScope": "model-family"
+    }
+  ]
+}

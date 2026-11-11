@@ -1,0 +1,164 @@
+{
+  "schema": 1,
+  "provider": "inphic-webhid",
+  "source": {
+    "url": "https://hubbeta.inphic.cn/",
+    "downloadPage": "https://www.inphic.cn/download",
+    "bundle": "https://hubbeta.inphic.cn/_next/static/chunks/app/page-fdff76e9871af3c5.js",
+    "sha256": "4737cf6d5487da0521a5221389323a67e6cb8841a4b6fa58114563d4dfabd482",
+    "retrievedOn": "2026-11-12",
+    "symbols": [
+      "eO",
+      "eq",
+      "eN",
+      "eZ",
+      "eA",
+      "eL",
+      "getConfig",
+      "readReportTransaction"
+    ]
+  },
+  "models": [
+    {
+      "id": "inphic-zhen",
+      "brand": "inphic",
+      "kind": "mouse",
+      "name": "英菲克 ZHEN",
+      "family": 3,
+      "productNames": [
+        "ZHEN"
+      ],
+      "connections": [
+        {
+          "vendorId": 7511,
+          "productId": 8822,
+          "usagePage": 11,
+          "usage": 0
+        },
+        {
+          "vendorId": 7511,
+          "productId": 8825,
+          "usagePage": 11,
+          "usage": 0
+        }
+      ],
+      "dpi": {
+        "min": 50,
+        "max": 30000,
+        "step": 50,
+        "maxLevels": 8,
+        "enableColorSetting": true,
+        "enableYAxis": true
+      },
+      "rates": [
+        {
+          "code": 1,
+          "hz": 125
+        },
+        {
+          "code": 2,
+          "hz": 250
+        },
+        {
+          "code": 3,
+          "hz": 500
+        },
+        {
+          "code": 4,
+          "hz": 1000
+        }
+      ],
+      "imageUrl": "https://hubbeta.inphic.cn/products/mouse_zhen.svg"
+    },
+    {
+      "id": "inphic-in10-upgraded",
+      "brand": "inphic",
+      "kind": "mouse",
+      "name": "英菲克 IN10 升级版",
+      "family": 4,
+      "productNames": [
+        "IN10"
+      ],
+      "connections": [
+        {
+          "vendorId": 7511,
+          "productId": 8824,
+          "usagePage": 11,
+          "usage": 0
+        }
+      ],
+      "dpi": {
+        "min": 50,
+        "max": 30000,
+        "step": 50,
+        "maxLevels": 8,
+        "enableColorSetting": true,
+        "enableYAxis": false
+      },
+      "rates": [
+        {
+          "code": 1,
+          "hz": 125
+        },
+        {
+          "code": 2,
+          "hz": 250
+        },
+        {
+          "code": 3,
+          "hz": 500
+        },
+        {
+          "code": 4,
+          "hz": 1000
+        }
+      ],
+      "imageUrl": "https://hubbeta.inphic.cn/products/mouse_in10.svg"
+    },
+    {
+      "id": "inphic-in9-pro-v2-upgraded",
+      "brand": "inphic",
+      "kind": "mouse",
+      "name": "英菲克 IN9 PRO V2 升级版",
+      "family": 4,
+      "productNames": [
+        "Inphic IN9 PRO V2"
+      ],
+      "connections": [
+        {
+          "vendorId": 7511,
+          "productId": 8823,
+          "usagePage": 11,
+          "usage": 0
+        }
+      ],
+      "dpi": {
+        "min": 50,
+        "max": 30000,
+        "step": 50,
+        "maxLevels": 8,
+        "enableColorSetting": true,
+        "enableYAxis": false
+      },
+      "rates": [
+        {
+          "code": 1,
+          "hz": 125
+        },
+        {
+          "code": 2,
+          "hz": 250
+        },
+        {
+          "code": 3,
+          "hz": 500
+        },
+        {
+          "code": 4,
+          "hz": 1000
+        }
+      ],
+      "imageUrl": "https://hubbeta.inphic.cn/products/mouse_in9pro.svg"
+    }
+  ]
+}

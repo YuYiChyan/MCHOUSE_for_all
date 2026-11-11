@@ -1,6 +1,6 @@
 'use strict';
 const path=require('node:path');
-const BRANDS=new Set(['mchose','razer','logitech','atk','vxe','vgn','dareu','rapoo','aula','melgeek']);
+const BRANDS=new Set(Object.keys(require('./domestic-models.cjs').BRANDS));
 const ATK_BRANDS=new Set(['atk','vxe','vgn']);
 function createResourceRefresh({utilityProcess,timeoutMs=15*60000}){
  const jobs=new Map();

@@ -3,8 +3,8 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {execFileSync}=require('node:child_process');
 const project=path.resolve(__dirname,'..'),dist=path.join(project,'dist'),stage=path.join(dist,'win-unpacked');
-const PUBLIC_DEPENDENCIES=['python','openrazer-win','g309-deps'];
-const BRANDS=['mchose','razer','logitech','atk','vxe','vgn','dareu','rapoo','aula','melgeek'];
+const PUBLIC_DEPENDENCIES=['python','openrazer-win','g309-deps','xiberia-audio-deps'];
+const BRANDS=Object.keys(require('../core/domestic-models.cjs').BRANDS);
 const NSIS={version:'3.13',url:'https://downloads.sourceforge.net/project/nsis/NSIS%203/3.13/nsis-3.13.zip',sha256:'ba63dffc4410ee89193e1cb5a41989991bd77c61068da17e3156d136b7b0b3d8'};
 const hash=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 const write=(file,value)=>{fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,value);};
@@ -27,7 +27,7 @@ function copyApplication(){
  const target=path.join(stage,'resources/app');
  for(const directory of ['app','core','runtime','catalog','docs'])copyTree(path.join(project,directory),path.join(target,directory),file=>!/(?:^|[\\/])__pycache__(?:[\\/]|$)|\.pyc$/i.test(file));
  fs.mkdirSync(path.join(target,'scripts'),{recursive:true});
- for(const name of fs.readdirSync(path.join(project,'scripts')).filter(name=>/^extract-.*\.cjs$/.test(name)))fs.copyFileSync(path.join(project,'scripts',name),path.join(target,'scripts',name));
+ for(const name of fs.readdirSync(path.join(project,'scripts')).filter(name=>/^extract-.*\.cjs$/.test(name)||name==='official-via-assets.cjs'))fs.copyFileSync(path.join(project,'scripts',name),path.join(target,'scripts',name));
  const metadata=JSON.parse(fs.readFileSync(path.join(project,'package.json'),'utf8'));
  json(path.join(target,'package.json'),{name:metadata.name,productName:metadata.productName,version:metadata.version,description:metadata.description,main:metadata.main,private:true});
  fs.copyFileSync(path.join(project,'README.md'),path.join(target,'README.md'));write(path.join(target,'packaging/README.md'),fs.readFileSync(path.join(__dirname,'README.md')));return metadata;
@@ -73,7 +73,7 @@ function prepare(options={}){
  for(const name of PUBLIC_DEPENDENCIES)copyTree(path.join(payload,name),path.join(base,name),file=>!/(?:^|[\\/])(?:__pycache__|\.git)(?:[\\/]|$)|\.pyc$/i.test(file));
  const dependencies=PUBLIC_DEPENDENCIES.map(name=>{const files=walk(path.join(base,name));return {name,files:files.length,bytes:files.reduce((sum,file)=>sum+fs.statSync(file).size,0)};});
  const brands=seedResources(resources,path.join(stage,'resources/vendor-resources'));
- const notices='# One4All Desktop — bundled components\n\nElectron/Chromium: see ../LICENSE and ../LICENSES.chromium.html.\n\nPython embedded runtime: base-payload/python/LICENSE.txt.\n\nopenrazer-win 1.3.0: base-payload/openrazer-win/LICENSE and LICENSES/; full Python source is included.\n\nHIDAPI Python binding: base-payload/g309-deps/hidapi-0.15.0.dist-info/licenses/.\n\nThe Logitech HID++ adapter is included as source at app/core/logitech-multi_backend.py, with its upstream Solaar commit and GPL-2.0-or-later attribution.\n\nDevice images and the MelGeek runtime remain their respective authors\' materials, with official source links preserved in each brand catalogue.\n\nInstaller generated with NSIS 3.13: https://nsis.sourceforge.io/ .\n';
+ const notices='# One4All Desktop — bundled components\n\nElectron/Chromium: see ../LICENSE and ../LICENSES.chromium.html.\n\nPython embedded runtime: base-payload/python/LICENSE.txt.\n\nopenrazer-win 1.3.0: base-payload/openrazer-win/LICENSE and LICENSES/; full Python source is included.\n\nHIDAPI Python binding: base-payload/g309-deps/hidapi-0.15.0.dist-info/licenses/.\n\nWindows Core Audio: base-payload/xiberia-audio-deps includes pycaw, comtypes and psutil with their distribution licenses. The XIBERIA native bridge is included as source; the official APO/SDK installer is downloaded on demand.\n\nThe Logitech HID++ adapter is included as source at app/core/logitech-multi_backend.py, with its upstream Solaar commit and GPL-2.0-or-later attribution.\n\nDevice images and the MelGeek runtime remain their respective authors\' materials, with official source links preserved in each brand catalogue.\n\nInstaller generated with NSIS 3.13: https://nsis.sourceforge.io/ .\n';
  write(path.join(stage,'resources/THIRD-PARTY-NOTICES.md'),notices);write(path.join(stage,'.one4all-install'),'org.one4all.desktop');
  const manifest={schema:1,version:metadata.version,platform:'win32',arch:'x64',electron:fs.readFileSync(path.join(electron,'version'),'utf8').trim(),dependencies,brands,containsUserRegistry:false,containsUserData:false,containsVendorInstallers:false};
  json(path.join(stage,'resources/seed-manifest.json'),manifest);json(path.join(dist,'stage-manifest.json'),manifest);
@@ -95,11 +95,11 @@ function compile(options={}){
  for(const file of files){const relative=path.relative(stage,file),dir=path.dirname(relative);if(dir!==last){install.push('SetOutPath "$INSTDIR'+(dir==='.'?'':'\\'+nsisEscape(dir))+'"');last=dir;}install.push('File "'+nsisEscape(file)+'"');uninstall.push('Delete "$INSTDIR\\'+nsisEscape(relative)+'"');let current=dir;while(current!=='.'){directories.add(current);current=path.dirname(current);}}
  for(const directory of [...directories].sort((a,b)=>b.length-a.length))uninstall.push('RMDir "$INSTDIR\\'+nsisEscape(directory)+'"');
  write(path.join(dist,'install-files.nsh'),'\ufeff'+install.join('\r\n')+'\r\n');write(path.join(dist,'uninstall-files.nsh'),'\ufeff'+uninstall.join('\r\n')+'\r\n');
- const output=path.join(dist,'One4All-Setup-'+metadata.version+'.exe');
- execFileSync(compiler,['/INPUTCHARSET','UTF8','/V3','/DAPP_VERSION='+metadata.version,'/DPRODUCT_VERSION=0.6.0.0','/DOUTPUT_FILE='+output,'/DAPP_ICON='+path.join(stage,'resources/app/app/assets/one4all.ico'),'/DINSTALL_FILES='+path.join(dist,'install-files.nsh'),'/DUNINSTALL_FILES='+path.join(dist,'uninstall-files.nsh'),'/DESTIMATED_KB='+Math.ceil(files.reduce((sum,file)=>sum+fs.statSync(file).size,0)/1024),path.join(__dirname,'one4all.nsi')],{windowsHide:true,stdio:'inherit',timeout:15*60000});
+ const output=path.join(dist,'One4All-Setup-'+metadata.version+'.exe'),productVersion=metadata.version.split('-')[0]+'.0';
+ execFileSync(compiler,['/INPUTCHARSET','UTF8','/V3','/DAPP_VERSION='+metadata.version,'/DPRODUCT_VERSION='+productVersion,'/DOUTPUT_FILE='+output,'/DAPP_ICON='+path.join(stage,'resources/app/app/assets/one4all.ico'),'/DINSTALL_FILES='+path.join(dist,'install-files.nsh'),'/DUNINSTALL_FILES='+path.join(dist,'uninstall-files.nsh'),'/DESTIMATED_KB='+Math.ceil(files.reduce((sum,file)=>sum+fs.statSync(file).size,0)/1024),path.join(__dirname,'one4all.nsi')],{windowsHide:true,stdio:'inherit',timeout:15*60000});
  const digest=hash(output),artifact={file:path.basename(output),bytes:fs.statSync(output).size,sha256:digest};
  write(path.join(dist,path.basename(output)+'.sha256'),digest+'  '+path.basename(output)+'\n');
- const manifest={schema:1,version:metadata.version,productVersion:'0.6.0.0',platform:'win32',arch:'x64',createdAt:new Date().toISOString(),installer:{engine:'NSIS',version:NSIS.version,scope:'current-user',silentSwitch:'/S',uninstaller:'Uninstall.exe',preservesUserDataByDefault:true},artifacts:[artifact],seed:JSON.parse(fs.readFileSync(path.join(dist,'stage-manifest.json'),'utf8')),published:false,installedOnBuildMachine:false};
+ const manifest={schema:1,version:metadata.version,productVersion,platform:'win32',arch:'x64',createdAt:new Date().toISOString(),installer:{engine:'NSIS',version:NSIS.version,scope:'current-user',silentSwitch:'/S',uninstaller:'Uninstall.exe',preservesUserDataByDefault:true},artifacts:[artifact],seed:JSON.parse(fs.readFileSync(path.join(dist,'stage-manifest.json'),'utf8')),published:false,installedOnBuildMachine:false};
  json(path.join(dist,'artifact-manifest.json'),manifest);console.log(JSON.stringify({output,bytes:artifact.bytes,sha256:digest}));return manifest;
 }
 module.exports={prepare,compile,seedResources,ensureNsis};

@@ -12,7 +12,7 @@ const execFileAsync = promisify(execFile);
 
 function checkedUrl(value, allowedHosts) {
   const url = new URL(value);
-  if (url.protocol !== 'https:' || url.username || url.password || url.port && url.port !== '443' || !allowedHosts.includes(url.hostname)) {
+  if (url.protocol !== 'https:' || url.username || url.password || !allowedHosts.includes(url.host)) {
     throw new Error('下载地址不在该品牌的已登记来源中');
   }
   return url;

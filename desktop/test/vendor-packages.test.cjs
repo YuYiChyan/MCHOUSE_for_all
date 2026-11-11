@@ -14,6 +14,8 @@ function fixture(t, overrides = {}) {
   return { dataRoot, manager:createPackageManager({ dataRoot, entries:[entry], ...overrides }) };
 }
 test('official sources take precedence; redirects cannot escape the known vendor hosts', () => {
+  assert.equal(checkedUrl('https://files.xiberia.net:9443/driver.exe',['files.xiberia.net:9443']).port,'9443');
+  assert.throws(()=>checkedUrl('https://files.xiberia.net:9444/driver.exe',['files.xiberia.net:9443']));
   assert.equal(sourceFor({...entry,adapter:{type:'github'}}).type,'official');
   assert.equal(checkedUrl(entry.source.url,['vendor.example']).hostname,'vendor.example');
   for (const url of ['https://vendor.example.attacker.net/setup.exe','http://vendor.example/setup.exe','https://user:pw@vendor.example/setup.exe','https://vendor.example:8443/setup.exe']) {

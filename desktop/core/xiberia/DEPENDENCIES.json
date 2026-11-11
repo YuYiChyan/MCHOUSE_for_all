@@ -1,0 +1,32 @@
+{
+  "official": {
+    "name": "XIBERIA X HUB",
+    "version": "0.3.1.0",
+    "source": "https://www.xiberia.net/h-col-181.html",
+    "url": "https://files.xiberia.net:9443/d/data/alist-share/XIBERIA%20X%20HUB/XIBERIA%20HUB%20Setup%20v0.3.1.0.exe?sign=LaUEt-jlCuV2CbhgCzfVbgrO4ICVhZqs6BIakbHDLqU=:0",
+    "sha256": "1035097ae65a89e3d5da398bd7c7df67fe2c82cc3ca4910fef192b43bd6be748",
+    "sdkSha256": "a4c99f0df9ebd24305f4ee31e71888e3079b3303879171c32e5085ae71f1def6",
+    "signer": "Dongguan Desheng Industrial Co.,Ltd.",
+    "distribution": "Original signed official installer is downloaded on demand from the official website. Vendor SDK DLLs are not bundled in One4All.",
+    "license": "Proprietary",
+    "architecture": "x86 SDK, x64 audio APO",
+    "framework": ".NET Framework 4.8",
+    "bytes": 273743040,
+    "sdkAssemblyVersion": "1.0.19.0",
+    "compatibleVersions": [
+      "0.3.0.6",
+      "0.3.1.0"
+    ]
+  },
+  "artwork": {
+    "source": "XIBERIA X HUB 0.3.0.6 Qt resources",
+    "license": "Original product illustrations, rights retained by XIBERIA; not covered by the project MIT license.",
+    "catalog": "core/xiberia/catalog.json"
+  },
+  "coreAudio": {
+    "name": "pycaw",
+    "license": "MIT",
+    "source": "https://github.com/AndreMiras/pycaw",
+    "correspondingSource": "vendor/pycaw-source.zip"
+  }
+}

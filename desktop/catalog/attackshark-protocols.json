@@ -1,0 +1,359 @@
+{
+  "schema": 1,
+  "source": {
+    "url": "https://inputdrv.com/Attack-Shark/",
+    "officialReference": "https://attackshark.cn/system.aspx?ClassID=18",
+    "bundle": "https://inputdrv.com/Attack-Shark/_next/static/chunks/app/page-992e15056d14b0ca.js",
+    "bundleSha256": "89036940dbe622093b571196cf367f5df8d779c8f196922c7b4ff57c731a5654"
+  },
+  "models": [
+    {
+      "id": "attackshark-inputdrv-20",
+      "name": "ATTACK SHARK X11SE contour lines",
+      "brand": "attackshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 7511,
+          "productId": 9236
+        }
+      ],
+      "support": {
+        "provider": "attackshark-webhid",
+        "protocol": "attackshark-inputdrv-feature",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "connectionModes": [
+          "usb"
+        ],
+        "connectionHint": "使用 USB 数据线连接；共享无线接收器尚未接入",
+        "deviceId": 20,
+        "filters": [
+          {
+            "vendorId": 7511,
+            "productId": 9236,
+            "usagePage": 11,
+            "usage": 0
+          }
+        ],
+        "identifiers": [
+          {
+            "vendorId": 7511,
+            "productId": 9236
+          }
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 22000,
+          "step": 50,
+          "maxLevels": 6,
+          "enableColorSetting": false,
+          "enableYAxis": false
+        },
+        "dpiEncoding": "pixart3311",
+        "dpiTable": {
+          "1": 50,
+          "2": 100,
+          "3": 150,
+          "4": 200,
+          "5": 250,
+          "6": 300,
+          "8": 350,
+          "9": 400,
+          "10": 450,
+          "11": 500,
+          "12": 550,
+          "14": 600,
+          "15": 650,
+          "16": 700,
+          "17": 750,
+          "18": 800,
+          "19": 850,
+          "21": 900,
+          "22": 950,
+          "23": 1000,
+          "24": 1050,
+          "25": 1100,
+          "27": 1150,
+          "28": 1200,
+          "29": 1250,
+          "30": 1300,
+          "31": 1350,
+          "32": 1400,
+          "34": 1450,
+          "35": 1500,
+          "36": 1550,
+          "37": 1600,
+          "38": 1650,
+          "39": 1700,
+          "41": 1750,
+          "42": 1800,
+          "43": 1850,
+          "44": 1900,
+          "45": 1950,
+          "47": 2000,
+          "48": 2050,
+          "49": 2100,
+          "50": 2150,
+          "51": 2200,
+          "52": 2250,
+          "54": 2300,
+          "55": 2350,
+          "56": 2400,
+          "57": 2450,
+          "58": 2500,
+          "59": 2550,
+          "61": 2600,
+          "62": 2650,
+          "63": 2700,
+          "64": 2750,
+          "65": 2800,
+          "67": 2850,
+          "68": 2900,
+          "69": 2950,
+          "70": 3000,
+          "71": 3050,
+          "72": 3100,
+          "74": 3150,
+          "75": 3200,
+          "76": 3250,
+          "77": 3300,
+          "78": 3350,
+          "79": 3400,
+          "81": 3450,
+          "82": 3500,
+          "83": 3550,
+          "84": 3600,
+          "85": 3650,
+          "87": 3700,
+          "88": 3750,
+          "89": 3800,
+          "90": 3850,
+          "91": 3900,
+          "92": 3950,
+          "94": 4000,
+          "95": 4050,
+          "96": 4100,
+          "97": 4150,
+          "98": 4200,
+          "99": 4250,
+          "101": 4300,
+          "102": 4350,
+          "103": 4400,
+          "104": 4450,
+          "105": 4500,
+          "107": 4550,
+          "108": 4600,
+          "109": 4650,
+          "110": 4700,
+          "111": 4750,
+          "112": 4800,
+          "114": 4850,
+          "115": 4900,
+          "116": 4950,
+          "117": 5000,
+          "118": 5050,
+          "119": 5100,
+          "121": 5150,
+          "122": 5200,
+          "123": 5250,
+          "124": 5300,
+          "125": 5350,
+          "127": 5400,
+          "128": 5450,
+          "129": 5500,
+          "130": 5550,
+          "131": 5600,
+          "132": 5650,
+          "134": 5700,
+          "135": 5750,
+          "136": 5800,
+          "137": 5850,
+          "138": 5900,
+          "139": 5950,
+          "141": 6000,
+          "142": 6050,
+          "143": 6100,
+          "144": 6150,
+          "145": 6200,
+          "147": 6250,
+          "148": 6300,
+          "149": 6350,
+          "150": 6400,
+          "151": 6450,
+          "152": 6500,
+          "154": 6550,
+          "155": 6600,
+          "156": 6650,
+          "157": 6700,
+          "158": 6750,
+          "159": 6800,
+          "161": 6850,
+          "162": 6900,
+          "163": 6950,
+          "164": 7000,
+          "165": 7050,
+          "167": 7100,
+          "168": 7150,
+          "169": 7200,
+          "170": 7250,
+          "171": 7300,
+          "172": 7350,
+          "174": 7400,
+          "175": 7450,
+          "176": 7500,
+          "177": 7550,
+          "178": 7600,
+          "179": 7650,
+          "181": 7700,
+          "182": 7750,
+          "183": 7800,
+          "184": 7850,
+          "185": 7900,
+          "187": 7950,
+          "188": 8000,
+          "189": 8050,
+          "190": 8100,
+          "191": 8150,
+          "192": 8200,
+          "194": 8250,
+          "195": 8300,
+          "196": 8350,
+          "197": 8400,
+          "198": 8450,
+          "199": 8500,
+          "201": 8550,
+          "202": 8600,
+          "203": 8650,
+          "204": 8700,
+          "205": 8750,
+          "207": 8800,
+          "208": 8850,
+          "209": 8900,
+          "210": 8950,
+          "211": 9000,
+          "212": 9050,
+          "214": 9100,
+          "215": 9150,
+          "216": 9200,
+          "217": 9250,
+          "218": 9300,
+          "219": 9350,
+          "221": 9400,
+          "222": 9450,
+          "223": 9500,
+          "224": 9550,
+          "225": 9600,
+          "227": 9650,
+          "228": 9700,
+          "229": 9750,
+          "230": 9800,
+          "231": 9850,
+          "232": 9900,
+          "234": 9950,
+          "235": 10000
+        },
+        "rates": [
+          {
+            "hz": 125,
+            "code": 8
+          },
+          {
+            "hz": 250,
+            "code": 4
+          },
+          {
+            "hz": 500,
+            "code": 2
+          },
+          {
+            "hz": 1000,
+            "code": 1
+          }
+        ],
+        "officialDriver": "https://inputdrv.com/Attack-Shark/"
+      },
+      "source": {
+        "url": "https://attackshark.cn/system.aspx?ClassID=18",
+        "driver": "https://inputdrv.com/Attack-Shark/",
+        "bundle": "https://inputdrv.com/Attack-Shark/_next/static/chunks/app/page-992e15056d14b0ca.js"
+      }
+    },
+    {
+      "id": "attackshark-inputdrv-169",
+      "name": "ATTACK SHARK X11PRO V2",
+      "brand": "attackshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 7511,
+          "productId": 8873
+        }
+      ],
+      "support": {
+        "provider": "attackshark-webhid",
+        "protocol": "attackshark-inputdrv-feature",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "connectionModes": [
+          "usb"
+        ],
+        "connectionHint": "使用 USB 数据线连接；共享无线接收器尚未接入",
+        "deviceId": 169,
+        "filters": [
+          {
+            "vendorId": 7511,
+            "productId": 8873,
+            "usagePage": 11,
+            "usage": 0
+          }
+        ],
+        "identifiers": [
+          {
+            "vendorId": 7511,
+            "productId": 8873
+          }
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 30000,
+          "step": 50,
+          "maxLevels": 6,
+          "enableColorSetting": false,
+          "enableYAxis": false
+        },
+        "dpiEncoding": "actual16",
+        "rates": [
+          {
+            "hz": 125,
+            "code": 8
+          },
+          {
+            "hz": 250,
+            "code": 4
+          },
+          {
+            "hz": 500,
+            "code": 2
+          },
+          {
+            "hz": 1000,
+            "code": 1
+          }
+        ],
+        "officialDriver": "https://inputdrv.com/Attack-Shark/"
+      },
+      "source": {
+        "url": "https://attackshark.cn/system.aspx?ClassID=18",
+        "driver": "https://inputdrv.com/Attack-Shark/",
+        "bundle": "https://inputdrv.com/Attack-Shark/_next/static/chunks/app/page-992e15056d14b0ca.js"
+      }
+    }
+  ]
+}

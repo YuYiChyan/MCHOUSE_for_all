@@ -1,0 +1,832 @@
+{
+  "schema": 1,
+  "brand": "xiberia",
+  "source": {
+    "url": "https://www.xiberia.net/h-col-181.html",
+    "version": "0.3.0.6",
+    "artwork": "Official X HUB Qt resources",
+    "currentOfficialVersion": "0.3.1",
+    "currentOfficialDate": "2026-10-27",
+    "compatibleOfficialVersions": [
+      "0.3.0.6",
+      "0.3.1.0"
+    ],
+    "sdkSha256": "a4c99f0df9ebd24305f4ee31e71888e3079b3303879171c32e5085ae71f1def6"
+  },
+  "models": [
+    {
+      "id": "xiberia-t10",
+      "name": "XIBERIA T10 有线",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "t10",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 53251
+        }
+      ],
+      "aliases": [
+        "XIBERIA T10"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-t10-000000-0",
+          "name": "玄墨黑",
+          "color": "#000000",
+          "file": "xiberia-t10-000000-0.png",
+          "sha256": "1e60a007633a7a9529a50efa0cfa60fb1bffde2ffedb70a1ca647d0ba93f1e98",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-t10-ffe251-1",
+          "name": "蚀金黑",
+          "color": "#ffe251",
+          "file": "xiberia-t10-ffe251-1.png",
+          "sha256": "57161b3ffba362f1ecc96e3977ffa1d080a5ff05fcf9763a21c98fe6c7c9d635",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_FFE251_1.png"
+          }
+        },
+        {
+          "id": "xiberia-t10-919393-2",
+          "name": "凌空灰",
+          "color": "#919393",
+          "file": "xiberia-t10-919393-2.png",
+          "sha256": "912a854c4c45b7a710863916dfb50a9c02284341a7f511af442f090d5d149ddc",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_919393_2.png"
+          }
+        },
+        {
+          "id": "xiberia-t10-b7b7b7-3",
+          "name": "皓月银",
+          "color": "#b7b7b7",
+          "file": "xiberia-t10-b7b7b7-3.png",
+          "sha256": "47ddb8b2ba639c2beb7ad9bfef4022151eedec02b195d838420202201e45a3c9",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_B7B7B7_3.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-t10g",
+      "name": "XIBERIA T10G",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "t10g",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 53251
+        }
+      ],
+      "aliases": [
+        "XIBERIA T10G"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-t10g-000000-0",
+          "name": "玄墨黑",
+          "color": "#000000",
+          "file": "xiberia-t10g-000000-0.png",
+          "sha256": "1e60a007633a7a9529a50efa0cfa60fb1bffde2ffedb70a1ca647d0ba93f1e98",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-t10g-ffe251-1",
+          "name": "蚀金黑",
+          "color": "#ffe251",
+          "file": "xiberia-t10g-ffe251-1.png",
+          "sha256": "57161b3ffba362f1ecc96e3977ffa1d080a5ff05fcf9763a21c98fe6c7c9d635",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_FFE251_1.png"
+          }
+        },
+        {
+          "id": "xiberia-t10g-919393-2",
+          "name": "凌空灰",
+          "color": "#919393",
+          "file": "xiberia-t10g-919393-2.png",
+          "sha256": "912a854c4c45b7a710863916dfb50a9c02284341a7f511af442f090d5d149ddc",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_919393_2.png"
+          }
+        },
+        {
+          "id": "xiberia-t10g-b7b7b7-3",
+          "name": "皓月银",
+          "color": "#b7b7b7",
+          "file": "xiberia-t10g-b7b7b7-3.png",
+          "sha256": "47ddb8b2ba639c2beb7ad9bfef4022151eedec02b195d838420202201e45a3c9",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wired_homePage_RGB_B7B7B7_3.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-t10-wireless",
+      "name": "XIBERIA T10 无线",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "t10_wireless",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61441
+        },
+        {
+          "vendorId": 14073,
+          "productId": 61456
+        }
+      ],
+      "aliases": [
+        "XIBERIA T10",
+        "XIBERIA T10 Wireless"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-t10-wireless-000000-0",
+          "name": "玄墨黑",
+          "color": "#000000",
+          "file": "xiberia-t10-wireless-000000-0.png",
+          "sha256": "b8bad543b8c0b758e8ea348e8758289ad7fc2dc455e626dbc3caf37928871f0c",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-t10-wireless-fcdeb2-1",
+          "name": "香槟金",
+          "color": "#fcdeb2",
+          "file": "xiberia-t10-wireless-fcdeb2-1.png",
+          "sha256": "3f5ac8e64987a5515bcd0e900d9ae2eba0228d4b3239b055fa7d7f2ba964b254",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_FCDEB2_1.png"
+          }
+        },
+        {
+          "id": "xiberia-t10-wireless-b7b7b7-2",
+          "name": "皓月银",
+          "color": "#b7b7b7",
+          "file": "xiberia-t10-wireless-b7b7b7-2.png",
+          "sha256": "ea93d04570555293a8b1818ef6e626dcdbd95aaf815c28eda7443aa70b8fe8f8",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T10wireless_homePage_RGB_B7B7B7_2.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "k03s",
+      "name": "XIBERIA K03S 超竞版",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "k03s",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61462
+        },
+        {
+          "vendorId": 14073,
+          "productId": 61463
+        }
+      ],
+      "aliases": [
+        "XIBERIA K03S",
+        "XIBERIA K03"
+      ],
+      "variants": [
+        {
+          "id": "k03s-000000-0",
+          "name": "武士黑",
+          "color": "#000000",
+          "file": "k03s-000000-0.png",
+          "sha256": "00339a1439f305311cc936229ad4a7b1b55d1b3a0546b108e394884c8293c426",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "k03s-ffffff-1",
+          "name": "熊猫白",
+          "color": "#ffffff",
+          "file": "k03s-ffffff-1.png",
+          "sha256": "039c465166efdbbc74037e88df3c8772cec84def798d33634cd2cf9ea454dca5",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_FFFFFF_1.png"
+          }
+        },
+        {
+          "id": "k03s-f9cad6-2",
+          "name": "极光粉",
+          "color": "#f9cad6",
+          "file": "k03s-f9cad6-2.png",
+          "sha256": "6e8aef0c15398250d94181442c914e302fd1195f85c318e1ac612ce0cadedfb5",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_F9CAD6_2.png"
+          }
+        },
+        {
+          "id": "k03s-6ba6c6-3",
+          "name": "宝石蓝",
+          "color": "#6ba6c6",
+          "file": "k03s-6ba6c6-3.png",
+          "sha256": "9270d2050d617a4d03a3d1778bc5a27d63d286852e00a0eb6d30856347cc3398",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_homePage_RGB_6BA6C6_3.png"
+          }
+        },
+        {
+          "id": "k03s-fb7099-4",
+          "name": "烈焰粉",
+          "color": "#fb7099",
+          "file": "k03s-fb7099-4.png",
+          "sha256": "f36a8bbbbec34198014bb8dd15cb339be28d4a4b98b21a626f7c03efdb973d64",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_Super_homePage_RGB_FB7099_4.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-k03-wired",
+      "name": "XIBERIA K03 有线二代",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "k03",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 57347
+        }
+      ],
+      "aliases": [
+        "XIBERIA K03"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-k03-wired-000000-0",
+          "name": "武士黑",
+          "color": "#000000",
+          "file": "xiberia-k03-wired-000000-0.png",
+          "sha256": "6cd6b42323e5bac00b5888278c16add2594de26287e70b3f07ef9c4aa53ab480",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-k03-wired-ffffff-1",
+          "name": "熊猫白",
+          "color": "#ffffff",
+          "file": "xiberia-k03-wired-ffffff-1.png",
+          "sha256": "113658daae30d9798b2765914d6914fa5ced359ee29763f17fc7a1feb3b5ab1b",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_FFFFFF_1.png"
+          }
+        },
+        {
+          "id": "xiberia-k03-wired-f9cad6-2",
+          "name": "极光粉",
+          "color": "#f9cad6",
+          "file": "xiberia-k03-wired-f9cad6-2.png",
+          "sha256": "b0ca24604b3684c716672593c63bbc23b5d43c59b5373e2014b616caef4358fc",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_F9CAD6_2.png"
+          }
+        },
+        {
+          "id": "xiberia-k03-wired-bbbebf-3",
+          "name": "冰川白",
+          "color": "#bbbebf",
+          "file": "xiberia-k03-wired-bbbebf-3.png",
+          "sha256": "a2d6ced62278581252fb6ebfc1b1c237a37de3e878c456c2b259206784227673",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K03S_wired_homePage_RGB_BBBEBF_3.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-k06s",
+      "name": "XIBERIA K06S",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "k06s",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61442
+        },
+        {
+          "vendorId": 14073,
+          "productId": 61457
+        }
+      ],
+      "aliases": [
+        "XIBERIA K06S Wireless"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-k06s-000000-0",
+          "name": "黑色",
+          "color": "#000000",
+          "file": "xiberia-k06s-000000-0.png",
+          "sha256": "39d0f35bfc6368d227d451e135cdd0f2665d2ebbdd746617abc91c4f493f1350",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K06S_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-k06s-ffffff-1",
+          "name": "云贝白",
+          "color": "#ffffff",
+          "file": "xiberia-k06s-ffffff-1.png",
+          "sha256": "94907774c170ab96a028402079bf9e0036fe08b35132ca0e44670f42ecc3da98",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/K06S_homePage_RGB_FFFFFF_1.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-t7",
+      "name": "CROCIRIS T7",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "t7",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61448
+        },
+        {
+          "vendorId": 14073,
+          "productId": 61460
+        }
+      ],
+      "aliases": [
+        "CROCIRIS T7"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-t7-000000-0",
+          "name": "玄墨黑",
+          "color": "#000000",
+          "file": "xiberia-t7-000000-0.png",
+          "sha256": "f673fd6f5e932943b090cc58c43ac987ab3e85bb53e357773da2213881ab4968",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-c7c0b8-1",
+          "name": "香槟金",
+          "color": "#c7c0b8",
+          "file": "xiberia-t7-c7c0b8-1.png",
+          "sha256": "73bf7ce14da1cb62b29a35bafa99d2d3b46ea6fed9ebc3ddd897888b558d2c92",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_C7C0B8_1.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-d7c3cf-2",
+          "name": "雪山粉",
+          "color": "#d7c3cf",
+          "file": "xiberia-t7-d7c3cf-2.png",
+          "sha256": "25c7b36c753d4feec08e8e856c57a4613a0047a555007bca4953e7d1ee1a6a95",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_D7C3CF_2.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-ffc652-3",
+          "name": "闪电黄",
+          "color": "#ffc652",
+          "file": "xiberia-t7-ffc652-3.png",
+          "sha256": "cf9827dfde3f5620a65823e996d767ce00a3f76b5860b52eb85fb8a9a3fd57ee",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_FFC652_3.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-50756a-4",
+          "name": "云杉绿",
+          "color": "#50756a",
+          "file": "xiberia-t7-50756a-4.png",
+          "sha256": "edb19bbcd7d319b851a7b67ed5ef0ffd8c2c433d6bc9e1f8ba3930ac2c737144",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_50756A_4.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-4bc3d7-5",
+          "name": "卡布里蓝",
+          "color": "#4bc3d7",
+          "file": "xiberia-t7-4bc3d7-5.png",
+          "sha256": "60ffe4a41ef6c9ee7e80b78a87800a567a759516f207aec40e8578c73dd12c32",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_4BC3D7_5.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-bd353f-6",
+          "name": "赤芒红",
+          "color": "#bd353f",
+          "file": "xiberia-t7-bd353f-6.png",
+          "sha256": "2bd077eabedf50b1c13cdabc56661c9438ad4cb3251defd93e919b3073dfdda0",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7_homePage_RGB_BD353F_6.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-t7-gt",
+      "name": "CROCIRIS T7 GT",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "t7_gt",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61449
+        },
+        {
+          "vendorId": 14073,
+          "productId": 61461
+        }
+      ],
+      "aliases": [
+        "CROCIRIS T7",
+        "CROCIRIS T7 GT"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-t7-gt-000000-0",
+          "name": "玄墨黑",
+          "color": "#000000",
+          "file": "xiberia-t7-gt-000000-0.png",
+          "sha256": "87ae143d9d704978c8ec11ca34e356c601f425ae03180d1180985d916dfe3954",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7GT_homePage_RGB_000000_0.png"
+          }
+        },
+        {
+          "id": "xiberia-t7-gt-acb1b9-1",
+          "name": "太空银",
+          "color": "#acb1b9",
+          "file": "xiberia-t7-gt-acb1b9-1.png",
+          "sha256": "5729c95a50e33faae1c0b58eccb1e7d1caa6ddefaf4ab846e3ae508fe809ac3d",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/T7GT_homePage_RGB_ACB1B9_1.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-s21",
+      "name": "XIBERIA S21 无线智充版",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "s21",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 49153
+        }
+      ],
+      "aliases": [
+        "XIBERIA S21 Wireless 7.1"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-s21-e1e3d6-0",
+          "name": "铁灰色",
+          "color": "#e1e3d6",
+          "file": "xiberia-s21-e1e3d6-0.png",
+          "sha256": "e7fbcaf96bbb54aaf7f60961f4624a25d389d15164a3619a403a9dd2c3f880a0",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/S21Wireless_7_1_homePage_RGB_E1E3D6_0.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    },
+    {
+      "id": "xiberia-w30",
+      "name": "XIBERIA W30",
+      "brand": "xiberia",
+      "kind": "headset",
+      "catalogRole": "device",
+      "officialKey": "w30",
+      "identifiers": [
+        {
+          "vendorId": 14073,
+          "productId": 61478
+        }
+      ],
+      "aliases": [
+        "XIBERIA W30 游戏模式",
+        "XIBERIA W30 Game"
+      ],
+      "variants": [
+        {
+          "id": "xiberia-w30-ffffff-0",
+          "name": "雪域白",
+          "color": "#ffffff",
+          "file": "xiberia-w30-ffffff-0.png",
+          "sha256": "3e0363eb3f6a00dc923edc1a445f0078bbd7d1eab57842bc8152a2bb2fc6d391",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/W30_homePage_RGB_FFFFFF_0.png"
+          }
+        },
+        {
+          "id": "xiberia-w30-000000-1",
+          "name": "暗影黑",
+          "color": "#000000",
+          "file": "xiberia-w30-000000-1.png",
+          "sha256": "2c07c0c8023ed47a258e51dbc92982f18e2460ce68188fdacb13dcb20e618f22",
+          "source": {
+            "resource": ":/Skin/Images/DevSel/homePage/W30_homePage_RGB_000000_1.png"
+          }
+        }
+      ],
+      "source": {
+        "provider": "xiberia-xhub",
+        "version": "0.3.0.6",
+        "url": "https://www.xiberia.net/h-col-181.html",
+        "supportList": "X HUB official model catalog"
+      },
+      "support": {
+        "provider": "xiberia-xhub",
+        "version": "xhub-native-0.3.0.6-coreaudio-1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "capabilities": [
+          "output",
+          "input",
+          "equalizer",
+          "preset",
+          "surround",
+          "bassBoost",
+          "voiceClarity",
+          "smartVolume"
+        ],
+        "compatibleOfficialVersions": [
+          "0.3.0.6",
+          "0.3.1.0"
+        ]
+      }
+    }
+  ]
+}

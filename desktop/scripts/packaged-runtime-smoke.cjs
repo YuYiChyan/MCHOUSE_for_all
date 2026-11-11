@@ -44,6 +44,28 @@ async function inspectRenderer(){
  return {info,local,server,serverRecords,installedCards:installedCards.map(card=>card.id),catalog:{real:catalog.devices.length,products:catalog.presentation?.length,visible:visible.length,brands:catalog.brands,paths:[...paths],renderedImages:[...renderedImages]},melgeek:{modelId:melgeek.id,wasmBytes:wasm.length,magic:[...wasm.slice(0,4)].map(c=>c.charCodeAt(0)),resourceCount:Object.keys(bundle.resources).length},ui:{title:document.getElementById('page-title')?.textContent,activePage:document.querySelector('[data-page].active')?.dataset.page,catalogCount:document.querySelector('.catalog-count')?.textContent,shownCards:document.querySelectorAll('.catalog-grid .device-card').length,errorText:document.querySelector('.empty p')?.textContent||'',notice:document.getElementById('notice')?.hidden?'':document.getElementById('notice')?.textContent||''}};
 }
 
+async function inspectNewProductRoutes(){
+ const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms)),result=[];
+ async function until(fn,label){for(let i=0;i<160;i++){if(fn())return;await pause(50);}throw Error('新型号页面未就绪：'+label);}
+ const brands=['keychron','monsgeek','akko','rk','redragon','darmoshark','inphic','attackshark','xiberia'];
+ for(const brand of brands){
+  document.querySelector('[data-page="packages"]').click();await until(()=>document.querySelector('.catalog-grid .device-card'),'支持库');
+  const select=document.querySelector('[aria-label="筛选品牌"]');select.value=brand;select.dispatchEvent(new Event('input',{bubbles:true}));
+  const cards=[...document.querySelectorAll('.catalog-grid .device-card')];if(!cards.length)throw Error('新品牌没有商品卡：'+brand);
+  const count=document.querySelector('.catalog-count').textContent,first=cards[0],image=first.querySelector('img');if(first.querySelector('.product-brand').textContent!==select.selectedOptions[0].textContent)throw Error('品牌筛选没有生效：'+brand);await until(()=>image.complete&&image.naturalWidth>0,brand+'商品图');
+  first.querySelector('.product-open').click();await until(()=>document.querySelector('.o4-mouse'),brand+'详情');
+  await until(()=>document.querySelector('.o4-mouse-art img')?.naturalWidth>0,brand+'详情商品图');
+  if(['darmoshark','inphic','attackshark'].includes(brand))await until(()=>document.querySelector('.o4-mouse-body .o4-mouse-info-row'),brand+'离线设备信息');
+  if(brand==='xiberia')await until(()=>document.querySelector('.o4-mouse-heading .o4-mouse-muted')?.textContent!=='正在检测耳机…',brand+'状态');
+  const pages=[];for(const button of document.querySelectorAll('.o4-mouse-tabs button,.o4-keyboard-tabs button')){button.click();await pause(20);pages.push(button.textContent);}
+  if(brand==='xiberia'&&pages.length!==5)throw Error('西伯利亚分页缺失');
+  if(document.body.innerText.includes('暂时无法读取'))throw Error(brand+'详情读取失败');
+  const name=document.getElementById('page-title').textContent;document.querySelector('[data-page="devices"]').click();await until(()=>document.querySelector('.brand-entry'),'返回主页');
+  result.push({brand,count,name,pages,artworkLoaded:true,navigationReturned:true});
+ }
+ document.querySelector('[data-page="packages"]').click();await until(()=>document.querySelector('.catalog-grid .device-card'),'返回支持库');return result;
+}
+
 async function main(){
  const startedAt=new Date().toISOString(),report={startedAt,success:false,executable:EXE,debugPort:PORT,hardwareWrites:0,verificationSubmissions:0,installOperations:0};
  let child,page,browser,exitPromise,identity;let stdout='',stderr='';
@@ -67,8 +89,9 @@ async function main(){
   const result=await page.evaluate('('+inspectRenderer.toString()+')()');
   assert.equal(result.info.version,JSON.parse(fs.readFileSync(path.join(ROOT,'package.json'),'utf8')).version);assert.equal(result.info.freshInstall,true);assert.equal(path.resolve(result.info.stateRoot),stateRoot);assert.equal(path.resolve(result.info.payloadRoot),path.join(stateRoot,'modules','imported'));
   assert.deepEqual(JSON.parse(fs.readFileSync(path.join(stateRoot,'registry.json'),'utf8')).plugins,[]);assert.deepEqual(result.installedCards,[]);
-  assert.equal(result.catalog.real,524);assert.equal(result.catalog.products,492);assert.equal(result.catalog.visible,471);assert.deepEqual(result.local,[]);assert.deepEqual(result.serverRecords,[]);assert.equal(result.server.configured,false);assert.equal(result.server.baseURL,'');
-  assert.equal(result.ui.title,'支持库');assert.equal(result.ui.activePage,'packages');assert.ok(result.ui.shownCards>0);assert.ok(result.ui.catalogCount.includes('471'));assert.equal(result.ui.errorText,'');
+  const expected=require('../core/device-catalog.cjs').createDeviceCatalog({resourceRoot:path.join(process.env.LOCALAPPDATA,'One4All-Desktop/vendor-resources')}).list();const groups=require('../core/catalog-presentation.cjs').buildCatalogPresentation(expected.devices);assert.equal(result.catalog.real,expected.devices.length);assert.equal(result.catalog.products,groups.length);assert.equal(result.catalog.visible,groups.filter(m=>m.hasImage&&!['component','noninteractive'].includes(m.catalogRole)).length);assert.deepEqual(result.local,[]);assert.deepEqual(result.serverRecords,[]);assert.equal(result.server.configured,false);assert.equal(result.server.baseURL,'');
+  assert.equal(result.ui.title,'支持库');assert.equal(result.ui.activePage,'packages');assert.ok(result.ui.shownCards>0);assert.ok(result.ui.catalogCount===result.catalog.visible+' 款设备');assert.equal(result.ui.errorText,'');
+  result.newBrandRoutes=await page.evaluate('('+inspectNewProductRoutes.toString()+')()');
   const allowedRoots=[cacheRoot,path.join(RESOURCES,'app')],violations=[];
   const paths=new Set(result.catalog.paths);for(const image of result.catalog.renderedImages){if(!image.startsWith('file:'))violations.push({image,reason:'nonlocal rendered artwork'});else paths.add(fileURLToPath(image));}
   for(const file of paths){if(!path.isAbsolute(file)||!allowedRoots.some(root=>inside(root,file)))violations.push({file,reason:'artwork outside isolated cache or bundled app'});else if(!fs.existsSync(file))violations.push({file,reason:'missing artwork'});}

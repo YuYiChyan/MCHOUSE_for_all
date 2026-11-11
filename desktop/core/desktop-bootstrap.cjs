@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path');
-const PUBLIC_DEPENDENCIES=['python','openrazer-win','g309-deps'];
+const PUBLIC_DEPENDENCIES=['python','openrazer-win','g309-deps','xiberia-audio-deps'];
 
 function absoluteRoot(value,label){if(typeof value!=='string'||!path.isAbsolute(value))throw TypeError(label+' must be an explicit absolute path');return path.resolve(value);}
 function directory(file){try{return fs.statSync(file).isDirectory();}catch{return false;}}
@@ -76,6 +76,9 @@ function prepareDesktopData({stateRoot,legacyRoot,packageRoot,bundledRoot,migrat
   // without replacing any of its files or importing a different installation.
   fs.writeFileSync(registryPath,JSON.stringify({schema:1,target:'standalone',plugins:[],autoRepair:false},null,2),{flag:'wx'});
  }
+ // New public dependencies also reach upgrades; existing files and device
+ // configuration remain owned by the installation.
+ for(const name of ['xiberia-audio-deps']){const source=path.join(bundledRoot,'base-payload',name);if(directory(source)&&!directory(path.join(payloadRoot,name)))copyMissing(source,path.join(payloadRoot,name));}
  return {payloadRoot,registryPath,freshInstall,migrated,existingInstallation,...seedCatalogs({packageRoot,bundledRoot})};
 }
 

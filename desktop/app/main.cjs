@@ -12,7 +12,7 @@ const homeURL = pathToFileURL(path.join(__dirname,'index.html')).href;
 const settingsPath = path.join(stateRoot,'settings.json');
 const readJson = (file,fallback) => {try{return JSON.parse(fs.readFileSync(file,'utf8'));}catch{return fallback;}};
 const settings = readJson(settingsPath,{theme:'light'});
-let ai, adapterRunner, deviceCatalog, razerService, logitechService, validation, localVerification, verificationServer, resourceRefresh;
+let ai, adapterRunner, deviceCatalog, razerService, logitechService, xiberiaService, validation, localVerification, verificationServer, resourceRefresh;
 let mainWindow, runtime, packages, keyboardService, brandView, keyboardTarget, bootstrapInfo;
 const packageRoot=process.env.ONE4ALL_DESKTOP_CACHE || path.join(process.env.LOCALAPPDATA || app.getPath('appData'),'One4All-Desktop');
 function saveSettings(){fs.writeFileSync(settingsPath,JSON.stringify(settings,null,2));}
@@ -107,6 +107,7 @@ else {
     deviceCatalog=require('../core/device-catalog.cjs').createDeviceCatalog({resourceRoot:path.join(packageRoot,'vendor-resources')});
     razerService=require('../core/razer-models.cjs').createRazerService({payloadRoot,stateRoot});
     logitechService=require('../core/logitech-models.cjs').createLogitechService({payloadRoot,stateRoot,resourceRoot:path.join(packageRoot,'vendor-resources')});
+    xiberiaService=require('../core/xiberia-models.cjs').createXiberiaService({payloadRoot,stateRoot});
     validation=require('../core/validation-feedback.cjs').createValidationFeedback({dataRoot:stateRoot,openExternal:url=>shell.openExternal(url),...(safeStorage.isEncryptionAvailable()?{encryptString:v=>safeStorage.encryptString(v),decryptString:v=>safeStorage.decryptString(v)}:{})});
     localVerification=require('../core/local-verification.cjs').createLocalVerification({dataRoot:stateRoot});
     verificationServer=require('../core/verification-server.cjs').createVerificationServer({dataRoot:stateRoot});
@@ -119,7 +120,11 @@ else {
     handle('logitech-scan',()=>logitechService.scan());
     handle('logitech-status',id=>logitechService.status(id));
     handle('logitech-execute',request=>logitechService.execute(request));
-    function prepareVendorHid(id){const model=deviceCatalog.get(id);if(!['mchose-webhid','atk-webhid','vgn-webhid','dareu-webhid','rapoo-webhid','aula-webhid','melgeek-hive'].includes(model.support.provider))throw Error('此型号尚未接入直接控制接口');keyboardTarget=require('../core/domestic-models.cjs').hidTarget(model);return keyboardTarget;}
+    handle('xiberia-scan',()=>xiberiaService.scan());
+    handle('xiberia-status',id=>xiberiaService.status(id));
+    handle('xiberia-execute',request=>xiberiaService.execute(request));
+    handle('xiberia-close',id=>xiberiaService.closeModel(id));
+    function prepareVendorHid(id){const model=deviceCatalog.get(id);if(!['mchose-webhid','atk-webhid','vgn-webhid','dareu-webhid','rapoo-webhid','aula-webhid','melgeek-hive','official-via','inphic-webhid','darmoshark-webhid','attackshark-webhid'].includes(model.support.provider))throw Error('此型号尚未接入直接控制接口');keyboardTarget=require('../core/domestic-models.cjs').hidTarget(model);return keyboardTarget;}
     handle('prepare-mchose-hid',prepareVendorHid);
     handle('prepare-vendor-hid',prepareVendorHid);
     handle('vendor-runtime',id=>{const model=deviceCatalog.get(id);if(model.support.provider!=='melgeek-hive')throw Error('此型号不需要额外设备模块');return require('../core/melgeek-runtime.cjs').getRuntime(id,{resourceRoot:path.join(packageRoot,'vendor-resources')});});
@@ -182,5 +187,5 @@ else {
     log('ready',{version:app.getVersion(),cards:runtime.listCards().map(card=>card.id),payloadRoot});
   }).catch(error=>{log('startup-error',error.stack||error.message);dialog.showErrorBox('One4All 启动失败',error.message);app.quit();});
   app.on('window-all-closed',()=>app.quit());
-  app.on('before-quit',()=>{adapterRunner?.stop();resourceRefresh?.close();razerService?.close().catch(()=>{});logitechService?.close().catch(()=>{});keyboardService?.close().catch(()=>{});});
+  app.on('before-quit',()=>{adapterRunner?.stop();resourceRefresh?.close();razerService?.close().catch(()=>{});logitechService?.close().catch(()=>{});xiberiaService?.close().catch(()=>{});keyboardService?.close().catch(()=>{});});
 }

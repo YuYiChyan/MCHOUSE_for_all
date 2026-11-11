@@ -6,8 +6,18 @@
     "description": "从迈从官网下载桌面运行组件；网页设备可通过独立页面接入。",
     "homepage": "https://www.mchose.store/pages/mchose-hub",
     "webDriver": "https://www.mchose.com.cn/",
-    "source": { "type": "official", "url": "https://cdn.mchose.com.cn/MCHOSE_HUB_installer.zip", "filename": "MCHOSE_HUB_installer.zip", "format": "zip", "allowedHosts": ["cdn.mchose.com.cn"] },
-    "installedExecutables": ["%ProgramFiles%/MCHOSE HUB/MCHOSE HUB.exe"],
+    "source": {
+      "type": "official",
+      "url": "https://cdn.mchose.com.cn/MCHOSE_HUB_installer.zip",
+      "filename": "MCHOSE_HUB_installer.zip",
+      "format": "zip",
+      "allowedHosts": [
+        "cdn.mchose.com.cn"
+      ]
+    },
+    "installedExecutables": [
+      "%ProgramFiles%/MCHOSE HUB/MCHOSE HUB.exe"
+    ],
     "installerNamePattern": "^(?:MCHOSE.*|M HUB installer)\\.exe$",
     "adapter": null,
     "verifiedOn": "2026-11-11"
@@ -19,8 +29,20 @@
     "description": "按需获取官方安装器；已适配设备继续使用独立控制器。",
     "homepage": "https://www.razer.com/synapse-4",
     "webDriver": "https://synapse.razer.com/",
-    "source": { "type": "official", "url": "https://rzr.to/synapse-4-pc-download", "filename": "RazerSynapseInstaller.exe", "format": "exe", "allowedHosts": ["rzr.to", "dl.razerzone.com"] },
-    "installedExecutables": ["%ProgramFiles%/Razer/RazerAppEngine/RazerAppEngine.exe", "%ProgramFiles(x86)%/Razer/Synapse3/WPFUI/Framework/Razer Synapse 3 Host/Razer Synapse 3.exe"],
+    "source": {
+      "type": "official",
+      "url": "https://rzr.to/synapse-4-pc-download",
+      "filename": "RazerSynapseInstaller.exe",
+      "format": "exe",
+      "allowedHosts": [
+        "rzr.to",
+        "dl.razerzone.com"
+      ]
+    },
+    "installedExecutables": [
+      "%ProgramFiles%/Razer/RazerAppEngine/RazerAppEngine.exe",
+      "%ProgramFiles(x86)%/Razer/Synapse3/WPFUI/Framework/Razer Synapse 3 Host/Razer Synapse 3.exe"
+    ],
     "adapter": null,
     "verifiedOn": "2026-11-11"
   },
@@ -30,9 +52,44 @@
     "brand": "Logitech",
     "description": "从罗技官网下载 G HUB；具体型号由对应适配器提供控件。",
     "homepage": "https://www.logitechg.com/en-us/software/ghub",
-    "source": { "type": "official", "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe", "filename": "lghub_installer.exe", "format": "exe", "allowedHosts": ["download01.logi.com", "download.logitech.com", "download.logi.com"] },
-    "installedExecutables": ["%ProgramFiles%/LGHUB/lghub.exe"],
+    "source": {
+      "type": "official",
+      "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe",
+      "filename": "lghub_installer.exe",
+      "format": "exe",
+      "allowedHosts": [
+        "download01.logi.com",
+        "download.logitech.com",
+        "download.logi.com"
+      ]
+    },
+    "installedExecutables": [
+      "%ProgramFiles%/LGHUB/lghub.exe"
+    ],
     "adapter": null,
     "verifiedOn": "2026-11-11"
+  },
+  {
+    "id": "xiberia",
+    "name": "西伯利亚 XIBERIA HUB",
+    "brand": "XIBERIA",
+    "description": "音量和麦克风使用系统接口；EQ 与音效按需安装官方音频组件。",
+    "homepage": "https://www.xiberia.com.cn/h-col-181.html",
+    "source": {
+      "type": "official",
+      "url": "https://files.xiberia.net:9443/d/data/alist-share/XIBERIA%20X%20HUB/XIBERIA%20HUB%20Setup%20v0.3.1.0.exe?sign=LaUEt-jlCuV2CbhgCzfVbgrO4ICVhZqs6BIakbHDLqU=:0",
+      "filename": "XIBERIA-HUB-Setup-v0.3.1.0.exe",
+      "format": "exe",
+      "sha256": "1035097ae65a89e3d5da398bd7c7df67fe2c82cc3ca4910fef192b43bd6be748",
+      "allowedHosts": [
+        "files.xiberia.net:9443"
+      ]
+    },
+    "installedExecutables": [
+      "%ProgramFiles(x86)%/XIBERIA HUB/XIBERIA HUB.exe",
+      "%ProgramFiles%/XIBERIA HUB/XIBERIA HUB.exe"
+    ],
+    "adapter": "xiberia-xhub",
+    "verifiedOn": "2026-11-12"
   }
 ]

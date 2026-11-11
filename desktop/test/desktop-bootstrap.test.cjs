@@ -44,6 +44,13 @@ test('an existing payload without registry is preserved and receives only an emp
  const options=fixture(t);write(path.join(options.payloadRoot,'lab-config.json'),'keep');const result=prepareDesktopData(options);assert.equal(result.existingInstallation,true);assert.equal(result.freshInstall,false);assert.equal(fs.readFileSync(path.join(result.payloadRoot,'lab-config.json'),'utf8'),'keep');assert.equal(fs.existsSync(path.join(result.payloadRoot,'python')),false);assert.deepEqual(JSON.parse(fs.readFileSync(result.registryPath,'utf8')).plugins,[]);
 });
 
+test('upgrade adds the new audio dependency without replacing previous modules or settings',t=>{
+ const options=fixture(t),registry='{ "plugins": [{"id":"keyboard"},{"id":"razer"},{"id":"charger"}] }';
+ write(path.join(options.stateRoot,'registry.json'),registry);write(path.join(options.payloadRoot,'python','public.txt'),'existing runtime');write(path.join(options.stateRoot,'settings.json'),'{"theme":"dark"}');
+ write(path.join(options.bundledRoot,'base-payload','xiberia-audio-deps','pycaw','api.py'),'public audio library');
+ prepareDesktopData(options);assert.equal(fs.readFileSync(path.join(options.payloadRoot,'xiberia-audio-deps','pycaw','api.py'),'utf8'),'public audio library');assert.equal(fs.readFileSync(path.join(options.stateRoot,'registry.json'),'utf8'),registry);assert.equal(fs.readFileSync(path.join(options.payloadRoot,'python','public.txt'),'utf8'),'existing runtime');assert.equal(fs.readFileSync(path.join(options.stateRoot,'settings.json'),'utf8'),'{"theme":"dark"}');
+});
+
 test('relative seeded artwork and runtime become local resources readable by the product catalogue',t=>{
  const options=fixture(t),models=require('../catalog/razer-mice.json').models.filter(m=>['razer-1532-00aa','razer-1532-00ab'].includes(m.id));
  seed(options,'razer',{devices:models.map(m=>({...m,variants:[{id:'black',imagePath:'assets/mouse.png'}],imagePaths:['assets/mouse.png'],reusableResources:[{key:'metadata',path:'assets/metadata.json'}]}))});

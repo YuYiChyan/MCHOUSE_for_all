@@ -22,7 +22,7 @@
     const localConfirmation=One4AllLocalVerification.mount(verificationMount,{model,api,notify,onChange:record=>{if(verificationLabel)verificationLabel.textContent=record.confirmed?'本机已确认':'待验证';}});
     const deviceLabel=node('label','o4-mouse-field'),selector=node('select');selector.setAttribute('aria-label','选择已连接的鼠标');deviceLabel.append(node('span','','已连接的设备'),selector);
     const rescan=node('button','secondary','重新检测');rescan.type='button';
-    sidebar.append(heading,verificationMount,art,colors,deviceLabel,rescan);
+    sidebar.append(heading,verificationMount,art,colors,deviceLabel,rescan);const connectionHint=model.support?.connectionLabel||model.support?.connectionHint;if(connectionHint)sidebar.append(node('p','o4-mouse-muted',connectionHint));
     if(controller.connect){const connect=node('button','primary','连接设备');connect.type='button';connect.onclick=async()=>{if(busy)return;busyUI(true);try{await controller.connect();if(alive)await scan();}catch(error){if(alive)showError(error);}finally{if(alive)busyUI(false);}};sidebar.append(connect);}
     const tabs=node('nav','o4-mouse-tabs'),body=node('div','o4-mouse-body'),message=node('p','o4-mouse-message');message.hidden=true;message.setAttribute('role','status');
     tabs.setAttribute('aria-label','鼠标设置');main.append(tabs,message,body);root.append(sidebar,main);container.replaceChildren(root);

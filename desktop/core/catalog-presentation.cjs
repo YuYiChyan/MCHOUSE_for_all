@@ -14,6 +14,8 @@ function displayName(model){
  // MCHOSE cardList.json records 1/2/3 explicitly name the same Ace 60 Pro
  // product with base, ISO FR and Nordic layouts. Only their display is shared.
  if(model.brand==='mchose'&&model.kind==='keyboard'&&/^Ace 60 Pro (?:ISO FR|Nordic)$/i.test(name))return 'Ace 60 Pro';
+ if(model.brand==='rk'&&model.support?.provider==='official-via')return name.replace(/\s+(?:有线版|无线版)\s+QMK\/VIA$/,' QMK/VIA');
+ if(model.support?.provider==='official-via')return name.replace(/\s*·\s*(?:ANSI|ISO|JIS)\s*$/i,'').trim();
  return name.replace(TRANSPORT_SUFFIX,'').trim();
 }
 function productKey(model){

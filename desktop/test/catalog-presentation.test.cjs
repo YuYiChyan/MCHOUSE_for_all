@@ -65,3 +65,10 @@ test('confirmed Ace 60 Pro regional layouts share a card with original IDs and l
  const snapshot=JSON.stringify(rows),cards=buildCatalogPresentation(rows),pro=cards.find(card=>card.displayName==='Ace 60 Pro');assert.equal(cards.length,4);assert.deepEqual(pro.members,rows.slice(0,3));assert.deepEqual(pro.members.map(m=>m.name),['Ace 60 Pro','Ace 60 Pro ISO FR','Ace 60 Pro Nordic']);assert.equal(pro.variants.length,3);assert.equal(new Set(pro.variants.map(v=>v.id)).size,3);assert.deepEqual(pro.variants.map(v=>v.sourceVariants[0].modelId),rows.slice(0,3).map(m=>m.id));assert.equal(JSON.stringify(rows),snapshot);
  const distinct=['Ace 60 Pro II','Ace 60 Pro III','Ace 60 Pro 8K','Ace 60 Pro 16K'].map((name,i)=>({...rows[0],id:'tier-'+i,name}));assert.equal(buildCatalogPresentation([...rows.slice(0,3),...distinct]).length,5);
 });
+
+test('new VIA layouts and RK transports group without losing exact device definitions',()=>{
+ const models=['keychron','monsgeek','akko','rk','redragon'].flatMap(brand=>require('../catalog/'+brand+'-protocols.json').models),groups=buildCatalogPresentation(models);
+ assert.equal(models.length,55);assert.equal(groups.length,36);assert.equal(groups.flatMap(g=>g.members).length,55);
+ const q1=groups.find(g=>g.displayName==='Keychron Q1 Max');assert.equal(q1.members.length,3);assert.equal(new Set(q1.members.map(m=>m.support.definition.productId)).size,3);
+ const r65=groups.find(g=>g.displayName==='RK R65 QMK/VIA');assert.equal(r65.members.length,2);assert.equal(new Set(r65.members.map(m=>m.id)).size,2);
+});

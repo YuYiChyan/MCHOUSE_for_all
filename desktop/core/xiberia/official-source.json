@@ -1,0 +1,15 @@
+{
+  "name": "XIBERIA X HUB",
+  "version": "0.3.1.0",
+  "source": "https://www.xiberia.net/h-col-181.html",
+  "url": "https://files.xiberia.net:9443/d/data/alist-share/XIBERIA%20X%20HUB/XIBERIA%20HUB%20Setup%20v0.3.1.0.exe?sign=LaUEt-jlCuV2CbhgCzfVbgrO4ICVhZqs6BIakbHDLqU=:0",
+  "sha256": "1035097ae65a89e3d5da398bd7c7df67fe2c82cc3ca4910fef192b43bd6be748",
+  "sdkSha256": "a4c99f0df9ebd24305f4ee31e71888e3079b3303879171c32e5085ae71f1def6",
+  "signer": "Dongguan Desheng Industrial Co.,Ltd.",
+  "bytes": 273743040,
+  "sdkAssemblyVersion": "1.0.19.0",
+  "compatibleVersions": [
+    "0.3.0.6",
+    "0.3.1.0"
+  ]
+}

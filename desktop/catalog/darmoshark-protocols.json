@@ -1,0 +1,5649 @@
+{
+  "schema": 1,
+  "provider": "darmoshark-webhid",
+  "source": {
+    "url": "https://www.darmoshark.cc/",
+    "officialReference": "https://www.darmoshark.cn/",
+    "bundle": "https://www.darmoshark.cc/main.47068c4b56a18ed4.js",
+    "bundleSha256": "78242bd7cbdde04b07ae8aa83bde5a1a615d116753ccf5a55cbda5974d980250",
+    "api": "https://launcher.keychron.cn/"
+  },
+  "models": [
+    {
+      "id": "darmoshark-1915-0722",
+      "name": "Darmoshark M3S Pro",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1826
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808482",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808482/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1826
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1826,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-072d",
+      "name": "Darmoshark M3 pro",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1837
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808493",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808493/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1837
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1837,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0733",
+      "name": "Darmoshark M2 MOUSE",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1843
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808499",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808499/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1843
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1843,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0735",
+      "name": "Darmoshark N5",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1845
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808501",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808501/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1845
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1845,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0736",
+      "name": "Darmoshark M3XS",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1846
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808502",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808502/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1846
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1846,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0737",
+      "name": "Darmoshark M5",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1847
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808503",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808503/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1847
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1847,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0738",
+      "name": "Darmoshark M3micro",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1848
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808504",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808504/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1848
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1848,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          26000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-073a",
+      "name": "Darmoshark M3 Pro Max",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1850
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808506",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808506/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1850
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1850,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-073c",
+      "name": "Darmoshark M3XS PRO",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1852
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808508",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808508/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1852
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1852,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-073d",
+      "name": "Darmoshark M5 PRO",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1853
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808509",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808509/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1853
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1853,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-073e",
+      "name": "Darmoshark M3 MICCRO PRO",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1854
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808510",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808510/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1854
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1854,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-073f",
+      "name": "Darmoshark M2 PRO",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1855
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808511",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808511/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1855
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1855,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0740",
+      "name": "Darmoshark M3S MAX",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1856
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808512",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808512/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1856
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1856,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0744",
+      "name": "Darmoshark N7",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1860
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808516",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808516/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1860
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1860,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0745",
+      "name": "Darmoshark N7 MAX",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1861
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808517",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808517/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1861
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1861,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0749",
+      "name": "Darmoshark M5 AIR",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 1865
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808521",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808521/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 1865
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 1865,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": ""
+          },
+          {
+            "value": 500,
+            "color": ""
+          },
+          {
+            "value": 1000,
+            "color": ""
+          },
+          {
+            "value": 2000,
+            "color": ""
+          },
+          {
+            "value": 4000,
+            "color": ""
+          },
+          {
+            "value": 8000,
+            "color": ""
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0802",
+      "name": "Darmoshark M5 AIR V2",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2050
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808706",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808706/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2050
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2050,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": ""
+          },
+          {
+            "value": 500,
+            "color": ""
+          },
+          {
+            "value": 1000,
+            "color": ""
+          },
+          {
+            "value": 2000,
+            "color": ""
+          },
+          {
+            "value": 4000,
+            "color": ""
+          },
+          {
+            "value": 8000,
+            "color": ""
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0803",
+      "name": "Darmoshark M9",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2051
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808707",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808707/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2051
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2051,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125
+          },
+          {
+            "value": 500
+          },
+          {
+            "value": 1000
+          },
+          {
+            "value": 2000
+          },
+          {
+            "value": 4000
+          },
+          {
+            "value": 8000
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0806",
+      "name": "Darmoshark M2 SE",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2054
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808710",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808710/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2054
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2054,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0807",
+      "name": "Darmoshark M3 Ultra",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2055
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808711",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808711/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2055
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2055,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0808",
+      "name": "Darmoshark M5 V2",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2056
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808712",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808712/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2056
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2056,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0809",
+      "name": "Darmoshark M3 Micro V2",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2057
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808713",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808713/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2057
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2057,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-080a",
+      "name": "Darmoshark M6",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2058
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808714",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808714/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2058
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2058,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0811",
+      "name": "Darmoshark M4",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2065
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808721",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808721/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2065
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2065,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          30000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0812",
+      "name": "Darmoshark M6 Ultra",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2066
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808722",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808722/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2066
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2066,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0814",
+      "name": "Darmoshark AIR28",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2068
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808724",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808724/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2068
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2068,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          1
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0815",
+      "name": "Darmoshark M5 V2S",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2069
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808725",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808725/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2069
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2069,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0816",
+      "name": "Darmoshark M9 PRO",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2070
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808726",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808726/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2070
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2070,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0817",
+      "name": "Darmoshark M5 AIR V2S",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2071
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808727",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808727/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2071
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2071,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0818",
+      "name": "Darmoshark M3 Micro V2S",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2072
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808728",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808728/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2072
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2072,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    },
+    {
+      "id": "darmoshark-1915-0819",
+      "name": "Darmoshark M2 Ultra",
+      "brand": "darmoshark",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 6421,
+          "productId": 2073
+        }
+      ],
+      "source": {
+        "url": "https://www.darmoshark.cc/",
+        "productUrl": "https://launcher.keychron.cn/vapi/v2/product/420808729",
+        "configurationUrl": "https://launcher.keychron.cn/static/device/420808729/json/v3.json"
+      },
+      "support": {
+        "provider": "darmoshark-webhid",
+        "protocol": "darmoshark-dms",
+        "version": "1.0.0",
+        "status": "unverified",
+        "interfaceImplemented": true,
+        "hardwareVerified": false,
+        "identifiers": [
+          {
+            "vendorId": 6421,
+            "productId": 2073
+          }
+        ],
+        "filters": [
+          {
+            "vendorId": 6421,
+            "productId": 2073,
+            "usagePage": 65290,
+            "usage": 1
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1827,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1829,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 1844,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          },
+          {
+            "vendorId": 6421,
+            "productId": 2053,
+            "usagePage": 65290,
+            "usage": 1,
+            "receiver": true
+          }
+        ],
+        "firmwareMap": [
+          {
+            "name": "M3Pro",
+            "firmwarePid": 1809,
+            "productId": 1837
+          },
+          {
+            "name": "M3XS PRO",
+            "firmwarePid": 1821,
+            "productId": 1852
+          },
+          {
+            "name": "M3XS",
+            "firmwarePid": 1813,
+            "productId": 1846
+          },
+          {
+            "name": "M3ProMax",
+            "firmwarePid": 1818,
+            "productId": 1850
+          },
+          {
+            "name": "M3SMax",
+            "firmwarePid": 1823,
+            "productId": 1856
+          },
+          {
+            "name": "M3MICROPRO",
+            "firmwarePid": 1822,
+            "productId": 1854
+          },
+          {
+            "name": "M2MOUSE",
+            "firmwarePid": 1811,
+            "productId": 1843
+          },
+          {
+            "name": "M2PRO",
+            "firmwarePid": 1819,
+            "productId": 1855
+          },
+          {
+            "name": "M5PRO",
+            "firmwarePid": 1820,
+            "productId": 1853
+          },
+          {
+            "name": "M5AIR",
+            "firmwarePid": 2548,
+            "productId": 1865
+          },
+          {
+            "name": "M5",
+            "firmwarePid": 1814,
+            "productId": 1847
+          },
+          {
+            "name": "M3SPRO",
+            "firmwarePid": 1808,
+            "productId": 1826
+          },
+          {
+            "name": "N7",
+            "firmwarePid": 2545,
+            "productId": 1860
+          },
+          {
+            "name": "N7MAX",
+            "firmwarePid": 2624,
+            "productId": 1861
+          },
+          {
+            "name": "N5",
+            "firmwarePid": 1812,
+            "productId": 1845
+          },
+          {
+            "name": "M3MICRO",
+            "firmwarePid": 1815,
+            "productId": 1848
+          }
+        ],
+        "dpiBounds": [
+          50,
+          40000,
+          50
+        ],
+        "reportRates": [
+          {
+            "value": 125,
+            "color": "#ff0000"
+          },
+          {
+            "value": 500,
+            "color": "#0060ff"
+          },
+          {
+            "value": 1000,
+            "color": "#12ff00"
+          },
+          {
+            "value": 2000,
+            "color": "#e218ff"
+          },
+          {
+            "value": 4000,
+            "color": "#f9e14c"
+          },
+          {
+            "value": 8000,
+            "color": "#ffffff"
+          }
+        ],
+        "officialDriver": "https://www.darmoshark.cc/"
+      }
+    }
+  ]
+}

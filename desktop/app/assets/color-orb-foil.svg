@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="leaf" x1="18" y1="5" x2="42" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fbe0a0" stop-opacity=".3"/><stop offset=".24" stop-color="#ffefb2"/>
+      <stop offset=".43" stop-color="#b7893c"/><stop offset=".63" stop-color="#fff4c5"/>
+      <stop offset=".84" stop-color="#d0a24c"/><stop offset="1" stop-color="#ffdf8d" stop-opacity=".25"/>
+    </linearGradient>
+    <radialGradient id="glint"><stop stop-color="#fffbe4"/><stop offset=".35" stop-color="#ffe2a0" stop-opacity=".85"/><stop offset="1" stop-color="#e7b75c" stop-opacity="0"/></radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation=".32"/></filter>
+  </defs>
+  <g fill="url(#leaf)" filter="url(#soft)">
+    <path d="m29 9 3-2-.5 2.7-2.8 1.2zM23 17l3-1-1.4 3.8-2 .3zM23.3 25l2.2 1.4.5 2.2-2.8-1.2zM32 35l2.6 1.2.9 2.7-2.2-1.4zM36 43l2.1 1.8-.8 2.5-1.6-1.9zM32 55l2.4-1.5-.9 3-2.5 1z"/>
+    <circle cx="25" cy="10" r=".8"/><circle cx="33" cy="6" r=".6"/>
+    <circle cx="19" cy="17" r="1.05"/><circle cx="28" cy="20" r=".65"/>
+    <circle cx="19" cy="26" r=".55"/><circle cx="28" cy="31" r=".8"/>
+    <circle cx="33" cy="28" r=".55"/><circle cx="29" cy="39" r=".65"/>
+    <circle cx="41" cy="38" r=".85"/><circle cx="43" cy="46" r=".55"/>
+    <circle cx="31" cy="49" r=".7"/><circle cx="38" cy="55" r=".75"/>
+    <circle cx="27" cy="58" r=".55"/>
+  </g>
+  <circle cx="23" cy="17" r="4.1" fill="url(#glint)" opacity=".76"/>
+  <circle cx="36" cy="44" r="3.2" fill="url(#glint)" opacity=".65"/>
+</svg>

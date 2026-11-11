@@ -2,7 +2,7 @@
 (() => {
  'use strict';
  const node=(tag,cls,text)=>{const element=document.createElement(tag);if(cls)element.className=cls;if(text!==undefined)element.textContent=text;return element;};
- const brands={mchose:'迈从',razer:'雷蛇',logitech:'罗技',atk:'ATK',vxe:'VXE',vgn:'VGN',dareu:'达尔优',rapoo:'雷柏',aula:'狼蛛',melgeek:'MelGeek',keychron:'Keychron 渴创',monsgeek:'MonsGeek',akko:'Akko',rk:'RK',redragon:'红龙',inphic:'英菲克',darmoshark:'达摩鲨',attackshark:'Attack Shark',xiberia:'西伯利亚'};
+ const brands={mchose:'迈从',razer:'雷蛇',logitech:'罗技',atk:'ATK',vxe:'VXE',vgn:'VGN',dareu:'达尔优',rapoo:'雷柏',aula:'狼蛛',melgeek:'MelGeek',keychron:'Keychron 渴创',monsgeek:'MonsGeek',akko:'Akko',rk:'RK',redragon:'红龙',inphic:'英菲克',darmoshark:'达摩鲨',attackshark:'Attack Shark',xiberia:'西伯利亚',fgg:'美加狮 FGG'};
  const kinds={mouse:'鼠标',keyboard:'键盘',headset:'耳机',headset_dock:'耳机底座',speaker:'音箱',microphone:'麦克风',camera:'摄像头',wheel:'方向盘',pedals:'踏板',charge_pad:'充电垫',rs_shifter_handbrake:'换挡器与手刹',h_shifter:'换挡器'};
  window.One4AllCatalogDetails={render(container,{model,api,notify=()=>{},onBack=()=>{}}){
   let alive=true,feedback=null;

@@ -1,16 +1,20 @@
-# One4All Desktop · 0.7.0-preview.1
+# One4All Desktop · 0.7.0-preview.2
 
-独立设备中心。Windows 用户运行 `dist/One4All-Setup-0.7.0-preview.1.exe` 安装，随后从桌面或开始菜单打开；卸载入口在系统“已安装的应用”及开始菜单中。开发目录仍可双击 `启动 One4All.cmd`。无须先打开 MCHOSE HUB。
+独立设备中心。Windows 用户运行 `dist/One4All-Setup-0.7.0-preview.2.exe` 安装，随后从桌面或开始菜单打开；卸载入口在系统“已安装的应用”及开始菜单中。开发目录仍可双击 `启动 One4All.cmd`。无须先打开 MCHOSE HUB。
 
-[下载 Windows 安装包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/desktop-v0.7.0-preview.1/One4All-Setup-0.7.0-preview.1.exe) · [本版发布说明](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/tag/desktop-v0.7.0-preview.1)
+[下载 Windows 安装包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/desktop-v0.7.0-preview.2/One4All-Setup-0.7.0-preview.2.exe) · [本版发布说明](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/tag/desktop-v0.7.0-preview.2)
 
-本版新增达摩鲨、Attack Shark、英菲克、Keychron、MonsGeek、Akko、RK、红龙的原生控制接入，并把西伯利亚已有十款接到独立桌面支持库。保留卡片叠层、柔和投影和玻璃质感。选色圆点用偏心黑白弧面与少量暖金过渡，叠加当前商品配色；色盘支持连续展开、收起和中途反向。支持库把连接方式、地区布局和重复配色收进同一产品卡，当前 625 条型号/接口记录合并为 553 张带图产品卡片，真实型号和控制入口完整保留。
+本版补入美加狮 FGG 的 NANO68、NANO68 Pro、NANO68 Plus、NANO68 Ultra 四张键盘卡片，包含十个明确 USB 版本及原厂配色。前一版的国产鼠标、VIA 键盘与西伯利亚接入继续保留。保留卡片叠层、柔和投影和玻璃质感。选色圆点用偏心黑白渐变，加高斯模糊、烫金反光和少量金色微粒，叠加当前商品配色；悬停与展开时金箔轻微转动；色盘支持连续展开、收起和中途反向。支持库把连接方式、地区布局和重复配色收进同一产品卡，当前 635 条型号/接口记录合并为 557 张带图产品卡片，真实型号和控制入口完整保留。
 
 “待验证”徽章可由用户实测后确认到本机，支持撤销。GitHub 上报继续可用，另外预留统一服务器的提交反馈和刷新状态接口，地址默认空，详见 [验证服务契约](docs/VERIFICATION-SERVER-API.md) 与 [安装包说明](docs/WINDOWS-INSTALLER.md)。
 
-新增卡片全部标记为待验证。西伯利亚 EQ/音效按需从官网下载 X HUB 0.3.1.0；核心 SDK 与已适配 0.3.0.6 字节一致。音量/麦克风使用系统接口，普通控制不启动官方 APP。美加狮（Mad Catz）仍未列为已接入。
+新增卡片全部标记为待验证。西伯利亚 EQ/音效按需从官网下载 X HUB 0.3.1.0；核心 SDK 与已适配 0.3.0.6 字节一致。音量/麦克风使用系统接口，普通控制不启动官方 APP。本版的美加狮键盘来自 FGG/MADLIONS 官方驱动；其 NANO68 与 Mad Catz 的 R.A.T. 鼠标属于不同入口。NANO68 的 LL 与 V2 使用其他控制方案，未套用本次协议。
 
-## 本轮新增
+## NANO68 键盘
+
+在支持库选择“美加狮 FGG”或搜索 `NANO68`。同名型号的不同轴体/USB 版本收进卡片内的版本选择，原厂配色使用原有圆点切换。基础版、Pro、Plus、Ultra 分别保留独立卡片；接口及范围见 [FGG 控制说明](docs/FGG-CONTROLS.md)。
+
+## 前一版补充
 
 | 品牌 | 支持库产品卡 | 接入功能 |
 | --- | ---: | --- |
@@ -75,7 +79,7 @@
 
 ## 当前验证记录
 
-2026-11-12（0.7.0-preview.1）：新增型号的协议帧、读回、精确身份与关闭路径通过针对性夹具；使用自带 Chromium 检查新机支持库、商品图、未连接详情和返回导航。硬件功能仍标记待验证。
+2026-11-12（0.7.0-preview.2）：新增型号的协议帧、读回、精确身份与关闭路径通过针对性夹具；使用自带 Chromium 检查新机支持库、商品图、未连接详情和返回导航。硬件功能仍标记待验证。
 
 2026-11-12（0.6.0-preview.3）：按用户要求把选色圆点改为黑白交错弧面、少量暖金过渡，保留当前配色滤层和连续收放动画。已对照官方配色组件的当前色提示与展开方式；底纹是本项目设计，原生参考见 [配色按钮参考](docs/COLOR-PICKER-REFERENCE.md)。
 

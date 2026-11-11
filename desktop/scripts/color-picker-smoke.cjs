@@ -7,7 +7,8 @@ app.whenReady().then(async()=>{
  try{
   await window.loadURL('data:text/html;charset=utf-8,'+encodeURIComponent('<!doctype html><html data-dc-theme="light"><head><meta charset="utf-8"></head><body><main id="fixture"></main></body></html>'));
   const orbURL='data:image/svg+xml;base64,'+fs.readFileSync(path.join(__dirname,'../app/assets/color-orb.svg')).toString('base64');
-  const pickerCSS=fs.readFileSync(path.join(__dirname,'../app/color-picker.css'),'utf8').replace('assets/color-orb.svg',orbURL);
+  const foilURL='data:image/svg+xml;base64,'+fs.readFileSync(path.join(__dirname,'../app/assets/color-orb-foil.svg')).toString('base64');
+  const pickerCSS=fs.readFileSync(path.join(__dirname,'../app/color-picker.css'),'utf8').replace('assets/color-orb.svg',orbURL).replace('assets/color-orb-foil.svg',foilURL);
   await window.webContents.insertCSS(fs.readFileSync(path.join(__dirname,'../app/desktop.css'),'utf8')+'\n'+pickerCSS+'\nbody{padding:40px;background:#edf0f5}.demo{width:300px;padding:24px;position:relative;background:var(--panel);border:1px solid var(--border);border-radius:12px}.demo img{display:block;width:180px;height:150px;object-fit:contain;margin:25px auto}.demo h2{font:600 19px system-ui;margin:14px 0}.demo p{color:var(--muted);font:13px system-ui}.demo.narrow{width:170px;margin-top:16px}');
   await window.webContents.executeJavaScript(fs.readFileSync(path.join(__dirname,'../app/color-picker.js'),'utf8'));
   const result=await window.webContents.executeJavaScript('('+async function(){

@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 const ATK_BRANDS=['atk','vxe','vgn'];
-const SINGLE_EXTRACTORS=new Set(['dareu','rapoo','aula','melgeek','keychron','monsgeek','akko','rk','redragon','inphic','xiberia','darmoshark','attackshark']);
+const SINGLE_EXTRACTORS=new Set(['dareu','rapoo','aula','melgeek','keychron','monsgeek','akko','rk','redragon','inphic','xiberia','darmoshark','attackshark','fgg']);
 async function refreshResources(brand,{load=require,resourceRoot=path.join(process.env.LOCALAPPDATA||path.join(os.homedir(),'.local/share'),'One4All-Desktop/vendor-resources'),readCatalog=file=>JSON.parse(fs.readFileSync(file,'utf8'))}={}){
  let result,updatedBrands=[brand],counts;
  const catalogCount=item=>{const catalog=readCatalog(path.join(resourceRoot,item,'catalog.json')),models=catalog.devices||catalog.models;if(!Array.isArray(models))throw Error('资源目录缺少型号列表：'+item);return models.length;};

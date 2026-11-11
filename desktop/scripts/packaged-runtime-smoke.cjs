@@ -47,7 +47,7 @@ async function inspectRenderer(){
 async function inspectNewProductRoutes(){
  const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms)),result=[];
  async function until(fn,label){for(let i=0;i<160;i++){if(fn())return;await pause(50);}throw Error('新型号页面未就绪：'+label);}
- const brands=['keychron','monsgeek','akko','rk','redragon','darmoshark','inphic','attackshark','xiberia'];
+ const brands=['keychron','monsgeek','akko','rk','redragon','darmoshark','inphic','attackshark','xiberia','fgg'];
  for(const brand of brands){
   document.querySelector('[data-page="packages"]').click();await until(()=>document.querySelector('.catalog-grid .device-card'),'支持库');
   const select=document.querySelector('[aria-label="筛选品牌"]');select.value=brand;select.dispatchEvent(new Event('input',{bubbles:true}));

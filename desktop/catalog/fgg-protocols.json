@@ -1,0 +1,1012 @@
+{
+  "schema": 1,
+  "provider": "fgg-webhid",
+  "source": {
+    "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+    "url": "https://hub.fgg.com.cn/",
+    "official": "https://fgg.com.cn/",
+    "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+    "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+    "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+    "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+    "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders"
+  },
+  "models": [
+    {
+      "id": "fgg-373b-1064",
+      "brand": "fgg",
+      "name": "NANO68",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "磁珀轴 Pro",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4196
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4196,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magnetic-amber-pro",
+      "themeConfigName": "nano68-1064",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8235,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4196,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-106b",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "天王磁轴电竞版",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4203
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4203,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "uranus-esport",
+      "themeConfigName": "nano68-106b",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8236,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4203,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-106d",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "磁皇轴电竞版",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4205
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4205,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magnetic-emperor-esports",
+      "themeConfigName": "nano68-106d",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8238,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4205,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-10ff",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "磁玉轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4351
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4351,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magnetic-jade",
+      "themeConfigName": "nano68-10ff",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8331,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4351,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-1100",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "万磁Gaming",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4352
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4352,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magneto-gaming",
+      "themeConfigName": "nano68-1100",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8332,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4352,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-113a",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "幻神轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4410
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4410,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "phantom-god",
+      "themeConfigName": "nano68-113a",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8485,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4410,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-110c",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "磁玉电竞Pro轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4364
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4364,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magnetic-jade-esports-pro",
+      "themeConfigName": "nano68-110c",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8451,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4364,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-1143",
+      "brand": "fgg",
+      "name": "NANO68 Pro",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "极光磁轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4419
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4419,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "aurora-magnetic",
+      "themeConfigName": "nano68-1143",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8492,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "white",
+          "name": "尖晶石白",
+          "color": "#eeeeef",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/white.webp",
+          "imageFile": "nano68-white.webp",
+          "sha256": "f953d0f87f873f5987867bae29334d6834bdf4eca25fa824778e01f9ecfab4a2",
+          "bytes": 191314,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "尖晶石白",
+          "swatch": "#eeeeef"
+        },
+        {
+          "id": "peach",
+          "name": "蜜桃色",
+          "color": "#efc4c5",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/peach.webp",
+          "imageFile": "nano68-peach.webp",
+          "sha256": "bfc99c5ea33d69571685fae4f525fb9e60d731b8af20f0e4a546a5f17f099b25",
+          "bytes": 382136,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "蜜桃色",
+          "swatch": "#efc4c5"
+        },
+        {
+          "id": "brown",
+          "name": "摩卡棕",
+          "color": "#7a5945",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/brown.webp",
+          "imageFile": "nano68-brown.webp",
+          "sha256": "1ee8000a11f9d465295e278f4e31e30c1299bb290a84d6956f44d6910770b80c",
+          "bytes": 366240,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "摩卡棕",
+          "swatch": "#7a5945"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4419,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-1101",
+      "brand": "fgg",
+      "name": "NANO68 Plus",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "万磁王轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4353
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4353,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magneto-king",
+      "themeConfigName": "nano68-1101",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8332,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "violet",
+          "name": "紫罗兰",
+          "color": "#6f42b2",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/violet.webp",
+          "imageFile": "nano68-violet.webp",
+          "sha256": "6f45f9837b86ef5d9f968dce74a09af5727c2547f4f119e03045f0a5f19d4109",
+          "bytes": 291092,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "紫罗兰",
+          "swatch": "#6f42b2"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4353,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    },
+    {
+      "id": "fgg-373b-11a1",
+      "brand": "fgg",
+      "name": "NANO68 Ultra",
+      "kind": "keyboard",
+      "catalogRole": "device",
+      "description": "磁玉轴",
+      "identifiers": [
+        {
+          "vendorId": 14139,
+          "productId": 4513
+        }
+      ],
+      "connections": [
+        {
+          "vendorId": 14139,
+          "productId": 4513,
+          "usage": 0,
+          "usagePage": 1
+        }
+      ],
+      "switchId": "magnetic-jade",
+      "themeConfigName": "nano68-11a1",
+      "cover": "nano68",
+      "source": {
+        "name": "FGG HUB 初代 NANO68 官方型号与商品图",
+        "url": "https://hub.fgg.com.cn/",
+        "official": "https://fgg.com.cn/",
+        "bundle": "https://hub.fgg.com.cn/assets/index-D9yt26aK.js",
+        "bundleSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "presentationBundle": "https://hub.fgg.com.cn/assets/index-waEhVVT3.js",
+        "presentationSha256": "90b52d492d59300e907fefda823ef5f404248621c970a0f73997392170b562c2",
+        "scope": "First fire-keyboard / Ls + Qo group only; excludes NANO68 V2 and bootloaders",
+        "controller": "Ls",
+        "digital": "Qo",
+        "firmwareMark": "Nano68",
+        "bootIdentifiers": [
+          {
+            "vendorId": 14139,
+            "productId": 8549,
+            "firmwareMark": "Nano68"
+          }
+        ]
+      },
+      "variants": [
+        {
+          "id": "violet",
+          "name": "紫罗兰",
+          "color": "#6f42b2",
+          "imageUrl": "https://hub.fgg.com.cn/devices/nano68/violet.webp",
+          "imageFile": "nano68-violet.webp",
+          "sha256": "6f45f9837b86ef5d9f968dce74a09af5727c2547f4f119e03045f0a5f19d4109",
+          "bytes": 291092,
+          "width": 1020,
+          "height": 394,
+          "hasAlpha": true,
+          "label": "紫罗兰",
+          "swatch": "#6f42b2"
+        }
+      ],
+      "support": {
+        "provider": "fgg-webhid",
+        "protocol": "fgg-nano68",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "connectionLabel": "USB 有线设置",
+        "filters": [
+          {
+            "vendorId": 14139,
+            "productId": 4513,
+            "usage": 0,
+            "usagePage": 1
+          }
+        ],
+        "sourceSha256": "0ef6d7565f650dbc9ca0fc13f9ad7d2609ed47d29927a5216aa465f5635319e5",
+        "officialDriver": "https://hub.fgg.com.cn/"
+      }
+    }
+  ]
+}

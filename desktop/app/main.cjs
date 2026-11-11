@@ -124,7 +124,7 @@ else {
     handle('xiberia-status',id=>xiberiaService.status(id));
     handle('xiberia-execute',request=>xiberiaService.execute(request));
     handle('xiberia-close',id=>xiberiaService.closeModel(id));
-    function prepareVendorHid(id){const model=deviceCatalog.get(id);if(!['mchose-webhid','atk-webhid','vgn-webhid','dareu-webhid','rapoo-webhid','aula-webhid','melgeek-hive','official-via','inphic-webhid','darmoshark-webhid','attackshark-webhid'].includes(model.support.provider))throw Error('此型号尚未接入直接控制接口');keyboardTarget=require('../core/domestic-models.cjs').hidTarget(model);return keyboardTarget;}
+    function prepareVendorHid(id){const model=deviceCatalog.get(id);if(!['mchose-webhid','atk-webhid','vgn-webhid','dareu-webhid','rapoo-webhid','aula-webhid','melgeek-hive','official-via','inphic-webhid','darmoshark-webhid','attackshark-webhid','fgg-webhid'].includes(model.support.provider))throw Error('此型号尚未接入直接控制接口');keyboardTarget=require('../core/domestic-models.cjs').hidTarget(model);return keyboardTarget;}
     handle('prepare-mchose-hid',prepareVendorHid);
     handle('prepare-vendor-hid',prepareVendorHid);
     handle('vendor-runtime',id=>{const model=deviceCatalog.get(id);if(model.support.provider!=='melgeek-hive')throw Error('此型号不需要额外设备模块');return require('../core/melgeek-runtime.cjs').getRuntime(id,{resourceRoot:path.join(packageRoot,'vendor-resources')});});

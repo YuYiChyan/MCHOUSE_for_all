@@ -32,11 +32,11 @@ ControlHub 已拆 `assets/index-CxS_PH0T.js` 与 `cfg.json`，CID 124，配置�
 
 检索到[原站 Z1PRO 驱动页](https://www.zaopinworld.com/article_76505.html)，页面标明 2023-07-24、深圳市金乐码电子科技有限公司。浏览器能读取旧文章，本机请求和首页请求未取回有效内容；文章的可读结果没有完整驱动包链接。另有 `zaopintechnology.com` 公司站，但本次未取得其设备驱动资源。尚没有新旧 Z1/Z2 型号的精确 USB/接收器协议证据，未混入其他品牌协议。
 
-## Mad Catz 与 MADLIONS 分开处理
+## Mad Catz 鼠标与美加狮 FGG 键盘
 
 已读取 [Mad Catz 官方下载页](https://www.madcatz.com/En/Support/Downloads/)和它自己的两个 GET 接口：`/En/Support/GetDownloadsProducts?language=En&productCategoryId=1`、`/En/Support/GetProductDownloadsResult?language=En&productId=3`。实际返回 R.A.T. 产品列表及 `/FileUploads/SupportFile/RAT_8+ADV_x64.1.0.70.exe`、x86 包和 PDF；这是逐型号的桌面驱动，没有取得与上述国产 WebHID 方案共用的证据，本轮未拆其二进制控制库。
 
-[MADLIONS 官方支持页](https://f.gg/pages/product-manuals)和 [FGG HUB](https://hub.fgg.com.cn/)属于另一套公开品牌/型号入口。没有把它们与 `madcatz.com` 的 R.A.T.、B.A.T. 等目录合并。
+[FGG 官网品牌介绍](https://fgg.com.cn/fgg/about)明确给出中文名“美加狮”、外文名“MADLIONS”，并列出 NANO68。用户所指 NANO68 使用这条键盘产品线。0.7.0-preview.2 已补接 NANO68/Pro/Plus/Ultra 主协议十个 USB 版本，详见 [FGG 控制说明](FGG-CONTROLS.md)。[FGG HUB](https://hub.fgg.com.cn/)的型号、商品图和协议分别核对，未把 Mad Catz 的 R.A.T. 方案套给键盘。
 
 ## 留存位置
 

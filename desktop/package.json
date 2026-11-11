@@ -1,7 +1,7 @@
 {
   "name": "one4all-desktop",
   "productName": "One4All Desktop",
-  "version": "0.7.0-preview.1",
+  "version": "0.7.0-preview.2",
   "description": "Independent device control desktop using existing One4All adapters",
   "main": "app/main.cjs",
   "private": true,

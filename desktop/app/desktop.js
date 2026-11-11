@@ -47,7 +47,7 @@
       $('page-title').textContent=model.name;$('page-caption').textContent='耳机设置';mouseView=One4AllXiberia.render($('content'),{model,api,notify,onBack:()=>navigate('packages')});await mouseView.ready;return;
     }
     if(model.kind==='keyboard'||model.support.provider==='melgeek-hive'){
-      const provider={'melgeek-hive':window.One4AllMelgeek,'official-via':window.One4AllOfficialVia}[model.support.provider]||null;
+      const provider={'melgeek-hive':window.One4AllMelgeek,'official-via':window.One4AllOfficialVia,'fgg-webhid':window.One4AllFgg}[model.support.provider]||null;
       page='keyboard-model';activeMouseModel=model;clear();await Promise.all([closeEmbedded(),mouseClosing,keyboardClosing]);if(ticket!==requestVersion)return;
       $('page-title').textContent=model.name;$('page-caption').textContent='键盘设置';keyboardModel=One4AllKeyboardModel.render($('content'),{model,api,provider,notify,onBack:()=>navigate('packages')});await keyboardModel.ready;return;
     }

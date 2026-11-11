@@ -1,0 +1,1004 @@
+{
+  "schema": 1,
+  "provider": "dareu-webhid",
+  "source": {
+    "url": "https://dr.dareu.com",
+    "sourceVersion": "1.3.26",
+    "protocolSha256": "14cf8b449bbd1fe11c5316697624d3368026226c0397d125a4ff8c07ad299cee",
+    "bootstrapSha256": "cb515577199f05ce57819aff2ab7508c1d8d907b199cb90707b5d14ec6d194ae"
+  },
+  "models": [
+    {
+      "id": "dareu-a980",
+      "name": "A980",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4165
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4165,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4165,
+            "reportId": 0,
+            "fwType": 0,
+            "hasBattery": false,
+            "polling": null
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-cm610-pro",
+      "name": "CM610 PRO",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4226
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4226,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4226,
+            "reportId": 0,
+            "fwType": 0,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  8,
+                  125
+                ],
+                [
+                  4,
+                  250
+                ],
+                [
+                  2,
+                  500
+                ],
+                [
+                  1,
+                  1000
+                ]
+              ],
+              "Wireless": [
+                [
+                  8,
+                  125
+                ],
+                [
+                  4,
+                  250
+                ],
+                [
+                  2,
+                  500
+                ],
+                [
+                  1,
+                  1000
+                ],
+                [
+                  16,
+                  2000
+                ],
+                [
+                  32,
+                  4000
+                ]
+              ]
+            }
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-a980-pro-max",
+      "name": "A980 PRO MAX",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4393
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4432
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4433
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4393,
+          4432,
+          4433,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4393,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          },
+          {
+            "productId": 4432,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          },
+          {
+            "productId": 4433,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-a980-pro",
+      "name": "A980 PRO",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4400
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4424
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4454
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4400,
+          4424,
+          4454,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4400,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          },
+          {
+            "productId": 4424,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          },
+          {
+            "productId": 4454,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": null
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-cm610-v2",
+      "name": "CM610 V2",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4417
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4434
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4441
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4417,
+          4434,
+          4441,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4417,
+            "reportId": 0,
+            "fwType": 0,
+            "hasBattery": false,
+            "polling": null
+          },
+          {
+            "productId": 4434,
+            "reportId": 0,
+            "fwType": 0,
+            "hasBattery": false,
+            "polling": null
+          },
+          {
+            "productId": 4441,
+            "reportId": 0,
+            "fwType": 0,
+            "hasBattery": false,
+            "polling": null
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-a950-air",
+      "name": "A950 AIR",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4423
+        },
+        {
+          "vendorId": 9741,
+          "productId": 4457
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4423,
+          4457,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4423,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          },
+          {
+            "productId": 4457,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": true,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ],
+                [
+                  1,
+                  8000
+                ]
+              ],
+              "Wireless": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ],
+                [
+                  2,
+                  4000
+                ]
+              ]
+            }
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dareu-cm620",
+      "name": "CM620",
+      "brand": "dareu",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9741,
+          "productId": 4707
+        }
+      ],
+      "support": {
+        "provider": "dareu-webhid",
+        "protocol": "dareu-tg-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9741,
+        "productIds": [
+          4707,
+          55,
+          66,
+          529,
+          4401
+        ],
+        "usagePages": [
+          65282,
+          65281
+        ],
+        "models": [
+          {
+            "productId": 4707,
+            "reportId": 10,
+            "fwType": 1,
+            "hasBattery": false,
+            "polling": {
+              "USB": [
+                [
+                  64,
+                  125
+                ],
+                [
+                  32,
+                  250
+                ],
+                [
+                  16,
+                  500
+                ],
+                [
+                  8,
+                  1000
+                ],
+                [
+                  4,
+                  2000
+                ]
+              ]
+            }
+          }
+        ],
+        "receivers": [
+          {
+            "productId": 55,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 66,
+            "reportId": 0,
+            "fwType": 0
+          },
+          {
+            "productId": 529,
+            "reportId": 10,
+            "fwType": 1
+          },
+          {
+            "productId": 4401,
+            "reportId": 10,
+            "fwType": 1
+          }
+        ]
+      }
+    }
+  ]
+}

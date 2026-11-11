@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {normalizeCapabilities,assertValue}=require('./keyboard-capabilities.cjs');
+function createAdapterRunner({stateRoot,utilityProcess}){
+ let active=null,serial=0;
+ function log(event){fs.appendFileSync(path.join(stateRoot,'adapter-runs.jsonl'),JSON.stringify({time:new Date().toISOString(),...event})+'\n');}
+ function stop(id){if(!active||(id&&active.id!==id))return;const previous=active;active=null;log({id:previous.id,type:'stop',pending:previous.pending.size});for(const pending of previous.pending.values())pending.reject(Error('模块已停止'));previous.pending.clear();try{previous.child.postMessage({requestId:++serial,method:'close'});}catch{}const timer=setTimeout(()=>previous.child.kill(),1500);timer.unref();previous.child.once('exit',()=>clearTimeout(timer));}
+ function call(method,args){if(!active)return Promise.reject(Error('请先试用模块'));const run=active;return new Promise((resolve,reject)=>{const requestId=++serial,timer=setTimeout(()=>{run.pending.delete(requestId);reject(Error('模块响应超时，已停止'));if(active===run)stop();},15000);run.pending.set(requestId,{resolve:v=>{clearTimeout(timer);resolve(v);},reject:e=>{clearTimeout(timer);reject(e);}});run.child.postMessage({requestId,method,args});});}
+ return {stop,async start({id,directory,manifest,candidateReady},packageRoot,device={}){
+  if(!candidateReady)throw Error('模块缺少可运行入口');const entry=path.resolve(directory,manifest.entry),relative=path.relative(directory,entry);if(relative.startsWith('..')||path.isAbsolute(relative)||!['.js','.cjs'].includes(path.extname(entry)))throw Error('模块入口无效');
+  stop();const child=utilityProcess.fork(path.join(__dirname,'adapter-worker.cjs'),[],{cwd:directory,stdio:'pipe',serviceName:'One4All device adapter'}),run={id,child,pending:new Map(),capabilities:[],queue:Promise.resolve()};active=run;
+  child.on('message',message=>{const pending=run.pending.get(message.requestId);if(!pending)return;run.pending.delete(message.requestId);message.error?pending.reject(Error(message.error)):pending.resolve(message.result);});child.on('exit',code=>{log({id,type:'exit',code});for(const pending of run.pending.values())pending.reject(Error('模块进程已退出'));run.pending.clear();if(active===run)active=null;});child.stderr?.on('data',data=>log({id,type:'stderr',text:String(data).slice(0,4000)}));
+  try{const report=await call('init',{entry,packageRoot,device});run.capabilities=normalizeCapabilities(report);log({id,type:'probe',connected:report?.connected===true,capabilities:run.capabilities.map(c=>c.id)});return {...report,device:report?.device||device,capabilities:run.capabilities};}catch(e){log({id,type:'error',error:e.message});if(active===run)stop();throw e;}
+ },execute({id,command,payload={}}){const run=active;if(!run||run.id!==id)throw Error('该模块尚未启动');const cap=run.capabilities.find(c=>c.id===payload.capability&&(c.readCommand===command||c.writeCommand===command));if(!cap)throw Error('接口未报告此操作');if(command===cap.writeCommand)assertValue(cap,payload.value);const request=run.queue.catch(()=>{}).then(()=>{if(active!==run)throw Error('模块已切换');return call('execute',{command,payload});});run.queue=request;return request;}};
+}
+module.exports={createAdapterRunner};

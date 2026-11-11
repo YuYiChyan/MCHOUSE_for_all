@@ -1,0 +1,671 @@
+{
+  "schema": 1,
+  "provider": "melgeek-hive",
+  "source": {
+    "url": "https://hive.melgeek.com/",
+    "catalog": "https://download.melgeek.cn/zh/",
+    "frontend": "https://hive.melgeek.com/assets/index-CdRCWFO1.js",
+    "runtimeRelease": "2026-10-12 11:24:10"
+  },
+  "runtime": {
+    "url": "https://hive.melgeek.com/assets/mghive_core_bg-Dkgbx2Ly.wasm",
+    "sha256": "acb7cf108b4e058d186135bbebff275cf71991c6cd2919f6481072a1eb2fa111"
+  },
+  "models": [
+    {
+      "id": "melgeek-made68",
+      "brand": "melgeek",
+      "name": "MADE68",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68",
+      "artwork": [
+        {
+          "asset": "made68",
+          "color": "#8050d8",
+          "name": "紫白"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68",
+          "MelGeek MADE68"
+        ],
+        "aliases": [
+          "made68"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68",
+        "officialRoute": "made68",
+        "officialFamily": "made68",
+        "firmwareVersions": [
+          "MADE68 &Dongle V2.3.0(Hardware Version: 1.0.1)"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made68pro",
+      "brand": "melgeek",
+      "name": "MADE68 Pro",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68pro",
+      "artwork": [
+        {
+          "asset": "made68pro",
+          "color": "#8050d8",
+          "name": "紫白"
+        },
+        {
+          "asset": "made68proqa",
+          "color": "#96968e",
+          "name": "灰白"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68 Pro",
+          "MADE68PRO",
+          "MelGeek MADE68 Pro"
+        ],
+        "aliases": [
+          "made68pro"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68pro",
+        "officialRoute": "made68pro",
+        "officialFamily": "made68pro",
+        "firmwareVersions": [
+          "MADE68PRO_firmware_1.8.4"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made68pro-plus",
+      "brand": "melgeek",
+      "name": "MADE68PRO+",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68pro",
+      "artwork": [
+        {
+          "asset": "made68pro+",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68PRO+",
+          "MelGeek MADE68PRO+"
+        ],
+        "aliases": [
+          "made68pro+"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68pro-plus",
+        "officialRoute": "made68pro+",
+        "officialFamily": "made68pro",
+        "firmwareVersions": [
+          "MADE68PRO+_firmware_1.8.4"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made68ultra",
+      "brand": "melgeek",
+      "name": "MADE68 Ultra",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68pro",
+      "artwork": [
+        {
+          "asset": "made68ultra",
+          "color": "#8050d8",
+          "name": "紫白"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68 Ultra",
+          "MADE68ULTRA",
+          "MelGeek MADE68 Ultra"
+        ],
+        "aliases": [
+          "made68ultra"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68ultra",
+        "officialRoute": "made68ultra",
+        "officialFamily": "made68pro",
+        "firmwareVersions": [
+          "MADE68Ultra_firmware_1.8.4"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made68ultra-plus",
+      "brand": "melgeek",
+      "name": "MADE68ULTRA+",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68pro",
+      "artwork": [
+        {
+          "asset": "made68ultra+",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68ULTRA+",
+          "MelGeek MADE68ULTRA+"
+        ],
+        "aliases": [
+          "made68ultra+"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68ultra-plus",
+        "officialRoute": "made68ultra+",
+        "officialFamily": "made68pro",
+        "firmwareVersions": [
+          "MADE68ULTRA+_firmware_1.8.4"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made84pro",
+      "brand": "melgeek",
+      "name": "MADE84 Pro",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made84pro",
+      "artwork": [
+        {
+          "asset": "made84pro",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE84 Pro",
+          "MADE84PRO",
+          "MelGeek MADE84 Pro"
+        ],
+        "aliases": [
+          "made84pro"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made84pro",
+        "officialRoute": "made84pro",
+        "officialFamily": "made84pro",
+        "firmwareVersions": [
+          "MADE84 Pro &Dongle V1.4.7(Hardware Version: 1.0.1)"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-made68-air",
+      "brand": "melgeek",
+      "name": "MADE68 Air",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "made68air",
+      "artwork": [
+        {
+          "asset": "made68air",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MADE68 Air",
+          "MADE68AIR",
+          "MelGeek MADE68 Air"
+        ],
+        "aliases": [
+          "made68air"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "made68-air",
+        "officialRoute": "made68air",
+        "officialFamily": "made68air",
+        "firmwareVersions": [
+          "MADE68 Air &Dongle V1.3.9(Hardware Version: 1.0.1)"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-cyber01",
+      "brand": "melgeek",
+      "name": "Cyber01",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "cyber01",
+      "artwork": [
+        {
+          "asset": "cyber01",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "Cyber01",
+          "CYBER01",
+          "MelGeek Cyber01"
+        ],
+        "aliases": [
+          "cyber01"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "cyber01",
+        "officialRoute": "cyber01",
+        "officialFamily": "cyber01",
+        "firmwareVersions": [
+          "Cyber01 &Dongle V2.1.8(Hardware Version: 1.0.1)"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-mojo68rt",
+      "brand": "melgeek",
+      "name": "MOJO68RT",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "mojo68rt",
+      "artwork": [
+        {
+          "asset": "mojo68rt",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "MOJO68RT",
+          "MelGeek MOJO68RT"
+        ],
+        "aliases": [
+          "mojo68rt"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "mojo68rt",
+        "officialRoute": "mojo68rt",
+        "officialFamily": "mojo68rt",
+        "firmwareVersions": []
+      }
+    },
+    {
+      "id": "melgeek-real67",
+      "brand": "melgeek",
+      "name": "REAL67",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "real67",
+      "artwork": [
+        {
+          "asset": "real67",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "REAL67",
+          "MelGeek REAL67"
+        ],
+        "aliases": [
+          "real67"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "real67",
+        "officialRoute": "real67",
+        "officialFamily": "real67",
+        "firmwareVersions": [
+          "REAL67 &Dongle V1.5.0(Hardware Version: 3.0.0)"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-real81",
+      "brand": "melgeek",
+      "name": "REAL81",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "real81",
+      "artwork": [
+        {
+          "asset": "real81",
+          "color": "#222222",
+          "name": "黑金"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "REAL81",
+          "MelGeek REAL81"
+        ],
+        "aliases": [
+          "real81"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "real81",
+        "officialRoute": "real81",
+        "officialFamily": "real81",
+        "firmwareVersions": [
+          "REAL81_Firmware_V1.8.6",
+          "REAL81_Firmware_V1.7.3"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-centauri80",
+      "brand": "melgeek",
+      "name": "CENTAURI 80",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "centauri80",
+      "artwork": [
+        {
+          "asset": "centauri80",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "CENTAURI 80",
+          "CENTAURI80",
+          "MelGeek CENTAURI 80"
+        ],
+        "aliases": [
+          "centauri80"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "centauri80",
+        "officialRoute": "centauri80",
+        "officialFamily": "centauri80",
+        "firmwareVersions": [
+          "CENTAURI80_Firmware_V1.5.4"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-centauri60",
+      "brand": "melgeek",
+      "name": "CENTAURI 60",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "centauri60",
+      "artwork": [
+        {
+          "asset": "centauri60",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "CENTAURI 60",
+          "CENTAURI60",
+          "MelGeek CENTAURI 60"
+        ],
+        "aliases": [
+          "centauri60"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "centauri60",
+        "officialRoute": "centauri60",
+        "officialFamily": "centauri60",
+        "firmwareVersions": [
+          "CENTAURI60_Firmware_V1.5.3"
+        ]
+      }
+    },
+    {
+      "id": "melgeek-viva63",
+      "brand": "melgeek",
+      "name": "VIVA63",
+      "kind": "keyboard",
+      "deviceType": "keyboard",
+      "category": "keyboard",
+      "family": "viva63",
+      "artwork": [
+        {
+          "asset": "viva63",
+          "color": "#b9b9b9",
+          "name": "原厂配色"
+        }
+      ],
+      "support": {
+        "provider": "melgeek-hive",
+        "status": "controls-unverified",
+        "verification": "unverified",
+        "protocol": "melgeek-hive-wasm",
+        "vendorIds": [
+          1046,
+          14420
+        ],
+        "usagePages": [
+          65376
+        ],
+        "productNames": [
+          "VIVA63",
+          "MelGeek VIVA63"
+        ],
+        "aliases": [
+          "viva63"
+        ],
+        "transport": "webhid",
+        "hardwareVerified": false
+      },
+      "evidence": {
+        "catalogSlug": "viva63",
+        "officialRoute": "viva63",
+        "officialFamily": "viva63",
+        "firmwareVersions": [
+          "VIVA63_FW_1.1.2"
+        ]
+      }
+    }
+  ]
+}

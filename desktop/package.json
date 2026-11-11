@@ -1,0 +1,10 @@
+{
+  "name": "one4all-desktop",
+  "productName": "One4All Desktop",
+  "version": "0.6.0-preview.3",
+  "description": "Independent device control desktop using existing One4All adapters",
+  "main": "app/main.cjs",
+  "private": true,
+  "scripts": { "start": "vendor\\electron\\electron.exe ." },
+  "engines": { "electron": "45.3.0" }
+}

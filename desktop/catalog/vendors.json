@@ -1,0 +1,38 @@
+[
+  {
+    "id": "mchose",
+    "name": "迈从 MCHOSE HUB",
+    "brand": "MCHOSE",
+    "description": "从迈从官网下载桌面运行组件；网页设备可通过独立页面接入。",
+    "homepage": "https://www.mchose.store/pages/mchose-hub",
+    "webDriver": "https://www.mchose.com.cn/",
+    "source": { "type": "official", "url": "https://cdn.mchose.com.cn/MCHOSE_HUB_installer.zip", "filename": "MCHOSE_HUB_installer.zip", "format": "zip", "allowedHosts": ["cdn.mchose.com.cn"] },
+    "installedExecutables": ["%ProgramFiles%/MCHOSE HUB/MCHOSE HUB.exe"],
+    "installerNamePattern": "^(?:MCHOSE.*|M HUB installer)\\.exe$",
+    "adapter": null,
+    "verifiedOn": "2026-11-11"
+  },
+  {
+    "id": "razer",
+    "name": "雷蛇 Razer Synapse",
+    "brand": "Razer",
+    "description": "按需获取官方安装器；已适配设备继续使用独立控制器。",
+    "homepage": "https://www.razer.com/synapse-4",
+    "webDriver": "https://synapse.razer.com/",
+    "source": { "type": "official", "url": "https://rzr.to/synapse-4-pc-download", "filename": "RazerSynapseInstaller.exe", "format": "exe", "allowedHosts": ["rzr.to", "dl.razerzone.com"] },
+    "installedExecutables": ["%ProgramFiles%/Razer/RazerAppEngine/RazerAppEngine.exe", "%ProgramFiles(x86)%/Razer/Synapse3/WPFUI/Framework/Razer Synapse 3 Host/Razer Synapse 3.exe"],
+    "adapter": null,
+    "verifiedOn": "2026-11-11"
+  },
+  {
+    "id": "logitech",
+    "name": "罗技 Logitech G HUB",
+    "brand": "Logitech",
+    "description": "从罗技官网下载 G HUB；具体型号由对应适配器提供控件。",
+    "homepage": "https://www.logitechg.com/en-us/software/ghub",
+    "source": { "type": "official", "url": "https://download01.logi.com/web/ftp/pub/techsupport/gaming/lghub_installer.exe", "filename": "lghub_installer.exe", "format": "exe", "allowedHosts": ["download01.logi.com", "download.logitech.com", "download.logi.com"] },
+    "installedExecutables": ["%ProgramFiles%/LGHUB/lghub.exe"],
+    "adapter": null,
+    "verifiedOn": "2026-11-11"
+  }
+]

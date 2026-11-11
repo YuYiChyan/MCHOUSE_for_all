@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {extract}=require('../core/atk-source.cjs');
+const {extractVgn}=require('../core/atk-vgn-source.cjs');
+const {mergeProducts}=require('../core/atk-products.cjs');
+const ROOT=path.join(process.env.LOCALAPPDATA,'One4All-Desktop/vendor-resources');
+const FILES={'index.js':'index-D7O1ZtHt.js','filter-PWVdWXeB.js':'filter-PWVdWXeB.js','mouse-skins-shCwZ6jw.js':'mouse-skins-shCwZ6jw.js','keyboard.assets.js':'keyboard.assets-v8XFWQWT.js'};
+async function download(url,file){if(fs.existsSync(file))return;const response=await fetch(url,{signal:AbortSignal.timeout(45000)});if(!response.ok)throw Error(response.status+' '+url);const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length<16)throw Error('Empty resource '+url);fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,bytes);}
+async function main({resourceRoot=ROOT,offline=false}={}){const sourceRoot=path.join(resourceRoot,'atk/source');if(!offline)for(const [local,remote]of Object.entries(FILES))await download('https://bpcdn.atkgear.com/hub-v3/production/3.2.32/static/'+remote,path.join(sourceRoot,local));const catalog=extract({root:sourceRoot}),errors=[];const vgnRoot=path.join(resourceRoot,'vgn/source');if(!offline)for(const [local,remote]of [['index.js','index-CeliRb9v.js'],['images.js','images-BRj5GHp3.js']])await download('https://drive.vgnlab.com.cn/assets/'+remote,path.join(vgnRoot,local));const vgn=extractVgn({root:vgnRoot});catalog.models.push(...vgn.models);
+ const urls=[...new Set(catalog.models.flatMap(m=>m.variants.map(v=>v.imageUrl)))],images=new Map();let cursor=0;
+ await Promise.all(Array.from({length:6},async()=>{while(cursor<urls.length){const url=urls[cursor++],file=path.join(resourceRoot,'atk/assets',crypto.createHash('sha256').update(url).digest('hex').slice(0,20)+path.extname(new URL(url).pathname));try{if(!offline)await download(url,file);if(fs.existsSync(file))images.set(url,file);}catch(error){errors.push({url,error:error.message});}}}));
+ for(const model of catalog.models)for(const variant of model.variants)variant.imagePath=images.get(variant.imageUrl)||null;
+ const hardwareRecords=catalog.models.length;catalog.models=mergeProducts(catalog.models);
+ for(const brand of ['atk','vxe','vgn']){const dir=path.join(resourceRoot,brand);fs.mkdirSync(dir,{recursive:true});const devices=catalog.models.filter(m=>m.brand===brand);fs.writeFileSync(path.join(dir,'catalog.json'),JSON.stringify({schema:1,source:brand==='vgn'?vgn.source:catalog.source,generatedAt:new Date().toISOString(),devices,stats:{models:devices.length,withImage:devices.filter(m=>m.variants.some(v=>v.imagePath)).length}},null,2));}
+ const report={models:catalog.models.length,hardwareRecords,images:images.size,totalImages:urls.length,withImage:catalog.models.filter(m=>m.variants.some(v=>v.imagePath)).length,missing:catalog.models.filter(m=>!m.variants.some(v=>v.imagePath)).map(m=>({id:m.id,name:m.name})),errors};fs.writeFileSync(path.join(resourceRoot,'atk/catalog-report.json'),JSON.stringify(report,null,2));return report;}
+module.exports={main};if(require.main===module)main().then(r=>console.log(JSON.stringify(r,null,2))).catch(e=>{console.error(e);process.exitCode=1;});

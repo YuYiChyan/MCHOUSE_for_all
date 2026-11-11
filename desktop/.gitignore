@@ -1,0 +1,6 @@
+vendor/
+dist/
+research/
+*.log
+node_modules/
+.state/

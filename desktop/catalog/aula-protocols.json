@@ -1,0 +1,5566 @@
+{
+  "schema": 1,
+  "provider": "aula-webhid",
+  "protocol": "aula-evision-v1",
+  "source": {
+    "url": "https://hub.aulacn.com/",
+    "index": "https://hub.aulacn.com/assets/index-DVZZOVTp.js",
+    "sdk": "https://hub.aulacn.com/assets/CvlYv9Yq.js",
+    "sdkSha256": "e71aadf4687d7ae7f119d841c4f233ea30f4dae1a37ed0f21be0e3ca814172f2",
+    "symbols": [
+      "m8",
+      "Pze",
+      "LA",
+      "Iie",
+      "Qu"
+    ]
+  },
+  "models": [
+    {
+      "id": "aula-v9pro",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Pro",
+      "configKey": "AULAV9Pro",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8888,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 7
+        },
+        {
+          "productName": "AULA-V9Pro",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8888,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100010",
+          "configFile": {
+            "7": "AULAV9Pro"
+          },
+          "configId": 7
+        },
+        {
+          "productName": "AULA-V9Pro",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100011",
+          "configFile": {
+            "7": "AULAV9Pro"
+          },
+          "configId": 7
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9proplus",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Pro+",
+      "configKey": "AULAV9ProPlus",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8887,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 4
+        },
+        {
+          "productName": "AULA-V9Pro+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8887,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100004",
+          "configFile": {
+            "4": "AULAV9ProPlus"
+          },
+          "configId": 4
+        },
+        {
+          "productName": "AULA-V9Pro+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100005",
+          "configFile": {
+            "4": "AULAV9ProPlus"
+          },
+          "configId": 4
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9",
+      "configKey": "AULAV9",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8888,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 6
+        },
+        {
+          "productName": "AULA-V9",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8888,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100008",
+          "configFile": {
+            "6": "AULAV9"
+          },
+          "configId": 6
+        },
+        {
+          "productName": "AULA-V9",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100009",
+          "configFile": {
+            "6": "AULAV9"
+          },
+          "configId": 6
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9plus",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9+",
+      "configKey": "AULAV9Plus",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8887,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 3
+        },
+        {
+          "productName": "AULA-V9+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8887,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100002",
+          "configFile": {
+            "3": "AULAV9Plus"
+          },
+          "configId": 3
+        },
+        {
+          "productName": "AULA-V9+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100003",
+          "configFile": {
+            "3": "AULAV9Plus"
+          },
+          "configId": 3
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9ultra",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Ultra",
+      "configKey": "AULAV9Ultra",
+      "config": {
+        "deviceName": "AULA-V9Ultra",
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8888,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 8
+        },
+        {
+          "productName": "AULA-V9Ultra",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8888,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100012",
+          "configFile": {
+            "8": "AULAV9Ultra"
+          },
+          "configId": 8
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9ultraplus",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Ultra+",
+      "configKey": "AULAV9UltraPlus",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8887,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 5
+        },
+        {
+          "productName": "AULA-V9Ultra+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8887,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100006",
+          "configFile": {
+            "5": "AULAV9UltraPlus"
+          },
+          "configId": 5
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9max",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Max",
+      "configKey": "AULAV9Max",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8888,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 10
+        },
+        {
+          "productName": "AULA-V9Max",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8888,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100013",
+          "configFile": {
+            "10": "AULAV9Max"
+          },
+          "configId": 10
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-v9maxplus",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA V9Max+",
+      "configKey": "AULAV9MaxPlus",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8887,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": true,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "lighting": {
+          "defaultValues": {
+            "brightness": 2,
+            "speed": 2,
+            "direction": 1,
+            "isColorful": 1,
+            "color": {
+              "r": 255,
+              "g": 255,
+              "b": 255
+            }
+          },
+          "effects": {
+            "0": {
+              "name": "常亮",
+              "type": "singleColor",
+              "colorEditable": true,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 3,
+                "speed": 2,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "1": {
+              "name": "呼吸",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "2": {
+              "name": "闪烁",
+              "type": "singleColor",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": true,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "3": {
+              "name": "光谱",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": false,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 2,
+                "speed": 1,
+                "direction": 2,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "4": {
+              "name": "波浪",
+              "type": "colorfulOnly",
+              "isSupportedSpeed": true,
+              "isSupportedDirection": true,
+              "colorEditable": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 1,
+                "color": {
+                  "r": 255,
+                  "g": 255,
+                  "b": 255
+                }
+              }
+            },
+            "5": {
+              "name": "熄灭",
+              "type": "off",
+              "colorEditable": false,
+              "isSupportedSpeed": false,
+              "isSupportedDirection": false,
+              "defaults": {
+                "brightness": 4,
+                "speed": 3,
+                "direction": 1,
+                "isColorful": 0,
+                "color": {
+                  "r": 0,
+                  "g": 0,
+                  "b": 0
+                }
+              }
+            }
+          }
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 9
+        },
+        {
+          "productName": "AULA-V9Max+",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8887,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100007",
+          "configFile": {
+            "9": "AULAV9MaxPlus"
+          },
+          "configId": 9
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-x9",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA X9",
+      "configKey": "AULAX9",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8886,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": false,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 1
+        },
+        {
+          "productName": "AULA-X9",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8886,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100014",
+          "configFile": {
+            "1": "AULAX9"
+          },
+          "configId": 1
+        },
+        {
+          "productName": "AULA-X9",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100015",
+          "configFile": {
+            "1": "AULAX9"
+          },
+          "configId": 1
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-x9pro",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA X9Pro",
+      "configKey": "AULAX9Pro",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8886,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8890,
+            "connectionType": 2,
+            "name": "无线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": false,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 0
+        },
+        {
+          "productName": "AULA-X9Pro",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8886,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100016",
+          "configFile": {
+            "0": "AULAX9Pro"
+          },
+          "configId": 0
+        },
+        {
+          "productName": "AULA-X9Pro",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8890,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100017",
+          "configFile": {
+            "0": "AULAX9Pro"
+          },
+          "configId": 0
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-x9max",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA X9Max",
+      "configKey": "AULAX9Max",
+      "config": {
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8886,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": false,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 11
+        },
+        {
+          "productName": "AULA-X9Max",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8886,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100019",
+          "configFile": {
+            "11": "AULAX9Max"
+          },
+          "configId": 11
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    },
+    {
+      "id": "aula-x9ultra",
+      "brand": "aula",
+      "kind": "mouse",
+      "name": "AULA X9Ultra",
+      "configKey": "AULAX9Ultra",
+      "config": {
+        "deviceName": "AULA-X9Ultra",
+        "type": "mouse",
+        "profileSize": 128,
+        "matrixSize": 33,
+        "macroSize": 3072,
+        "agreement": 1,
+        "profileTotalNumber": 1,
+        "models": [
+          {
+            "vid": 12815,
+            "pid": 8886,
+            "connectionType": 1,
+            "name": "有线模式"
+          },
+          {
+            "vid": 12815,
+            "pid": 8864,
+            "connectionType": 2,
+            "name": "无线模式"
+          }
+        ],
+        "features": {
+          "lighting": false,
+          "dpi": true,
+          "macro": true,
+          "deepSleep": true,
+          "keyPressDelay": true,
+          "mobileSync": true,
+          "linearCalibration": true
+        },
+        "dpi": {
+          "count": 6,
+          "bytesPerDpi": 9,
+          "startOffset": 14,
+          "range": {
+            "min": 100,
+            "max": 42000,
+            "step": 50
+          },
+          "fields": [
+            {
+              "key": "enabled",
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xyLock",
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            {
+              "key": "xValueLow",
+              "offset": 2
+            },
+            {
+              "key": "xValueHigh",
+              "offset": 3
+            },
+            {
+              "key": "yValueLow",
+              "offset": 4
+            },
+            {
+              "key": "yValueHigh",
+              "offset": 5
+            },
+            {
+              "key": "colorR",
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorG",
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            {
+              "key": "colorB",
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            }
+          ]
+        },
+        "functionZone": {
+          "fields": {
+            "profileIndex": {
+              "offset": 0,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "ledIndex": {
+              "offset": 1,
+              "range": {
+                "min": 0,
+                "max": 25
+              }
+            },
+            "brightness": {
+              "offset": 2,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "speed": {
+              "offset": 3,
+              "range": {
+                "min": 0,
+                "max": 4
+              }
+            },
+            "direction": {
+              "offset": 4,
+              "range": {
+                "min": 1,
+                "max": 2
+              }
+            },
+            "isColorful": {
+              "offset": 5,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "colorR": {
+              "offset": 6,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorG": {
+              "offset": 7,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "colorB": {
+              "offset": 8,
+              "range": {
+                "min": 0,
+                "max": 255
+              }
+            },
+            "reportRate": {
+              "offset": 11,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "reportRate1": {
+              "offset": 10,
+              "range": {
+                "min": 0,
+                "max": 6
+              }
+            },
+            "dpiRank": {
+              "offset": 12,
+              "range": {
+                "min": 0,
+                "max": 5
+              }
+            },
+            "liftHeight": {
+              "offset": 13,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "deepSleepLow": {
+              "offset": 68
+            },
+            "deepSleepHigh": {
+              "offset": 69
+            },
+            "keyPressDelay": {
+              "offset": 70
+            },
+            "mobileSync": {
+              "offset": 71,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "linearCalibration": {
+              "offset": 72,
+              "range": {
+                "min": 0,
+                "max": 1
+              }
+            },
+            "sensorRotation": {
+              "offset": 74
+            },
+            "dipEffectsIndex": {
+              "offset": 76,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiBrightness": {
+              "offset": 77,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            },
+            "dpiSpeed": {
+              "offset": 78,
+              "range": {
+                "min": 0,
+                "max": 2
+              }
+            }
+          }
+        },
+        "mappings": {
+          "deepSleep": {
+            "0": {
+              "display": "3min",
+              "seconds": 180
+            },
+            "1": {
+              "display": "4min",
+              "seconds": 240
+            },
+            "2": {
+              "display": "5min",
+              "seconds": 300
+            },
+            "3": {
+              "display": "10min",
+              "seconds": 600
+            },
+            "4": {
+              "display": "15min",
+              "seconds": 900
+            },
+            "5": {
+              "display": "20min",
+              "seconds": 1200
+            }
+          },
+          "keyPressDelay": {
+            "0": {
+              "display": "1ms",
+              "hex": "01"
+            },
+            "1": {
+              "display": "2ms",
+              "hex": "02"
+            },
+            "2": {
+              "display": "4ms",
+              "hex": "04"
+            },
+            "3": {
+              "display": "6ms",
+              "hex": "06"
+            },
+            "4": {
+              "display": "8ms",
+              "hex": "08"
+            },
+            "5": {
+              "display": "10ms",
+              "hex": "0A"
+            }
+          }
+        },
+        "syncCodes": {
+          "profileSwitch": {
+            "reportId": 3,
+            "firstByte": 1,
+            "secondByte": 4
+          },
+          "connectionError": {
+            "reportId": 3,
+            "firstByte": 255,
+            "secondByte": 255
+          },
+          "reset": {
+            "reportId": 3,
+            "firstByte": 2,
+            "secondByte": 4
+          }
+        }
+      },
+      "connections": [
+        {
+          "productName": "AULA-8K Dongle",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8864,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 2,
+          "id": "evision-device-ms-00100001",
+          "configFile": {
+            "0": "AULAX9Pro",
+            "1": "AULAX9",
+            "2": "AULAX9Ultra",
+            "3": "AULAV9Plus",
+            "4": "AULAV9ProPlus",
+            "5": "AULAV9UltraPlus",
+            "6": "AULAV9",
+            "7": "AULAV9Pro",
+            "8": "AULAV9Ultra",
+            "9": "AULAV9MaxPlus",
+            "10": "AULAV9Max",
+            "11": "AULAX9Max"
+          },
+          "configId": 2
+        },
+        {
+          "productName": "AULA-X9Ultra",
+          "usagePage": 65308,
+          "usage": 146,
+          "productId": 8886,
+          "vendorId": 12815,
+          "deviceType": 2,
+          "connectionType": 1,
+          "id": "evision-device-ms-00100018",
+          "configFile": {
+            "2": "AULAX9Ultra"
+          },
+          "configId": 2
+        }
+      ],
+      "images": [
+        {
+          "id": "black",
+          "url": "https://hub.aulacn.com/assets/black-Cgy4Iw6-.webp"
+        },
+        {
+          "id": "white",
+          "url": "https://hub.aulacn.com/assets/white-DIT53LEO.webp"
+        }
+      ]
+    }
+  ]
+}

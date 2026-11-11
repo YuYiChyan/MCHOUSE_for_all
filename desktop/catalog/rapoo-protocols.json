@@ -1,0 +1,4770 @@
+{
+  "schema": 1,
+  "source": {
+    "url": "https://hid.rapoo.cn/AHUB_WEB/dist/assets/js/index-D1SIX0zk.js",
+    "sha256": "11866386839fcc004f2f16660b5e77f367412446f1e194b467b14f2ed16506f8",
+    "entry": "https://hub.rapoo.cn/"
+  },
+  "models": [
+    {
+      "id": "rapoo-esm612ace",
+      "name": "ESM612ACE",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17997
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17997
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17997
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm612max",
+      "name": "ESM612MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18049
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18049
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18049
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm612pro",
+      "name": "ESM612PRO",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17969
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17969
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17969
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm622max",
+      "name": "ESM622MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17975
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17975
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17975
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm622pro",
+      "name": "ESM622PRO",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17970
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17970
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17970
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm652pro",
+      "name": "ESM652PRO",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17971
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17971
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17971
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm672max",
+      "name": "ESM672MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17984
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17984
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17984
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-esm672pro",
+      "name": "ESM672PRO",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17973
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17973
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17973
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt0-max-master",
+      "name": "VT0 MAX MASTER",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17994
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5194
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17994,
+          5194
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17994
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5194
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt0-max",
+      "name": "VT0 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17952
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5152
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17952,
+          5152
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17952
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5152
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt0-air-max",
+      "name": "VT0 Air MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18081
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5281
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18081,
+          5281
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18081
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5281
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt1-max",
+      "name": "VT1 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17988
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5188
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17988,
+          5188
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17988
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5188
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt1",
+      "name": "VT1",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17941
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5141
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17941,
+          5141
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17941
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5141
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt1s-max-v2",
+      "name": "VT1S MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19210
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6922
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19210,
+          6922
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19210
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6922
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt1s-v2",
+      "name": "VT1S V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18026
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5226
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18026,
+          5226
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18026
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5226
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2-max-master-v2",
+      "name": "VT2 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18037
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5237
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18037,
+          5237
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18037
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5237
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2-max-v2",
+      "name": "VT2 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19209
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6921
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19209,
+          6921
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19209
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6921
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2-max",
+      "name": "VT2 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17955
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5155
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17955,
+          5155
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17955
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5155
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2-v2",
+      "name": "VT2 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18024
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5224
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18024,
+          5224
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18024
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5224
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2",
+      "name": "VT2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17954
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5154
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17954,
+          5154
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17954
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5154
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2-air-max-v2",
+      "name": "VT2 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19218
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6930
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19218,
+          6930
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19218
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6930
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2k-max",
+      "name": "VT2K MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18084
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5284
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18084,
+          5284
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18084
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5284
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2s-max-master-v2",
+      "name": "VT2S MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18038
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5238
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18038,
+          5238
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18038
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5238
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2s-max-v2",
+      "name": "VT2S MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19204
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6916
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19204,
+          6916
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19204
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6916
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2s-v2",
+      "name": "VT2S V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18013
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5213
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18013,
+          5213
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18013
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5213
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt2s-air-max-v2",
+      "name": "VT2S Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19219
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6931
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19219,
+          6931
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19219
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6931
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-max-master-v2",
+      "name": "VT3 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18029
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5229
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18029,
+          5229
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18029
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5229
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-max-v2",
+      "name": "VT3 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19206
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6918
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19206,
+          6918
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19206
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6918
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-max",
+      "name": "VT3 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17943
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5143
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17943,
+          5143
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17943
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5143
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-pro-v2",
+      "name": "VT3 PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18085
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5285
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18085,
+          5285
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18085
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5285
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-v2",
+      "name": "VT3 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18018
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5218
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18018,
+          5218
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18018
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5218
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3",
+      "name": "VT3",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17938
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5138
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17938,
+          5138
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17938
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5138
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3-air-max-v2",
+      "name": "VT3 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19212
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6924
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19212,
+          6924
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19212
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6924
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-max-master-v2",
+      "name": "VT3S MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18030
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5230
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18030,
+          5230
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18030
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5230
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-max-master",
+      "name": "VT3S MAX MASTER",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17995
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5195
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17995,
+          5195
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17995
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5195
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-max-v2",
+      "name": "VT3S MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19207
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6919
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19207,
+          6919
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19207
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6919
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-max",
+      "name": "VT3S MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17953
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5153
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17953,
+          5153
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17953
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5153
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-pro-v2",
+      "name": "VT3S PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18086
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5286
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18086,
+          5286
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18086
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5286
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-v2",
+      "name": "VT3S V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18020
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5220
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18020,
+          5220
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18020
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5220
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s",
+      "name": "VT3S",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17937
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5137
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17937,
+          5137
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17937
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5137
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-air-max-v2",
+      "name": "VT3S Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19213
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6925
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19213,
+          6925
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19213
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6925
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt3s-air-max",
+      "name": "VT3S Air Max",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18082
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5282
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18082,
+          5282
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18082
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5282
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt4-max-master-v2",
+      "name": "VT4 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18039
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5239
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18039,
+          5239
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18039
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5239
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt4-max-v2",
+      "name": "VT4 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19203
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6915
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19203,
+          6915
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19203
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6915
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt4-v2",
+      "name": "VT4 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18011
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5211
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18011,
+          5211
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18011
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5211
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt4-air-max-v2",
+      "name": "VT4 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19220
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6932
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19220,
+          6932
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19220
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6932
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt6-max",
+      "name": "VT6 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18002
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5202
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18002,
+          5202
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18002
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5202
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt6",
+      "name": "VT6",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18001
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5201
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18001,
+          5201
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18001
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5201
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-max-master-v2",
+      "name": "VT7 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18032
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5232
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18032,
+          5232
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18032
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5232
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-max-v2",
+      "name": "VT7 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19205
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6917
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19205,
+          6917
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19205
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6917
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-max",
+      "name": "VT7 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17942
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5142
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17942,
+          5142
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17942
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5142
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-pro-v2",
+      "name": "VT7 PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18087
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5287
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18087,
+          5287
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18087
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5287
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-v2",
+      "name": "VT7 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18016
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5216
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18016,
+          5216
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18016
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5216
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7",
+      "name": "VT7",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17939
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5139
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17939,
+          5139
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17939
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5139
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7-air-max-v2",
+      "name": "VT7 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19214
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6926
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19214,
+          6926
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19214
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6926
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7s-max-master-v2",
+      "name": "VT7S MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18033
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5233
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18033,
+          5233
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18033
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5233
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7s-max-v2",
+      "name": "VT7S MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19202
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6914
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19202,
+          6914
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19202
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6914
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7s-pro-v2",
+      "name": "VT7S PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18088
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5288
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18088,
+          5288
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18088
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5288
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7s-v2",
+      "name": "VT7S V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18009
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5209
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18009,
+          5209
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18009
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5209
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt7s-air-max-v2",
+      "name": "VT7S Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19215
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6927
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19215,
+          6927
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19215
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6927
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt8-max-master-v2",
+      "name": "VT8 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18040
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5240
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18040,
+          5240
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18040
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5240
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt8-max-v2",
+      "name": "VT8 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19211
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6923
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19211,
+          6923
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19211
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6923
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt8-v2",
+      "name": "VT8 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18028
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5228
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18028,
+          5228
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18028
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5228
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt8-air-max-v2",
+      "name": "VT8 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19221
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6933
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19221,
+          6933
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19221
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6933
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-max-master-v2",
+      "name": "VT9 MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18035
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5235
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18035,
+          5235
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18035
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5235
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-max-v2",
+      "name": "VT9 MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19208
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6920
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19208,
+          6920
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19208
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6920
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-max",
+      "name": "VT9 MAX",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17944
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5144
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17944,
+          5144
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17944
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5144
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-pro-v2",
+      "name": "VT9 PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18089
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5289
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18089,
+          5289
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18089
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5289
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-v2",
+      "name": "VT9 V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18022
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5222
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18022,
+          5222
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18022
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5222
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9",
+      "name": "VT9",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 17940
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5140
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          17940,
+          5140
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 17940
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5140
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 50,
+          "max": 26000,
+          "step": 50
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9-air-max-v2",
+      "name": "VT9 Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19216
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6928
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19216,
+          6928
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19216
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6928
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9s-max-master-v2",
+      "name": "VT9S MAX MASTER V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18036
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5236
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18036,
+          5236
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18036
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5236
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9s-max-v2",
+      "name": "VT9S MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19201
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6913
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19201,
+          6913
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19201
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6913
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9s-pro-v2",
+      "name": "VT9S PRO V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18090
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5290
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18090,
+          5290
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18090
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5290
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9s-v2",
+      "name": "VT9S V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 18003
+        },
+        {
+          "vendorId": 9390,
+          "productId": 5203
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          18003,
+          5203
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 18003
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 5203
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 10,
+          "max": 45000,
+          "step": 10,
+          "steps": [
+            {
+              "from": 10,
+              "to": 10050,
+              "step": 10
+            },
+            {
+              "from": 10050,
+              "to": 45000,
+              "step": 50
+            }
+          ]
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    },
+    {
+      "id": "rapoo-vt9s-air-max-v2",
+      "name": "VT9S Air MAX V2",
+      "brand": "rapoo",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 9390,
+          "productId": 19217
+        },
+        {
+          "vendorId": 9390,
+          "productId": 6929
+        }
+      ],
+      "support": {
+        "provider": "rapoo-webhid",
+        "protocol": "rapoo-nrf54l-v1",
+        "version": "1.0.0",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "vendorId": 9390,
+        "productIds": [
+          19217,
+          6929
+        ],
+        "filters": [
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 19217
+          },
+          {
+            "vendorId": 9390,
+            "usagePage": 65280,
+            "usage": 2,
+            "productId": 6929
+          }
+        ],
+        "usagePages": [
+          65280
+        ],
+        "dpi": {
+          "min": 1,
+          "max": 60000,
+          "step": 1
+        },
+        "rateCodes": [
+          8,
+          4,
+          2,
+          1,
+          132,
+          130,
+          129
+        ]
+      }
+    }
+  ]
+}

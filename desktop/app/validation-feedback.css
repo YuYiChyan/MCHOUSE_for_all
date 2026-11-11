@@ -1,0 +1,37 @@
+.o4-validation{width:min(650px,calc(100vw - 48px));max-height:calc(100vh - 48px);padding:0;border:1px solid var(--border);border-radius:14px;background:var(--panel);color:var(--text);box-shadow:0 24px 80px #0008}
+.o4-validation::backdrop{background:#0009}
+.o4-validation-form{display:grid;gap:18px;padding:26px;font:14px MiSans,'Microsoft YaHei',system-ui,sans-serif}
+.o4-validation-header{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.o4-validation h2,.o4-validation p{margin:0}
+.o4-validation h2{font-size:22px;font-weight:600}
+.o4-validation-close{border:0;border-radius:6px;color:var(--muted);background:transparent;font-size:27px;line-height:1;width:30px;height:30px;cursor:pointer}
+.o4-validation-close:hover{background:var(--config);color:var(--text)}
+.o4-validation-muted{color:var(--muted);font-size:12px;line-height:1.7}
+.o4-validation-destination{padding:11px 13px;background:var(--config);border-radius:8px;font-size:12px;overflow-wrap:anywhere}
+.o4-validation-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.o4-validation-field{display:grid;gap:8px;font-size:12px}
+.o4-validation input:not([type=checkbox]),.o4-validation textarea,.o4-validation select{box-sizing:border-box;width:100%;background:var(--config);color:var(--text);border:1px solid var(--border);border-radius:7px;padding:10px 12px;font:inherit}
+.o4-validation input[readonly]{color:var(--muted)}
+.o4-validation input:focus-visible,.o4-validation textarea:focus-visible,.o4-validation button:focus-visible,.o4-validation summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.o4-validation textarea{resize:vertical;min-height:72px}
+.o4-validation-checks{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:0;padding:15px;border:1px solid var(--border);border-radius:8px}
+.o4-validation-checks legend{padding:0 6px;font-size:12px}
+.o4-validation-check,.o4-validation-declaration{display:flex;align-items:flex-start;gap:9px;line-height:1.6;cursor:pointer}
+.o4-validation input[type=checkbox]{accent-color:var(--accent);flex-shrink:0;margin:4px 0 0;width:15px;height:15px}
+.o4-validation-declaration{font-size:13px}
+.o4-validation-auth,.o4-validation-preview{padding:13px;border:1px solid var(--border);border-radius:8px}
+.o4-validation summary{cursor:pointer;font-size:12px;color:var(--muted)}
+.o4-validation details[open]>:not(summary){margin-top:13px}
+.o4-validation-actions{display:flex;gap:10px;flex-wrap:wrap}
+.o4-validation button{font:inherit}
+.o4-validation .secondary,.o4-validation .primary{border-radius:7px;padding:10px 14px;cursor:pointer}
+.o4-validation .primary{border:1px solid var(--accent);background:var(--accent);color:white}
+.o4-validation .secondary{border:1px solid var(--border);background:var(--config);color:var(--text)}
+.o4-validation button:disabled{opacity:.45;cursor:default}
+.o4-validation-preview pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.7 MiSans,'Microsoft YaHei',system-ui,sans-serif;max-height:230px;overflow:auto}
+.o4-validation-status{font-size:12px;line-height:1.7;overflow-wrap:anywhere;color:var(--accent)}
+.o4-validation-status:empty{display:none}
+.o4-validation-status[data-error=true]{color:#e96e68}
+.o4-validation-footer{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.o4-validation-footer .primary{white-space:nowrap}
+@media(max-width:560px){.o4-validation-form{padding:18px}.o4-validation-columns{grid-template-columns:1fr}.o4-validation-checks{grid-template-columns:1fr}.o4-validation-footer{align-items:stretch;flex-direction:column}}

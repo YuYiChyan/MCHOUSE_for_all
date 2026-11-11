@@ -1,0 +1,1122 @@
+{
+  "schema": 1,
+  "brand": "logitech",
+  "source": {
+    "catalog": {
+      "url": "https://updates.ghub.logitechg.com/pipeline/v2/update/ghub13/win/public/details.json",
+      "version": "2026.7.1011216",
+      "buildId": 887386,
+      "sha256": "ca65362957b5b7d8a6e660f0c2946d53380676f109a90b99dd27918dc40602c0"
+    },
+    "protocol": "https://github.com/pwr-Solaar/Solaar/tree/e7304c4c451cc9bb4f206a914844525e67856a28",
+    "protocolSourceZipSha256": "7026b943d9e203903bafbc3a472e488702a3d50860f797f88b69e4a2343d01a8"
+  },
+  "models": [
+    {
+      "id": "logitech-g903-hero",
+      "name": "G903 LIGHTSPEED",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49297,
+          "interfaceId": "046d_c091",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16519,
+          "interfaceId": "046d_4087",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43767,
+          "interfaceId": "046d_aaf7",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "g903_hero",
+        "version": "2026.7.1011216",
+        "depot": "g903_hero",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-mx518",
+      "name": "MX518",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49294,
+          "interfaceId": "046d_c08e",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "mx518",
+        "version": "2026.7.1011216",
+        "depot": "mx518",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-pro-mouse",
+      "name": "PRO",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49285,
+          "interfaceId": "046d_c085",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "pro_mouse",
+        "version": "2026.7.1011216",
+        "depot": "pro_mouse",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-pro-mouse-hero",
+      "name": "PRO HERO",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49292,
+          "interfaceId": "046d_c08c",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43751,
+          "interfaceId": "046d_aae7",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "pro_mouse_hero",
+        "version": "2026.7.1011216",
+        "depot": "pro_mouse_hero",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-pro-wireless-mouse",
+      "name": "PRO WIRELESS",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49288,
+          "interfaceId": "046d_c088",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16505,
+          "interfaceId": "046d_4079",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43743,
+          "interfaceId": "046d_aadf",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "pro_wireless_mouse",
+        "version": "2026.7.1011216",
+        "depot": "pro_wireless_mouse_depot",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-pro-x-wireless-mouse",
+      "name": "PRO X SUPERLIGHT",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49300,
+          "interfaceId": "046d_c094",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16531,
+          "interfaceId": "046d_4093",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43776,
+          "interfaceId": "046d_ab00",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "pro_x_wireless_mouse",
+        "version": "2026.7.1011216",
+        "depot": "pro_x_wireless_mouse",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g203-lightsync",
+      "name": "G203 LIGHTSYNC",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49298,
+          "interfaceId": "046d_c092",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 49309,
+          "interfaceId": "046d_c09d",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0001.json",
+        "record": "g203_lightsync",
+        "version": "2026.7.1011216",
+        "depot": "g102_g203",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g203",
+      "name": "G102",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49284,
+          "interfaceId": "046d_c084",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g203",
+        "version": "2026.7.1011216",
+        "depot": "g203",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g302",
+      "name": "G302",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49279,
+          "interfaceId": "046d_c07f",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43701,
+          "interfaceId": "046d_aab5",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g302",
+        "version": "2026.7.1011216",
+        "depot": "g302",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g303",
+      "name": "G303",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49280,
+          "interfaceId": "046d_c080",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43702,
+          "interfaceId": "046d_aab6",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g303",
+        "version": "2026.7.1011216",
+        "depot": "g303",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g305",
+      "name": "G305",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16500,
+          "interfaceId": "046d_4074",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g305",
+        "version": "2026.7.1011216",
+        "depot": "g305",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g402",
+      "name": "G402",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49278,
+          "interfaceId": "046d_c07e",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43700,
+          "interfaceId": "046d_aab4",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g402",
+        "version": "2026.7.1011216",
+        "depot": "g402",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g403-hero",
+      "name": "G403 HERO",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49295,
+          "interfaceId": "046d_c08f",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43762,
+          "interfaceId": "046d_aaf2",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g403_hero",
+        "version": "2026.7.1011216",
+        "depot": "g403_hero",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g403-wired",
+      "name": "G403",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49283,
+          "interfaceId": "046d_c083",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g403_wired",
+        "version": "2026.7.1011216",
+        "depot": "g403",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g403-wireless",
+      "name": "G403",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16477,
+          "interfaceId": "046d_405d",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 49282,
+          "interfaceId": "046d_c082",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g403_wireless",
+        "version": "2026.7.1011216",
+        "depot": "g403",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g502-core",
+      "name": "G502",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49277,
+          "interfaceId": "046d_c07d",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43699,
+          "interfaceId": "046d_aab3",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g502_core",
+        "version": "2026.7.1011216",
+        "depot": "g502",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g502-hero",
+      "name": "G502 HERO",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49291,
+          "interfaceId": "046d_c08b",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43750,
+          "interfaceId": "046d_aae6",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g502_hero",
+        "version": "2026.7.1011216",
+        "depot": "g502_hero",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g502-spectrum",
+      "name": "G502",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49970,
+          "interfaceId": "046d_c332",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g502_spectrum",
+        "version": "2026.7.1011216",
+        "depot": "g502",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g502-wireless",
+      "name": "G502 LIGHTSPEED",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49293,
+          "interfaceId": "046d_c08d",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16511,
+          "interfaceId": "046d_407f",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43759,
+          "interfaceId": "046d_aaef",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g502_wireless",
+        "version": "2026.7.1011216",
+        "depot": "g502_wireless",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g603",
+      "name": "G603",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16492,
+          "interfaceId": "046d_406c",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g603",
+        "version": "2026.7.1011216",
+        "depot": "g603",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g604",
+      "name": "G604 LIGHTSPEED",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16517,
+          "interfaceId": "046d_4085",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 45092,
+          "interfaceId": "046d_b024",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g604",
+        "version": "2026.7.1011216",
+        "depot": "g604",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g703",
+      "name": "G703",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49287,
+          "interfaceId": "046d_c087",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16496,
+          "interfaceId": "046d_4070",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g703",
+        "version": "2026.7.1011216",
+        "depot": "g703",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g703-hero",
+      "name": "G703 LIGHTSPEED",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49296,
+          "interfaceId": "046d_c090",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16518,
+          "interfaceId": "046d_4086",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43766,
+          "interfaceId": "046d_aaf6",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g703_hero",
+        "version": "2026.7.1011216",
+        "depot": "g703_hero",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g900",
+      "name": "G900",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49281,
+          "interfaceId": "046d_c081",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16467,
+          "interfaceId": "046d_4053",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43706,
+          "interfaceId": "046d_aaba",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g900",
+        "version": "2026.7.1011216",
+        "depot": "g900",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g903",
+      "name": "G903",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 49286,
+          "interfaceId": "046d_c086",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 16487,
+          "interfaceId": "046d_4067",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43736,
+          "interfaceId": "046d_aad8",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0002.json",
+        "record": "g903",
+        "version": "2026.7.1011216",
+        "depot": "g903",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g303-wireless",
+      "name": "G303 SHROUD EDITION",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16542,
+          "interfaceId": "046d_409e",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 49303,
+          "interfaceId": "046d_c097",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 43793,
+          "interfaceId": "046d_ab11",
+          "interfaceType": "DEVIO",
+          "source": "G HUB model interface; may denote HID++ logical product rather than USB receiver"
+        }
+      ],
+      "source": {
+        "file": "data/devices/devices_0007.json",
+        "record": "g303_wireless",
+        "version": "2026.7.1011216",
+        "depot": "g303_wireless",
+        "depotPrefix": null
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "G HUB exact model IDs, HID++ 2 handshake, runtime feature and readback gating",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "brightness",
+          "hostMode"
+        ]
+      }
+    },
+    {
+      "id": "logitech-g309",
+      "name": "G309 LIGHTSPEED",
+      "brand": "logitech",
+      "kind": "mouse",
+      "identifiers": [
+        {
+          "vendorId": 1133,
+          "productId": 16561,
+          "interfaceType": "WPID"
+        },
+        {
+          "vendorId": 1133,
+          "productId": 45116,
+          "interfaceType": "BT"
+        }
+      ],
+      "source": {
+        "url": "https://github.com/pwr-Solaar/Solaar/issues/2816",
+        "receiverProductId": 50503
+      },
+      "support": {
+        "status": "unverified",
+        "provider": "logitech-hidpp2",
+        "basis": "Existing G309 adapter and device-reported HID++ 2 feature set",
+        "capabilities": [
+          "dpi",
+          "pollRate",
+          "battery",
+          "hostMode"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+'use strict';
+async function connect(match=url=>url.endsWith('/app/index.html')){
+ const targets=await(await fetch('http://127.0.0.1:9456/json/list')).json();const target=targets.find(p=>match(p.url));if(!target)throw Error('No matching app view');const ws=new WebSocket(target.webSocketDebuggerUrl);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});let seq=0;const pending=new Map();ws.onmessage=e=>{const v=JSON.parse(e.data),task=pending.get(v.id);if(task){pending.delete(v.id);v.error?task.reject(Error(v.error.message)):task.resolve(v.result);}};function call(method,params={}){return new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});}async function evaluate(expression){const result=await call('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true,userGesture:true});if(result.exceptionDetails)throw Error(result.exceptionDetails.exception?.description||result.exceptionDetails.text);return result.result?.value;}return {call,evaluate,close:()=>ws.close()};
+}
+module.exports={connect};
+if(require.main===module){(async()=>{const c=await connect();try{console.log(JSON.stringify(await c.evaluate(process.argv[2]||'document.body.innerText'),null,2));}finally{c.close();}})().catch(e=>{console.error(e);process.exitCode=1});}

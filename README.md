@@ -6,7 +6,17 @@
 
 理论上，只要设备存在能够合法使用的控制入口，就可以开发适配层，把它的状态、设置与交互接入 MCHOSE HUB。项目希望把分散在不同品牌客户端、网页驱动和开源工具中的能力，汇集到统一的卡片、导航、主题与设置体验中。每完成一项适配，就提供一个可以单独下载安装的设备包，并持续扩展支持列表。
 
-[下载独立设备包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/latest) · [开发库](library) · [开发指南](docs/DEVELOPMENT.md) · [参与贡献](CONTRIBUTING.md)
+[下载独立桌面版](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/tag/desktop-v0.6.0-preview.3) · [下载独立设备包](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/latest) · [开发库](library) · [开发指南](docs/DEVELOPMENT.md) · [参与贡献](CONTRIBUTING.md)
+
+## One4All Desktop 独立桌面版
+
+**更新时间：2026-11-12 · Windows x64 · 0.6.0-preview.3**
+
+One4All Desktop 提供自己的设备中心与安装、卸载入口，无须先打开 MCHOSE HUB。安装包自带 Electron、通用 Python/HID 控制库及商品图，新机器可直接启动；已有 One4All 的设备模块和设置在首次运行时迁移保留。厂商完整驱动按需从官网下载。
+
+[下载安装器](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/desktop-v0.6.0-preview.3/One4All-Setup-0.6.0-preview.3.exe) · [SHA256 校验文件](https://github.com/YuYiChyan/MCHOUSE_for_all/releases/download/desktop-v0.6.0-preview.3/SHA256SUMS.txt) · [桌面版源码](desktop) · [安装说明](desktop/docs/WINDOWS-INSTALLER.md)
+
+支持库将连接方式、地区布局和重复配色收进同一产品卡，提供 471 张带图卡片及圆点切色；迈从、雷蛇、罗技与新增国产品牌复用统一控件。设备实际可用功能由已接入的接口决定，新型号保留待实机验证状态。本版同时修复离线产品详情和离开官方页面后的覆盖层残留，新增本机验证确认与可选反馈服务接口。具体范围见 [桌面版说明](desktop/README.md) 与 [国产品牌接入范围](desktop/docs/DOMESTIC-CONTROLS.md)。
 
 ## 当前支持列表
 

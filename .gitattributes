@@ -2,6 +2,7 @@
 *.cmd text eol=crlf
 *.zip -text
 *.png -text
+*.ico -text
 *.webp -text
 *.whl -text
 *.exe -text

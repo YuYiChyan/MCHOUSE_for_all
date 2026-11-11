@@ -1,0 +1,743 @@
+{
+  "schema": 1,
+  "source": {
+    "url": "https://drive.vgnlab.com.cn/",
+    "bundle": "https://drive.vgnlab.com.cn/assets/index-CeliRb9v.js",
+    "sha256": "7bcd37f0c6964cdeb1f755a6c94c2621bac004af19027a029387ac36e43f3d31",
+    "basis": "Official ln.f1 CID=2 model table, deviceList vgn-f1-pm, EncryptionData/CID-MID and COMPX EEPROM controller"
+  },
+  "models": [
+    {
+      "id": "vgn-f1pro",
+      "brand": "vgn",
+      "name": "VGN F1 Pro",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 13652,
+          "productId": 62737,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64337,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64336,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62722,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62730,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62731,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62723,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62725,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62726,
+          "usagePage": 65282,
+          "usage": 2
+        }
+      ],
+      "variants": [
+        {
+          "id": "mouse-f1ProMaxWHITE",
+          "name": "白色",
+          "color": "#f2f2f2",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxWHITE-BUj-6Ks0.webp"
+        },
+        {
+          "id": "mouse-f1ProMaxBLACK",
+          "name": "黑色",
+          "color": "#202124",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxBLACK-BC3o1kDF.webp"
+        }
+      ],
+      "support": {
+        "provider": "atk-webhid",
+        "protocol": "atk-compx-v1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "cidMid": [
+          2,
+          1
+        ],
+        "cidMids": [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            23
+          ],
+          [
+            2,
+            24
+          ]
+        ],
+        "identityCommand": 1,
+        "sensor": "PAW3395",
+        "dpiBounds": [
+          50,
+          26000,
+          50
+        ],
+        "separateAxes": true,
+        "reportId": 8,
+        "filters": [
+          {
+            "vendorId": 13652,
+            "productId": 62737,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64337,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64336,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62722,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62730,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62731,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62723,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62725,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62726,
+            "usagePage": 65282,
+            "usage": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "vgn-f1promax",
+      "brand": "vgn",
+      "name": "VGN F1 Pro Max",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 13652,
+          "productId": 62737,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64337,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64336,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62722,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62730,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62731,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62723,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62725,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62726,
+          "usagePage": 65282,
+          "usage": 2
+        }
+      ],
+      "variants": [
+        {
+          "id": "mouse-f1ProMaxWHITE",
+          "name": "白色",
+          "color": "#f2f2f2",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxWHITE-BUj-6Ks0.webp"
+        },
+        {
+          "id": "mouse-f1ProMaxBLACK",
+          "name": "黑色",
+          "color": "#202124",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxBLACK-BC3o1kDF.webp"
+        },
+        {
+          "id": "mouse-f1ProMaxTARNISHED",
+          "name": "TARNISHED",
+          "color": "#8e8e8e",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxTARNISHED-DD_eQxey.webp"
+        },
+        {
+          "id": "mouse-f1ProMaxCUJOH",
+          "name": "CUJOH",
+          "color": "#8e8e8e",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1ProMaxCUJOH-ryV3AbRp.webp"
+        }
+      ],
+      "support": {
+        "provider": "atk-webhid",
+        "protocol": "atk-compx-v1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "cidMid": [
+          2,
+          3
+        ],
+        "cidMids": [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            25
+          ],
+          [
+            2,
+            26
+          ],
+          [
+            2,
+            48
+          ],
+          [
+            2,
+            52
+          ]
+        ],
+        "identityCommand": 1,
+        "sensor": "PAW3395",
+        "dpiBounds": [
+          50,
+          26000,
+          50
+        ],
+        "separateAxes": true,
+        "reportId": 8,
+        "filters": [
+          {
+            "vendorId": 13652,
+            "productId": 62737,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64337,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64336,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62722,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62730,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62731,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62723,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62725,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62726,
+            "usagePage": 65282,
+            "usage": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "vgn-f1moba",
+      "brand": "vgn",
+      "name": "VGN F1 Moba",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 13652,
+          "productId": 62737,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64337,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64336,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62722,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62730,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62731,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62723,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62725,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62726,
+          "usagePage": 65282,
+          "usage": 2
+        }
+      ],
+      "variants": [
+        {
+          "id": "mouse-f1MobaWHITE",
+          "name": "白色",
+          "color": "#f2f2f2",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1MobaWHITE-BinyQBX9.webp"
+        },
+        {
+          "id": "mouse-f1MobaBLACK",
+          "name": "黑色",
+          "color": "#202124",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1MobaBLACK-DVPkz4T5.webp"
+        }
+      ],
+      "support": {
+        "provider": "atk-webhid",
+        "protocol": "atk-compx-v1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "cidMid": [
+          2,
+          5
+        ],
+        "cidMids": [
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            33
+          ]
+        ],
+        "identityCommand": 1,
+        "sensor": "PAW3395",
+        "dpiBounds": [
+          50,
+          26000,
+          50
+        ],
+        "separateAxes": true,
+        "reportId": 8,
+        "filters": [
+          {
+            "vendorId": 13652,
+            "productId": 62737,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64337,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64336,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62722,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62730,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62731,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62723,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62725,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62726,
+            "usagePage": 65282,
+            "usage": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "vgn-f1s",
+      "brand": "vgn",
+      "name": "VGN F1 S",
+      "kind": "mouse",
+      "catalogRole": "device",
+      "identifiers": [
+        {
+          "vendorId": 13652,
+          "productId": 62737,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64337,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 64336,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62722,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62730,
+          "usagePage": 65282,
+          "usage": 2
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62731,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62723,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62725,
+          "usagePage": 65282,
+          "usage": 2,
+          "receiver": true
+        },
+        {
+          "vendorId": 13652,
+          "productId": 62726,
+          "usagePage": 65282,
+          "usage": 2
+        }
+      ],
+      "variants": [
+        {
+          "id": "mouse-f1WHITE",
+          "name": "白色",
+          "color": "#f2f2f2",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1WHITE-ALB81hGt.webp"
+        },
+        {
+          "id": "mouse-f1BLACK",
+          "name": "黑色",
+          "color": "#202124",
+          "imageUrl": "https://drive.vgnlab.com.cn/assets/F1BLACK-BK6mG4-j.webp"
+        }
+      ],
+      "support": {
+        "provider": "atk-webhid",
+        "protocol": "atk-compx-v1",
+        "status": "unverified",
+        "hardwareVerified": false,
+        "interfaceImplemented": true,
+        "cidMid": [
+          2,
+          19
+        ],
+        "cidMids": [
+          [
+            2,
+            19
+          ],
+          [
+            2,
+            20
+          ],
+          [
+            2,
+            21
+          ],
+          [
+            2,
+            22
+          ]
+        ],
+        "identityCommand": 1,
+        "sensor": "PAW3395",
+        "dpiBounds": [
+          50,
+          26000,
+          50
+        ],
+        "separateAxes": true,
+        "reportId": 8,
+        "filters": [
+          {
+            "vendorId": 13652,
+            "productId": 62737,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64337,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 64336,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62722,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62730,
+            "usagePage": 65282,
+            "usage": 2
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62731,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62723,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62725,
+            "usagePage": 65282,
+            "usage": 2,
+            "receiver": true
+          },
+          {
+            "vendorId": 13652,
+            "productId": 62726,
+            "usagePage": 65282,
+            "usage": 2
+          }
+        ]
+      }
+    }
+  ]
+}

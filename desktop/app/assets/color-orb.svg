@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <clipPath id="disc"><circle cx="32" cy="32" r="32"/></clipPath>
+    <filter id="soft-flow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="1.1"/></filter>
+    <linearGradient id="pearl" x1="50" y1="5" x2="24" y2="63" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffef9"/>
+      <stop offset=".63" stop-color="#f1eee6"/>
+      <stop offset="1" stop-color="#d7c8ab"/>
+    </linearGradient>
+    <linearGradient id="ink" x1="8" y1="47" x2="37" y2="9" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17191d"/>
+      <stop offset="1" stop-color="#42454b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="36" y1="4" x2="36" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#d9c79c" stop-opacity=".15"/>
+      <stop offset=".35" stop-color="#dbc492" stop-opacity=".9"/>
+      <stop offset=".75" stop-color="#b69a63" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#d4bd91" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#disc)">
+    <rect width="64" height="64" fill="url(#pearl)"/>
+    <path d="M40 0C19 5 13 22 29 32C46 43 39 59 22 64H0V0Z" fill="url(#ink)" filter="url(#soft-flow)"/>
+    <path d="M40 0C19 5 13 22 29 32C46 43 39 59 22 64" fill="none" stroke="url(#gold)" stroke-width="2.5" filter="url(#soft-flow)"/>
+  </g>
+</svg>

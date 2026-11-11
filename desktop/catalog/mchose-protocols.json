@@ -1,0 +1,1040 @@
+{
+  "schema": 1,
+  "provider": "mchose-webhid",
+  "source": {
+    "url": "https://cdn.mchose.com.cn/customPage/prod/assets/main-uPmmEh_1.js",
+    "sha256": "191836b939505185e8a920f67df90afbc848da39fd6b7709174378594e7270df",
+    "symbols": [
+      "getCommandBuffer",
+      "calculateXorSum",
+      "mcReadCommand",
+      "mcSetCommand",
+      "allInfoToObj",
+      "allInfoToArr",
+      "dpiToObj",
+      "dpiToArr",
+      "setSingleDpi",
+      "mouseDiffConfig",
+      "newMouseWirelessPids"
+    ],
+    "characterOffsets": {
+      "codec": 1848499,
+      "modelTable": 1882881,
+      "modelTableEnd": 1886824
+    }
+  },
+  "models": [
+    {
+      "name": "A5 V3 Pro",
+      "productName": "MCHOSE A5 V3 Pro",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16437,
+      "productIds": [
+        16437,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 26000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A5 V3 Ultra",
+      "productName": "MCHOSE A5 V3 Ultra",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16450,
+      "productIds": [
+        16450,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A5 V3 Ultra+",
+      "productName": "MCHOSE A5 V3 Ultra+",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16422,
+      "productIds": [
+        16422,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A5 V3 Ultra+(3955)",
+      "productName": "MCHOSE A5 V3 Ultra+(3955)",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16436,
+      "productIds": [
+        16436,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K7 V2 Pro",
+      "productName": "MCHOSE K7 V2 Pro",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16443,
+      "productIds": [
+        16443,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 26000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K7 V2 Pro+",
+      "productName": "MCHOSE K7 V2 Pro+",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16423,
+      "productIds": [
+        16423,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K7 V2 Ultra",
+      "productName": "MCHOSE K7 V2 Ultra",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16444,
+      "productIds": [
+        16444,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K7 V2 Ultra+",
+      "productName": "MCHOSE K7 V2 Ultra+",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16424,
+      "productIds": [
+        16424,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3",
+      "productName": "MCHOSE A7 V3",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16432,
+      "productIds": [
+        16432,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 26000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3 Pro",
+      "productName": "MCHOSE A7 V3 Pro",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16433,
+      "productIds": [
+        16433,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3 Pro+",
+      "productName": "MCHOSE A7 V3 Pro+",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16434,
+      "productIds": [
+        16434,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3 Ultra",
+      "productName": "MCHOSE A7 V3 Ultra",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16445,
+      "productIds": [
+        16445,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3 Ultra+",
+      "productName": "MCHOSE A7 V3 Ultra+",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16435,
+      "productIds": [
+        16435,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3-X",
+      "productName": "MCHOSE A7 V3-X",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16442,
+      "productIds": [
+        16442,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "A7 V3 Magnetic",
+      "productName": "MCHOSE A7 V3 Magnetic",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16447,
+      "productIds": [
+        16447,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K5 V2",
+      "productName": "MCHOSE K5 V2",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16448,
+      "productIds": [
+        16448,
+        4124
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K5 Pro",
+      "productName": "MCHOSE K5 Pro",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16439,
+      "productIds": [
+        16439,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 26000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "K5 Ultra",
+      "productName": "MCHOSE K5 Ultra",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16440,
+      "productIds": [
+        16440,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "R7 Ultra",
+      "productName": "MCHOSE R7 Ultra",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16438,
+      "productIds": [
+        16438,
+        4116,
+        4120
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 50000,
+      "rates": [
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ],
+        [
+          125,
+          500,
+          1000,
+          2000,
+          4000,
+          8000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "V7",
+      "productName": "MCHOSE V7",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16426,
+      "productIds": [
+        16426,
+        4118
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 26000,
+      "rates": [
+        [
+          125,
+          500,
+          1000
+        ],
+        [
+          125,
+          500,
+          1000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "V7 Pro",
+      "productName": "MCHOSE V7 Pro",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16446,
+      "productIds": [
+        16446,
+        4125
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 42000,
+      "rates": [
+        [
+          125,
+          500,
+          1000
+        ],
+        [
+          125,
+          500,
+          1000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "G3 V3",
+      "productName": "MCHOSE G3 V3",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16425,
+      "productIds": [
+        16425,
+        4125
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 12000,
+      "rates": [
+        [
+          125,
+          500,
+          1000
+        ],
+        [
+          125,
+          500,
+          1000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    },
+    {
+      "name": "G3 S",
+      "productName": "MCHOSE G3 S",
+      "protocol": "mchose-mouse-4d-v1",
+      "vendorId": 14391,
+      "wiredProductId": 16449,
+      "productIds": [
+        16449,
+        4125
+      ],
+      "usagePages": [
+        65281,
+        65291
+      ],
+      "reportId": 77,
+      "dpiMin": 200,
+      "dpiMax": 18000,
+      "rates": [
+        [
+          125,
+          500,
+          1000
+        ],
+        [
+          125,
+          500,
+          1000
+        ]
+      ],
+      "verification": "unverified",
+      "hardwareVerified": false
+    }
+  ]
+}
